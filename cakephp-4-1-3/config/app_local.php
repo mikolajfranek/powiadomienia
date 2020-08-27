@@ -15,7 +15,7 @@ return [
      * Development Mode:
      * true: Errors and warnings shown.
      */
-    'debug' => filter_var(env('DEBUG', true), FILTER_VALIDATE_BOOLEAN),
+    'debug' => true,
 
     /*
      * Security and encryption configuration
@@ -60,7 +60,10 @@ return [
             'url' => env('DATABASE_URL', null),
         ],
 
-	'debug_kit' => [
+        /*
+         * The test connection used in configuration
+         */
+        'debug_kit' => [
             'host' => 'localhost',
             /*
              * CakePHP will use the default DB port based on the driver selected

@@ -30,7 +30,7 @@ use Cake\View\Exception\MissingTemplateException;
  * @link https://book.cakephp.org/4/en/controllers/pages-controller.html
  */
 class PagesController extends AppController
-{
+{  
     /**
      * Displays a view
      *

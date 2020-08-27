@@ -1,0 +1,1963 @@
+2020-08-27 18:03:13 Error: [Cake\Database\Exception\MissingConnectionException] Connection to Mysql could not be established: SQLSTATE[HY000] [1049] Unknown database 'powiadomienia' in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Database/Driver.php on line 140
+Exception Attributes: array (
+  'driver' => 'Mysql',
+  'reason' => 'SQLSTATE[HY000] [1049] Unknown database \'powiadomienia\'',
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php:178
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Database/Schema/SchemaDialect.php:47
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php:230
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:53
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Database/Connection.php:399
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Model/Table/LazyTableTrait.php:44
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Model/Table/RequestsTable.php:55
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/ORM/Table.php:318
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/ORM/Locator/TableLocator.php:245
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/ORM/Locator/TableLocator.php:200
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Datasource/Locator/AbstractLocator.php:59
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/ORM/Locator/TableLocator.php:155
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/ToolbarService.php:243
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:66
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Caused by: [PDOException] SQLSTATE[HY000] [1049] Unknown database 'powiadomienia' in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Database/Driver.php on line 132
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Database/Driver.php:132
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Core/Retry/CommandRetry.php:70
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Database/Driver.php:138
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php:178
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Database/Schema/SchemaDialect.php:47
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Database/Driver/Mysql.php:230
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Database/Schema/Collection.php:53
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Database/Connection.php:399
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Model/Table/LazyTableTrait.php:44
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Model/Table/RequestsTable.php:55
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/ORM/Table.php:318
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/ORM/Locator/TableLocator.php:245
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/ORM/Locator/TableLocator.php:200
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Datasource/Locator/AbstractLocator.php:59
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/ORM/Locator/TableLocator.php:155
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/ToolbarService.php:243
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:66
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:11:51 Error: [Cake\Http\Exception\NotFoundException] Please replace templates/Pages/home.php with your own version or re-enable debug mode. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php on line 26
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1176
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1134
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:764
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:12:02 Error: [Cake\Http\Exception\NotFoundException] Please replace templates/Pages/home.php with your own version or re-enable debug mode. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php on line 26
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1176
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1134
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:764
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:12:12 Error: [Cake\Http\Exception\NotFoundException] Please replace templates/Pages/home.php with your own version or re-enable debug mode. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php on line 26
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1176
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1134
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:764
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:12:28 Error: [Cake\Http\Exception\NotFoundException] Please replace templates/Pages/home.php with your own version or re-enable debug mode. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php on line 26
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1176
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1134
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:764
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:12:33 Error: [Cake\Http\Exception\NotFoundException] Please replace templates/Pages/home.php with your own version or re-enable debug mode. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php on line 26
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1176
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1134
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:764
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:12:33 Error: [Cake\Http\Exception\NotFoundException] Please replace templates/Pages/home.php with your own version or re-enable debug mode. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php on line 26
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1176
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1134
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:764
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:12:33 Error: [Cake\Http\Exception\NotFoundException] Please replace templates/Pages/home.php with your own version or re-enable debug mode. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php on line 26
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1176
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1134
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:764
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:12:34 Error: [Cake\Http\Exception\NotFoundException] Please replace templates/Pages/home.php with your own version or re-enable debug mode. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php on line 26
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1176
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1134
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:764
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:12:34 Error: [Cake\Http\Exception\NotFoundException] Please replace templates/Pages/home.php with your own version or re-enable debug mode. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php on line 26
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1176
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1134
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:764
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:13:19 Error: [Cake\Http\Exception\NotFoundException] Please replace templates/Pages/home.php with your own version or re-enable debug mode. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php on line 26
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1176
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1134
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:764
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:16:04 Error: [Cake\Http\Exception\NotFoundException] Please replace templates/Pages/home.php with your own version or re-enable debug mode. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php on line 26
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1176
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:1134
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:764
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:48:29 Error: [Cake\Controller\Exception\MissingActionException] Action PagesController::krytycznyBlad() could not be found, or is not accessible. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php on line 506
+Exception Attributes: array (
+  'controller' => 'PagesController',
+  'action' => 'krytycznyBlad',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /krytyczny_blad
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:50:54 Error: [Cake\Controller\Exception\MissingActionException] Action PagesController::krytycznyBlad() could not be found, or is not accessible. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php on line 506
+Exception Attributes: array (
+  'controller' => 'PagesController',
+  'action' => 'krytycznyBlad',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /krytyczny_blad
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:51:22 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/krytyczny_blad.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/krytyczny_blad.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/krytyczny_blad.php`
+ in Pages/krytyczny_blad.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/krytyczny_blad.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:536
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /krytyczny_blad
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:53:32 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/krytyczny_blad.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/krytyczny_blad.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/krytyczny_blad.php`
+ in Pages/krytyczny_blad.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/krytyczny_blad.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:536
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /krytyczny_blad
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:53:48 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/krytyczny_blad.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/krytyczny_blad.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/krytyczny_blad.php`
+ in Pages/krytyczny_blad.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/krytyczny_blad.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:536
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /krytyczny_blad
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:53:50 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/krytyczny_blad.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/krytyczny_blad.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/krytyczny_blad.php`
+ in Pages/krytyczny_blad.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/krytyczny_blad.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:536
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /krytyczny_blad
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:55:18 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/krytyczny_blad.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/krytyczny_blad.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/krytyczny_blad.php`
+ in Pages/krytyczny_blad.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/krytyczny_blad.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:536
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /krytyczny_blad
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:55:54 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/krytyczny_blad.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/krytyczny_blad.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/krytyczny_blad.php`
+ in Pages/krytyczny_blad.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/krytyczny_blad.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:536
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /krytyczny_blad
+Client IP: 127.0.0.1
+
+
+2020-08-27 18:55:56 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/krytyczny_blad.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/krytyczny_blad.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/krytyczny_blad.php`
+ in Pages/krytyczny_blad.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/krytyczny_blad.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:536
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /krytyczny_blad
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:02:15 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/przerwa_techniczna.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/przerwa_techniczna.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/przerwa_techniczna.php`
+ in Pages/przerwa_techniczna.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/przerwa_techniczna.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:536
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /przerwa_techniczna
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:04:50 Error: [Error] Call to undefined method App\Controller\PagesController::disableAutoLayout() in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php on line 36
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /krytyczny_blad
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:04:52 Error: [Error] Call to undefined method App\Controller\PagesController::disableAutoLayout() in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php on line 36
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /krytyczny_blad
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:07:13 Error: [Cake\Http\Exception\MissingControllerException] Controller class Krytyczny_blad could not be found. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 158
+Exception Attributes: array (
+  'class' => 'Krytyczny_blad',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:46
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:249
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /krytyczny_blad
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:07:59 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/krytyczny_blad.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/krytyczny_blad.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/krytyczny_blad.php`
+ in Pages/krytyczny_blad.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/krytyczny_blad.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /pages/krytyczny_blad
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:08:27 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/home.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/home.php`
+ in Pages/home.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/home.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:10:28 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/home.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/home.php`
+ in Pages/home.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/home.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:13:54 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/home.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/home.php`
+ in Pages/home.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/home.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:14:56 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/home.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/home.php`
+ in Pages/home.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/home.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:15:00 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/home.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/home.php`
+ in Pages/home.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/home.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:15:05 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/home.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/home.php`
+ in Pages/home.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/home.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:20:50 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/home.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/home.php`
+ in Pages/home.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/home.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:20:50 Warning: Warning (512): Unable to emit headers. Headers sent in file=/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/ResponseEmitter.php line=113 in [/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/ResponseEmitter.php, line 71]
+Request URL: /
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 188
+DebugKit\Plugin::DebugKit\{closure}() - ROOT/vendor/cakephp/debug_kit/src/Plugin.php, line 105
+Cake\Http\ResponseEmitter::emit() - CORE/src/Http/ResponseEmitter.php, line 71
+Cake\Error\ErrorHandler::_sendResponse() - CORE/src/Error/ErrorHandler.php, line 214
+Cake\Error\ErrorHandler::_displayException() - CORE/src/Error/ErrorHandler.php, line 139
+Cake\Error\BaseErrorHandler::handleException() - CORE/src/Error/BaseErrorHandler.php, line 221
+[main] - [internal], line ??
+
+2020-08-27 19:20:50 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/ResponseEmitter.php:113) in [/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/ResponseEmitter.php, line 168]
+Request URL: /
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 188
+DebugKit\Plugin::DebugKit\{closure}() - ROOT/vendor/cakephp/debug_kit/src/Plugin.php, line 105
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE/src/Http/ResponseEmitter.php, line 168
+Cake\Http\ResponseEmitter::emit() - CORE/src/Http/ResponseEmitter.php, line 74
+Cake\Error\ErrorHandler::_sendResponse() - CORE/src/Error/ErrorHandler.php, line 214
+Cake\Error\ErrorHandler::_displayException() - CORE/src/Error/ErrorHandler.php, line 139
+Cake\Error\BaseErrorHandler::handleException() - CORE/src/Error/BaseErrorHandler.php, line 221
+[main] - [internal], line ??
+
+2020-08-27 19:20:50 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/ResponseEmitter.php:113) in [/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/ResponseEmitter.php, line 197]
+Request URL: /
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 188
+DebugKit\Plugin::DebugKit\{closure}() - ROOT/vendor/cakephp/debug_kit/src/Plugin.php, line 105
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE/src/Http/ResponseEmitter.php, line 197
+Cake\Http\ResponseEmitter::emit() - CORE/src/Http/ResponseEmitter.php, line 75
+Cake\Error\ErrorHandler::_sendResponse() - CORE/src/Error/ErrorHandler.php, line 214
+Cake\Error\ErrorHandler::_displayException() - CORE/src/Error/ErrorHandler.php, line 139
+Cake\Error\BaseErrorHandler::handleException() - CORE/src/Error/BaseErrorHandler.php, line 221
+[main] - [internal], line ??
+
+2020-08-27 19:20:50 Error: [Exception]  in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php on line 41
+Stack Trace:
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:20:50 Error: [Exception]  in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php on line 41
+Stack Trace:
+
+
+
+2020-08-27 19:21:25 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/home.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/home.php`
+ in Pages/home.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/home.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:41
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:40:18 Error: [Cake\Http\Exception\MissingControllerException] Controller class Krytyczny_blad.php could not be found. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 158
+Exception Attributes: array (
+  'class' => 'Krytyczny_blad.php',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:141
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:44
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:249
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:41
+
+Request URL: /krytyczny_blad.php
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:42:33 Error: [Cake\Http\Exception\MissingControllerException] Controller class Krytyczny_blad.php could not be found. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 158
+Exception Attributes: array (
+  'class' => 'Krytyczny_blad.php',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:141
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:44
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:249
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:41
+
+Request URL: /krytyczny_blad.php
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:43:05 Error: [Cake\Http\Exception\MissingControllerException] Controller class Krytyczny_blad.php could not be found. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 158
+Exception Attributes: array (
+  'class' => 'Krytyczny_blad.php',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:141
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:44
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:249
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:51
+
+Request URL: /krytyczny_blad.php
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:43:16 Error: [Cake\Http\Exception\MissingControllerException] Controller class Krytyczny_blad.php could not be found. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 158
+Exception Attributes: array (
+  'class' => 'Krytyczny_blad.php',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:141
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:44
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:249
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:51
+
+Request URL: /krytyczny_blad.php
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:43:33 Error: [Cake\Http\Exception\MissingControllerException] Controller class Krytyczny_blad.php could not be found. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 158
+Exception Attributes: array (
+  'class' => 'Krytyczny_blad.php',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:141
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:44
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:249
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:44
+
+Request URL: /krytyczny_blad.php
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:44:17 Error: [Cake\Http\Exception\MissingControllerException] Controller class Krytyczny_blad.php could not be found. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 158
+Exception Attributes: array (
+  'class' => 'Krytyczny_blad.php',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:141
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:44
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:249
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:41
+
+Request URL: /krytyczny_blad.php
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:46:47 Error: [Cake\Http\Exception\MissingControllerException] Controller class Krytyczny_blad.php could not be found. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 158
+Exception Attributes: array (
+  'class' => 'Krytyczny_blad.php',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:141
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:44
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:249
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:41
+
+Request URL: /krytyczny_blad.php
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:52:31 Error: [Cake\Http\Exception\MissingControllerException] Controller class Krytyczny_blad.php could not be found. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 158
+Exception Attributes: array (
+  'class' => 'Krytyczny_blad.php',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:141
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:44
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:249
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:41
+
+Request URL: /krytyczny_blad.php
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:54:13 Error: [Cake\View\Exception\MissingTemplateException] Template file `Pages/home.php` could not be found.
+
+The following paths were searched:
+
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/Pages/home.php`
+- `/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/Pages/home.php`
+ in Pages/home.php on line 1354
+Exception Attributes: array (
+  'file' => 'Pages/home.php',
+  'paths' => 
+  array (
+    0 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/templates/',
+    1 => '/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/PagesController.php:65
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:41
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:54:21 Error: [Cake\Http\Exception\MissingControllerException] Controller class Notifications could not be found. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 158
+Exception Attributes: array (
+  'class' => 'Notifications',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:46
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:249
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:41
+
+Request URL: /notifications/send
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:54:36 Error: [Cake\Http\Exception\MissingControllerException] Controller class Notifications could not be found. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 158
+Exception Attributes: array (
+  'class' => 'Notifications',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:46
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:249
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:41
+
+Request URL: /notifications/send
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:57:04 Error: [Cake\Http\Exception\MissingControllerException] Controller class Notifications could not be found. in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 158
+Exception Attributes: array (
+  'class' => 'Notifications',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:46
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:249
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:41
+
+Request URL: /notifications/send
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:57:13 Warning: Warning (2): Declaration of App\Controller\NotificationController::beforeFilter() should be compatible with Cake\Controller\Controller::beforeFilter(Cake\Event\EventInterface $event) in [/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/NotificationController.php, line 5]
+Request URL: /notification/send
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 188
+DebugKit\Plugin::DebugKit\{closure}() - ROOT/vendor/cakephp/debug_kit/src/Plugin.php, line 105
+include - APP/Controller/NotificationController.php, line 5
+Composer\Autoload\includeFile - ROOT/vendor/composer/ClassLoader.php, line 444
+Composer\Autoload\ClassLoader::loadClass() - ROOT/vendor/composer/ClassLoader.php, line 322
+spl_autoload_call - [internal], line ??
+class_exists - [internal], line ??
+Cake\Core\App::_classExistsInBase() - CORE/src/Core/App.php, line 161
+Cake\Core\App::className() - CORE/src/Core/App.php, line 67
+Cake\Controller\ControllerFactory::getControllerClass() - CORE/src/Controller/ControllerFactory.php, line 146
+Cake\Controller\ControllerFactory::create() - CORE/src/Controller/ControllerFactory.php, line 44
+Cake\Http\BaseApplication::handle() - CORE/src/Http/BaseApplication.php, line 249
+Cake\Http\Runner::handle() - CORE/src/Http/Runner.php, line 77
+Cake\Http\Middleware\CsrfProtectionMiddleware::process() - CORE/src/Http/Middleware/CsrfProtectionMiddleware.php, line 156
+Cake\Http\Runner::handle() - CORE/src/Http/Runner.php, line 73
+Cake\Http\Middleware\BodyParserMiddleware::process() - CORE/src/Http/Middleware/BodyParserMiddleware.php, line 159
+Cake\Http\Runner::handle() - CORE/src/Http/Runner.php, line 73
+Cake\Routing\Middleware\RoutingMiddleware::process() - CORE/src/Routing/Middleware/RoutingMiddleware.php, line 166
+Cake\Http\Runner::handle() - CORE/src/Http/Runner.php, line 73
+Cake\Routing\Middleware\AssetMiddleware::process() - CORE/src/Routing/Middleware/AssetMiddleware.php, line 68
+Cake\Http\Runner::handle() - CORE/src/Http/Runner.php, line 73
+Cake\Error\Middleware\ErrorHandlerMiddleware::process() - CORE/src/Error/Middleware/ErrorHandlerMiddleware.php, line 121
+Cake\Http\Runner::handle() - CORE/src/Http/Runner.php, line 73
+DebugKit\Middleware\DebugKitMiddleware::process() - ROOT/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php, line 60
+Cake\Http\Runner::handle() - CORE/src/Http/Runner.php, line 73
+Cake\Http\Runner::run() - CORE/src/Http/Runner.php, line 58
+Cake\Http\Server::run() - CORE/src/Http/Server.php, line 90
+[main] - ROOT/webroot/index.php, line 41
+
+2020-08-27 19:57:13 Error: [RuntimeException] Template name not provided in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php on line 1328
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/NotificationController.php:12
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:41
+
+Request URL: /notification/send
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:57:14 Warning: Warning (512): Unable to emit headers. Headers sent in file=/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Debugger.php line=954 in [/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/ResponseEmitter.php, line 71]
+Request URL: /notification/send
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 188
+DebugKit\Plugin::DebugKit\{closure}() - ROOT/vendor/cakephp/debug_kit/src/Plugin.php, line 105
+Cake\Http\ResponseEmitter::emit() - CORE/src/Http/ResponseEmitter.php, line 71
+Cake\Http\Server::emit() - CORE/src/Http/Server.php, line 130
+[main] - ROOT/webroot/index.php, line 41
+
+2020-08-27 19:57:14 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Debugger.php:954) in [/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/ResponseEmitter.php, line 168]
+Request URL: /notification/send
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 188
+DebugKit\Plugin::DebugKit\{closure}() - ROOT/vendor/cakephp/debug_kit/src/Plugin.php, line 105
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitStatusLine() - CORE/src/Http/ResponseEmitter.php, line 168
+Cake\Http\ResponseEmitter::emit() - CORE/src/Http/ResponseEmitter.php, line 74
+Cake\Http\Server::emit() - CORE/src/Http/Server.php, line 130
+[main] - ROOT/webroot/index.php, line 41
+
+2020-08-27 19:57:14 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Debugger.php:954) in [/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/ResponseEmitter.php, line 197]
+Request URL: /notification/send
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 188
+DebugKit\Plugin::DebugKit\{closure}() - ROOT/vendor/cakephp/debug_kit/src/Plugin.php, line 105
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE/src/Http/ResponseEmitter.php, line 197
+Cake\Http\ResponseEmitter::emit() - CORE/src/Http/ResponseEmitter.php, line 75
+Cake\Http\Server::emit() - CORE/src/Http/Server.php, line 130
+[main] - ROOT/webroot/index.php, line 41
+
+2020-08-27 19:57:14 Warning: Warning (2): Cannot modify header information - headers already sent by (output started at /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Debugger.php:954) in [/home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/ResponseEmitter.php, line 197]
+Request URL: /notification/send
+Client IP: 127.0.0.1
+Trace:
+Cake\Error\BaseErrorHandler::handleError() - CORE/src/Error/BaseErrorHandler.php, line 188
+DebugKit\Plugin::DebugKit\{closure}() - ROOT/vendor/cakephp/debug_kit/src/Plugin.php, line 105
+header - [internal], line ??
+Cake\Http\ResponseEmitter::emitHeaders() - CORE/src/Http/ResponseEmitter.php, line 197
+Cake\Http\ResponseEmitter::emit() - CORE/src/Http/ResponseEmitter.php, line 75
+Cake\Http\Server::emit() - CORE/src/Http/Server.php, line 130
+[main] - ROOT/webroot/index.php, line 41
+
+2020-08-27 19:57:42 Error: [RuntimeException] Template name not provided in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php on line 1328
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/NotificationController.php:14
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:41
+
+Request URL: /notification/send
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:58:26 Error: [RuntimeException] Template name not provided in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php on line 1328
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/NotificationController.php:14
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:41
+
+Request URL: /notification/send
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:58:31 Error: [RuntimeException] Template name not provided in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php on line 1328
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/NotificationController.php:14
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:41
+
+Request URL: /notification/send
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:59:42 Error: [RuntimeException] Template name not provided in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php on line 1328
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/NotificationController.php:14
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:41
+
+Request URL: /notification/send
+Client IP: 127.0.0.1
+
+
+2020-08-27 19:59:56 Error: [RuntimeException] Template name not provided in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php on line 1328
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:694
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/NotificationController.php:14
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:41
+
+Request URL: /notification/send
+Client IP: 127.0.0.1
+
+
+2020-08-27 20:01:24 Error: [Error] Call to undefined method App\Controller\NotificationController::autoRender() in /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/src/Controller/NotificationController.php on line 14
+Stack Trace:
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/Controller.php:527
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:79
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:251
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:156
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:166
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:121
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/ubuntu/Pulpit/eclipse-php/powiadomienia/cakephp-4-1-3/webroot/index.php:41
+
+Request URL: /notification/send
+Client IP: 127.0.0.1
+
+

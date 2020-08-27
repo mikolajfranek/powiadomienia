@@ -32,9 +32,18 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 use App\Application;
 use Cake\Http\Server;
+use Cake\Log\Log;
+try{
+    // Bind your application to the server.
+    $server = new Server(new Application(dirname(__DIR__) . '/config'));
 
-// Bind your application to the server.
-$server = new Server(new Application(dirname(__DIR__) . '/config'));
-
-// Run the request/response through the application and emit the response.
-$server->emit($server->run());
+    // Run the request/response through the application and emit the response.
+    $server->emit($server->run());
+}catch(Exception $e){
+    Log::write('error', $e->getMessage());
+    Log::write('error', $e->getTraceAsString());
+    ob_start();
+    echo "Krytyczny błąd";
+    ob_end_flush();
+    exit;
+}
