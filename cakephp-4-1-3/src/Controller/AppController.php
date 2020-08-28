@@ -17,6 +17,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+use Cake\Core\Configure;
 
 /**
  * Application Controller
@@ -49,5 +50,30 @@ class AppController extends Controller
          * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
          */
         //$this->loadComponent('FormProtection');
+    }
+    
+    public function getClientIp() {
+        $ip = 'UNKNOWN';
+        if (getenv('HTTP_CLIENT_IP')){
+            $ip = getenv('HTTP_CLIENT_IP');
+        }else if(getenv('HTTP_X_FORWARDED_FOR')){
+            $ip = getenv('HTTP_X_FORWARDED_FOR');
+        }else if(getenv('HTTP_X_FORWARDED')){
+            $ip = getenv('HTTP_X_FORWARDED');
+        }else if(getenv('HTTP_FORWARDED_FOR')){
+            $ip = getenv('HTTP_FORWARDED_FOR');
+        }else if(getenv('HTTP_FORWARDED')){
+            $ip = getenv('HTTP_FORWARDED');
+        }else if(getenv('REMOTE_ADDR')){
+            $ip = getenv('REMOTE_ADDR');
+        }
+        return $ip;
+    }
+    
+    public function isLocalhost($ip){
+        if(in_array($ip, Configure::read('Config.Localhost')) ){
+            return true;
+        }
+        return false;
     }
 }

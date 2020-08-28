@@ -252,7 +252,7 @@ return [
     'Email' => [
         'default' => [
             'transport' => 'default',
-            'from' => 'you@localhost',
+            'from' => array('kontakt@powiadomienia.eu' => "Powiadomienia.eu"),
             /*
              * Will by default be set to config value of App.encoding, if that exists otherwise to UTF-8.
              */
@@ -429,5 +429,9 @@ return [
      */
     'Session' => [
         'defaults' => 'php',
+    ],
+    
+    'Config' => [
+        'Localhost' => array('127.0.0.1'),
     ],
 ];
