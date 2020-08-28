@@ -432,6 +432,8 @@ return [
     ],
     
     'Config' => [
-        'Localhost' => array('127.0.0.1'),
+        'Localhost' => array('127.0.0.1', '213.32.10.111'),
+        'WebName' => 'Powiadomienia',
+        
     ],
 ];
