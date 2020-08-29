@@ -58,7 +58,7 @@ return [
         'wwwRoot' => WWW_ROOT,
         //'baseUrl' => env('SCRIPT_NAME'),
         'fullBaseUrl' => false,
-        'imageBaseUrl' => 'img/',
+        'imageBaseUrl' => 'images/',
         'cssBaseUrl' => 'css/',
         'jsBaseUrl' => 'js/',
         'paths' => [
@@ -434,6 +434,56 @@ return [
     'Config' => [
         'Localhost' => array('127.0.0.1', '213.32.10.111'),
         'WebName' => 'Powiadomienia',
-        
+        'NavigationBar' => array(
+            'Pages' => array(
+                'home' => array(
+                    'id' => 1,
+                    'name' => "Strona główna",
+                    'href' => array('controller' => 'pages', 'action' => 'home'),
+                    'isActive' => false,
+                    'isAdmin' => false,
+                    'isLogged' => true,
+                    'isNotLogged' => true,
+                ),
+                'donate' => array(
+                    'id' => 4,
+                    'name' => "Donate",
+                    'href' => array('controller' => 'pages', 'action' => 'donate'),
+                    'isActive' => false,
+                    'isAdmin' => false,
+                    'isLogged' => true,
+                    'isNotLogged' => true,
+                ),
+            ),
+            'User' => array(
+                'login' => array(
+                    'id' => 2,
+                    'name' => "Logowanie",
+                    'href' => array('controller' => 'user', 'action' => 'login'),
+                    'isActive' => false,
+                    'isAdmin' => false,
+                    'isLogged' => false,
+                    'isNotLogged' => true,
+                ),
+                'register' => array(
+                    'id' => 3,
+                    'name' => "Rejestracja",
+                    'href' => array('controller' => 'user', 'action' => 'register'),
+                    'isActive' => false,
+                    'isAdmin' => false,
+                    'isLogged' => false,
+                    'isNotLogged' => true,
+                ),
+                'logout' => array(
+                    'id' => 5,
+                    'name' => "Wyloguj się",
+                    'href' => array('controller' => 'user', 'action' => 'logout'),
+                    'isActive' => false,
+                    'isAdmin' => false,
+                    'isLogged' => true,
+                    'isNotLogged' => false,
+                ),
+            ),
+        ),
     ],
 ];

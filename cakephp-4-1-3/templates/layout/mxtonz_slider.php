@@ -73,17 +73,73 @@ use Cake\Core\Configure;
             </div>
         </nav>
         <!-- Navigation End -->
+
+        <!-- Banner Slider -->
+        <div class="banner-slider owl-slider" id="banner-slider">
+            <div class="banner-item banner-item-1 text-center">
+                <div class="banner-content text-white">
+                    <div class="container">
+                        <h3 class="banner-subtitle theme-color">powiadomienia.eu</h3>
+                        <h1 class="banner-title">zarejestruj kupony</h1>
+                        <div class="button-group">
+                            <?php 
+                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'user', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-white"));
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="banner-item banner-item-2 text-center">
+                <div class="banner-content text-white">
+                    <div class="container">
+                        <h3 class="banner-subtitle theme-color">powiadomienia.eu</h3>
+                        <h1 class="banner-title">zaczekaj na email</h1>
+                        <div class="button-group">
+                            <?php 
+                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'user', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-white"));
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="banner-item banner-item-3 text-center">
+                <div class="banner-content text-white">
+                    <div class="container">
+                        <h3 class="banner-subtitle theme-color">powiadomienia.eu</h3>
+                        <h1 class="banner-title">odbierz wyganą</h1>
+                        <div class="button-group">
+                            <?php 
+                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'user', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-white"));
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Banner Slider End -->
     </header>
-  
+    
     <div class="main-wrap">
-        <div class="section-padding bottom-0 theme-bg">
-         	<div class="container">
-         		<?= $this->Flash->render() ?>
-            </div>            
-    	</div>
         <?= $this->fetch('content') ?>
     </div>
- 
+    
+    <footer>
+        <!-- Footer copyrgiht and navigation -->
+        <div class="copyright-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <p class="copyright">Copyright &copy; <?= (date('Y', time())) ?>. Wszelkie prawa zastrzeżone</p>
+                    </div>
+                    <div class="col-md-6 col-12">
+                        <p class="credit-text"><a href="/"><?= Configure::read('Config.WebName') ?></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer copyrgiht and navigation -->
+    </footer>
+    
     <!-- Script -->    
     <?= $this->Html->script(['/assets/js/jquery.min.js', '/assets/js/bootstrap.min.js', '/assets/js/owl.carousel.js', '/assets/js/imagesloaded.pkgd.min.js', '/assets/js/jquery.magnific-popup.min.js', '/assets/js/plyr.js', '/assets/js/jquery.ajaxchimp.min.js', '/assets/js/isotope.pkgd.min.js', '/assets/js/jquery.countdown.min.js', '/assets/js/tether.min.js', '/assets/js/jquery.slimscroll.min.js', '/assets/js/amplitude.js', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAmiJjq5DIg_K9fv6RE72OY__p9jz0YTMI', '/js/map.js', '/js/custom.js']) ?>
 	<?= $this->fetch('script') ?>

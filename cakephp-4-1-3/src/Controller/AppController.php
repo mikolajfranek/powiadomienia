@@ -18,6 +18,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Core\Configure;
+use Cake\Event\EventInterface;
 
 /**
  * Application Controller
@@ -54,7 +55,34 @@ class AppController extends Controller
     
     public function beforeRender($event){
         parent::beforeRender($event);
-        $this->viewBuilder()->setLayout('mxtonz');        
+        
+        //change layout, with slider or not
+        $requestController = $this->request->getParam('controller');
+        $requestAction = $this->request->getParam('action');
+        if($requestController == 'Pages' && $requestAction == 'home'){
+            $this->viewBuilder()->setLayout('mxtonz_slider');
+        }else{
+            $this->viewBuilder()->setLayout('mxtonz');
+        }
+    }
+    
+    public function beforeFilter(EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        
+        //navigationBar
+        $navigationBar = array();
+        $requestController = $this->request->getParam('controller');
+        $requestAction = $this->request->getParam('action');
+        foreach(Configure::read('Config.NavigationBar') as $controller => $actions){
+            foreach($actions as $action => $v){
+                $v['isActive'] = $requestController == $controller && $requestAction == $action;
+                $navigationBar[$v['id']] = $v;
+            }
+        }
+        ksort($navigationBar);
+        $this->set('navigationBar', $navigationBar);
+        
     }
     
     public function getClientIp() {
