@@ -52,6 +52,11 @@ class AppController extends Controller
         //$this->loadComponent('FormProtection');
     }
     
+    public function beforeRender($event){
+        parent::beforeRender($event);
+        $this->viewBuilder()->setLayout('mxtonz');        
+    }
+    
     public function getClientIp() {
         $ip = 'UNKNOWN';
         if (getenv('HTTP_CLIENT_IP')){
