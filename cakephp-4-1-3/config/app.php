@@ -447,7 +447,7 @@ return [
                 ),
                 'donate' => array(
                     'id' => 4,
-                    'name' => "Donate",
+                    'name' => "Dotacja",
                     'href' => array('controller' => 'pages', 'action' => 'donate'),
                     'isActive' => false,
                     'isAdmin' => false,
@@ -485,5 +485,8 @@ return [
                 ),
             ),
         ),
+        'Email' => array(
+            'admin' => 'mikolaj.franek95@gmail.com'
+        )
     ],
 ];

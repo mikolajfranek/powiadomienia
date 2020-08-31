@@ -2,11 +2,28 @@
 
 namespace App\Controller\Component;
 
+use Cake\Auth\DigestAuthenticate;
 use Cake\Controller\Component;
+use Cake\Core\Configure;
 use Cake\Mailer\Mailer;
+use Cake\Routing\Router;
 
 class EmailProviderComponent extends Component {
-
+    
+    public function sendAboutRegistration($user){
+        $mailer = new Mailer('default');        
+        $mailer
+            ->setTo($user->email)
+            ->setBcc(Configure::read('Config.Email.admin'))
+            ->setSubject('[Powiadomienia]'. '['. (date('Y-m-d', time())) . '] Rejestracja')
+            ->setEmailFormat('html');
+        $hash = DigestAuthenticate::password($user->login, ($user->login . $user->email), env('SERVER_NAME'));
+        $url =  Router::fullBaseUrl() . '/user/activate/' . $user->id . '/' . $hash;
+        $mailer->deliver(
+            '<p>Witaj ' . $user->login . ' w serwisie ' . Configure::read('Config.WebName') . '!</p>' .
+            '<p>Oto link aktywujący Twoje konto - <a href="'. $url .'">'. $url .'</a>.</p>'
+        );
+    }
     
     public function sendNotifications($message){
         
@@ -18,6 +35,5 @@ class EmailProviderComponent extends Component {
             ->setEmailFormat('html');
            
         $mailer->deliver();
-        
     }
 }

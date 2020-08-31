@@ -16,9 +16,12 @@ declare(strict_types=1);
  */
 namespace App\Controller;
 
+use Cake\Auth\DigestAuthenticate;
 use Cake\Controller\Controller;
+use Cake\Controller\Component\AuthComponent;
 use Cake\Core\Configure;
 use Cake\Event\EventInterface;
+use Cake\Routing\Router;
 
 /**
  * Application Controller
