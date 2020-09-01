@@ -54,6 +54,31 @@ class AppController extends Controller
          * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
          */
         //$this->loadComponent('FormProtection');
+        
+        $this->loadComponent('Auth', [
+            'authenticate' => [
+                'Form' => [
+                    'fields' => [
+                        'username' => 'login',
+                        'password' => 'password'
+                    ]
+                ]
+            ],
+            'loginAction' => [
+                'controller' => 'users',
+                'action' => 'login'
+            ],
+            'loginRedirect' => array(
+                'controller' => 'pages',
+                'action' => 'donate'
+            ),
+            'logoutRedirect' => array(
+                'controller' => 'pages',
+                'action' => 'donate',
+            ),
+            // If unauthorized, return them to page they were just on
+            'unauthorizedRedirect' => $this->referer()
+        ]);
     }
     
     public function beforeRender($event){
@@ -80,7 +105,15 @@ class AppController extends Controller
         foreach(Configure::read('Config.NavigationBar') as $controller => $actions){
             foreach($actions as $action => $v){
                 $v['isActive'] = $requestController == $controller && $requestAction == $action;
-                $navigationBar[$v['id']] = $v;
+                if($this->Auth->user() != null){
+                    if($v['isLogged']){
+                        $navigationBar[$v['id']] = $v;
+                    }
+                }else{
+                    if($v['isNotLogged']){
+                        $navigationBar[$v['id']] = $v;
+                    }
+                }
             }
         }
         ksort($navigationBar);

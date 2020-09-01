@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use Cake\Auth\DigestAuthenticate;
 use Cake\Core\Exception\Exception;
 use Cake\Datasource\FactoryLocator;
 use Cake\Event\EventInterface;
@@ -10,8 +9,9 @@ use Cake\Event\EventInterface;
 use App\Controller\AppController;
 use App\Form\RegisterForm;
 use App\Form\LoginForm;
+use Cake\Auth\DefaultPasswordHasher;
 
-class UserController extends AppController
+class UsersController extends AppController
 {
     public function initialize(): void
     {
@@ -22,19 +22,18 @@ class UserController extends AppController
     public function beforeFilter(EventInterface $event)
     {
         parent::beforeFilter($event);
+        $this->Auth->allow(['register', 'activate']);
     }
-    
+  
     public function login(){
         $form = new LoginForm();
         if ($this->request->is('post')) {
             try{
-                if ($form->execute($this->request->getData()) == false) throw new Exception('Wystąpił błąd w przetarzaniu formularza logowania');
-                
-                
-                //if($this->Auth->login() == false) throw new Exception('Wystąpił błąd w tworzeniu sesji użytkownika');
-                
+                $user = $this->Auth->identify();
+                if($user == false) throw new Exception("Login lub hasło niepoprawne");
+                $this->Auth->setUser($user);
                 $this->Flash->success('Witamy w serwisie Powiadomienia.');
-                $this->redirect(array('controller' => 'pages', 'action' => 'donate'));
+                return $this->redirect($this->Auth->redirectUrl());
             }catch(Exception $e){
                 $this->Flash->error('Wystąpił błąd w wysyłaniu formularza, spóbuj ponownie.');
             }
@@ -64,7 +63,7 @@ class UserController extends AppController
                 ->where(array('id' => $user_id))
                 ->first();
             if(empty($user) == true) throw new Exception('Nie znaleziono zarejestrowanego użytkownika');
-            $hash = DigestAuthenticate::password($user->login, ($user->login . $user->email), env('SERVER_NAME'));
+            $hash = (new DefaultPasswordHasher())->hash($user->login . $user->email);
             if($activating_hash != $hash) throw new Exception('Podany hash się nie zgadza');
             if($user->is_email_confirmation == 1) throw new Exception('Konto użytkownika zostało wcześniej aktywowane');
             $user->is_account_active = 1;
@@ -79,6 +78,7 @@ class UserController extends AppController
     }
     
     public function logout(){
-        
+        $this->Flash->success('Nastąpiło wylogowanie, będziemy czekać na Twój powrót');
+        return $this->redirect($this->Auth->logout());
     }
 }

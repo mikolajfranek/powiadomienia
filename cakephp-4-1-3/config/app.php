@@ -455,11 +455,11 @@ return [
                     'isNotLogged' => true,
                 ),
             ),
-            'User' => array(
+            'Users' => array(
                 'login' => array(
                     'id' => 2,
                     'name' => "Logowanie",
-                    'href' => array('controller' => 'user', 'action' => 'login'),
+                    'href' => array('controller' => 'users', 'action' => 'login'),
                     'isActive' => false,
                     'isAdmin' => false,
                     'isLogged' => false,
@@ -468,7 +468,7 @@ return [
                 'register' => array(
                     'id' => 3,
                     'name' => "Rejestracja",
-                    'href' => array('controller' => 'user', 'action' => 'register'),
+                    'href' => array('controller' => 'users', 'action' => 'register'),
                     'isActive' => false,
                     'isAdmin' => false,
                     'isLogged' => false,
@@ -477,7 +477,7 @@ return [
                 'logout' => array(
                     'id' => 5,
                     'name' => "Wyloguj się",
-                    'href' => array('controller' => 'user', 'action' => 'logout'),
+                    'href' => array('controller' => 'users', 'action' => 'logout'),
                     'isActive' => false,
                     'isAdmin' => false,
                     'isLogged' => true,

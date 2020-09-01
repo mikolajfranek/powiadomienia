@@ -2,12 +2,12 @@
 
 namespace App\Form;
 
-use Cake\Auth\DigestAuthenticate;
 use Cake\Form\Form;
 use Cake\Form\Schema;
 use Cake\Validation\Validator;
 use Cake\Datasource\FactoryLocator;
 use App\Controller\Component\EmailProviderComponent;
+use Cake\Auth\DefaultPasswordHasher;
 
 class RegisterForm extends Form
 {
@@ -112,7 +112,7 @@ class RegisterForm extends Form
         $users = FactoryLocator::get('Table')->get('Users');
         $user = $users->newEmptyEntity();
         $user->login = $data['login'];
-        $user->password = DigestAuthenticate::password($data['login'], $data['password'], env('SERVER_NAME'));
+        $user->password = (new DefaultPasswordHasher())->hash($data['password']);
         $user->email = $data['email'];
         $user->is_account_admin = 0;
         $user->is_account_active = 0;
