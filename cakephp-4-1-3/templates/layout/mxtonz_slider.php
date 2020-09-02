@@ -83,7 +83,7 @@ use Cake\Core\Configure;
                         <h1 class="banner-title">zarejestruj kupony</h1>
                         <div class="button-group">
                             <?php 
-                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'user', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-white"));
+                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'users', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-white"));
                             ?>
                         </div>
                     </div>
@@ -96,7 +96,7 @@ use Cake\Core\Configure;
                         <h1 class="banner-title">zaczekaj na email</h1>
                         <div class="button-group">
                             <?php 
-                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'user', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-white"));
+                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'users', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-white"));
                             ?>
                         </div>
                     </div>
@@ -109,7 +109,7 @@ use Cake\Core\Configure;
                         <h1 class="banner-title">odbierz wyganą</h1>
                         <div class="button-group">
                             <?php 
-                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'user', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-white"));
+                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'users', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-white"));
                             ?>
                         </div>
                     </div>
@@ -124,6 +124,29 @@ use Cake\Core\Configure;
     </div>
     
     <footer>
+        <!-- Upcoming Stage -->
+        <div class="section section-padding upcoming-stage-section text-white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="section-header left-style">
+                            <h3 class="section-title">już teraz<br/>bądź powiadomiony</h3>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="stage-countdown-wrap">
+                            <div class="section-header">
+                                <h3 class="section-title">Kontakt</h3>
+                                <p class="section-subtext"></p>
+                                <p class="email"><i class="fa fa-envelope-o"></i>  kontakt@powiadomienia.eu</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Upcoming Stage End -->
+        
         <!-- Footer copyrgiht and navigation -->
         <div class="copyright-footer">
             <div class="container">

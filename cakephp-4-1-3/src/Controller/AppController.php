@@ -16,12 +16,10 @@ declare(strict_types=1);
  */
 namespace App\Controller;
 
-use Cake\Auth\DigestAuthenticate;
 use Cake\Controller\Controller;
-use Cake\Controller\Component\AuthComponent;
 use Cake\Core\Configure;
 use Cake\Event\EventInterface;
-use Cake\Routing\Router;
+use const False\MyClass\true;
 
 /**
  * Application Controller
@@ -61,6 +59,10 @@ class AppController extends Controller
                     'fields' => [
                         'username' => 'login',
                         'password' => 'password'
+                    ],
+                    'scope' => [
+                        'is_account_active' => '1',
+                        'is_email_confirmation' => '1'
                     ]
                 ]
             ],
@@ -118,7 +120,6 @@ class AppController extends Controller
         }
         ksort($navigationBar);
         $this->set('navigationBar', $navigationBar);
-        
     }
     
     public function getClientIp() {

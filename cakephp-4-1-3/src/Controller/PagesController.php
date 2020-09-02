@@ -16,12 +16,7 @@ declare(strict_types=1);
  */
 namespace App\Controller;
 
-use Cake\Core\Configure;
 use Cake\Event\EventInterface;
-use Cake\Http\Exception\ForbiddenException;
-use Cake\Http\Exception\NotFoundException;
-use Cake\Http\Response;
-use Cake\View\Exception\MissingTemplateException;
 
 /**
  * Static content controller
@@ -80,11 +75,7 @@ class PagesController extends AppController
         $this->Auth->allow(['home', 'donate']);
     }
     
-    public function home(){
-        
-    }
+    public function home(){}
     
-    public function donate(){
-        
-    }
+    public function donate(){}
 }

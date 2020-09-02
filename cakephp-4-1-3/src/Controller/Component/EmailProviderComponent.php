@@ -18,8 +18,8 @@ class EmailProviderComponent extends Component {
             ->setBcc(Configure::read('Config.Email.admin'))
             ->setSubject('[Powiadomienia]'. '['. (date('Y-m-d', time())) . '] Rejestracja')
             ->setEmailFormat('html');
-        $hash = (new DefaultPasswordHasher())->hash($user->login . $user->email);
-        $url =  Router::fullBaseUrl() . '/user/activate/' . $user->id . '/' . $hash;
+        $hash = DigestAuthenticate::password($user->login, ($user->login . $user->email), env('SERVER_NAME'));
+        $url =  Router::fullBaseUrl() . '/users/activate/' . $user->id . '/' . $hash;
         $mailer->deliver(
             '<p>Witaj ' . $user->login . ' w serwisie ' . Configure::read('Config.WebName') . '!</p>' .
             '<p>Oto link aktywujący Twoje konto - <a href="'. $url .'">'. $url .'</a>.</p>'

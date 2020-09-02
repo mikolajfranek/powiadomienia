@@ -387,7 +387,7 @@ Header
   right: 0;
   border-radius: 0;
   border: none;
-  background-color: rgba(255, 255, 255, 0.66);
+  background-color: #E8E8E8;
   z-index: 990;
   min-height: 100px;
   margin: 0;
@@ -581,7 +581,7 @@ Header
 Banner
 --------------------------------*/
 .banner-item {
-  height: 768px;
+  height: 500px;
   background-size: cover;
   background-position: center center;
   position: relative;
@@ -633,7 +633,7 @@ Banner
           transform: translateY(-50%);
   width: 30px;
   height: 120px;
-  background-color: #111111;
+  background-color: #6A5ACD;
   opacity: 0;
   visibility: hidden;
   color: #ffffff;
@@ -2140,7 +2140,6 @@ Footer
 
 .copyright-footer {
   background-color: #111111;
-  border-top: 1px solid #4b4a4a;
   color: #ffffff;
   padding: 22px 0;
 }
@@ -3240,7 +3239,7 @@ FAQs
   	padding-top: 0;
 }
 html{
-	background-color: rgba(106, 90, 205, 0.34);
+	background-color: #E8E8E8;
 	height:  100%;
 }
 .text-bg {
