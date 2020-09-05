@@ -10,13 +10,7 @@ use App\Controller\Component\EmailProviderComponent;
 use Cake\Auth\DefaultPasswordHasher;
 
 class RegisterForm extends Form
-{
-    private $emailProvider;
-    
-    public  function __construct(EmailProviderComponent $emailProvider){
-        $this->emailProvider = $emailProvider;
-    }
-    
+{   
     protected function _buildSchema(Schema $schema): Schema
     {
         return $schema
@@ -119,7 +113,6 @@ class RegisterForm extends Form
         $user->is_email_confirmation = 0;
         $user->is_email_notification = 1;
         if ($users->save($user)) {
-            $this->emailProvider->sendAboutRegistration($user);
             return true;
         }
         return false;

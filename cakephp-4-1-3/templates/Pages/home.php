@@ -10,7 +10,7 @@ use Cake\Core\Configure;
      	 	<article class="concert-single">     
                 <h3 class="concert-title">Czym są <?= Configure::read('Config.WebName') ?>?</h3>         
                 <div class="concert-entry">
-                	<p>To serwis, w którym istnieje możliwość zadeklarowania kupionych kuponów dla poniższych gier hazardowych</p>
+                	<p>To serwis, w którym istnieje możliwość zadeklarowania kupionych kuponów dla poniższych gier hazardowych:</p>
                     <div class="schedules">
                         <div class="schedule-item">
                             <h5 class="schedule-title">Lotto</h5>
@@ -18,7 +18,7 @@ use Cake\Core\Configure;
                             <h5 class="schedule-title">Mini Lotto.</h5>
                         </div>
                     </div>
-                  	<p>W dniu losowania dla danej gry hazardowej pobierane są wyniki losowania oraz wykonywane jest porównywanie z zadeklarowanymi kuponami, co oznacza, że po każdym losowaniu zostają wysyłane powiadomienia mailowe o rezultacie wygrania.</p>
+                  	<p>Serwis <?= Configure::read('Config.WebName') ?> w dniu losowania dla danej gry hazardowej pobiera wyniki losowania oraz wykonuje porównanie z zadeklarowanymi kuponami, co oznacza, że po każdym losowaniu zostają wysłane powiadomienia email o rezultacie wygrania.</p>
                 </div>
             </article>     
         </div>

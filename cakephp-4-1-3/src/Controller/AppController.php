@@ -19,7 +19,6 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\Core\Configure;
 use Cake\Event\EventInterface;
-use const False\MyClass\true;
 
 /**
  * Application Controller
@@ -59,10 +58,6 @@ class AppController extends Controller
                     'fields' => [
                         'username' => 'login',
                         'password' => 'password'
-                    ],
-                    'scope' => [
-                        'is_account_active' => '1',
-                        'is_email_confirmation' => '1'
                     ]
                 ]
             ],
@@ -96,6 +91,7 @@ class AppController extends Controller
         }
     }
     
+
     public function beforeFilter(EventInterface $event)
     {
         parent::beforeFilter($event);
@@ -120,30 +116,5 @@ class AppController extends Controller
         }
         ksort($navigationBar);
         $this->set('navigationBar', $navigationBar);
-    }
-    
-    public function getClientIp() {
-        $ip = 'UNKNOWN';
-        if (getenv('HTTP_CLIENT_IP')){
-            $ip = getenv('HTTP_CLIENT_IP');
-        }else if(getenv('HTTP_X_FORWARDED_FOR')){
-            $ip = getenv('HTTP_X_FORWARDED_FOR');
-        }else if(getenv('HTTP_X_FORWARDED')){
-            $ip = getenv('HTTP_X_FORWARDED');
-        }else if(getenv('HTTP_FORWARDED_FOR')){
-            $ip = getenv('HTTP_FORWARDED_FOR');
-        }else if(getenv('HTTP_FORWARDED')){
-            $ip = getenv('HTTP_FORWARDED');
-        }else if(getenv('REMOTE_ADDR')){
-            $ip = getenv('REMOTE_ADDR');
-        }
-        return $ip;
-    }
-    
-    public function isLocalhost($ip){
-        if(in_array($ip, Configure::read('Config.Localhost')) ){
-            return true;
-        }
-        return false;
     }
 }

@@ -41,8 +41,6 @@ use Cake\Core\Configure;
     
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
-    
-    
 </head>
 <body>
   	<header id="top" class="top-header">
@@ -84,7 +82,7 @@ use Cake\Core\Configure;
                         <h1 class="banner-title">zarejestruj kupony</h1>
                         <div class="button-group">
                             <?php 
-                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'users', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-white"));
+                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'users', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-black"));
                             ?>
                         </div>
                     </div>
@@ -97,7 +95,7 @@ use Cake\Core\Configure;
                         <h1 class="banner-title">zaczekaj na email</h1>
                         <div class="button-group">
                             <?php 
-                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'users', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-white"));
+                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'users', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-black"));
                             ?>
                         </div>
                     </div>
@@ -110,7 +108,7 @@ use Cake\Core\Configure;
                         <h1 class="banner-title">odbierz wyganą</h1>
                         <div class="button-group">
                             <?php 
-                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'users', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-white"));
+                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'users', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-black"));
                             ?>
                         </div>
                     </div>

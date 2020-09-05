@@ -6,7 +6,12 @@
 
 <IfModule mod_rewrite.c>
     RewriteEngine on
+#if(przerwa_techniczna)    
+#    RewriteRule    ^$    webroot/przerwa_techniczna.php    [L]
+#    RewriteRule    (.*) webroot/przerwa_techniczna.php    [L]	
+#else
     RewriteRule    ^(\.well-known/.*)$ $1 [L]
     RewriteRule    ^$    webroot/    [L]
     RewriteRule    (.*) webroot/$1    [L]
+#endif
 </IfModule>

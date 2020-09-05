@@ -7,7 +7,6 @@ use Cake\Controller\Component;
 use Cake\Core\Configure;
 use Cake\Mailer\Mailer;
 use Cake\Routing\Router;
-use Cake\Auth\DefaultPasswordHasher;
 
 class EmailProviderComponent extends Component {
     
@@ -22,19 +21,17 @@ class EmailProviderComponent extends Component {
         $url =  Router::fullBaseUrl() . '/users/activate/' . $user->id . '/' . $hash;
         $mailer->deliver(
             '<p>Witaj ' . $user->login . ' w serwisie ' . Configure::read('Config.WebName') . '!</p>' .
-            '<p>Oto link aktywujący Twoje konto - <a href="'. $url .'">'. $url .'</a>.</p>'
+            '<p>Oto link aktywujący Twoje konto <a href="'. $url .'">'. $url .'</a>.</p>'
         );
     }
     
     public function sendNotifications($message){
         
         $mailer = new Mailer('default');
-        
         $mailer
-            ->setTo('mikolaj.franek95@gmail.com')
+            ->setTo(Configure::read('Config.Email.admin'))
             ->setSubject('[Powiadomienia]'. '['. (date('Y-m-d', time())) . ']')
             ->setEmailFormat('html');
-           
         $mailer->deliver();
     }
 }

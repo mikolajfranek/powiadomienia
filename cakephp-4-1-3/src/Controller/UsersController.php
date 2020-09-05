@@ -8,7 +8,7 @@ use Cake\Auth\DigestAuthenticate;
 use Cake\Core\Exception\Exception;
 use Cake\Datasource\FactoryLocator;
 use Cake\Event\EventInterface;
-use const False\MyClass\true;
+use Cake\Core\Configure;
 
 class UsersController extends AppController
 {
@@ -34,9 +34,9 @@ class UsersController extends AppController
                 if($form->validate($this->request->getData()) == false) throw new Exception('Wystąpił błąd w przetarzaniu formularza logowania.');
                 $user = $this->Auth->identify();
                 if($user == false) throw new Exception("Login lub hasło są niepoprawne.");
-                if($user['is_account_active'] != 1 || $user['is_email_confirmation'] != 1) throw new Exception("Konto zostało zablokowane.");
+                if($user['is_account_active'] != 1 || $user['is_email_confirmation'] != 1) throw new Exception("Konto jest zablokowane.");
                 $this->Auth->setUser($user);
-                $this->Flash->success('Witamy w serwisie Powiadomienia.');
+                $this->Flash->success('Witamy w serwisie ' . Configure::read('Config.WebName') . '.');
                 return $this->redirect($this->Auth->redirectUrl());
             }catch(Exception $e){
                 $this->Flash->error(empty($e->getMessage()) ? 'Wystąpił błąd w wysyłaniu formularza, spóbuj ponownie.' : $e->getMessage());
@@ -46,13 +46,18 @@ class UsersController extends AppController
     }
     
     public function register(){
-        $form = new RegisterForm($this->EmailProvider);
+        $form = new RegisterForm();
         if($this->Auth->user() != null){
             return $this->redirect($this->Auth->redirectUrl());
         }
         if ($this->request->is('post')) {
             try{
                 if ($form->execute($this->request->getData()) == false) throw new Exception('Wystąpił błąd w przetarzaniu formularza rejestracji.');
+                $users = FactoryLocator::get('Table')->get('Users');
+                $user = $users->find()
+                    ->where(array('login' => $this->request->getData()['login']))
+                    ->first();
+                $this->EmailProvider->sendAboutRegistration($user);
                 $this->Flash->success('Aktywuj konto za pomocą linku aktywacyjnego znajdującego się na Twojej poczcie elektrocznej.');
                 $this->redirect(array('action' => 'login'));
             }catch(Exception $e){
@@ -69,7 +74,7 @@ class UsersController extends AppController
             $user = $users->find()
                 ->where(array('id' => $user_id))
                 ->first();
-            if(empty($user) == true) throw new Exception('Nie znaleziono zarejestrowanego użytkownika.');
+            if($user == null) throw new Exception('Nie znaleziono zarejestrowanego użytkownika.');
             $hash = DigestAuthenticate::password($user->login, ($user->login . $user->email), env('SERVER_NAME'));
             if($activating_hash != $hash) throw new Exception('Podany hash się nie zgadza.');
             if($user->is_email_confirmation == 1) throw new Exception('Konto użytkownika zostało wcześniej aktywowane.');
