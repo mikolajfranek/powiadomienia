@@ -31,7 +31,7 @@ class UsersController extends AppController
         }
         if ($this->request->is('post')) {
             try{
-                if ($form->execute($this->request->getData()) == false) throw new Exception('Wystąpił błąd w przetarzaniu formularza logowania.');
+                if($form->validate($this->request->getData()) == false) throw new Exception('Wystąpił błąd w przetarzaniu formularza logowania.');
                 $user = $this->Auth->identify();
                 if($user == false) throw new Exception("Login lub hasło są niepoprawne.");
                 if($user['is_account_active'] != 1 || $user['is_email_confirmation'] != 1) throw new Exception("Konto zostało zablokowane.");

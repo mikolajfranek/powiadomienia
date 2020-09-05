@@ -37,9 +37,4 @@ class LoginForm extends Form
             ));
         return $validator;
     }
-    
-    protected function _execute(array $data): bool
-    {
-        return true;
-    }
 }

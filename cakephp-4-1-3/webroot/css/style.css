@@ -2709,13 +2709,13 @@ Single Concert Page
   margin-top: 15px;
 }
 .concert-single .concert-entry p {
-  margin-bottom: 54px;
+  margin-bottom: 14px;
 }
 .concert-single .concert-entry p:last-child {
   margin-bottom: 0;
 }
 .concert-single .schedules {
-  margin-bottom: 54px;
+  margin-bottom: 14px;
 }
 .concert-single .schedules .schedule-item + .schedule-item {
   margin-top: 50px;
@@ -3244,4 +3244,7 @@ html{
 }
 .text-bg {
   	color: #6A5ACD;
+}
+.section-padding-additional {
+  padding: 48px 15px;
 }
