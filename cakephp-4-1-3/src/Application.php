@@ -25,6 +25,7 @@ use Cake\Http\Middleware\CsrfProtectionMiddleware;
 use Cake\Http\MiddlewareQueue;
 use Cake\Routing\Middleware\AssetMiddleware;
 use Cake\Routing\Middleware\RoutingMiddleware;
+use Cake\Http\Middleware\HttpsEnforcerMiddleware;
 
 /**
  * Application setup class.
@@ -95,6 +96,11 @@ class Application extends BaseApplication
             // https://book.cakephp.org/4/en/controllers/middleware.html#cross-site-request-forgery-csrf-middleware
             ->add(new CsrfProtectionMiddleware([
                 'httponly' => true,
+            ]))
+            ->add(new HttpsEnforcerMiddleware([
+                'disableOnDebug' => true,
+                'redirect' => true,
+                'statusCode' => 302,
             ]));
 
         return $middlewareQueue;

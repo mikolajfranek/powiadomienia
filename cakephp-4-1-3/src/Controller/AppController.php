@@ -51,7 +51,7 @@ class AppController extends Controller
          * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
          */
         //$this->loadComponent('FormProtection');
-        
+
         $this->loadComponent('Auth', [
             'authenticate' => [
                 'Form' => [
@@ -79,7 +79,7 @@ class AppController extends Controller
     }
     
     public function beforeRender($event){
-        parent::beforeRender($event);
+        parent::beforeRender($event);       
         
         //change layout, with slider or not
         $requestController = $this->request->getParam('controller');
@@ -91,7 +91,6 @@ class AppController extends Controller
         }
     }
     
-
     public function beforeFilter(EventInterface $event)
     {
         parent::beforeFilter($event);
