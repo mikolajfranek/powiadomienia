@@ -32,6 +32,6 @@ class EmailProviderComponent extends Component {
             ->setTo(Configure::read('Config.Email.admin'))
             ->setSubject('[Powiadomienia]'. '['. (date('Y-m-d', time())) . ']')
             ->setEmailFormat('html');
-        $mailer->deliver();
+        $mailer->deliver($message);
     }
 }

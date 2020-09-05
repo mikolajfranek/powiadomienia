@@ -30,7 +30,7 @@ class NotificationsController extends AppController
             }
             
             //TODO
-            $this->EmailProvider->sendNotifications("");
+            $this->EmailProvider->sendNotifications("Cron działa");
             
         }catch(Exception $e){
             $this->EmailProvider->sendNotifications($e->getMessage());
