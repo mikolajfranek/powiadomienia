@@ -9,6 +9,7 @@ use Cake\Core\Exception\Exception;
 use Cake\Datasource\FactoryLocator;
 use Cake\Event\EventInterface;
 use Cake\Core\Configure;
+use Cake\Log\Log;
 
 class UsersController extends AppController
 {
@@ -39,6 +40,8 @@ class UsersController extends AppController
                 $this->Flash->success('Witamy w serwisie ' . Configure::read('Config.WebName') . '.');
                 return $this->redirect($this->Auth->redirectUrl());
             }catch(Exception $e){
+                Log::write('error', $e->getMessage());
+                Log::write('error', $e->getTraceAsString());
                 $this->Flash->error(empty($e->getMessage()) ? 'Wystąpił błąd w wysyłaniu formularza, spóbuj ponownie.' : $e->getMessage());
             }
         }
@@ -61,6 +64,8 @@ class UsersController extends AppController
                 $this->Flash->success('Aktywuj konto za pomocą linku aktywacyjnego znajdującego się na Twojej poczcie elektrocznej.');
                 $this->redirect(array('action' => 'login'));
             }catch(Exception $e){
+                Log::write('error', $e->getMessage());
+                Log::write('error', $e->getTraceAsString());
                 $this->Flash->error(empty($e->getMessage()) ? 'Wystąpił błąd w wysyłaniu formularza, spóbuj ponownie.' : $e->getMessage());
             }
         }
@@ -84,6 +89,8 @@ class UsersController extends AppController
             $this->Flash->success('Pomyślnie aktywowano konto!');
             $this->redirect(array('action' => 'login'));
         }catch(Exception $e){
+            Log::write('error', $e->getMessage());
+            Log::write('error', $e->getTraceAsString());
             $this->Flash->error(empty($e->getMessage()) ? 'Wystąpił błąd w procesie aktywacji konta.' : $e->getMessage());
             $this->redirect(array('action' => 'login'));
         }

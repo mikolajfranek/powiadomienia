@@ -5,6 +5,7 @@ namespace App\Controller;
 use Cake\Core\Exception\Exception;
 use Cake\Event\EventInterface;
 use Cake\Core\Configure;
+use Cake\Log\Log;
 
 class NotificationsController extends AppController
 {
@@ -33,6 +34,8 @@ class NotificationsController extends AppController
             $this->EmailProvider->sendNotifications("Cron działa");
             
         }catch(Exception $e){
+            Log::write('error', $e->getMessage());
+            Log::write('error', $e->getTraceAsString());
             $this->EmailProvider->sendNotifications($e->getMessage());
             ob_start();
             echo "Krytyczny błąd";
