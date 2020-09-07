@@ -10,6 +10,7 @@ use Cake\Datasource\FactoryLocator;
 use Cake\Event\EventInterface;
 use Cake\Core\Configure;
 use Cake\Log\Log;
+use App\Form\SettingsForm;
 
 class UsersController extends AppController
 {
@@ -99,5 +100,40 @@ class UsersController extends AppController
     public function logout(){
         $this->Flash->success('Nastąpiło wylogowanie, będziemy oczekiwać Twojego powrotu!');
         return $this->redirect($this->Auth->logout());
+    }
+    
+    public function settings(){
+        $form = new SettingsForm();
+        if ($this->request->is('post')) {
+            try{
+                if ($form->execute($this->request->getData()) == false) throw new Exception('Wystąpił błąd w przetarzaniu formularza rejestracji.');
+
+                //TODO
+                
+                
+                
+                /*
+                $users = FactoryLocator::get('Table')->get('Users');
+                $user = $users->find()
+                ->where(array('login' => $this->request->getData()['login']))
+                ->first();
+                
+                $this->Flash->success('Pomyślnie zaktualizowane dane użytkownika.');
+                */
+                $this->Flash->success('Pomyślnie zaktualizowane dane użytkownika.');
+            }catch(Exception $e){
+                Log::write('error', $e->getMessage());
+                Log::write('error', $e->getTraceAsString());
+                $this->Flash->error(empty($e->getMessage()) ? 'Wystąpił błąd w wysyłaniu formularza, spóbuj ponownie.' : $e->getMessage());
+            }
+        }
+        if ($this->request->is('get')) {            
+            $form->setData([
+                'id' => $this->Auth->user()['id'],
+                'is_email_notification' => $this->Auth->user()['is_email_notification'],
+                'email' => $this->Auth->user()['email']
+            ]);
+        }
+        $this->set('form', $form);
     }
 }

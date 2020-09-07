@@ -6,7 +6,6 @@ use Cake\Form\Form;
 use Cake\Form\Schema;
 use Cake\Validation\Validator;
 use Cake\Datasource\FactoryLocator;
-use App\Controller\Component\EmailProviderComponent;
 use Cake\Auth\DefaultPasswordHasher;
 
 class RegisterForm extends Form
@@ -28,7 +27,7 @@ class RegisterForm extends Form
             ->notEmptyString('login', 'To pole nie może być puste') 
             ->lengthBetween('login', array(6, 40), 'Wymagane minimalnie 6, maksymalnie 40 znaki długości')
             ->add('login', 'custom', array(
-                'rule' => array('custom', '/^[A-Za-z0-9,\.\-]*$/i'),
+                'rule' => array('custom', '/^[A-Za-z0-9]*$/i'),
                 'message' => 'Zawiera nieodpowiednie znaki'
             ))
             ->add('login', 'unique', array(
@@ -49,7 +48,7 @@ class RegisterForm extends Form
             ->notEmptyString('password', 'To pole nie może być puste')
             ->lengthBetween('password', array(6, 22), 'Wymagane minimalnie 6, maksymalnie 22 znaki długości')
             ->add('password', 'custom', array(
-                'rule' => array('custom', '/^[A-Za-z0-9,\.\-]*$/i'),
+                'rule' => array('custom', '/^[A-Za-z0-9]*$/i'),
                 'message' => 'Zawiera nieodpowiednie znaki'
             ))
             ->add('password', 'match_passwords', array(
@@ -61,7 +60,7 @@ class RegisterForm extends Form
             ->notEmptyString('password_confirm', 'To pole nie może być puste')
             ->lengthBetween('password_confirm', array(6, 22), 'Wymagane minimalnie 6, maksymalnie 22 znaki długości')
             ->add('password_confirm', 'custom', array(
-                'rule' => array('custom', '/^[A-Za-z0-9,\.\-]*$/i'),
+                'rule' => array('custom', '/^[A-Za-z0-9]*$/i'),
                 'message' => 'Zawiera nieodpowiednie znaki'
             ))
             ->add('password_confirm', 'match_passwords', array(

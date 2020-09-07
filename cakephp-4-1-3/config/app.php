@@ -446,7 +446,7 @@ return [
                     'isNotLogged' => true,
                 ),
                 'donate' => array(
-                    'id' => 4,
+                    'id' => 5,
                     'name' => "Dotacja",
                     'href' => array('controller' => 'pages', 'action' => 'donate'),
                     'isActive' => false,
@@ -474,8 +474,17 @@ return [
                     'isLogged' => false,
                     'isNotLogged' => true,
                 ),
+                'settings' => array(
+                    'id' => 4,
+                    'name' => "Ustawienia",
+                    'href' => array('controller' => 'users', 'action' => 'settings'),
+                    'isActive' => false,
+                    'isAdmin' => false,
+                    'isLogged' => true,
+                    'isNotLogged' => false,
+                ),
                 'logout' => array(
-                    'id' => 5,
+                    'id' => 6,
                     'name' => "Wyloguj się",
                     'href' => array('controller' => 'users', 'action' => 'logout'),
                     'isActive' => false,
