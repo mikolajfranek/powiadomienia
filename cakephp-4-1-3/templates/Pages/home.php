@@ -18,7 +18,7 @@ use Cake\Core\Configure;
                             <h5 class="schedule-title">Mini Lotto.</h5>
                         </div>
                     </div>
-                  	<p>Serwis <?= Configure::read('Config.WebName') ?> w dniu losowania dla danej gry hazardowej pobiera wyniki losowania oraz wykonuje porównanie z zadeklarowanymi kuponami, co oznacza, że po każdym losowaniu zostają wysłane powiadomienia email o rezultacie wygrania.</p>
+                  	<p>Serwis <?= Configure::read('Config.WebName') ?> w dniu losowania dla danej gry hazardowej pobiera wyniki losowania oraz wykonuje porównanie z zadeklarowanymi kuponami, co oznacza, że po każdym losowaniu zostają wysłane powiadomienia email o rezultacie wygrania. Powiadomienia są wysyłane o godzinie 22:34.</p>
                 </div>
             </article>     
         </div>

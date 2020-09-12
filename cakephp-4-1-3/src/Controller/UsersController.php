@@ -130,7 +130,7 @@ class UsersController extends AppController
                 $this->Users->save($user);
                 if($userChangeEmail){
                     $this->EmailProvider->sendAboutChangeEmail($user);
-                    $this->Flash->success('Adres email został zmieniony, odblokuj konto za pomocą linku odblokowującego znajdującego się na Twojej poczcie elektrocznej.');
+                    $this->Flash->success('Adres email został zmieniony, odblokuj konto za pomocą linku odblokowującego znajdującego się na Twojej poczcie elektronicznej.');
                     return $this->redirect($this->Auth->logout());
                 }else if($userChangePassword){
                     $this->Flash->success('Pomyślnie zaktualizowane dane użytkownika, zaloguj się ponownie korzystając z nowego hasła.');

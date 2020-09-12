@@ -74,7 +74,8 @@ class AppController extends Controller
                 'action' => 'donate',
             ),
             // If unauthorized, return them to page they were just on
-            'unauthorizedRedirect' => $this->referer()
+            'unauthorizedRedirect' => $this->referer(),
+            'authError' => 'Nie masz uprawnień dostępu do tej lokalizacji.'
         ]);
     }
     

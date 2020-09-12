@@ -446,7 +446,7 @@ return [
                     'isNotLogged' => true,
                 ),
                 'donate' => array(
-                    'id' => 5,
+                    'id' => 9,
                     'name' => "Dotacja",
                     'href' => array('controller' => 'pages', 'action' => 'donate'),
                     'isActive' => false,
@@ -475,7 +475,7 @@ return [
                     'isNotLogged' => true,
                 ),
                 'settings' => array(
-                    'id' => 4,
+                    'id' => 8,
                     'name' => "Ustawienia",
                     'href' => array('controller' => 'users', 'action' => 'settings'),
                     'isActive' => false,
@@ -484,9 +484,49 @@ return [
                     'isNotLogged' => false,
                 ),
                 'logout' => array(
-                    'id' => 6,
+                    'id' => 10,
                     'name' => "Wyloguj się",
                     'href' => array('controller' => 'users', 'action' => 'logout'),
+                    'isActive' => false,
+                    'isAdmin' => false,
+                    'isLogged' => true,
+                    'isNotLogged' => false,
+                ),
+            ),
+            'Games' => array(
+                'list' => array(
+                    'id' => 6,
+                    'name' => "Gry",
+                    'href' => array('controller' => 'games', 'action' => 'list'),
+                    'isActive' => false,
+                    'isAdmin' => false,
+                    'isLogged' => true,
+                    'isNotLogged' => false,
+                ),
+                'statistic' => array(
+                    'id' => 7,
+                    'name' => "Statystyki",
+                    'href' => array('controller' => 'games', 'action' => 'statistic'),
+                    'isActive' => false,
+                    'isAdmin' => false,
+                    'isLogged' => true,
+                    'isNotLogged' => false,
+                ),
+            ),
+            'Tickets' => array(
+                'ticket' => array(
+                    'id' => 4,
+                    'name' => "Nowy kupon",
+                    'href' => array('controller' => 'tickets', 'action' => 'ticket'),
+                    'isActive' => false,
+                    'isAdmin' => false,
+                    'isLogged' => true,
+                    'isNotLogged' => false,
+                ),
+                'list' => array(
+                    'id' => 5,
+                    'name' => "Moje kupony",
+                    'href' => array('controller' => 'tickets', 'action' => 'list'),
                     'isActive' => false,
                     'isAdmin' => false,
                     'isLogged' => true,
@@ -497,6 +537,38 @@ return [
         'Email' => array(
             'web' => 'kontakt@powiadomienia.eu',
             'admin' => 'mikolaj.franek95@gmail.com'
-        )
+        ),
+        'Notifications' => array(
+            'url' => 'https://app.lotto.pl/wyniki?type=',
+        ),
+        'Game' => array(
+            1 => array(
+                'shortcut' => 'el',
+                'description' => 'Dawniej nazywany "Express lotek"',
+                'name' =>  'Mini Lotto',
+                'numbersInCollection' => 5,
+                'theGreatestNumber' => 42,
+                'numbersToWin' => 3,
+                'dayOfWeek' => array(1, 2, 3, 4, 5, 6, 7)
+            ),
+            2 => array(
+                'shortcut' => 'dl',
+                'description' => 'Dawniej nazywany "Duży lotek"',
+                'name' =>  'Lotto',
+                'numbersInCollection' => 6,
+                'theGreatestNumber' => 49,
+                'numbersToWin' => 3,
+                'dayOfWeek' => array(2, 4, 6)
+            ),
+            3 => array(
+                'shortcut' => 'lp',
+                'description' => 'Dawniej nie istniał',
+                'name' =>  'Lotto Plus',
+                'numbersInCollection' => 6,
+                'theGreatestNumber' => 49,
+                'numbersToWin' => 3,
+                'dayOfWeek' => array(2, 4, 6)
+            ),
+        ),
     ],
 ];
