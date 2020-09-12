@@ -11,6 +11,7 @@ use Cake\Event\EventInterface;
 use Cake\Core\Configure;
 use Cake\Log\Log;
 use App\Form\SettingsForm;
+use Cake\Auth\DefaultPasswordHasher;
 
 class UsersController extends AppController
 {
@@ -106,32 +107,51 @@ class UsersController extends AppController
         $form = new SettingsForm();
         if ($this->request->is('post')) {
             try{
-                if ($form->execute($this->request->getData()) == false) throw new Exception('Wystąpił błąd w przetarzaniu formularza rejestracji.');
-
-                //TODO
-                
-                
-                
-                /*
+                $data = $this->request->getData();
+                $data['id'] = $this->Auth->user()['id'];
+                if ($form->execute($data) == false) throw new Exception('Wystąpił błąd w przetarzaniu formularza ustawień.');
                 $users = FactoryLocator::get('Table')->get('Users');
                 $user = $users->find()
-                ->where(array('login' => $this->request->getData()['login']))
-                ->first();
-                
-                $this->Flash->success('Pomyślnie zaktualizowane dane użytkownika.');
-                */
-                $this->Flash->success('Pomyślnie zaktualizowane dane użytkownika.');
+                    ->where(array('id' => $this->Auth->user()['id']))
+                    ->first();
+                $dataToUpdated = array(
+                    'is_email_notification' => $data['is_email_notification'],
+                    'email' => $data['email']
+                );
+                $userChangeEmail = $user->email != $data['email'];
+                if($userChangeEmail){
+                    $dataToUpdated['is_email_confirmation'] = 0;
+                }
+                $userChangePassword = empty($data['password_new']) == false;
+                if($userChangePassword){
+                    $dataToUpdated['password'] = (new DefaultPasswordHasher)->hash($data['password_new']);
+                }
+                $users->patchEntity($user, $dataToUpdated);
+                $this->Users->save($user);
+                if($userChangeEmail){
+                    $this->EmailProvider->sendAboutChangeEmail($user);
+                    $this->Flash->success('Adres email został zmieniony, odblokuj konto za pomocą linku odblokowującego znajdującego się na Twojej poczcie elektrocznej.');
+                    return $this->redirect($this->Auth->logout());
+                }else if($userChangePassword){
+                    $this->Flash->success('Pomyślnie zaktualizowane dane użytkownika, zaloguj się ponownie korzystając z nowego hasła.');
+                    return $this->redirect($this->Auth->logout());
+                }else{
+                    $this->Flash->success('Pomyślnie zaktualizowane dane użytkownika.');
+                }
             }catch(Exception $e){
                 Log::write('error', $e->getMessage());
                 Log::write('error', $e->getTraceAsString());
                 $this->Flash->error(empty($e->getMessage()) ? 'Wystąpił błąd w wysyłaniu formularza, spóbuj ponownie.' : $e->getMessage());
             }
         }
-        if ($this->request->is('get')) {            
+        if ($this->request->is('get')) {
+            $users = FactoryLocator::get('Table')->get('Users');
+            $user = $users->find()
+                ->where(array('id' => $this->Auth->user()['id']))
+                ->first();
             $form->setData([
-                'id' => $this->Auth->user()['id'],
-                'is_email_notification' => $this->Auth->user()['is_email_notification'],
-                'email' => $this->Auth->user()['email']
+                'is_email_notification' => $user['is_email_notification'],
+                'email' => $user['email']
             ]);
         }
         $this->set('form', $form);

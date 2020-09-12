@@ -13,7 +13,6 @@ class SettingsForm extends Form
     protected function _buildSchema(Schema $schema): Schema
     {
         return $schema
-            ->addField('id', 'integer')
             ->addField('is_email_notification', 'bool')
             ->addField('email', 'string')
             ->addField('password', 'password')
@@ -42,15 +41,21 @@ class SettingsForm extends Form
             ))
             ->add('password', 'match_passwords', array(
                 'rule' => array($this, 'isPasswordMatched'),
-                'message' => 'Hasła nie pasują do siebie'
-            ))
-        //password_confirm
-            ->requirePresence('password_new')
-            ->notEmptyString('password_new', 'To pole nie może być puste')
-            ->lengthBetween('password_new', array(6, 22), 'Wymagane minimalnie 6, maksymalnie 22 znaki długości')
+                'message' => 'Hasło użytkownika jest niepoprawne'
+            ))  
+        //password_new   
+            ->allowEmptyString('password_new')
             ->add('password_new', 'custom', array(
                 'rule' => array('custom', '/^[A-Za-z0-9]*$/i'),
                 'message' => 'Zawiera nieodpowiednie znaki'
+            ))
+            ->add('password_new', 'length_password', array(
+                'rule' => array($this, 'isPasswordNewLength'),
+                'message' => 'Wymagane minimalnie 6, maksymalnie 22 znaki długości'
+            ))
+            ->add('password_new', 'match_passwords', array(
+                'rule' => array($this, 'isPasswordNewMatched'),
+                'message' => 'Nowe hasło użytkownika nie może być takie samo jak aktualne'
             ));
         return $validator;
     }
@@ -63,19 +68,32 @@ class SettingsForm extends Form
         return $count == 0;
     }
     
-    //TODO
-    
-    //$2y$10$T38dy/nmAMvOual.gPt1cuFWUASV4Y.Ohh2gs0LEnWrYfTJWGgNdC
     public function isPasswordMatched($password) {
         $users = FactoryLocator::get('Table')->get('Users');
         $user = $users->find()
             ->where(array('id' => $this->getData('id')))
             ->first();
-        $password = (new DefaultPasswordHasher())->hash($password);
-        if ($password == $user->password){
+        if ((new DefaultPasswordHasher)->check($password, $user->password)) {
             return true;
         }
         return false;
+    }
+    
+    public function isPasswordNewLength($password) {
+        if(empty($password)) return true;
+        return strlen($password) >= 6 && strlen($password) <= 22;
+    }
+    
+    public function isPasswordNewMatched($password) {
+        if(empty($password)) return true;
+        $users = FactoryLocator::get('Table')->get('Users');
+        $user = $users->find()
+            ->where(array('id' => $this->getData('id')))
+            ->first();
+        if ((new DefaultPasswordHasher)->check($password, $user->password)) {
+            return false;
+        }
+        return true;
     }
     
     protected function _execute(array $data): bool

@@ -137,7 +137,7 @@ use Cake\Core\Configure;
                             <div class="section-header">
                                 <h3 class="section-title">Kontakt</h3>
                                 <p class="section-subtext"></p>
-                                <p class="email"><i class="fa fa-envelope-o"></i>  kontakt@powiadomienia.eu</p>
+                                <p class="email"><i class="fa fa-envelope-o"></i> <?= Configure::read('Config.Email.web') ?></p>
                             </div>
                         </div>
                     </div>

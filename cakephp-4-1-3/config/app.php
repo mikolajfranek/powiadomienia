@@ -432,7 +432,7 @@ return [
     ],
     
     'Config' => [
-        'Localhost' => array('127.0.0.1', '213.32.10.111'),
+        'Localhost' => array('127.0.0.1', '91.134.248.249'),
         'WebName' => 'Powiadomienia',
         'NavigationBar' => array(
             'Pages' => array(
@@ -495,6 +495,7 @@ return [
             ),
         ),
         'Email' => array(
+            'web' => 'kontakt@powiadomienia.eu',
             'admin' => 'mikolaj.franek95@gmail.com'
         )
     ],
