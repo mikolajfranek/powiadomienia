@@ -34,7 +34,7 @@ class UsersController extends AppController
         }
         if ($this->request->is('post')) {
             try{
-                if($form->validate($this->request->getData()) == false) throw new Exception('Wystąpił błąd w przetarzaniu formularza logowania.');
+                if($form->validate($this->request->getData()) == false) throw new Exception('Wystąpił błąd w przetwarzaniu formularza logowania.');
                 $user = $this->Auth->identify();
                 if($user == false) throw new Exception("Login lub hasło są niepoprawne.");
                 if($user['is_account_active'] != 1 || $user['is_email_confirmation'] != 1) throw new Exception("Konto jest zablokowane.");
@@ -57,7 +57,7 @@ class UsersController extends AppController
         }
         if ($this->request->is('post')) {
             try{
-                if ($form->execute($this->request->getData()) == false) throw new Exception('Wystąpił błąd w przetarzaniu formularza rejestracji.');
+                if ($form->execute($this->request->getData()) == false) throw new Exception('Wystąpił błąd w przetwarzaniu formularza rejestracji.');
                 $users = FactoryLocator::get('Table')->get('Users');
                 $user = $users->find()
                     ->where(array('login' => $this->request->getData()['login']))
@@ -109,7 +109,7 @@ class UsersController extends AppController
             try{
                 $data = $this->request->getData();
                 $data['id'] = $this->Auth->user()['id'];
-                if ($form->execute($data) == false) throw new Exception('Wystąpił błąd w przetarzaniu formularza ustawień.');
+                if ($form->execute($data) == false) throw new Exception('Wystąpił błąd w przetwarzaniu formularza ustawień.');
                 $users = FactoryLocator::get('Table')->get('Users');
                 $user = $users->find()
                     ->where(array('id' => $this->Auth->user()['id']))

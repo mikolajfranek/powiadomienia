@@ -9,7 +9,7 @@ use Cake\Core\Configure;
         <div class="row">
             <div class="col-lg-8 offset-lg-2 col-12">
                 <div class="section-header text-center">
-                    <h3 class="section-title">Zarejestrowane kupony</h3>
+                    <h3 class="section-title">Moje kupony</h3>
                 </div>
             </div>
         </div>
@@ -21,10 +21,17 @@ use Cake\Core\Configure;
                             <tr>
                                 <td class="show-hall show-date">
                                     <span class="date"><?= (Configure::read('Config.Game'))[$ticket['id_game']]['name'] . ($ticket['is_lotto_plus'] ? ' (+ Lotto Plus)' : '') ?></span>
-                                    <span class="hall-name">Ważny od <?= $ticket['date_begin'] ?> do <?= $ticket['date_end'] ?></span>
+                                    <span class="hall-name">Ważny od <?= date("d-m-y", date_timestamp_get($ticket['date_begin'])) ?> do <?= date("d-m-y", date_timestamp_get($ticket['date_end'])) ?></span>
                                 </td>
                                 <td class="show-ticket">
-                                    <a class="btn btn-border btn-white" href="#">Edytuj</a>
+                                    <?php 
+                                        echo $this->Html->link('Edytuj', array('controller' => 'tickets', 'action' => 'ticket', $ticket['id']), array('class' => "btn btn-border btn-white"));
+                                    ?>
+                                </td>
+                                <td class="show-ticket">                                
+                                    <?php 
+                                        echo $this->Form->postlink('Usuń', array('controller' => 'tickets', 'action' => 'delete', $ticket['id']), array('class' => "btn btn-border btn-white", 'confirm' => 'Czy na pewno chcesz usunąć wybrany kupon?'));
+                                    ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

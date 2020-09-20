@@ -3,15 +3,13 @@
 namespace App\Model\Table;
 
 use Cake\ORM\Table;
+use Cake\Auth\DefaultPasswordHasher;
 
-class TicketsTable extends Table
+class ResultsTable extends Table
 {
     public function initialize(array $config): void
     {
         $this->setPrimaryKey('id');
-        $this->setTable('tickets');
-        $this->belongsTo('Users')
-             ->setForeignKey('id_user');
+        $this->setTable('results');
     }
 }
-

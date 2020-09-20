@@ -17,14 +17,16 @@ use Cake\Core\Configure;
             <div class="col-12">
                 <div class="table-responsive">
                     <table class="table show-table table-borderless">
-                        <?php foreach(Configure::read('Config.Game') as $name => $game): ?>
+                        <?php foreach(Configure::read('Config.Game') as $id => $game): ?>
                             <tr>
                                 <td class="show-hall show-date">
                                     <span class="date"><?= $game['name'] ?></span>
                                     <span class="hall-name"><?= $game['description'] ?></span>
                                 </td>
                                 <td class="show-ticket">
-                                    <a class="btn btn-border btn-white" href="#">Dodaj nowy kupon</a>
+                                    <?php 
+                                    echo $this->Html->link('Dodaj nowy kupon', array('controller' => 'tickets', 'action' => 'ticket'. '?game=' . $id), array('class' => "btn btn-border btn-white"));
+                                    ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

@@ -117,4 +117,15 @@ class AppController extends Controller
         ksort($navigationBar);
         $this->set('navigationBar', $navigationBar);
     }
+    
+    //additionals
+    protected function sortCollection($collectionString){
+        $array = explode(' ', $collectionString);
+        $toSort = array();
+        foreach($array as $number){
+            $toSort[] = (int)$number;
+        }
+        sort($toSort);
+        return implode(" ", $toSort);
+    }
 }

@@ -496,7 +496,7 @@ return [
             'Games' => array(
                 'list' => array(
                     'id' => 6,
-                    'name' => "Gry",
+                    'name' => "Zarejestrowane gry",
                     'href' => array('controller' => 'games', 'action' => 'list'),
                     'isActive' => false,
                     'isAdmin' => false,
@@ -516,7 +516,7 @@ return [
             'Tickets' => array(
                 'ticket' => array(
                     'id' => 4,
-                    'name' => "Nowy kupon",
+                    'name' => "Rejestracja kuponu",
                     'href' => array('controller' => 'tickets', 'action' => 'ticket'),
                     'isActive' => false,
                     'isAdmin' => false,
@@ -541,11 +541,17 @@ return [
         'Notifications' => array(
             'url' => 'https://app.lotto.pl/wyniki?type=',
         ),
+        'GameToId' => array(
+            'MiniLotto' => 1,
+            'Lotto' => 2,
+            'LottoAndLottoPlus' => 3
+        ),
         'Game' => array(
             1 => array(
                 'shortcut' => 'el',
-                'description' => 'Dawniej nazywany "Express lotek"',
+                'description' => 'Dawniej "Express lotek"',
                 'name' =>  'Mini Lotto',
+                'nameStatistic' => 'Mini Lotto',
                 'numbersInCollection' => 5,
                 'theGreatestNumber' => 42,
                 'numbersToWin' => 3,
@@ -553,8 +559,9 @@ return [
             ),
             2 => array(
                 'shortcut' => 'dl',
-                'description' => 'Dawniej nazywany "Duży lotek"',
+                'description' => 'Dawniej "Duży lotek"',
                 'name' =>  'Lotto',
+                'nameStatistic' => 'Lotto',
                 'numbersInCollection' => 6,
                 'theGreatestNumber' => 49,
                 'numbersToWin' => 3,
@@ -562,8 +569,9 @@ return [
             ),
             3 => array(
                 'shortcut' => 'lp',
-                'description' => 'Dawniej nie istniał',
-                'name' =>  'Lotto Plus',
+                'description' => '"Duży lotek" rozszerzony o dodatkowe losowanie',
+                'name' =>  'Lotto + Lotto Plus',
+                'nameStatistic' => 'Lotto Plus',
                 'numbersInCollection' => 6,
                 'theGreatestNumber' => 49,
                 'numbersToWin' => 3,
