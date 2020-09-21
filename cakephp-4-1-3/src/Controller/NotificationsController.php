@@ -116,10 +116,10 @@ class NotificationsController extends AppController
             //prepare variables before download results
             $gameTickets = array();
             foreach ($activeTickets as $ticket) {
-                $gameTickets[$ticket['id_game']][$ticket['id_user']][] = $ticket;
+                $gameTickets[$ticket['id_game']][$ticket->user['email']][] = $ticket;
                 if($ticket['id_game'] == Configure::read('Config.GameToId.LottoAndLottoPlus')){
                     $ticket['id_game'] = Configure::read('Config.GameToId.Lotto');
-                    $gameTickets[$ticket['id_game']][$ticket['id_user']][] = $ticket;
+                    $gameTickets[$ticket['id_game']][$ticket->user['email']][] = $ticket;
                 }
             }
 
@@ -131,9 +131,9 @@ class NotificationsController extends AppController
                 if(empty($content)) throw new Exception("Nie pobrano wyników loterii.");
                 $lastLotteryDate = $this->getLastLotteryDate($idGame);
                 $content = explode("\n", trim($content, "\n"));
-                //if($lastLotteryDate == null || $content[0] != $lastLotteryDate){
-                    //throw new Exception("Dzień loterii jest nieprawidłowy.");
-                //}
+                if($lastLotteryDate == null || $content[0] != $lastLotteryDate){
+                    throw new Exception("Dzień loterii jest nieprawidłowy.");
+                }
                 unset($content[0]);
                 $gameResults[$idGame] = $content;
             }
@@ -141,14 +141,10 @@ class NotificationsController extends AppController
             //compare results and sending email
             $resultsToSave = array();
             foreach($gameResults as $idGame => $winnerNumbers){
-                foreach($gameTickets[$idGame] as $ticketsOfUser){
+                foreach($gameTickets[$idGame] as $emailOfUser => $ticketsOfUser){
                     $results = $this->compareResultWithTicketsOfUser(Configure::read('Config.Game')[$idGame]['numbersToWin'], $winnerNumbers, $ticketsOfUser);
                     $resultsToSave = array_merge($resultsToSave, $results['wins'], $results['loses']);
-                    
-                    
-                    //if($this->EmailProvider->notifications($games[$game_id], $users[$user_id], $winnerNumbers, $win_numbers, $this->language) == false){
-                        //throw new Exception(Configure::read("AppConfig.Web." . $this->language . ".controller_notifications_failure_notsent"));
-                    //}
+                    $this->EmailProvider->sendNotification($emailOfUser, $results, Configure::read('Config.Game')[$idGame]['nameStatistic']);
                 }
             }
             
@@ -159,23 +155,22 @@ class NotificationsController extends AppController
             if(count($resultsToSave) != count($result)){
                 throw new Exception("Nie zapisano wszystkich kuponów w bazie danych.");
             }
-         
-            
-            
-            
         
             //send email about success of process
-            //$this->EmailProvider->sendNotifications("Cron działa");
+            $this->EmailProvider->sendMessageToAdmin("Success", "Cron działa, powiadomienia zostały wysłane.");
             
         }catch(Exception $e){
+            Log::write('error', $this->getRequest()->getUri()->__toString());
             Log::write('error', $e->getMessage());
             Log::write('error', $e->getTraceAsString());
-            //$this->EmailProvider->sendNotifications($e->getMessage());
+            $this->EmailProvider->sendMessageToAdmin("Exception", $e->getMessage());
+            ob_clean();
             ob_start();
-            echo "Krytyczny błąd - wyrzuony " . $e->getMessage();
+            echo "Krytyczny błąd";
             ob_end_flush();
             exit;
         }
+        ob_clean();
         ob_start();
         echo "Ok";
         ob_end_flush();

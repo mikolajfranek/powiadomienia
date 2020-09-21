@@ -569,7 +569,7 @@ return [
             ),
             3 => array(
                 'shortcut' => 'lp',
-                'description' => '"Duży lotek" rozszerzony o dodatkowe losowanie',
+                'description' => 'Dodatkowe losowanie dla kuponu "Duży lotek"',
                 'name' =>  'Lotto + Lotto Plus',
                 'nameStatistic' => 'Lotto Plus',
                 'numbersInCollection' => 6,

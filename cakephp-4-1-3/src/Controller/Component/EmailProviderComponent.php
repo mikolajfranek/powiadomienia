@@ -39,12 +39,34 @@ class EmailProviderComponent extends Component {
             );
     }
     
-    public function sendNotifications($message){
+    public function sendNotification($email, $results, $nameOfGame){
+        $mailer = new Mailer('default');
+        $mailer
+            ->setTo($email)
+            ->setSubject('['. (date('Y-m-d', time())) . '][' . $nameOfGame . '] ' . (empty($results['wins']) == false ? "Wygrałeś - najlepsze trafienie to " . $results['winLevel'] : "Przegrałeś"))
+            ->setEmailFormat('html');
+        $content = '<p>' . $nameOfGame . ' oraz Twoje wyniki.</p><br/>';
+        if(empty($results['wins']) == false){
+            $content .= "<p>Zwycięskie zakłady:</p>";
+            foreach($results['wins'] as $item){
+                $content .= '<p>Zakład ' . $item['collection'] .  ' trafił "' . $item['winning_amount']  . '" (' .  $item['winning_numbers']  . ') w losowaniu ' . $item['lottery_numbers'] . '</p>';
+            }
+        }
+        if(empty($results['loses']) == false){
+            $content .= "<p>Przegrane zakłady:</p>";
+            foreach($results['loses'] as $item){
+                $content .= '<p>Zakład ' . $item['collection'] .  ' trafił "' . $item['winning_amount']  . '" (' .  $item['winning_numbers']  . ') w losowaniu ' . $item['lottery_numbers'] . '</p>';
+            }
+        }
+        $mailer->deliver($content);
+    }
+    
+    public function sendMessageToAdmin($title, $message){
         
         $mailer = new Mailer('default');
         $mailer
             ->setTo(Configure::read('Config.Email.admin'))
-            ->setSubject('['. (date('Y-m-d', time())) . ']')
+            ->setSubject('['. (date('Y-m-d', time())) . '] ' . $title)
             ->setEmailFormat('html');
         $mailer->deliver($message);
     }
