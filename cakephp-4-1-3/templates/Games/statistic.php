@@ -16,22 +16,17 @@ use Cake\Core\Configure;
         <div class="row">
             <div class="col-12">
                 <div class="table-responsive">
-                    <table class="table table-borderless">
-                        <?php foreach(Configure::read('Config.Game') as $id => $game): ?>
+                    <table class="table table-borderless show-table ">
+                        <?php foreach(Configure::read('Config.Game') as $idGame => $game): ?>
                             <tr>
                                 <td class="show-hall show-date">
                                     <span class="date"><?= $game['nameStatistic'] ?></span>
                                     <span class="hall-name"><?= $game['description'] ?></span>
                                 </td>
                                 <td class="show-ticket">
-                                
-                                <p>sdasda</p>
-                                <p>sdasda</p>
-                                <p>sdasda</p>
-                                <p>sdasda</p>
-                                <p>sdasda</p>
-                                <p>sdasda</p>
-                                  
+                                <?php foreach($statistics[$idGame] as $level => $statistic) : ?>
+                                	<span><?=$statistic?> trafień w "<?=$level ?>"</span></br>
+                                <?php endforeach; ?>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

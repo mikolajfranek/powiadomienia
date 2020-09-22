@@ -160,7 +160,7 @@ class NotificationsController extends AppController
             $this->EmailProvider->sendMessageToAdmin("Success", "Cron działa, powiadomienia zostały wysłane.");
             
         }catch(Exception $e){
-            Log::write('error', $this->getRequest()->getUri()->__toString());
+            Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
             Log::write('error', $e->getMessage());
             Log::write('error', $e->getTraceAsString());
             $this->EmailProvider->sendMessageToAdmin("Exception", $e->getMessage());

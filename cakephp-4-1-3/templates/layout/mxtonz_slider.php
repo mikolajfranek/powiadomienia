@@ -151,7 +151,7 @@ use Cake\Core\Configure;
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-12">
-                        <p class="copyright">Copyright &copy; <?= (date('Y', time())) ?>. Wszelkie prawa zastrzeżone</p>
+                        <p class="copyright">Copyright &copy; <?= (date('Y', time())) ?>. Wszelkie prawa zastrzeżone.</p>
                     </div>
                     <div class="col-md-6 col-12">
                         <p class="credit-text"><a href="/"><?= Configure::read('Config.WebName') ?></a></p>

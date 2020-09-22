@@ -11,8 +11,10 @@ class AppExceptionRenderer extends ExceptionRenderer
 {
     public function __construct(Throwable $e, ?ServerRequest $request = null)
     {
+        Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
         Log::write('error', $e->getMessage());
         Log::write('error', $e->getTraceAsString());
+        ob_clean();
         ob_start();
         echo "Krytyczny błąd";
         ob_end_flush();

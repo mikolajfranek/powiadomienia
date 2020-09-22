@@ -82,7 +82,7 @@ use Cake\Core\Configure;
     	</div>
         <?= $this->fetch('content') ?>
     </div>
- 
+   
     <!-- Script -->    
     <?= $this->Html->script(['/assets/js/jquery.min.js', '/assets/js/bootstrap.min.js', '/assets/js/owl.carousel.js', '/assets/js/imagesloaded.pkgd.min.js', '/assets/js/jquery.magnific-popup.min.js', '/assets/js/plyr.js', '/assets/js/jquery.ajaxchimp.min.js', '/assets/js/isotope.pkgd.min.js', '/assets/js/jquery.countdown.min.js', '/assets/js/tether.min.js', '/assets/js/jquery.slimscroll.min.js', '/assets/js/amplitude.js', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAmiJjq5DIg_K9fv6RE72OY__p9jz0YTMI', '/js/map.js', '/js/custom.js']) ?>
 	<?= $this->fetch('script') ?>
