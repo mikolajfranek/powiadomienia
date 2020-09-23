@@ -25,7 +25,7 @@ class RegisterForm extends Form
         //login
             ->requirePresence('login')
             ->notEmptyString('login', 'To pole nie może być puste') 
-            ->lengthBetween('login', array(6, 40), 'Wymagane minimalnie 6, maksymalnie 40 znaki długości')
+            ->lengthBetween('login', array(6, 22), 'Wymagane minimalnie 6, maksymalnie 22 znaki długości')
             ->add('login', 'custom', array(
                 'rule' => array('custom', '/^[A-Za-z0-9]*$/i'),
                 'message' => 'Zawiera nieodpowiednie znaki'
@@ -37,11 +37,11 @@ class RegisterForm extends Form
         //email
             ->requirePresence('email')
             ->notEmptyString('email', 'To pole nie może być puste')
-            ->email('email', false, "Nieprawidłowy email")
+            ->email('email', false, "Nieprawidłowy adres email")
             ->maxLength('email', 100, 'Maksymalnie 100 znaki długości')
             ->add('email', 'unique', array(
                 'rule' => array($this, 'isUniqueEmail'),
-                'message' => 'Email jest już w użyciu'
+                'message' => 'Adres email jest już w użyciu'
             ))  
         //password
             ->requirePresence('password')
@@ -86,18 +86,12 @@ class RegisterForm extends Form
         return $count == 0;
     }
     
-    public function isPasswordMatched($password) {
-        if ($password == $this->getData('password_confirm')) {
-            return true;
-        }
-        return false;
+    public function isPasswordMatched($check) {
+        return $check == $this->getData('password_confirm');
     }
     
-    public function isPasswordConfirmMatched($password) {
-        if ($password == $this->getData('password')) {
-            return true;
-        }
-        return false;
+    public function isPasswordConfirmMatched($check) {
+        return $check == $this->getData('password');
     }
     
     protected function _execute(array $data): bool

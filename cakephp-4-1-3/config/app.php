@@ -253,6 +253,7 @@ return [
         'default' => [
             'transport' => 'default',
             'from' => array('kontakt@powiadomienia.eu' => "Powiadomienia.eu"),
+            'tls' => true,
             /*
              * Will by default be set to config value of App.encoding, if that exists otherwise to UTF-8.
              */

@@ -26,12 +26,37 @@ class UsersController extends AppController
         parent::beforeFilter($event);
         $this->Auth->allow(['register', 'activate']);
     }
-  
-    public function login(){
-        $form = new LoginForm();
+    
+    public function register(){
         if($this->Auth->user() != null){
             return $this->redirect($this->Auth->redirectUrl());
         }
+        $form = new RegisterForm();
+        if ($this->request->is('post')) {
+            try{
+                if ($form->execute($this->request->getData()) == false) throw new Exception('Wystąpił błąd w przetwarzaniu formularza rejestracji.');
+                $users = FactoryLocator::get('Table')->get('Users');                
+                $user = $users->find()
+                    ->where(array('login' => $this->request->getData()['login']))
+                    ->first();
+                $this->EmailProvider->sendAboutRegistration($user);
+                $this->Flash->success('Aktywuj konto za pomocą linku aktywacyjnego znajdującego się na Twojej poczcie elektrocznej.');
+                $this->redirect(array('action' => 'login'));
+            }catch(Exception $e){
+                Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
+                Log::write('error', $e->getMessage());
+                Log::write('error', $e->getTraceAsString());                
+                $this->Flash->error(empty($e->getMessage()) ? 'Wystąpił błąd w wysyłaniu formularza, spóbuj ponownie.' : $e->getMessage());
+            }
+        }
+        $this->set('form', $form);
+    }
+    
+    public function login(){
+        if($this->Auth->user() != null){
+            return $this->redirect($this->Auth->redirectUrl());
+        }
+        $form = new LoginForm();
         if ($this->request->is('post')) {
             try{
                 if($form->validate($this->request->getData()) == false) throw new Exception('Wystąpił błąd w przetwarzaniu formularza logowania.');
@@ -42,6 +67,7 @@ class UsersController extends AppController
                 $this->Flash->success('Witamy w serwisie ' . Configure::read('Config.WebName') . '.');
                 return $this->redirect($this->Auth->redirectUrl());
             }catch(Exception $e){
+                Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
                 Log::write('error', $e->getMessage());
                 Log::write('error', $e->getTraceAsString());
                 $this->Flash->error(empty($e->getMessage()) ? 'Wystąpił błąd w wysyłaniu formularza, spóbuj ponownie.' : $e->getMessage());
@@ -50,52 +76,28 @@ class UsersController extends AppController
         $this->set('form', $form);
     }
     
-    public function register(){
-        $form = new RegisterForm();
-        if($this->Auth->user() != null){
-            return $this->redirect($this->Auth->redirectUrl());
-        }
-        if ($this->request->is('post')) {
-            try{
-                if ($form->execute($this->request->getData()) == false) throw new Exception('Wystąpił błąd w przetwarzaniu formularza rejestracji.');
-                $users = FactoryLocator::get('Table')->get('Users');
-                $user = $users->find()
-                    ->where(array('login' => $this->request->getData()['login']))
-                    ->first();
-                $this->EmailProvider->sendAboutRegistration($user);
-                $this->Flash->success('Aktywuj konto za pomocą linku aktywacyjnego znajdującego się na Twojej poczcie elektrocznej.');
-                $this->redirect(array('action' => 'login'));
-            }catch(Exception $e){
-                Log::write('error', $e->getMessage());
-                Log::write('error', $e->getTraceAsString());
-                $this->Flash->error(empty($e->getMessage()) ? 'Wystąpił błąd w wysyłaniu formularza, spóbuj ponownie.' : $e->getMessage());
-            }
-        }
-        $this->set('form', $form);
-    }
-    
-    public function activate($user_id, $activating_hash){
+    public function activate($userId, $activatingHash){
         $this->autoRender = false;
         try{
             $users = FactoryLocator::get('Table')->get('Users');
             $user = $users->find()
-                ->where(array('id' => $user_id))
+                ->where(array('id' => $userId))
                 ->first();
-            if($user == null) throw new Exception('Nie znaleziono zarejestrowanego użytkownika.');
-            $hash = DigestAuthenticate::password($user->login, ($user->login . $user->email), env('SERVER_NAME'));
-            if($activating_hash != $hash) throw new Exception('Podany hash się nie zgadza.');
-            if($user->is_email_confirmation == 1) throw new Exception('Konto użytkownika zostało wcześniej aktywowane.');
+            if($user == null) throw new Exception('Nie znaleziono użytkownika.');
+            $hash = DigestAuthenticate::password($user->login, ($user->id . $user->login . $user->email), env('SERVER_NAME'));
+            if($activatingHash != $hash) throw new Exception('Podany hash się nie zgadza.');
+            if($user->is_email_confirmation == 1) throw new Exception('Konto użytkownika zostało już wcześniej aktywowane.');
             $user->is_account_active = 1;
             $user->is_email_confirmation = 1;
-            if($users->save($user) == false) throw new Exception('Nie aktywowano poprawnie użytkownika.');
+            if($users->save($user) == false) throw new Exception('Konto użytkownika nie zostało aktywowane.');
             $this->Flash->success('Pomyślnie aktywowano konto!');
-            $this->redirect(array('action' => 'login'));
         }catch(Exception $e){
+            Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
             Log::write('error', $e->getMessage());
             Log::write('error', $e->getTraceAsString());
-            $this->Flash->error(empty($e->getMessage()) ? 'Wystąpił błąd w procesie aktywacji konta.' : $e->getMessage());
-            $this->redirect(array('action' => 'login'));
+            $this->Flash->error(empty($e->getMessage()) ? 'Wystąpił błąd, spóbuj ponownie.' : $e->getMessage());
         }
+        $this->redirect(array('action' => 'login'));
     }
     
     public function logout(){
@@ -133,12 +135,13 @@ class UsersController extends AppController
                     $this->Flash->success('Adres email został zmieniony, odblokuj konto za pomocą linku odblokowującego znajdującego się na Twojej poczcie elektronicznej.');
                     return $this->redirect($this->Auth->logout());
                 }else if($userChangePassword){
-                    $this->Flash->success('Pomyślnie zaktualizowane dane użytkownika, zaloguj się ponownie korzystając z nowego hasła.');
+                    $this->Flash->success('Pomyślnie zaktualizowano dane użytkownika, zaloguj się ponownie korzystając z nowego hasła.');
                     return $this->redirect($this->Auth->logout());
                 }else{
-                    $this->Flash->success('Pomyślnie zaktualizowane dane użytkownika.');
+                    $this->Flash->success('Pomyślnie zaktualizowano dane użytkownika.');
                 }
             }catch(Exception $e){
+                Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
                 Log::write('error', $e->getMessage());
                 Log::write('error', $e->getTraceAsString());
                 $this->Flash->error(empty($e->getMessage()) ? 'Wystąpił błąd w wysyłaniu formularza, spóbuj ponownie.' : $e->getMessage());
@@ -150,8 +153,8 @@ class UsersController extends AppController
                 ->where(array('id' => $this->Auth->user()['id']))
                 ->first();
             $form->setData([
-                'is_email_notification' => $user['is_email_notification'],
-                'email' => $user['email']
+                'is_email_notification' => $user->is_email_notification,
+                'email' => $user->email
             ]);
         }
         $this->set('form', $form);

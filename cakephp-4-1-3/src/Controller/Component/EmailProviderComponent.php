@@ -11,16 +11,16 @@ use Cake\Routing\Router;
 class EmailProviderComponent extends Component {
     
     public function sendAboutRegistration($user){
-        $mailer = new Mailer('default');        
+        $mailer = new Mailer('default');
         $mailer
             ->setTo($user->email)
             ->setBcc(Configure::read('Config.Email.admin'))
             ->setSubject('['. (date('Y-m-d', time())) . '] Rejestracja')
-            ->setEmailFormat('html');
-        $hash = DigestAuthenticate::password($user->login, ($user->login . $user->email), env('SERVER_NAME'));
+            ->setEmailFormat('html');    
+        $hash = DigestAuthenticate::password($user->login, ($user->id . $user->login . $user->email), env('SERVER_NAME'));
         $url =  Router::fullBaseUrl() . '/users/activate/' . $user->id . '/' . $hash;
         $mailer->deliver(
-            '<p>Witaj ' . $user->login . ' w serwisie ' . Configure::read('Config.WebName') . '!</p>' .
+            '<h3>Witaj ' . $user->login . ' w serwisie ' . Configure::read('Config.WebName') . '!</h3>' .
             '<p>Oto link aktywujący Twoje konto <a href="'. $url .'">'. $url .'</a>.</p>'
         );
     }
@@ -31,13 +31,23 @@ class EmailProviderComponent extends Component {
             ->setTo($user->email)
             ->setSubject('['. (date('Y-m-d', time())) . '] Odblokowanie dostępu')
             ->setEmailFormat('html');
-        $hash = DigestAuthenticate::password($user->login, ($user->login . $user->email), env('SERVER_NAME'));
+        $hash = DigestAuthenticate::password($user->login, ($user->id . $user->login . $user->email), env('SERVER_NAME'));
         $url =  Router::fullBaseUrl() . '/users/activate/' . $user->id . '/' . $hash;
         $mailer->deliver(
-            '<p>Witaj ' . $user->login . '!</p>' .
+            '<h3>Witaj ' . $user->login . '!</h3>' .
             '<p>Oto link odblokowujący Twoje konto <a href="'. $url .'">'. $url .'</a>.</p>'
             );
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    //TODO
+    
     
     public function sendNotification($email, $results, $nameOfGame){
         $mailer = new Mailer('default');

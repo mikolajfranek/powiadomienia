@@ -21,7 +21,7 @@ class LoginForm extends Form
         //login
             ->requirePresence('login')
             ->notEmptyString('login', 'To pole nie może być puste') 
-            ->lengthBetween('login', array(6, 40), 'Wymagane minimalnie 6, maksymalnie 40 znaki długości')
+            ->lengthBetween('login', array(6, 22), 'Wymagane minimalnie 6, maksymalnie 22 znaki długości')
             ->add('login', 'custom', array(
                 'rule' => array('custom', '/^[A-Za-z0-9]*$/i'),
                 'message' => 'Zawiera nieodpowiednie znaki'

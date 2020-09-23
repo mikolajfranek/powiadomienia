@@ -25,11 +25,11 @@ class SettingsForm extends Form
         //email
             ->requirePresence('email')
             ->notEmptyString('email', 'To pole nie może być puste')
-            ->email('email', false, "Nieprawidłowy email")
+            ->email('email', false, "Nieprawidłowy adres email")
             ->maxLength('email', 100, 'Maksymalnie 100 znaki długości')
             ->add('email', 'unique', array(
                 'rule' => array($this, 'isUniqueEmail'),
-                'message' => 'Email jest już w użyciu'
+                'message' => 'Adres email jest już w użyciu'
             ))
         //password
             ->requirePresence('password')
@@ -68,32 +68,26 @@ class SettingsForm extends Form
         return $count == 0;
     }
     
-    public function isPasswordMatched($password) {
+    public function isPasswordMatched($check) {
         $users = FactoryLocator::get('Table')->get('Users');
         $user = $users->find()
             ->where(array('id' => $this->getData('id')))
             ->first();
-        if ((new DefaultPasswordHasher)->check($password, $user->password)) {
-            return true;
-        }
-        return false;
+        return (new DefaultPasswordHasher)->check($check, $user->password);
     }
     
-    public function isPasswordNewLength($password) {
-        if(empty($password)) return true;
-        return strlen($password) >= 6 && strlen($password) <= 22;
+    public function isPasswordNewLength($check) {
+        if(empty($check)) return true;
+        return strlen($check) >= 6 && strlen($check) <= 22;
     }
     
-    public function isPasswordNewMatched($password) {
-        if(empty($password)) return true;
+    public function isPasswordNewMatched($check) {
+        if(empty($check)) return true;
         $users = FactoryLocator::get('Table')->get('Users');
         $user = $users->find()
             ->where(array('id' => $this->getData('id')))
             ->first();
-        if ((new DefaultPasswordHasher)->check($password, $user->password)) {
-            return false;
-        }
-        return true;
+        return (new DefaultPasswordHasher)->check($check, $user->password) == false;
     }
     
     protected function _execute(array $data): bool
