@@ -13,9 +13,9 @@
             	   echo $this->Form->create($form);
             	   echo $this->Form->control('is_email_notification', array("type" => "checkbox", "label" => ' Odbieranie powiadomień email', "autocomplete" => "new-password"));
             	   echo $this->Form->control('email', array('label' => '* Adres email', "placeholder" => 'Twój adres email', "autocomplete" => "new-password"));
-            	   echo $this->Form->control('password', array("type" => "password", "label" => "Aktualne hasło", "placeholder" => 'Twoje hasło', "autocomplete" => "new-password"));
+            	   echo $this->Form->control('password', array("type" => "password", "label" => "Hasło", "placeholder" => 'Twoje hasło', "autocomplete" => "new-password"));
             	   echo $this->Form->control('password_new', array("type" => "password", "label" => "** Nowe hasło", "placeholder" => 'Twoje nowe hasło', "autocomplete" => "new-password"));
-            	   echo "<br/>" . $this->Form->button('Aktualizuj', array("class" => "btn btn-white"));
+            	   echo "<br/>" . $this->Form->button('Aktualizuj', array("class" => "btn btn-border btn-white"));
             	   echo $this->Form->end();
             	?>
             </div>

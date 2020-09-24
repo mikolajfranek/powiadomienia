@@ -105,8 +105,7 @@ class NotificationsController extends AppController
                     'Tickets.date_begin <= CAST(CURDATE() as date)',
                     'Tickets.date_end >= CAST(CURDATE() as date)',
                     'Users.is_account_active' => 1,
-                    'Users.is_email_confirmation' => 1,
-                    'Users.is_email_notification' => 1,
+                    'Users.is_email_confirmation' => 1
                 ))
                 ->contain(['Users']);
             if($activeTickets->count() == 0){
@@ -115,11 +114,13 @@ class NotificationsController extends AppController
             
             //prepare variables before download results
             $gameTickets = array();
+            $users = array();
             foreach ($activeTickets as $ticket) {
-                $gameTickets[$ticket['id_game']][$ticket->user['email']][] = $ticket;
+                $users[$ticket->user['id']] = $ticket->user;
+                $gameTickets[$ticket['id_game']][$ticket->user['id']][] = $ticket;
                 if($ticket['id_game'] == Configure::read('Config.GameToId.LottoAndLottoPlus')){
                     $ticket['id_game'] = Configure::read('Config.GameToId.Lotto');
-                    $gameTickets[$ticket['id_game']][$ticket->user['email']][] = $ticket;
+                    $gameTickets[$ticket['id_game']][$ticket->user['id']][] = $ticket;
                 }
             }
 
@@ -141,10 +142,12 @@ class NotificationsController extends AppController
             //compare results and sending email
             $resultsToSave = array();
             foreach($gameResults as $idGame => $winnerNumbers){
-                foreach($gameTickets[$idGame] as $emailOfUser => $ticketsOfUser){
+                foreach($gameTickets[$idGame] as $idUser => $ticketsOfUser){
                     $results = $this->compareResultWithTicketsOfUser(Configure::read('Config.Game')[$idGame]['numbersToWin'], $winnerNumbers, $ticketsOfUser);
                     $resultsToSave = array_merge($resultsToSave, $results['wins'], $results['loses']);
-                    $this->EmailProvider->sendNotification($emailOfUser, $results, Configure::read('Config.Game')[$idGame]['nameStatistic']);
+                    if(empty($users[$idUser]['is_email_notification']) == false){
+                        $this->EmailProvider->sendNotification($users[$idUser]['email'], $results, Configure::read('Config.Game')[$idGame]['nameStatistic']);
+                    }
                 }
             }
             

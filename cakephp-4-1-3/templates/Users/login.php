@@ -18,7 +18,7 @@ use Cake\Core\Configure;
             	   echo $this->Form->create($form);
             	   echo $this->Form->control('login', array("placeholder" => 'Twój login', "autocomplete" => "new-password"));
             	   echo $this->Form->control('password', array("type" => "password", "label" => "Hasło", "placeholder" => 'Twoje hasło', "autocomplete" => "new-password"));
-            	   echo "<br/>" . $this->Form->button('Zaloguj', array("class" => "btn btn-white"));
+            	   echo "<br/>" . $this->Form->button('Zaloguj', array("class" => "btn btn-border btn-white"));
             	   echo $this->Form->end();
             	?>
             </div>

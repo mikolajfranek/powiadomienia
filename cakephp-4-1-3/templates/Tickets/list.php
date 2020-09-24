@@ -3,11 +3,11 @@
 use Cake\Core\Configure;
 
 ?>
-<!-- Games -->
-<div class="section section-padding  theme-bg">
+<!-- List -->
+<div class="section section-padding theme-bg">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 offset-lg-2 col-12">
+            <div class="col-12">
                 <div class="section-header text-center">
                     <h3 class="section-title">Moje kupony</h3>
                 </div>
@@ -16,12 +16,12 @@ use Cake\Core\Configure;
         <div class="row">
             <div class="col-12">
                 <div class="table-responsive">
-                    <table class="table show-table table-borderless">
+                    <table class="table-borderless show-table">
                         <?php foreach($ticketsOfUser as $ticket): ?>
                             <tr>
-                                <td class="show-hall show-date">
+                            	<td class="show-date">
                                     <span class="date"><?= (Configure::read('Config.Game'))[$ticket['id_game']]['name'] . ($ticket['is_lotto_plus'] ? ' (+ Lotto Plus)' : '') ?></span>
-                                    <span class="hall-name">Ważny od <?= date("d-m-y", date_timestamp_get($ticket['date_begin'])) ?> do <?= date("d-m-y", date_timestamp_get($ticket['date_end'])) ?></span>
+                                    <span class="day">Ważny od <?= date("d-m-y", date_timestamp_get($ticket['date_begin'])) ?> do <?= date("d-m-y", date_timestamp_get($ticket['date_end'])) ?></span>
                                 </td>
                                 <td class="show-ticket">
                                     <?php 
@@ -41,4 +41,4 @@ use Cake\Core\Configure;
         </div>
     </div>
 </div>
-<!-- Games -->
+<!-- List -->
