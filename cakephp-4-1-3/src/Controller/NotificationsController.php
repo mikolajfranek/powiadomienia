@@ -21,8 +21,129 @@ class NotificationsController extends AppController
         parent::beforeFilter($event);
         $this->Auth->allow(['send']);
     }
+    
+    public function send(){
+        $this->autoRender = false;
+        try{
+            //ip
+            $ip = $this->request->clientIp();
+            if(in_array($ip, Configure::read('Config.Localhost')) == false){
+                throw new Exception('Nieznany adres IP ' . $ip . ', wywołujący rozsyłkę powiadomień.');
+            }
+            
+            //active games
+            $activeGames = array();
+            foreach(Configure::read('Config.Game') as $id => $game){
+                if(in_array(date('N'), $game['dayOfWeek'])){
+                    $activeGames[] = $id;
+                }
+            }
+            
+            //active tickets
+            $tickets = FactoryLocator::get('Table')->get('Tickets');
+            $activeTickets = $tickets->find('all')
+                ->where(array(
+                    'Tickets.id_game IN' => $activeGames,
+                    'Tickets.is_deleted' => 0,
+                    'Tickets.date_begin <= CAST(CURDATE() as date)',
+                    'Tickets.date_end >= CAST(CURDATE() as date)',
+                    'Users.is_account_active' => 1,
+                    'Users.is_email_confirmation' => 1
+                ))
+                ->contain(['Users']);
+            if($activeTickets->count() == 0){
+                throw new Exception("Brak aktywnych kuponów");
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            //TODO
+            
+            
+            //prepare variables before download results
+            $gameTickets = array();
+            $users = array();
+            foreach ($activeTickets as $ticket) {
+                $users[$ticket->user['id']] = $ticket->user;
+                $gameTickets[$ticket['id_game']][$ticket->user['id']][] = $ticket;
+                if($ticket['id_game'] == Configure::read('Config.GameToId.LottoAndLottoPlus')){
+                    $ticket['id_game'] = Configure::read('Config.GameToId.Lotto');
+                    $gameTickets[$ticket['id_game']][$ticket->user['id']][] = $ticket;
+                }
+            }
+            
+            //download results
+            $gameResults = array();
+            foreach(array_keys($gameTickets) as $idGame){
+                $url = Configure::read('Config.Notifications.url') . Configure::read('Config.Game')[$idGame]['shortcut'];
+                $content = file_get_contents($url);
+                if(empty($content)) throw new Exception("Nie pobrano wyników loterii.");
+                $lastLotteryDate = $this->getLastLotteryDate($idGame);
+                $content = explode("\n", trim($content, "\n"));
+                if($lastLotteryDate == null || $content[0] != $lastLotteryDate){
+                    throw new Exception("Dzień loterii jest nieprawidłowy.");
+                }
+                unset($content[0]);
+                $gameResults[$idGame] = $content;
+            }
+            
+            //compare results and sending email
+            $resultsToSave = array();
+            foreach($gameResults as $idGame => $winnerNumbers){
+                foreach($gameTickets[$idGame] as $idUser => $tickets){
+                    $results = $this->compareResultWithTicketsOfUser(Configure::read('Config.Game')[$idGame]['numbersToWin'], $winnerNumbers, $tickets);
+                    $resultsToSave = array_merge($resultsToSave, $results['wins'], $results['loses']);
+                    if(empty($users[$idUser]['is_email_notification']) == false){
+                        $this->EmailProvider->sendNotification($users[$idUser]['email'], $results, Configure::read('Config.Game')[$idGame]['nameStatistic']);
+                    }
+                }
+            }
+            
+            //save in results table
+            $results = FactoryLocator::get('Table')->get('Results');
+            $entities = $results->newEntities($resultsToSave);
+            $result = $results->saveMany($entities);
+            if(count($resultsToSave) != count($result)){
+                throw new Exception("Nie zapisano wszystkich kuponów w bazie danych.");
+            }
+            
+            
+            
+            
+            
+            
+            
+            
+            //send email about success of process
+            $this->EmailProvider->sendMessageToAdmin("Success", "Cron działa, powiadomienia zostały wysłane.");
+            
+        }catch(Exception $e){
+            Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
+            Log::write('error', $e->getMessage());
+            Log::write('error', $e->getTraceAsString());
+            $this->EmailProvider->sendMessageToAdmin("Exception", $e->getMessage());
+            ob_clean();
+            ob_start();
+            echo "Krytyczny błąd";
+            ob_end_flush();
+            exit;
+        }
+        ob_clean();
+        ob_start();
+        echo "Ok";
+        ob_end_flush();
+        exit;
+    }
+    
+    
+    
 
-    private function getLastLotteryDate($idGame){
+    protected function getLastLotteryDate($idGame){
         switch($idGame){
             case Configure::read('Config.GameToId.MiniLotto'):
                 return date('Y-m-d',  time());
@@ -46,7 +167,7 @@ class NotificationsController extends AppController
         return null;
     }
    
-    private function compareResultWithTicketsOfUser($numbersToWin, $winnerNumbers, $tickets){
+    protected function compareResultWithTicketsOfUser($numbersToWin, $winnerNumbers, $tickets){
         $compare = array(
             'wins' => array(),
             'loses' => array(),
@@ -78,105 +199,12 @@ class NotificationsController extends AppController
         }
         return $compare;
     }
+  
     
-    public function send(){
-        $this->autoRender = false;
-        try{
-            //ip
-            $ip = $this->request->clientIp();
-            if(in_array($ip, Configure::read('Config.Localhost')) == false){
-                throw new Exception('Nieznany adres IP ' . $ip . ', wywołujący rozsyłkę powiadomień.');
-            }
-           
-            //active games
-            $activeGames = array();
-            foreach(Configure::read('Config.Game') as $id => $game){
-                if(in_array(date('N'), $game['dayOfWeek'])){
-                    $activeGames[] = $id;
-                }
-            }
-            
-            //active tickets
-            $ticketsOfUser = FactoryLocator::get('Table')->get('Tickets');
-            $activeTickets = $ticketsOfUser->find('all')     
-                ->where(array(
-                    'Tickets.id_game IN' => $activeGames,
-                    'Tickets.is_deleted' => 0,
-                    'Tickets.date_begin <= CAST(CURDATE() as date)',
-                    'Tickets.date_end >= CAST(CURDATE() as date)',
-                    'Users.is_account_active' => 1,
-                    'Users.is_email_confirmation' => 1
-                ))
-                ->contain(['Users']);
-            if($activeTickets->count() == 0){
-                throw new Exception("Brak aktywnych kuponów");    
-            }
-            
-            //prepare variables before download results
-            $gameTickets = array();
-            $users = array();
-            foreach ($activeTickets as $ticket) {
-                $users[$ticket->user['id']] = $ticket->user;
-                $gameTickets[$ticket['id_game']][$ticket->user['id']][] = $ticket;
-                if($ticket['id_game'] == Configure::read('Config.GameToId.LottoAndLottoPlus')){
-                    $ticket['id_game'] = Configure::read('Config.GameToId.Lotto');
-                    $gameTickets[$ticket['id_game']][$ticket->user['id']][] = $ticket;
-                }
-            }
+    
+    
+    
+    
+    
 
-            //download results
-            $gameResults = array();
-            foreach(array_keys($gameTickets) as $idGame){
-                $url = Configure::read('Config.Notifications.url') . Configure::read('Config.Game')[$idGame]['shortcut'];
-                $content = file_get_contents($url);
-                if(empty($content)) throw new Exception("Nie pobrano wyników loterii.");
-                $lastLotteryDate = $this->getLastLotteryDate($idGame);
-                $content = explode("\n", trim($content, "\n"));
-                if($lastLotteryDate == null || $content[0] != $lastLotteryDate){
-                    throw new Exception("Dzień loterii jest nieprawidłowy.");
-                }
-                unset($content[0]);
-                $gameResults[$idGame] = $content;
-            }
-            
-            //compare results and sending email
-            $resultsToSave = array();
-            foreach($gameResults as $idGame => $winnerNumbers){
-                foreach($gameTickets[$idGame] as $idUser => $ticketsOfUser){
-                    $results = $this->compareResultWithTicketsOfUser(Configure::read('Config.Game')[$idGame]['numbersToWin'], $winnerNumbers, $ticketsOfUser);
-                    $resultsToSave = array_merge($resultsToSave, $results['wins'], $results['loses']);
-                    if(empty($users[$idUser]['is_email_notification']) == false){
-                        $this->EmailProvider->sendNotification($users[$idUser]['email'], $results, Configure::read('Config.Game')[$idGame]['nameStatistic']);
-                    }
-                }
-            }
-            
-            //save in results table
-            $results = FactoryLocator::get('Table')->get('Results');
-            $entities = $results->newEntities($resultsToSave);
-            $result = $results->saveMany($entities);
-            if(count($resultsToSave) != count($result)){
-                throw new Exception("Nie zapisano wszystkich kuponów w bazie danych.");
-            }
-        
-            //send email about success of process
-            $this->EmailProvider->sendMessageToAdmin("Success", "Cron działa, powiadomienia zostały wysłane.");
-            
-        }catch(Exception $e){
-            Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
-            Log::write('error', $e->getMessage());
-            Log::write('error', $e->getTraceAsString());
-            $this->EmailProvider->sendMessageToAdmin("Exception", $e->getMessage());
-            ob_clean();
-            ob_start();
-            echo "Krytyczny błąd";
-            ob_end_flush();
-            exit;
-        }
-        ob_clean();
-        ob_start();
-        echo "Ok";
-        ob_end_flush();
-        exit;
-    }
 }

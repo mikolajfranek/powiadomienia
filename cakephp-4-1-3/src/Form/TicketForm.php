@@ -6,7 +6,6 @@ use Cake\Form\Form;
 use Cake\Form\Schema;
 use Cake\Validation\Validator;
 use Cake\Core\Configure;
-use Cake\Datasource\FactoryLocator;
 
 class TicketForm extends Form
 {
@@ -34,7 +33,7 @@ class TicketForm extends Form
         ->notEmptyString('id_game', 'To pole nie może być puste')
         ->add('id_game', 'isGameExists', array(
             'rule' => array($this, 'isGameExists'),
-            'message' => 'Gra nie istnieje w systemie'
+            'message' => 'Gra nie istnieje w serwisie'
         ))
         //date_begin
         ->requirePresence('date_begin')
@@ -121,38 +120,22 @@ class TicketForm extends Form
         if(empty($check)) return true;
         $games = Configure::read('Config.Game');
         if(array_key_exists($this->getData('id_game'), $games) == false) return false;
+        $game = $games[$this->getData('id_game')];
         $check = preg_replace('/\s{2,}/i', ' ', trim($check));
         $array = explode(' ', $check);
-        if(sizeof($array) != $games[$this->getData('id_game')]['numbersInCollection']) return false;
+        if(sizeof($array) != $game['numbersInCollection']) return false;
         $temporary = array();
         foreach($array as $number){
             if(ctype_digit(strval($number)) == false) return false;
-            if((int)$number < 1 || (int)$number > $games[$this->getData('id_game')]['theGreatestNumber']) return false;
+            if((int)$number < 1 || (int)$number > $game['theGreatestNumber']) return false;
             $temporary[(int)$number] = '';
         }
-        if(sizeof($temporary) != $games[$this->getData('id_game')]['numbersInCollection']) return false;
+        if(sizeof($temporary) != $game['numbersInCollection']) return false;
         return true;
     }
     
     protected function _execute(array $data): bool
     {
-        if( (
-            (isset($data['collection1']) && empty($data['collection1']) == false)
-            ||
-            (isset($data['collection2']) && empty($data['collection2']) == false)
-            ||
-            (isset($data['collection3']) && empty($data['collection3']) == false)
-            ||
-            (isset($data['collection4']) && empty($data['collection4']) == false)
-            ||
-            (isset($data['collection5']) && empty($data['collection5']) == false)
-            ||
-            (isset($data['collection6']) && empty($data['collection6']) == false)
-            ||
-            (isset($data['collection7']) && empty($data['collection7']) == false)
-            ||
-            (isset($data['collection8']) && empty($data['collection8']) == false)
-        ) == false) return false;
         return true;
     }
 }

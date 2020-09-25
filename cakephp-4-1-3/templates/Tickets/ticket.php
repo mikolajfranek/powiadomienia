@@ -1,3 +1,8 @@
+<?php
+
+use Cake\Core\Configure;
+
+?>
 <!-- Ticket -->
 <div class="section section-padding theme-bg">
     <div class="container">
@@ -10,7 +15,7 @@
             	<?php
             	   echo $this->Form->create($form);
             	   echo $this->Form->label('id_game', "Gra hazardowa");
-            	   echo $this->Form->control('id_game', array('options' => $games, 'default' => $game, 'empty' => '-- wybierz grę -- ', 'label' => false, "autocomplete" => "new-password"));
+            	   echo $this->Form->control('id_game', array('options' => Configure::read('Config.IdToGame'), 'default' => $game, 'empty' => '-- wybierz grę -- ', 'label' => false, "autocomplete" => "new-password"));
             	   echo $this->Form->control("date_begin", array('type' => 'date', 'label' => 'Ważny od', "autocomplete" => "new-password"));
             	   echo $this->Form->control("date_end", array('type' => 'date', 'label' => 'Ważny do', "autocomplete" => "new-password"));
             	   echo $this->Form->control("collection1", array('label' => 'Zakład 1', "placeholder" => 'Zakład 1',  "autocomplete" => "new-password"));

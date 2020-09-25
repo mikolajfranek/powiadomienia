@@ -547,6 +547,11 @@ return [
             'Lotto' => 2,
             'LottoAndLottoPlus' => 3
         ),
+        'IdToGame' => array(
+           1 => "Mini Lotto",
+           2 => "Lotto",
+           3 => "Lotto + Lotto Plus"
+        ),
         'Game' => array(
             1 => array(
                 'shortcut' => 'el',
@@ -578,6 +583,6 @@ return [
                 'numbersToWin' => 3,
                 'dayOfWeek' => array(2, 4, 6)
             ),
-        ),
+        )
     ],
 ];

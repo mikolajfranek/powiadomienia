@@ -12,16 +12,14 @@ class TicketsController extends AppController
 {
     public function ticket($id = null){
         $this->set('game', null);
-        $game = $this->request->getQuery('game');
-        if(array_key_exists($game, Configure::read('Config.Game'))){
-            $this->set('game', $game);
-        }
         $form = new TicketForm();
         if ($this->request->is('post')) {
             try{
                 $data = $this->request->getData();
-                $data['id_user'] = $this->Auth->user()['id'];
-                if ($form->execute($data) == false) throw new Exception('Wystąpił błąd w przetwarzaniu formularza kuponu.');
+                if ($form->execute($data) == false) throw new Exception('Wystąpił błąd w przetwarzaniu formularza rejestracji kuponu.');
+                if(((isset($data['collection1']) && empty($data['collection1']) == false) || (isset($data['collection2']) && empty($data['collection2']) == false) || (isset($data['collection3']) && empty($data['collection3']) == false) || (isset($data['collection4']) && empty($data['collection4']) == false) || (isset($data['collection5']) && empty($data['collection5']) == false) || (isset($data['collection6']) && empty($data['collection6']) == false) || (isset($data['collection7']) && empty($data['collection7']) == false) || (isset($data['collection8']) && empty($data['collection8']) == false) ) == false) {
+                    throw new Exception('Do zarejestrowania kuponu wymagana jest deklaracja minimalnie jednego zakładu.');
+                }
                 $numbers = array();
                 if((isset($data['collection1']) && empty($data['collection1']) == false)) $numbers[] = $this->sortCollection($data['collection1']);
                 if((isset($data['collection2']) && empty($data['collection2']) == false)) $numbers[] = $this->sortCollection($data['collection2']);
@@ -34,20 +32,29 @@ class TicketsController extends AppController
                 $tickets = FactoryLocator::get('Table')->get('Tickets');
                 $ticket = $tickets->newEmptyEntity();
                 if($id != null){
-                    $ticket->id = $id;
+                    $count = $tickets->find()
+                        ->where(array('id' => $id, 'id_user' => $this->Auth->user()['id']))
+                        ->count('*');
+                    if($count == 1) {
+                        $ticket->id = $id;
+                    }else{
+                        $this->Flash->error('Nie znaleziono kuponu.');
+                        $this->redirect(array('action' => 'ticket'));
+                    }
                 }
                 $ticket->id_game = $data['id_game'];
-                $ticket->id_user = $data['id_user'];
+                $ticket->id_user = $this->Auth->user()['id'];
                 $ticket->date_begin = $data['date_begin'];
                 $ticket->date_end = $data['date_end'];
                 $ticket->numbers = json_encode($numbers);
                 $ticket->is_deleted = false;
-                if ($tickets->save($ticket)) {
-                    $this->Flash->success('Pomyślnie zarejestrowano kupon.');
-                    return $this->redirect(array('action' => 'ticket', $ticket->id));
+                if ($tickets->save($ticket) == false) {
+                    throw new Exception('Nie udało się zapisać kuponu.');
                 }
-                throw new Exception('Nie udało się zapisać kuponu.');
+                $this->Flash->success('Pomyślnie zarejestrowano kupon.');
+                return $this->redirect(array('action' => 'ticket', $ticket->id));
             }catch(Exception $e){
+                Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
                 Log::write('error', $e->getMessage());
                 Log::write('error', $e->getTraceAsString());
                 $this->Flash->error(empty($e->getMessage()) ? 'Wystąpił błąd w wysyłaniu formularza, spóbuj ponownie.' : $e->getMessage());
@@ -58,10 +65,8 @@ class TicketsController extends AppController
                 $tickets = FactoryLocator::get('Table')->get('Tickets');
                 $ticket = $tickets->find()
                     ->where(array('id' => $id, 'id_user' => $this->Auth->user()['id']))
-                    ->first();         
-                if($ticket == null) {
-                    $this->Flash->error('Nie znaleziono kuponu');
-                }else{
+                    ->first();
+                if($ticket != null) {
                     $this->set('game', $ticket->id_game);
                     $decoded = json_decode($ticket->numbers);
                     $form->setData([
@@ -76,18 +81,24 @@ class TicketsController extends AppController
                         'collection7' => isset($decoded[6]) ? $decoded[6] : '',
                         'collection8' => isset($decoded[7]) ? $decoded[7] : '',
                     ]);
+                }else{
+                    $this->Flash->error('Nie znaleziono kuponu.');
+                    $this->redirect(array('action' => 'ticket'));
+                }
+            }else{
+                $game = $this->request->getQuery('game');
+                if(array_key_exists($game, Configure::read('Config.Game'))){
+                    $this->set('game', $game);
                 }
             }
         }
         $this->set('form', $form);
-        
-        //dictionaries
-        $result = Configure::read('Config.Game');
-        $games = array();
-        foreach($result as $key => $game){
-            $games[$key] = $game['name'];
-        }
-        $this->set('games', $games);
+    }
+    
+    protected function sortCollection($collectionString){
+        $array = explode(' ', $collectionString);
+        sort($array);
+        return implode(" ", $array);
     }
     
     public function delete($id){
@@ -98,16 +109,17 @@ class TicketsController extends AppController
                 $ticket = $tickets->find()
                     ->where(array('id' => $id, 'id_user' => $this->Auth->user()['id']))
                     ->first();
-                if($ticket == null) {
-                    $this->Flash->error('Nie znaleziono kuponu');
-                }else{
+                if($ticket != null) {
                     $ticket->is_deleted = 1;
-                    if($tickets->save($ticket) == false) throw new Exception('Nie usunięto poprawnie kuponu.');
+                    if($tickets->save($ticket) == false) throw new Exception('Nie usunięto kuponu poprawnie.');
+                }else{
+                    $this->Flash->error('Nie znaleziono kuponu');
                 }
             }catch(Exception $e){
+                Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
                 Log::write('error', $e->getMessage());
                 Log::write('error', $e->getTraceAsString());
-                $this->Flash->error(empty($e->getMessage()) ? 'Wystąpił błąd w wysyłaniu formularza, spóbuj ponownie.' : $e->getMessage());
+                $this->Flash->error(empty($e->getMessage()) ? 'Wystąpił błąd, spóbuj ponownie.' : $e->getMessage());
             }
         }
         return $this->redirect(array('action' => 'list'));
@@ -116,9 +128,7 @@ class TicketsController extends AppController
     public function list(){
         $tickets = FactoryLocator::get('Table')->get('Tickets');
         $ticketsOfUser = $tickets->find()
-            ->where(array('id_user' => $this->Auth->user()['id'], 
-                'is_deleted' => false
-            ))
+            ->where(array('id_user' => $this->Auth->user()['id'], 'is_deleted' => false))
             ->all();
         $this->set('ticketsOfUser', $ticketsOfUser);
     }

@@ -39,6 +39,15 @@ class EmailProviderComponent extends Component {
             );
     }
     
+    public function sendMessageToAdmin($title, $message){        
+        $mailer = new Mailer('default');
+        $mailer
+            ->setTo(Configure::read('Config.Email.admin'))
+            ->setSubject('['. (date('Y-m-d', time())) . '] ' . $title)
+            ->setEmailFormat('html');
+        $mailer->deliver('<p>' . $message . '</p>');
+    }
+    
     
     
     
@@ -73,13 +82,5 @@ class EmailProviderComponent extends Component {
         $mailer->deliver($content);
     }
     
-    public function sendMessageToAdmin($title, $message){
-        
-        $mailer = new Mailer('default');
-        $mailer
-            ->setTo(Configure::read('Config.Email.admin'))
-            ->setSubject('['. (date('Y-m-d', time())) . '] ' . $title)
-            ->setEmailFormat('html');
-        $mailer->deliver($message);
-    }
+  
 }
