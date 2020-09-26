@@ -25,7 +25,7 @@ use Cake\Core\Configure;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= Configure::read('Config.WebName') ?></title>
-    <meta name="description" content="Serwis powiadomień e-mail o wynikach gier hazardowych, takich jak Lotto, Lotto Plus, Mini Lotto">
+    <meta name="description" content="Serwis umożliwiający otrzymywanie powiadomienia email zawierające porównanie wyników losowania gier hazardowych (takich jak Lotto, Lotto Plus, Mini Lotto) z zadreklarowanymi zakładami użytkownika.">
 
     <!-- External CSS -->
     <?= $this->Html->css (['/assets/css/bootstrap.min.css', '/assets/css/font-awesome.min.css', '/assets/css/owl.carousel.css', '/assets/css/owl.transitions.css', '/assets/css/magnific-popup.css', '/assets/css/apps.css', '/assets/css/plyr.css' ]) ?>
