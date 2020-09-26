@@ -27,6 +27,7 @@ use Cake\Core\Configure;
     
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
+    
 </head>
 <body>
   	<header id="top" class="top-header">
