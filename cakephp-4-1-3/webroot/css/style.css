@@ -3237,16 +3237,7 @@ FAQs
 }
 
 /* Added */
-.section-padding.top-0 {
-  	padding-top: 0;
-}
 html{
 	background-color: #d6ddd6;
 	height:  100%;
-}
-.text-bg {
-  	color: #134b72;
-}
-.section-padding-additional {
-  padding: 48px 15px;
 }
