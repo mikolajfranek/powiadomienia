@@ -14,4 +14,3 @@ class TicketsTable extends Table
              ->setForeignKey('id_user');
     }
 }
-

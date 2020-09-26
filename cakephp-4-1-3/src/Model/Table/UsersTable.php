@@ -20,4 +20,3 @@ class UsersTable extends Table
         }
     }
 }
-
