@@ -61,10 +61,14 @@ use Cake\Core\Configure;
     </header>
   
     <div class="main-wrap">
-        <div class="section-padding bottom-0 theme-bg">
-         	<div class="container">
-         		<?= $this->Flash->render() ?>
-            </div>            
+    	<div class="section section-padding theme-bg bottom-0">
+    		<div class="container">
+        		<div class="row">
+        			<div class="col-12">
+         				<?= $this->Flash->render() ?>
+ 				    </div>            
+    			</div>
+           </div>            
     	</div>
         <?= $this->fetch('content') ?>
     </div>
