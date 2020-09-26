@@ -109,8 +109,8 @@
 
   .navbar-default .navbar-toggle {
     display: block;
-    background-color: #6A5ACD;
-    border-color: #6A5ACD;
+    background-color: #134b72;
+    border-color: #134b72;
     border-radius: 5px;
     margin: 33px 0;
   }
@@ -135,7 +135,7 @@
     margin-bottom: 6px;
   }
   .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
-    background-color: #6A5ACD;
+    background-color: #134b72;
   }
   .navbar-default .navbar-toggle.collapsed .icon-bar {
     opacity: 1;
@@ -454,7 +454,7 @@
     bottom: 0;
   }
   .contact-info-item:nth-child(4) {
-    background-color: #6A5ACD;
+    background-color: #134b72;
     background-image: none;
   }
   .contact-info-item:nth-child(4):before {
