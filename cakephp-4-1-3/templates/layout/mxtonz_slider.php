@@ -68,7 +68,7 @@ use Cake\Core\Configure;
                         <h1 class="banner-title">zarejestruj kupony</h1>
                         <div class="button-group">
                             <?php 
-                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'users', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-black"));
+                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'users', 'action' => 'register'), array('class' => "btn btn-border btn-white"));
                             ?>
                         </div>
                     </div>
@@ -81,20 +81,20 @@ use Cake\Core\Configure;
                         <h1 class="banner-title">zaczekaj na email</h1>
                         <div class="button-group">
                             <?php 
-                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'users', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-black"));
+                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'users', 'action' => 'register'), array('class' => "btn btn-border btn-white"));
                             ?>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="banner-item banner-item-3 text-center">
+              <div class="banner-item banner-item-3 text-center">
                 <div class="banner-content text-white">
                     <div class="container">
                         <h3 class="banner-subtitle theme-color">powiadomienia.eu</h3>
                         <h1 class="banner-title">odbierz wyganą</h1>
                         <div class="button-group">
                             <?php 
-                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'users', 'action' => 'register'), array('class' => "btn btn-border btn-lg btn-black"));
+                                echo $this->Html->link('rejestracja do serwisu', array('controller' => 'users', 'action' => 'register'), array('class' => "btn btn-border btn-white"));
                             ?>
                         </div>
                     </div>
@@ -121,9 +121,8 @@ use Cake\Core\Configure;
                     <div class="col-md-6">
                         <div class="stage-countdown-wrap">
                             <div class="section-header">
-                                <h3 class="section-title">Kontakt</h3>
-                                <p class="section-subtext"></p>
-                                <p class="email"><i class="fa fa-envelope-o"></i> <?= Configure::read('Config.Email.web') ?></p>
+                                <h3 class="stage-title">Kontakt</h3><br/>
+                                <p class="stage-location email"><i class="fa fa-envelope-o"></i> <?= Configure::read('Config.Email.web') ?></p>
                             </div>
                         </div>
                     </div>
@@ -137,7 +136,7 @@ use Cake\Core\Configure;
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-12">
-                        <p class="copyright">Copyright &copy; <?= (date('Y', time())) ?>. Wszelkie prawa zastrzeżone.</p>
+                        <p class="copyright">Copyright &copy; <?= (date('Y', time())) > 2020 ? "2020-" . (date('Y', time())) : 2020  ?>. Wszelkie prawa zastrzeżone.</p>
                     </div>
                     <div class="col-md-6 col-12">
                         <p class="credit-text"><a href="/"><?= Configure::read('Config.WebName') ?></a></p>
