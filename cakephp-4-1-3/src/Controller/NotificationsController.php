@@ -55,16 +55,6 @@ class NotificationsController extends AppController
                 throw new Exception("Brak aktywnych kuponów");
             }
             
-            
-            
-            
-            
-            
-            
-            
-            //TODO
-            
-            
             //prepare variables before download results
             $gameTickets = array();
             $users = array();
@@ -74,13 +64,14 @@ class NotificationsController extends AppController
                 if($ticket['id_game'] == Configure::read('Config.GameToId.LottoAndLottoPlus')){
                     $ticket['id_game'] = Configure::read('Config.GameToId.Lotto');
                     $gameTickets[$ticket['id_game']][$ticket->user['id']][] = $ticket;
+                    
                 }
             }
             
             //download results
             $gameResults = array();
             foreach(array_keys($gameTickets) as $idGame){
-                $url = Configure::read('Config.Notifications.url') . Configure::read('Config.Game')[$idGame]['shortcut'];
+                $url = Configure::read('Config.Notifications.url') . Configure::read('Config.Game')[$idGame]['queryParameter'];
                 $content = file_get_contents($url);
                 if(empty($content)) throw new Exception("Nie pobrano wyników loterii.");
                 $lastLotteryDate = $this->getLastLotteryDate($idGame);
@@ -91,15 +82,15 @@ class NotificationsController extends AppController
                 unset($content[0]);
                 $gameResults[$idGame] = $content;
             }
-            
+
             //compare results and sending email
             $resultsToSave = array();
             foreach($gameResults as $idGame => $winnerNumbers){
                 foreach($gameTickets[$idGame] as $idUser => $tickets){
                     $results = $this->compareResultWithTicketsOfUser(Configure::read('Config.Game')[$idGame]['numbersToWin'], $winnerNumbers, $tickets);
                     $resultsToSave = array_merge($resultsToSave, $results['wins'], $results['loses']);
-                    if(empty($users[$idUser]['is_email_notification']) == false){
-                        $this->EmailProvider->sendNotification($users[$idUser]['email'], $results, Configure::read('Config.Game')[$idGame]['nameStatistic']);
+                    if($users[$idUser]['is_email_notification'] == 1){
+                        $this->EmailProvider->sendNotification($users[$idUser], $results, Configure::read('Config.Game')[$idGame]['nameStatistic']);
                     }
                 }
             }
@@ -112,16 +103,8 @@ class NotificationsController extends AppController
                 throw new Exception("Nie zapisano wszystkich kuponów w bazie danych.");
             }
             
-            
-            
-            
-            
-            
-            
-            
             //send email about success of process
             $this->EmailProvider->sendMessageToAdmin("Success", "Cron działa, powiadomienia zostały wysłane.");
-            
         }catch(Exception $e){
             Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
             Log::write('error', $e->getMessage());
@@ -140,9 +123,6 @@ class NotificationsController extends AppController
         exit;
     }
     
-    
-    
-
     protected function getLastLotteryDate($idGame){
         switch($idGame){
             case Configure::read('Config.GameToId.MiniLotto'):
@@ -166,14 +146,14 @@ class NotificationsController extends AppController
         }
         return null;
     }
-   
+    
     protected function compareResultWithTicketsOfUser($numbersToWin, $winnerNumbers, $tickets){
+        $lotteryDate = date('Y-m-d',  time());
         $compare = array(
             'wins' => array(),
             'loses' => array(),
             'winLevel' => 0
         );
-        $results = FactoryLocator::get('Table')->get('Results');
         foreach($tickets as $ticket){
             foreach(json_decode($ticket->numbers) as $numbers){
                 $numbers = explode(' ', $numbers);
@@ -183,13 +163,13 @@ class NotificationsController extends AppController
                     $compare['winLevel'] = $winLevel;
                 }
                 $type = ($winLevel >= $numbersToWin) ? 'wins' : 'loses';
-                sort($numbers);
                 sort($winnerNumbers);
+                sort($numbers);
                 sort($wins);
                 $result = array();
                 $result['id_game'] = $ticket->id_game;
                 $result['id_user'] = $ticket->id_user;
-                $result['lottery_date'] = date('Y-m-d',  time());
+                $result['lottery_date'] = $lotteryDate;
                 $result['lottery_numbers'] = implode(';', $winnerNumbers);
                 $result['collection'] = implode(';', $numbers);
                 $result['winning_numbers'] =  implode(';', $wins);
@@ -199,12 +179,4 @@ class NotificationsController extends AppController
         }
         return $compare;
     }
-  
-    
-    
-    
-    
-    
-    
-
 }

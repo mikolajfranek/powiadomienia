@@ -554,7 +554,7 @@ return [
         ),
         'Game' => array(
             1 => array(
-                'shortcut' => 'el',
+                'queryParameter' => 'el',
                 'description' => 'Dawniej "Express lotek"',
                 'name' =>  'Mini Lotto',
                 'nameStatistic' => 'Mini Lotto',
@@ -564,7 +564,7 @@ return [
                 'dayOfWeek' => array(1, 2, 3, 4, 5, 6, 7)
             ),
             2 => array(
-                'shortcut' => 'dl',
+                'queryParameter' => 'dl',
                 'description' => 'Dawniej "Duży lotek"',
                 'name' =>  'Lotto',
                 'nameStatistic' => 'Lotto',
@@ -574,7 +574,7 @@ return [
                 'dayOfWeek' => array(2, 4, 6)
             ),
             3 => array(
-                'shortcut' => 'lp',
+                'queryParameter' => 'lp',
                 'description' => 'Dodatkowe losowanie dla kuponu "Duży lotek"',
                 'name' =>  'Lotto + Lotto Plus',
                 'nameStatistic' => 'Lotto Plus',

@@ -48,25 +48,14 @@ class EmailProviderComponent extends Component {
         $mailer->deliver('<p>' . $message . '</p>');
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //TODO
-    
-    
-    public function sendNotification($email, $results, $nameOfGame){
+    public function sendNotification($user, $results, $nameOfGame){
         $mailer = new Mailer('default');
         $mailer
-            ->setTo($email)
+            ->setTo($user['email'])           
             ->setSubject('['. (date('Y-m-d', time())) . '][' . $nameOfGame . '] ' . (empty($results['wins']) == false ? "Wygrałeś - najlepsze trafienie to " . $results['winLevel'] : "Przegrałeś"))
             ->setEmailFormat('html');
-        $content = '<p>' . $nameOfGame . ' oraz Twoje wyniki.</p><br/>';
+        
+        $content = '<h3>Witaj ' . $user['login'] . '!</h3>' . '<p>' . $nameOfGame . ' oraz Twoje wyniki.</p><br/>';        
         if(empty($results['wins']) == false){
             $content .= "<p>Zwycięskie zakłady:</p>";
             foreach($results['wins'] as $item){
@@ -74,13 +63,14 @@ class EmailProviderComponent extends Component {
             }
         }
         if(empty($results['loses']) == false){
+            if(empty($results['wins']) == false){
+                $content .= "<br/>";
+            }
             $content .= "<p>Przegrane zakłady:</p>";
             foreach($results['loses'] as $item){
                 $content .= '<p>Zakład ' . $item['collection'] .  ' trafił "' . $item['winning_amount']  . '" (' .  $item['winning_numbers']  . ') w losowaniu ' . $item['lottery_numbers'] . '</p>';
             }
         }
         $mailer->deliver($content);
-    }
-    
-  
+    }  
 }
