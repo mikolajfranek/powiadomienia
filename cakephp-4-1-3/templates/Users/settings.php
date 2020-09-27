@@ -6,7 +6,7 @@
             	<h3 class="section-title">Ustawienia</h3>
                 <p>Korzystając z formularza istnieje możliwość zaktualizowania danych użytkownika. Każda zmiana wymaga podania aktualnego hasła do konta użytkownika.</p>
                 <p>* Po zmianie adresu email Twoje konto zostanie zablokowane. Na nowy adres email zostanie wysłany link odblokowujący konto.</p>                                    
-                <p>** Pole nieobowiązkowe, hasło użytkownika zostanie zaktualizowane w przypadku, gdy wartość w polu wprowadzania danych pozostanie niepusta. Po zaktualizowaniu hasła użytkownik zostanie wylogowany.</p>                
+                <p>** Pole nieobowiązkowe, hasło użytkownika zostanie zaktualizowane w przypadku, gdy wartość w polu wprowadzania danych pozostanie niepusta. Po zaktualizowaniu hasła użytkownik zostanie wylogowany.</p><br/>                
             </div>
             <div class="col-md-6 col-12">
             	<?php

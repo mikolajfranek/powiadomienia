@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-md-6 col-12">
                 <h3 class="section-title">Rejestracja</h3>
-                <p>Po wysłaniu poprawnego formularza rejestracji otrzymasz email, w którym będzie znajdował się link aktywujący konto.</p>
+                <p>Po wysłaniu poprawnego formularza rejestracji otrzymasz email, w którym będzie znajdował się link aktywujący konto.</p><br/>
             </div>
             <div class="col-md-6 col-12">
             	<?php

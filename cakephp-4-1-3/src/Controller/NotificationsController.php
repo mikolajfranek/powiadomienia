@@ -62,9 +62,9 @@ class NotificationsController extends AppController
                 $users[$ticket->user['id']] = $ticket->user;
                 $gameTickets[$ticket['id_game']][$ticket->user['id']][] = $ticket;
                 if($ticket['id_game'] == Configure::read('Config.GameToId.LottoAndLottoPlus')){
-                    $ticket['id_game'] = Configure::read('Config.GameToId.Lotto');
-                    $gameTickets[$ticket['id_game']][$ticket->user['id']][] = $ticket;
-                    
+                    $additionalTicket = $tickets->newEntity($ticket->toArray());
+                    $additionalTicket['id_game'] = Configure::read('Config.GameToId.Lotto');
+                    $gameTickets[$additionalTicket['id_game']][$additionalTicket->user['id']][] = $additionalTicket;
                 }
             }
             

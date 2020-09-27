@@ -9,7 +9,7 @@ use Cake\Core\Configure;
         <div class="row">
             <div class="col-md-6 col-12">
                 <h3 class="section-title">Rejestracja kuponu</h3>
-                <p>Do zarejestrowania kuponu wymagane jest wybranie gry hazardowej, określenie ważności kuponu oraz zadeklarowania minimalnie jednego zakładu. W polach wprowadzania danych dla deklaracji zakładów, liczby należy podawać po białym znaku.</p>
+                <p>Do zarejestrowania kuponu wymagane jest wybranie gry hazardowej, określenie ważności kuponu oraz zadeklarowania minimalnie jednego zakładu. W polach wprowadzania danych dla deklaracji zakładów, liczby należy podawać po białym znaku.</p><br/>
             </div>
             <div class="col-md-6 col-12">
             	<?php

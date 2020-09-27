@@ -11,7 +11,7 @@ use Cake\Core\Configure;
             	<h3 class="section-title">Logowanie</h3>    
                 <p>Konto w serwisie <?= Configure::read('Config.WebName') ?> pozwala na zarządzanie kuponami do gier hazardowych, takich jak Lotto, Lotto Plus, Mini Lotto.</p>
                 <p>Zapomniałeś hasła? Skontaktuj się z nami poprzez pocztę elektroniczą.</p>     
-                <p class="stage-location email"><i class="fa fa-envelope-o"></i> <?= Configure::read('Config.Email.web') ?></p>
+                <p class="stage-location email"><i class="fa fa-envelope-o"></i> <?= Configure::read('Config.Email.web') ?></p><br/>
             </div>
             <div class="col-md-6 col-12">
             	<?php
