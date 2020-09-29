@@ -43,6 +43,7 @@ class UsersController extends AppController
                 $this->Flash->success('Aktywuj konto za pomocą linku aktywacyjnego znajdującego się na Twojej poczcie elektrocznej.');
                 $this->redirect(array('action' => 'login'));
             }catch(Exception $e){
+                Log::write('error', isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "");
                 Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
                 Log::write('error', $e->getMessage());
                 Log::write('error', $e->getTraceAsString());                
@@ -67,6 +68,7 @@ class UsersController extends AppController
                 $this->Flash->success('Witamy w serwisie ' . Configure::read('Config.WebName') . '.');
                 return $this->redirect($this->Auth->redirectUrl());
             }catch(Exception $e){
+                Log::write('error', isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "");
                 Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
                 Log::write('error', $e->getMessage());
                 Log::write('error', $e->getTraceAsString());
@@ -92,6 +94,7 @@ class UsersController extends AppController
             if($users->save($user) == false) throw new Exception('Konto użytkownika nie zostało aktywowane.');
             $this->Flash->success('Pomyślnie aktywowano konto!');
         }catch(Exception $e){
+            Log::write('error', isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "");
             Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
             Log::write('error', $e->getMessage());
             Log::write('error', $e->getTraceAsString());
@@ -141,6 +144,7 @@ class UsersController extends AppController
                     $this->Flash->success('Pomyślnie zaktualizowano dane użytkownika.');
                 }
             }catch(Exception $e){
+                Log::write('error', isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "");
                 Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
                 Log::write('error', $e->getMessage());
                 Log::write('error', $e->getTraceAsString());

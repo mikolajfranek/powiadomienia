@@ -11,6 +11,7 @@ class AppExceptionRenderer extends ExceptionRenderer
 {
     public function __construct(Throwable $e, ?ServerRequest $request = null)
     {
+        Log::write('error', isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "");
         Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
         Log::write('error', $e->getMessage());
         Log::write('error', $e->getTraceAsString());

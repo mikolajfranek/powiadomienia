@@ -54,6 +54,7 @@ class TicketsController extends AppController
                 $this->Flash->success('Pomyślnie zarejestrowano kupon.');
                 return $this->redirect(array('action' => 'ticket', $ticket->id));
             }catch(Exception $e){
+                Log::write('error', isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "");
                 Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
                 Log::write('error', $e->getMessage());
                 Log::write('error', $e->getTraceAsString());
@@ -116,6 +117,7 @@ class TicketsController extends AppController
                     $this->Flash->error('Nie znaleziono kuponu');
                 }
             }catch(Exception $e){
+                Log::write('error', isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "");
                 Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
                 Log::write('error', $e->getMessage());
                 Log::write('error', $e->getTraceAsString());

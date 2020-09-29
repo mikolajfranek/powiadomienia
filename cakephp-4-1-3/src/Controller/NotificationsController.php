@@ -106,6 +106,7 @@ class NotificationsController extends AppController
             //send email about success of process
             $this->EmailProvider->sendMessageToAdmin("Success", "Cron działa, powiadomienia zostały wysłane.");
         }catch(Exception $e){
+            Log::write('error', isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "");
             Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
             Log::write('error', $e->getMessage());
             Log::write('error', $e->getTraceAsString());
