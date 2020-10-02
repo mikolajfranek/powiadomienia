@@ -435,6 +435,7 @@ return [
     'Config' => [
         'Localhost' => array('127.0.0.1', '91.134.248.249'),
         'WebName' => 'Powiadomienia',
+        'Secret' => 'secret',
         'NavigationBar' => array(
             'Pages' => array(
                 'home' => array(

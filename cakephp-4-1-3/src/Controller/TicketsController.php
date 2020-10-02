@@ -99,7 +99,7 @@ class TicketsController extends AppController
     protected function sortCollection($collectionString){
         $array = explode(' ', $collectionString);
         sort($array);
-        return implode(" ", $array);
+        return trim(implode(" ", $array));
     }
     
     public function delete($id){

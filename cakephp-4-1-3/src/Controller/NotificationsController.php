@@ -22,12 +22,15 @@ class NotificationsController extends AppController
         $this->Auth->allow(['send']);
     }
     
-    public function send(){
+    public function send($inputSecret = null){
         $this->autoRender = false;
         try{
+            if(empty($inputSecret) == false && $inputSecret != Configure::read('Config.Secret')) throw new Exception("Sekretny klucz niepoprawny.");
+            $withoutChecking = empty($inputSecret) == false && $inputSecret == Configure::read('Config.Secret');
+          
             //ip
             $ip = $this->request->clientIp();
-            if(in_array($ip, Configure::read('Config.Localhost')) == false){
+            if($withoutChecking == false && in_array($ip, Configure::read('Config.Localhost')) == false){
                 throw new Exception('Nieznany adres IP ' . $ip . ', wywołujący rozsyłkę powiadomień.');
             }
             
@@ -37,6 +40,11 @@ class NotificationsController extends AppController
                 if(in_array(date('N'), $game['dayOfWeek'])){
                     $activeGames[] = $id;
                 }
+            }
+            
+            //additional request
+            if($withoutChecking){
+                $activeGames = array_keys(Configure::read('Config.Game'));
             }
             
             //active tickets
@@ -76,7 +84,7 @@ class NotificationsController extends AppController
                 if(empty($content)) throw new Exception("Nie pobrano wyników loterii.");
                 $lastLotteryDate = $this->getLastLotteryDate($idGame);
                 $content = explode("\n", trim($content, "\n"));
-                if($lastLotteryDate == null || $content[0] != $lastLotteryDate){
+                if($withoutChecking = false && ($lastLotteryDate == null || $content[0] != $lastLotteryDate)){
                     throw new Exception("Dzień loterii jest nieprawidłowy.");
                 }
                 unset($content[0]);
