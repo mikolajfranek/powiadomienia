@@ -8,4 +8,4 @@ $options = array(
 );
 $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
-file_put_contents('./logs.txt', $result.PHP_EOL , FILE_APPEND | LOCK_EX);
+file_put_contents('/home/powiadg/cron/logs.txt', $result.PHP_EOL, FILE_APPEND | LOCK_EX);

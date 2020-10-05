@@ -120,7 +120,4 @@ return [
             'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null)
         ],
     ],
-    'Config' => array(
-        'Secret' => 'secret'
-    )
 ];
