@@ -4,9 +4,9 @@ namespace App\Controller;
 
 use Cake\Core\Exception\Exception;
 use Cake\Event\EventInterface;
+use Cake\Log\Log;
 use Cake\Core\Configure;
 use Cake\Datasource\FactoryLocator;
-use Cake\Log\Log;
 
 class NotificationsController extends AppController
 {
@@ -19,7 +19,34 @@ class NotificationsController extends AppController
     public function beforeFilter(EventInterface $event)
     {
         parent::beforeFilter($event);
-        $this->Auth->allow(['send']);
+        $this->Auth->allow(['send', 'delivered']);
+    }
+    
+    public function delivered($userId, $emailId){
+        $this->autoRender = false;
+        try{
+            $emails = FactoryLocator::get('Table')->get('Emails');
+            $email = $emails->find()
+                ->where(array('id' => $emailId, 'id_user' => $userId))
+                ->first();
+            if($email != null) {
+                $email->delivered = time();
+                if ($emails->save($email) == false) {
+                    throw new Exception('Nie udało się zaktualizować emailu.');
+                }
+            }
+        }catch(Exception $e){
+            Log::write('error', isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "");
+            Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
+            Log::write('error', $e->getMessage());
+            Log::write('error', $e->getTraceAsString());
+        }finally{
+            ob_clean();
+            ob_start();
+            echo "";
+            ob_end_flush();
+            exit;
+        }
     }
     
     public function send(){
@@ -84,21 +111,42 @@ class NotificationsController extends AppController
             }
 
             //compare results and sending email
+            $emails = FactoryLocator::get('Table')->get('Emails');
             $resultsToSave = array();
             foreach($gameResults as $idGame => $winnerNumbers){
                 foreach($gameTickets[$idGame] as $idUser => $tickets){
                     $results = $this->compareResultWithTicketsOfUser(Configure::read('Config.Game')[$idGame]['numbersToWin'], $winnerNumbers, $tickets);
                     $resultsToSave = array_merge($resultsToSave, $results['wins'], $results['loses']);
                     if($users[$idUser]['is_email_notification'] == 1){
-                        $this->EmailProvider->sendNotification($users[$idUser], $results, Configure::read('Config.Game')[$idGame]['nameStatistic']);
+                        try{
+                            $email = $emails->newEmptyEntity();
+                            $email->id_game = $idGame;
+                            $email->id_user = $idUser;
+                            $email->address = $users[$idUser]['email'];
+                            $email->content = (empty($results['wins']) == false ? "Wygrałeś" : "Przegrałeś")  . " - najlepsze trafienie to " . $results['winLevel'];
+                            $email->lottery_date = date('Y-m-d', time());
+                            if ($emails->save($email) == false) {
+                                throw new Exception('Nie udało się zapisać emailu.');
+                            }
+                            $this->EmailProvider->sendNotification($users[$idUser], $results, Configure::read('Config.Game')[$idGame]['nameStatistic'], $email->id);
+                            $email->sent = time();
+                            if ($emails->save($email) == false) {
+                                throw new Exception('Nie udało się zaktualizować emailu.');
+                            }
+                        }catch (Exception $e){
+                            Log::write('error', isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "");
+                            Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
+                            Log::write('error', $e->getMessage());
+                            Log::write('error', $e->getTraceAsString());
+                        }
                     }
                 }
             }
-            
+
             //save in results table
             $results = FactoryLocator::get('Table')->get('Results');
-            $entities = $results->newEntities($resultsToSave);
-            $result = $results->saveMany($entities);
+            $entitiesResults = $results->newEntities($resultsToSave);
+            $result = $results->saveMany($entitiesResults);
             if(count($resultsToSave) != count($result)){
                 throw new Exception("Nie zapisano wszystkich kuponów w bazie danych.");
             }

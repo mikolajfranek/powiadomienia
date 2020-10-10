@@ -9,6 +9,23 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla tabeli `emails`
+--
+
+CREATE TABLE `emails` (
+  `id` int(11) NOT NULL,
+  `id_game` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `address` text NOT NULL,
+  `content` text NOT NULL,
+  `lottery_date` date NOT NULL,
+  `sent` datetime DEFAULT NULL,
+  `delivered` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla tabeli `results`
 --
 
@@ -61,6 +78,12 @@ CREATE TABLE `users` (
 --
 
 --
+-- Indeksy dla tabeli `emails`
+--
+ALTER TABLE `emails`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indeksy dla tabeli `results`
 --
 ALTER TABLE `results`
@@ -81,6 +104,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT dla tabeli `emails`
+--
+ALTER TABLE `emails`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT dla tabeli `results`

@@ -48,14 +48,16 @@ class EmailProviderComponent extends Component {
         $mailer->deliver('<p>' . $message . '</p>');
     }
     
-    public function sendNotification($user, $results, $nameOfGame){
+    public function sendNotification($user, $results, $nameOfGame, $emailId){
         $mailer = new Mailer('default');
         $mailer
             ->setTo($user['email'])           
             ->setSubject('['. (date('Y-m-d', time())) . '][' . $nameOfGame . '] ' . (empty($results['wins']) == false ? "Wygrałeś - najlepsze trafienie to " . $results['winLevel'] : "Przegrałeś"))
             ->setEmailFormat('html');
-        
-        $content = '<h3>Witaj ' . $user['login'] . '!</h3>' . '<p>' . $nameOfGame . ' oraz Twoje wyniki.</p><br/>';        
+       
+        $url =  Router::fullBaseUrl() . '/notifications/delivered/' . $user['id'] . '/' . $emailId;
+        $content = "<img width='0' height='0' alt='' src='". $url ."'/>";
+        $content .= '<h3>Witaj ' . $user['login'] . '!</h3>' . '<p>' . $nameOfGame . ' oraz Twoje wyniki.</p><br/>';        
         if(empty($results['wins']) == false){
             $content .= "<p>Zwycięskie zakłady:</p>";
             foreach($results['wins'] as $item){

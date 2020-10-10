@@ -21,4 +21,30 @@ class GamesController extends AppController
     }
     
     public function list(){}
+    
+    public function last(){
+        $limit = 10;
+        $emails = FactoryLocator::get('Table')->get('Emails');
+        $lasts = array(
+            Configure::read('Config.GameToId.MiniLotto') => $emails
+                ->find()
+                ->where(array('id_game' => Configure::read('Config.GameToId.MiniLotto'), 'id_user' => $this->Auth->user()['id']))
+                ->order(array('id DESC'))
+                ->limit($limit)
+                ->all(),
+            Configure::read('Config.GameToId.Lotto') => $emails
+                ->find()
+                ->where(array('id_game' => Configure::read('Config.GameToId.Lotto'), 'id_user' => $this->Auth->user()['id']))
+                ->order(array('id DESC'))
+                ->limit($limit)
+                ->all(),
+            Configure::read('Config.GameToId.LottoAndLottoPlus') => $emails
+                ->find()
+                ->where(array('id_game' => Configure::read('Config.GameToId.LottoAndLottoPlus'), 'id_user' => $this->Auth->user()['id']))
+                ->order(array('id DESC'))
+                ->limit($limit)
+                ->all(),
+        );
+        $this->set('lasts', $lasts);
+    }
 }

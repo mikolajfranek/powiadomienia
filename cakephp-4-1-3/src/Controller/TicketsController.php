@@ -2,11 +2,11 @@
 
 namespace App\Controller;
 
-use Cake\Datasource\FactoryLocator;
-use Cake\Log\Log;
 use App\Form\TicketForm;
 use Cake\Core\Configure;
 use Cake\Core\Exception\Exception;
+use Cake\Datasource\FactoryLocator;
+use Cake\Log\Log;
 
 class TicketsController extends AppController
 {
