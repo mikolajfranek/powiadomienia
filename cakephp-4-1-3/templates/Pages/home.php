@@ -24,7 +24,7 @@ use Cake\Core\Configure;
                         	</div>
                         </div>
                     </div>
-                    <p>Serwis <?= Configure::read('Config.WebName') ?> w dniu losowania dla danej gry hazardowej pobiera wyniki losowania oraz wykonuje porównanie z zadeklarowanymi zakładami, operacja ta jest wykonywana o godzinie 22:34. Jeśli użytkownik posiada aktywne (ważne) zakłady dla danej gry hazardowej, wtedy zostaje do niego wysłane powiadomienie email o rezultacie porównania.</p>
+                    <p>Serwis <?= Configure::read('Config.WebName') ?> w dniu losowania dla danej gry hazardowej pobiera wyniki losowania oraz wykonuje porównanie z zadeklarowanymi zakładami, operacja ta jest wykonywana o godzinie 23:04. Jeśli użytkownik posiada aktywne (ważne) zakłady dla danej gry hazardowej, wtedy zostaje do niego wysłane powiadomienie email o rezultacie porównania. Ze względu na limity współdzielonych usług wysyłanie emaili może nie zadziałać.</p>
             	</article>
         	</div>   
     	</div>
