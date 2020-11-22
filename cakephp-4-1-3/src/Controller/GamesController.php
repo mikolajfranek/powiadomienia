@@ -23,7 +23,7 @@ class GamesController extends AppController
     public function list(){}
     
     public function last(){
-        $limit = 10;
+        $limit = 5;
         $emails = FactoryLocator::get('Table')->get('Emails');
         $lasts = array(
             Configure::read('Config.GameToId.MiniLotto') => $emails

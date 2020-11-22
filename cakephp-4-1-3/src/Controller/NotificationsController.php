@@ -24,13 +24,14 @@ class NotificationsController extends AppController
     
     public function delivered($userId, $emailId){
         $this->autoRender = false;
+        date_default_timezone_set("Europe/Warsaw");
         try{
             $emails = FactoryLocator::get('Table')->get('Emails');
             $email = $emails->find()
                 ->where(array('id' => $emailId, 'id_user' => $userId))
                 ->first();
             if($email != null) {
-                $email->delivered = time();
+                $email->delivered = date('Y-m-d H:i:s', time());
                 if ($emails->save($email) == false) {
                     throw new Exception('Nie udało się zaktualizować emailu.');
                 }
@@ -51,6 +52,7 @@ class NotificationsController extends AppController
     
     public function send(){
         $this->autoRender = false;
+        date_default_timezone_set("Europe/Warsaw");
         try{
             //ip
             $ip = $this->request->clientIp();
@@ -129,7 +131,7 @@ class NotificationsController extends AppController
                                 throw new Exception('Nie udało się zapisać emailu.');
                             }
                             $this->EmailProvider->sendNotification($users[$idUser], $results, Configure::read('Config.Game')[$idGame]['nameStatistic'], $email->id);
-                            $email->sent = time();
+                            $email->sent = date('Y-m-d H:i:s', time());
                             if ($emails->save($email) == false) {
                                 throw new Exception('Nie udało się zaktualizować emailu.');
                             }
