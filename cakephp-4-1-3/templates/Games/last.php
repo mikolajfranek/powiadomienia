@@ -27,8 +27,8 @@ use Cake\Core\Configure;
                                     <?php foreach($lasts[$idGame] as $last) : ?>
                                     	<span>                                    	
                                         	Losowanie dnia: <?=date('d-m-Y', date_timestamp_get($last['lottery_date']))?><br/>
-                                        	Wysłano email: <?=empty($last['sent']) ? "Nie" : date('d-m-Y H:m:s', date_timestamp_get($last['sent'])) ?><br/>
-                                        	Dostarczono email: <?=empty($last['delivered']) ? "Nie" : date('d-m-Y H:m:s', date_timestamp_get($last['delivered']))?><br/>
+                                        	Wysłano email: <?=empty($last['sent']) ? "Nie" : date('d-m-Y H:i:s', date_timestamp_get($last['sent'])) ?><br/>
+                                        	Dostarczono email: <?=empty($last['delivered']) ? "Nie" : date('d-m-Y H:i:s', date_timestamp_get($last['delivered']))?><br/>
                                         	Treść email: <?=$last['content'] ?>
                                     	</span><br/><br/>
                                     <?php endforeach; ?>
