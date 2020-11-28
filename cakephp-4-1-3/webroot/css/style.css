@@ -927,9 +927,6 @@ Show Styles
 .show-table tr:last-child {
   border-bottom: none;
 }
-.show-table tr:hover {
-  background-image: url(../images/bg/show-table-bg.jpg);
-}
 .show-table tr:hover .show-date,
 .show-table tr:hover .show-hall,
 .show-table tr:hover .show-name {
@@ -998,9 +995,6 @@ tr:hover .show-date {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   width: 200px;
-}
-tr:hover .show-ticket {
-  padding-right: 30px;
 }
 tr:hover .show-ticket .btn.btn-border {
   background-color: transparent;
