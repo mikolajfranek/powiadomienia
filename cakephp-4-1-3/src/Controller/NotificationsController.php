@@ -28,7 +28,7 @@ class NotificationsController extends AppController
         try{
             $emails = FactoryLocator::get('Table')->get('Emails');
             $email = $emails->find()
-                ->where(array('id' => $emailId, 'id_user' => $userId))
+                ->where(array('id' => $emailId, 'id_user' => $userId, 'delivered' => null))
                 ->first();
             if($email != null) {
                 $email->delivered = date('Y-m-d H:i:s', time());
