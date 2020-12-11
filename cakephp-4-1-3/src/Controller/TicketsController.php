@@ -42,6 +42,12 @@ class TicketsController extends AppController
                         $this->redirect(array('action' => 'ticket'));
                     }
                 }
+                $countActive = $tickets->find()
+                    ->where(array('is_deleted' => 0, 'id_user' => $this->Auth->user()['id']))
+                    ->count('*');
+                if($countActive > 6){
+                    throw new Exception('Nie można dodać kuponu, maksymalna liczba aktywnych kuponów to 6.');
+                }
                 $ticket->id_game = $data['id_game'];
                 $ticket->id_user = $this->Auth->user()['id'];
                 $ticket->date_begin = $data['date_begin'];
