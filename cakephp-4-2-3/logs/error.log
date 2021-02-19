@@ -2230,3 +2230,36 @@ Referer URL: http://127.0.0.1/
 Client IP: 127.0.0.1
 
 
+2021-02-19 21:44:26 Error: [Cake\Http\Exception\MissingControllerException] Controller class LoginDarkLogin.html could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 229
+Exception Attributes: array (
+  'class' => 'LoginDarkLogin.html',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:213
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:63
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-3/webroot/index.php:40
+
+Request URL: /login-dark-login.html
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
