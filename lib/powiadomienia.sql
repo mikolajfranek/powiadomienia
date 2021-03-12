@@ -52,7 +52,7 @@ CREATE TABLE `users` (
   `is_account_active` tinyint(1) NOT NULL DEFAULT 0,
   `is_blocked` tinyint(1) NOT NULL DEFAULT 0,
   `is_email_confirmation` tinyint(1) NOT NULL DEFAULT 0,
-  `is_email_notification` tinyint(1) NOT NULL DEFAULT 0
+  `is_email_notification` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
