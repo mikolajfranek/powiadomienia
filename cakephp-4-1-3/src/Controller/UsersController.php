@@ -58,6 +58,8 @@ class UsersController extends AppController
             return $this->redirect($this->Auth->redirectUrl());
         }
         $form = new LoginForm();
+        
+        
         if ($this->request->is('post')) {
             try{
                 if($form->validate($this->request->getData()) == false) throw new Exception('Wystąpił błąd w przetwarzaniu formularza logowania.');

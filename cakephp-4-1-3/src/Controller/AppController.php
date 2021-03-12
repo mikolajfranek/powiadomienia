@@ -8,38 +8,7 @@ use Cake\Event\EventInterface;
 
 class AppController extends Controller
 {
-    public function initialize(): void
-    {
-        parent::initialize();
-        $this->loadComponent('RequestHandler');
-        $this->loadComponent('Flash');
-        $this->loadComponent('FormProtection');
-        $this->loadComponent('Auth', [
-            'authenticate' => [
-                'Form' => [
-                    'fields' => [
-                        'username' => 'login',
-                        'password' => 'password'
-                    ]
-                ]
-            ],
-            'loginAction' => [
-                'controller' => 'users',
-                'action' => 'login'
-            ],
-            'loginRedirect' => array(
-                'controller' => 'pages',
-                'action' => 'donate'
-            ),
-            'logoutRedirect' => array(
-                'controller' => 'pages',
-                'action' => 'donate',
-            ),
-            'unauthorizedRedirect' => $this->referer(),
-            'authError' => 'Nie masz uprawnień dostępu do tej lokalizacji.'
-        ]);
-    }
-    
+  
     public function beforeRender($event){
         parent::beforeRender($event);
         $requestController = $this->request->getParam('controller');

@@ -17,14 +17,14 @@
 
 /*!
  * 
- *     Litepicker v1.5.7 (https://github.com/wakirin/Litepicker)
- *     Package: litepicker (https://www.npmjs.com/package/litepicker)
- *     License: MIT (https://github.com/wakirin/Litepicker/blob/master/LICENCE.md)
- *     Copyright 2019-2020 Rinat G.
+ * litepicker.umd.js
+ * Litepicker v2.0.11 (https://github.com/wakirin/Litepicker)
+ * Package: litepicker (https://www.npmjs.com/package/litepicker)
+ * License: MIT (https://github.com/wakirin/Litepicker/blob/master/LICENCE.md)
+ * Copyright 2019-2021 Rinat G.
  *     
- *     Hash: 85b7ce11883a11b98abb
- *     Generated on: 1592979305748
- *     
+ * Hash: 8991663e2f73caec8a52
+ * 
  */
 
 /*!
@@ -570,8 +570,8 @@ PERFORMANCE OF THIS SOFTWARE.
  */
 
 /**!
-* tippy.js v6.2.7
-* (c) 2017-2020 atomiks
+* tippy.js v6.3.1
+* (c) 2017-2021 atomiks
 * MIT License
 */
 

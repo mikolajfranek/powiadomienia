@@ -29,10 +29,24 @@ use Cake\Core\Configure;
                     <h2 class="intro-x font-bold text-2xl xl:text-3xl text-center xl:text-left">
                         Zaloguj się
                     </h2>
-                    <div class="intro-x mt-2 text-gray-500 xl:hidden text-center">A few more clicks to sign in to your account. Manage all your e-commerce accounts in one place</div>
+                    <div class="intro-x mt-2 text-gray-500 xl:hidden text-center">Otrzymuj powiadomienia na adres email o wynikach w Lotto, Lotto Plus, Mini Lotto.</div>
+                    <?php
+                	   echo $this->Form->create($form);
+            	    ?>
                     <div class="intro-x mt-8">
-                        <input type="text" class="intro-x login__input form-control py-3 px-4 border-gray-300 block" placeholder="Email">
-                        <input type="password" class="intro-x login__input form-control py-3 px-4 border-gray-300 block mt-4" placeholder="Password">
+                       <?php
+                	       echo $this->Form->control("email", array(
+                	           "placeholder" => "Email",
+                	           "label" => false,
+                	           "class" => "intro-x login__input form-control py-3 px-4 border-gray-300 block"
+                	       ));
+                	       echo $this->Form->control("password", array(
+                	           "type" => "password",
+                	           "class" => "intro-x login__input form-control py-3 px-4 border-gray-300 block mt-4",
+                	           "placeholder" => "Hasło",
+                	           "label" => false,
+                	       ));
+                	   ?>
                     </div>
                     <div class="intro-x flex text-gray-700 dark:text-gray-600 text-xs sm:text-sm mt-4">
                         <div class="flex items-center mr-auto">
@@ -42,9 +56,16 @@ use Cake\Core\Configure;
                         <a href="">Zapomniałeś hasła?</a> 
                     </div>
                     <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
-                        <button class="btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top">Zaloguj</button>
+                         <?php
+                            echo $this->Form->button("Zaloguj", array(
+                                "class" => "btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top"
+                            ));
+                    	 ?>
                         <button class="btn btn-outline-secondary py-3 px-4 w-full xl:w-32 mt-3 xl:mt-0 align-top">Zarejestruj</button>
                     </div>
+                    <?php
+                	  echo $this->Form->end();
+                	?>
                 </div>
             </div>
             <!-- END: Login Form -->
