@@ -3159,3 +3159,34 @@ Request URL: /users/dist/images/logo.svg
 Client IP: 127.0.0.1
 
 
+2021-03-12 21:42:42 Error: [Cake\Controller\Exception\MissingActionException] Action UsersController::dist() could not be found, or is not accessible. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/cakephp/src/Controller/Controller.php on line 510
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'dist',
+  'prefix' => '',
+  'plugin' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:100
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/cakephp/src/Http/BaseApplication.php:313
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-4/webroot/index.php:40
+
+Request URL: /users/dist/images/logo.svg
+Client IP: 127.0.0.1
+
+
