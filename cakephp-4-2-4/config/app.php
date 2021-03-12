@@ -58,9 +58,9 @@ return [
         'wwwRoot' => WWW_ROOT,
         //'baseUrl' => env('SCRIPT_NAME'),
         'fullBaseUrl' => false,
-        'imageBaseUrl' => 'img/',
-        'cssBaseUrl' => 'css/',
-        'jsBaseUrl' => 'js/',
+        'imageBaseUrl' => 'dist/images/',
+        'cssBaseUrl' => 'dist/css/',
+        'jsBaseUrl' => 'dist/js/',
         'paths' => [
             'plugins' => [ROOT . DS . 'plugins' . DS],
             'templates' => [ROOT . DS . 'templates' . DS],
@@ -417,5 +417,8 @@ return [
      */
     'Session' => [
         'defaults' => 'php',
+    ],
+    'Config' => [
+        'WebName' => 'Powiadomienia',  
     ],
 ];
