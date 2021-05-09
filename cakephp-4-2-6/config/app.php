@@ -420,6 +420,9 @@ return [
     ],
     'Config' => [
         'WebName' => 'Powiadomienia',
+        'Messages' => [
+            'FailedForm' => 'Wystąpił błąd w formularzu, spóbuj ponownie.'
+        ]
         
     ],
 ];
