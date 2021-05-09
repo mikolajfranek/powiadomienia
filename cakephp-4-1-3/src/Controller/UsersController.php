@@ -23,7 +23,7 @@ class UsersController extends AppController
     
     public function beforeFilter(EventInterface $event)
     {
-        parent::beforeFilter($event);
+        parent:beforeFilter($event);
         $this->Auth->allow(['register', 'activate']);
     }
     

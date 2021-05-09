@@ -13,10 +13,9 @@ class UsersTable extends Table
         $this->setTable('users');
     }
     
-    //protected function _setPassword($value)
-    //{
-        //if (strlen($value)) {
-            //return (new DefaultPasswordHasher())->hash($value);
-        //}
-    //}
+    protected function _setPassword(string $password)
+    {
+        $hasher = new DefaultPasswordHasher();
+        return $hasher->hash($password);
+    }
 }

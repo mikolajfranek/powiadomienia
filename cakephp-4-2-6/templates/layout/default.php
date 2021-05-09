@@ -24,7 +24,7 @@ use Cake\Core\Configure;
     <title><?= Configure::read('Config.WebName') ?></title>
     <?= $this->Html->meta('icon') ?>
 
-	<link href="dist/images/logo.svg" rel="shortcut icon">
+	<link href="/dist/images/logo.svg" rel="shortcut icon">
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 
@@ -34,5 +34,13 @@ use Cake\Core\Configure;
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
-<?= $this->fetch('content') ?>
+    <!-- BEGIN: Body-->
+	<?= $this->fetch('content') ?>
+	<!-- END: Body-->
+	
+    
+    <!-- BEGIN: JS Assets-->
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="/dist/js/app.js"></script>
+    <!-- END: JS Assets-->
 </html>
