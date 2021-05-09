@@ -35,60 +35,9 @@ return [
      * See app.php for more configuration options.
      */
     'Datasources' => [
-        'default' => [
-            'host' => 'localhost',
-            /*
-             * CakePHP will use the default DB port based on the driver selected
-             * MySQL on MAMP uses port 8889, MAMP users will want to uncomment
-             * the following line and set the port accordingly
-             */
-            //'port' => 'non_standard_port_number',
+  
 
-            'username' => 'root',
-            'password' => '',
-
-            'database' => 'powiadomienia',
-            /*
-             * If not using the default 'public' schema with the PostgreSQL driver
-             * set it here.
-             */
-            //'schema' => 'myapp',
-
-            /*
-             * You can use a DSN string to set the entire configuration
-             */
-            'url' => env('DATABASE_URL', null),
-        ],
-
-        /*
-         * The test connection is used during the test suite.
-         */
-        'test' => [
-            'host' => 'localhost',
-            //'port' => 'non_standard_port_number',
-            'username' => 'root',
-            'password' => '',
-            'database' => 'powiadomienia',
-            //'schema' => 'myapp',
-            'url' => env('DATABASE_TEST_URL', null),
-        ],
     ],
 
-    /*
-     * Email configuration.
-     *
-     * Host and credential configuration in case you are using SmtpTransport
-     *
-     * See app.php for more configuration options.
-     */
-    'EmailTransport' => [
-        'default' => [
-            'host' => 'ssl://smtp.gmail.com',
-            'port' => 465,
-            'username' => 'eu.powiadomienia@gmail.com',
-            'password' => 'secret',
-            'client' => null,
-            'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
-        ],
-    ],
+
 ];

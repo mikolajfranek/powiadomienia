@@ -1,0 +1,1576 @@
+2021-05-08 18:24:35 Error: [Cake\View\Exception\MissingTemplateException] Template file `Users/login.php` could not be found.
+
+The following paths were searched:
+
+- `/home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/templates/Users/login.php`
+- `/home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/templates/Users/login.php`
+ in Users/login.php on line 1354
+Exception Attributes: array (
+  'file' => 'Users/login.php',
+  'paths' => 
+  array (
+    0 => '/home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/templates/',
+    1 => '/home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/templates/',
+  ),
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/View/View.php:761
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/Controller.php:699
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/Controller.php:540
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:149
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:313
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:68
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:28:27 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/app.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:28:27 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/js/app.js
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:28:27 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/images/illustration.svg
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:28:27 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/images/logo.svg
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:28:27 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/images/logo.svg
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:28:31 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/js/app.js
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:28:31 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/app.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:28:31 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/images/illustration.svg
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:28:31 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/images/logo.svg
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:28:31 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/images/logo.svg
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:29:34 Error: [Cake\Http\Exception\MissingControllerException] Controller class Css could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /css/milligram.min.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:29:34 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/js/app.js
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:29:34 Error: [Cake\Http\Exception\MissingControllerException] Controller class Css could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /css/normalize.min.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:29:34 Error: [Cake\Http\Exception\MissingControllerException] Controller class Css could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /css/cake.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:29:34 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/app.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:29:34 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/images/logo.svg
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:29:34 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/images/illustration.svg
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:30:11 Error: [Cake\Http\Exception\MissingControllerException] Controller class Css could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /css/normalize.min.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:30:11 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/images/illustration.svg
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:30:11 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/js/app.js
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:30:11 Error: [Cake\Http\Exception\MissingControllerException] Controller class Css could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /css/cake.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:30:11 Error: [Cake\Http\Exception\MissingControllerException] Controller class Css could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Css',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /css/milligram.min.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:30:11 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/app.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:30:11 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/images/logo.svg
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:30:12 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/images/logo.svg
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:31:28 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/js/app.js
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:31:28 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/app.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:31:28 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/images/logo.svg
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:31:28 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/images/illustration.svg
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:32:04 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/normalize.min.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:32:04 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/milligram.min.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:32:04 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/cake.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:34:50 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/normalize.min.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:34:50 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/cake.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:34:50 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/milligram.min.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:35:08 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/milligram.min.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:35:08 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/cake.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:35:08 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/normalize.min.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 18:43:48 Error: [Cake\Http\Exception\MissingControllerException] Controller class LoginDarkLogin.html could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'LoginDarkLogin.html',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:211
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:63
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /login-dark-login.html
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 19:00:20 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:72
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 19:00:25 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:72
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 19:00:28 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:72
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 19:00:32 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:72
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 19:00:41 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:72
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 19:00:44 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:72
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 19:00:47 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:72
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 19:00:49 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:72
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+
+2021-05-08 19:00:58 Error: [Cake\Http\Exception\MissingControllerException] Controller class Dist could not be found. in /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php on line 226
+Exception Attributes: array (
+  'class' => 'Dist',
+  'plugin' => NULL,
+  'prefix' => NULL,
+  '_ext' => NULL,
+)
+Stack Trace:
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Controller/ControllerFactory.php:65
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/BaseApplication.php:311
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:77
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/CsrfProtectionMiddleware.php:169
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Middleware/BodyParserMiddleware.php:159
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/RoutingMiddleware.php:161
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Routing/Middleware/AssetMiddleware.php:72
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Error/Middleware/ErrorHandlerMiddleware.php:126
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/debug_kit/src/Middleware/DebugKitMiddleware.php:60
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:73
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Runner.php:58
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/vendor/cakephp/cakephp/src/Http/Server.php:90
+- /home/debian/Dokumenty/Projects/mikolajfranek/powiadomienia/cakephp-4-2-6/webroot/index.php:40
+
+Request URL: /dist/css/.css
+Referer URL: http://127.0.0.1/
+Client IP: 127.0.0.1
+
+

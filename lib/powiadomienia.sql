@@ -12,7 +12,7 @@ CREATE TABLE `emails` (
   `id` int(11) NOT NULL,
   `id_game` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
+  `email` varchar(256) NOT NULL,
   `date_sent` datetime DEFAULT NULL,
   `date_delivered` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -20,7 +20,7 @@ CREATE TABLE `emails` (
 CREATE TABLE `hashes` (
   `id` int(11) NOT NULL,
   `id_user` int(11) DEFAULT NULL,
-  `hash` varchar(1023) NOT NULL
+  `hash` varchar(1024) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `results` (
@@ -29,9 +29,9 @@ CREATE TABLE `results` (
   `id_user` int(11) NOT NULL,
   `id_email` int(11) NOT NULL,
   `date_lottery` date NOT NULL,
-  `numbers_lottery` varchar(1023) NOT NULL,
-  `numbers` varchar(1023) NOT NULL,
-  `numbers_winning` varchar(1023) NOT NULL,
+  `numbers_lottery` varchar(1024) NOT NULL,
+  `numbers` varchar(1024) NOT NULL,
+  `numbers_winning` varchar(1024) NOT NULL,
   `amount_winning` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -41,13 +41,13 @@ CREATE TABLE `tickets` (
   `id_user` int(11) NOT NULL,
   `date_begin` date NOT NULL,
   `date_end` date NOT NULL,
-  `numbers` varchar(1023) NOT NULL
+  `numbers` varchar(1024) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `email` varchar(256) NOT NULL,
+  `password` varchar(256) NOT NULL,
   `is_account_admin` tinyint(1) NOT NULL DEFAULT 0,
   `is_account_active` tinyint(1) NOT NULL DEFAULT 0,
   `is_blocked` tinyint(1) NOT NULL DEFAULT 0,

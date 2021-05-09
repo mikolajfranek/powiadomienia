@@ -44,10 +44,10 @@ return [
              */
             //'port' => 'non_standard_port_number',
 
-            'username' => 'root',
-            'password' => '',
+            'username' => 'my_app',
+            'password' => 'secret',
 
-            'database' => 'powiadomienia',
+            'database' => 'my_app',
             /*
              * If not using the default 'public' schema with the PostgreSQL driver
              * set it here.
@@ -66,9 +66,9 @@ return [
         'test' => [
             'host' => 'localhost',
             //'port' => 'non_standard_port_number',
-            'username' => 'root',
-            'password' => '',
-            'database' => 'test_powiadomienia',
+            'username' => 'my_app',
+            'password' => 'secret',
+            'database' => 'test_myapp',
             //'schema' => 'myapp',
             'url' => env('DATABASE_TEST_URL', null),
         ],
@@ -83,12 +83,12 @@ return [
      */
     'EmailTransport' => [
         'default' => [
-            'host' => 'ssl://smtp.gmail.com',
-            'port' => 465,
-            'username' => 'eu.powiadomienia@gmail.com',
-            'password' => 'secret',
+            'host' => 'localhost',
+            'port' => 25,
+            'username' => null,
+            'password' => null,
             'client' => null,
             'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
         ],
-    ],  
+    ],
 ];
