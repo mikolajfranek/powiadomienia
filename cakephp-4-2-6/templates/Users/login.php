@@ -4,6 +4,27 @@ use Cake\Core\Configure;
 
 ?>
 <body class="login">
+
+
+    
+    <!-- TODO -->
+	<div id="basic-textual-notification" class="p-5">
+        <div class="preview">
+            <div class="text-center">
+                <!-- BEGIN: Notification Content -->
+                <div id="basic-non-sticky-notification-content" class="toastify-content hidden flex flex-col sm:flex-row">
+                    <div class="font-medium"><?= $this->Flash->render() ?></div> 
+                </div>
+                <!-- END: Notification Content -->  
+                
+                
+                <!-- BEGIN: Notification Toggle -->
+                <button id="basic-sticky-notification-toggle" class="hidden"></button>          
+                <!-- END: Notification Toggle -->
+            </div>
+        </div>
+    </div>
+
     <div class="container sm:px-10">
         <div class="block xl:grid grid-cols-2 gap-4">
             <!-- BEGIN: Login Info -->
@@ -68,4 +89,29 @@ use Cake\Core\Configure;
             <!-- END: Login Form -->
         </div>
     </div>
+    
+    
+    <!-- BEGIN: JS Assets-->
+    <script type="text/javascript" src="/dist/js/app.js"></script>
+
+    <!-- END: JS Assets-->
+    
+    	 
+
+    
+    
+	<script type="text/javascript">
+
+	$(document).ready(function(e) {	    
+		$("#basic-sticky-notification-toggle").trigger("click");
+	 });
+
+	 
+	</script>
+    
+    
+
+    
+    
+    
 </body>

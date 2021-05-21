@@ -8,18 +8,6 @@ use Cake\Event\EventInterface;
 
 class AppController extends Controller
 {
-  
-    public function beforeRender($event){
-        parent::beforeRender($event);
-        $requestController = $this->request->getParam('controller');
-        $requestAction = $this->request->getParam('action');
-        if($requestController == 'Pages' && $requestAction == 'home'){
-            $this->viewBuilder()->setLayout('mxtonz_slider');
-        }else{
-            $this->viewBuilder()->setLayout('mxtonz');
-        }
-    }
-    
     public function beforeFilter(EventInterface $event)
     {
         parent::beforeFilter($event);

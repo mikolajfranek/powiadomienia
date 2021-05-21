@@ -1,0 +1,474 @@
+2021-05-21 19:49:12 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 19:49:12 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 19:49:12 Debug: connection=default duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 19:49:12 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 19:49:12 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:05:38 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 20:05:38 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 20:05:38 Debug: connection=default duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 20:05:38 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 20:05:38 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:14:18 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 20:14:18 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 20:14:18 Debug: connection=default duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 20:14:18 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 20:14:18 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:14:43 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:15:34 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:15:41 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:15:53 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:26:15 Debug: connection=default duration=2 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 20:26:15 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 20:26:15 Debug: connection=default duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 20:26:15 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 20:26:15 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:26:27 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:34:21 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 20:34:21 Debug: connection=default duration=1 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 20:34:21 Debug: connection=default duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 20:34:21 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 20:34:21 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:34:49 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:35:09 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:35:29 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:35:45 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:35:52 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:36:45 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 20:36:45 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 20:36:45 Debug: connection=default duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 20:36:45 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 20:36:45 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:37:24 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:37:35 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:39:46 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 20:39:46 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 20:39:46 Debug: connection=default duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 20:39:46 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 20:39:46 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:42:19 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 20:42:19 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 20:42:19 Debug: connection=default duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 20:42:19 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 20:42:19 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:54:25 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 20:54:25 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 20:54:25 Debug: connection=default duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 20:54:25 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 20:54:25 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:55:58 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:56:46 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 20:56:46 Debug: connection=default duration=1 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 20:56:46 Debug: connection=default duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 20:56:46 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 20:56:46 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:57:12 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:57:48 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:58:00 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:58:24 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:58:31 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:58:40 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:58:48 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 20:58:48 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 20:58:48 Debug: connection=default duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 20:58:48 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 20:58:48 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:58:53 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:59:33 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 20:59:42 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:00:00 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:00:36 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:03:41 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 21:03:41 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 21:03:41 Debug: connection=default duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 21:03:41 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 21:03:41 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:03:57 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:05:06 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:05:14 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:05:21 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:06:54 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 21:06:54 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 21:06:54 Debug: connection=default duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 21:06:54 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 21:06:54 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:07:18 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:16:15 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 21:16:15 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 21:16:15 Debug: connection=default duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 21:16:15 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 21:16:15 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:16:27 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:16:35 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:17:09 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:17:31 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:17:58 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:19:26 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 21:19:26 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 21:19:26 Debug: connection=default duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 21:19:26 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 21:19:26 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:19:46 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:21:50 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 21:21:50 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 21:21:50 Debug: connection=default duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 21:21:50 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 21:21:50 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:24:33 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 21:24:33 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 21:24:33 Debug: connection=default duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 21:24:33 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 21:24:33 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:25:02 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:25:12 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:25:54 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:27:03 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 21:27:03 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 21:27:03 Debug: connection=default duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 21:27:03 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 21:27:03 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:27:07 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:27:25 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:27:32 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:27:56 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:28:09 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:28:29 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:28:38 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:29:51 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 21:29:51 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 21:29:51 Debug: connection=default duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 21:29:51 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 21:29:51 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:30:03 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:30:25 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:30:30 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:30:34 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:31:27 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:32:11 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 21:32:11 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 21:32:11 Debug: connection=default duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 21:32:11 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 21:32:11 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:32:46 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:32:56 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:38:20 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 21:38:20 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 21:38:20 Debug: connection=default duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 21:38:20 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 21:38:20 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:39:17 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:41:07 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 21:41:07 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 21:41:07 Debug: connection=default duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 21:41:07 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 21:41:07 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:44:07 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 21:44:07 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 21:44:07 Debug: connection=default duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 21:44:07 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 21:44:07 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:45:46 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:47:38 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 21:47:38 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 21:47:38 Debug: connection=default duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 21:47:38 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 21:47:38 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:48:11 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:48:58 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:49:54 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 21:49:54 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 21:49:54 Debug: connection=default duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 21:49:54 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 21:49:54 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:50:17 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:50:41 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:50:52 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:51:26 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:51:40 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:53:10 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 21:53:10 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 21:53:10 Debug: connection=default duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 21:53:10 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 21:53:10 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:53:22 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:53:38 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:56:02 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 21:56:02 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 21:56:02 Debug: connection=default duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 21:56:02 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 21:56:02 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:56:53 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:56:55 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:57:04 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:57:16 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 21:57:17 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 22:01:22 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 22:01:22 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 22:01:22 Debug: connection=default duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 22:01:22 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 22:01:22 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 22:02:04 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 22:02:33 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 22:02:36 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 22:03:05 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 22:03:44 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 22:03:44 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 22:03:44 Debug: connection=default duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 22:03:44 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 22:03:44 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 22:03:57 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 22:03:59 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 22:09:36 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 22:09:36 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 22:09:36 Debug: connection=default duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 22:09:36 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 22:09:36 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 22:22:21 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 22:22:21 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 22:22:21 Debug: connection=default duration=0 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 22:22:21 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 22:22:21 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 22:24:38 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 22:24:38 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 22:24:38 Debug: connection=default duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 22:24:38 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 22:24:38 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 22:25:13 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 22:25:18 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 22:25:37 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 22:26:38 Debug: connection=default duration=1 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1
+2021-05-21 22:26:57 Debug: connection=default duration=1 rows=8 SHOW FULL COLUMNS FROM `users`
+2021-05-21 22:26:57 Debug: connection=default duration=0 rows=1 SHOW INDEXES FROM `users`
+2021-05-21 22:26:57 Debug: connection=default duration=1 rows=0 SELECT * FROM information_schema.key_column_usage AS kcu
+            INNER JOIN information_schema.referential_constraints AS rc
+            ON (
+                kcu.CONSTRAINT_NAME = rc.CONSTRAINT_NAME
+                AND kcu.CONSTRAINT_SCHEMA = rc.CONSTRAINT_SCHEMA
+            )
+            WHERE kcu.TABLE_SCHEMA = 'powiadomienia' AND kcu.TABLE_NAME = 'users' AND rc.TABLE_NAME = 'users'
+            ORDER BY kcu.ORDINAL_POSITION ASC
+2021-05-21 22:26:57 Debug: connection=default duration=0 rows=1 SHOW TABLE STATUS WHERE Name = 'users'
+2021-05-21 22:26:57 Debug: connection=default duration=0 rows=1 SELECT Users.id AS Users__id, Users.email AS Users__email, Users.password AS Users__password, Users.is_account_admin AS Users__is_account_admin, Users.is_account_active AS Users__is_account_active, Users.is_blocked AS Users__is_blocked, Users.is_email_confirmation AS Users__is_email_confirmation, Users.is_email_notification AS Users__is_email_notification FROM users Users WHERE Users.email = 'mikolaj.franek95@gmail.com' LIMIT 1

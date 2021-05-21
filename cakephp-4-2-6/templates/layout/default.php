@@ -20,27 +20,15 @@ use Cake\Core\Configure;
 <html>
 <head>
     <?= $this->Html->charset() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title><?= Configure::read('Config.WebName') ?></title>
-    <?= $this->Html->meta('icon') ?>
-
-	<link href="/dist/images/logo.svg" rel="shortcut icon">
-
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
-
-	<?= $this->Html->css(['app.css', 'css/cake.css']) ?>
-
-    <?= $this->fetch('meta') ?>
-    <?= $this->fetch('css') ?>
-    <?= $this->fetch('script') ?>
+    <link href="/dist/images/logo.svg" rel="shortcut icon"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet"/>
+	<?= $this->Html->css(['app.css', 'my.css']) ?>
+    <?= $this->Html->script(['jquery-3.6.0.min']) ?>
 </head>
     <!-- BEGIN: Body-->
 	<?= $this->fetch('content') ?>
 	<!-- END: Body-->
-	
-    
-    <!-- BEGIN: JS Assets-->
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script src="/dist/js/app.js"></script>
-    <!-- END: JS Assets-->
 </html>

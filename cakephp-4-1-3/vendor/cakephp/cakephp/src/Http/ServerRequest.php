@@ -1579,7 +1579,7 @@ class ServerRequest implements ServerRequestInterface
      * @param mixed $default The default value if `$name` is not set. Default `null`.
      * @return mixed
      */
-    public function getParam(string $name, $default = null)
+    public function (string $name, $default = null)
     {
         return Hash::get($this->params, $name, $default);
     }

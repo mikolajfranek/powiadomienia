@@ -7,6 +7,14 @@ use Cake\Error\ExceptionRenderer;
 use Cake\Log\Engine\FileLog;
 use Cake\Mailer\Transport\MailTransport;
 
+/*
+ * TODO
+ * 'Error'.'exceptionRenderer' => 'App\Error\AppExceptionRenderer',
+ * side-menu-light-notification.html
+ * 
+ * 
+ */
+
 return [
     /*
      * Debug Level:
@@ -256,7 +264,8 @@ return [
     'Email' => [
         'default' => [
             'transport' => 'default',
-            'from' => 'you@localhost',
+            'from' => array('eu.powiadomienia@gmail.com' => "Powiadomienia.eu"),
+            'tls' => true,
             /*
              * Will by default be set to config value of App.encoding, if that exists otherwise to UTF-8.
              */
@@ -298,7 +307,7 @@ return [
             /*
              * For MariaDB/MySQL the internal default changed from utf8 to utf8mb4, aka full utf-8 support, in CakePHP 3.6
              */
-            //'encoding' => 'utf8mb4',
+            'encoding' => 'utf8mb4',
 
             /*
              * If your MySQL server is configured with `skip-character-set-client-handshake`
@@ -307,7 +316,7 @@ return [
              */
             'flags' => [],
             'cacheMetadata' => true,
-            'log' => false,
+            'log' => true,
 
             /*
              * Set identifier quoting to true if you are using reserved words or
@@ -337,7 +346,7 @@ return [
             'driver' => Mysql::class,
             'persistent' => false,
             'timezone' => 'UTC',
-            //'encoding' => 'utf8mb4',
+            'encoding' => 'utf8mb4',
             'flags' => [],
             'cacheMetadata' => true,
             'quoteIdentifiers' => false,
