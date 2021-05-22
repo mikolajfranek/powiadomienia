@@ -33,25 +33,25 @@ use Cake\Core\Configure;
             	   echo $this->Form->create($form);
         	    ?>
                 <div class="intro-x mt-8">
-                    <?php
+					<?php
             	       echo $this->Form->control("email", array(
             	           "placeholder" => "Email",
             	           "label" => false,
-            	           "class" => "intro-x login__input form-control py-3 px-4 border-gray-300 block"
+            	           "class" => "intro-x login__input form-control py-3 px-4 border-gray-300 block",
             	       ));
             	       echo $this->Form->control("password", array(
             	           "type" => "password",
-            	           "class" => "intro-x login__input form-control py-3 px-4 border-gray-300 block mt-4",
             	           "placeholder" => "Hasło",
             	           "label" => false,
+            	           "class" => "intro-x login__input form-control py-3 px-4 border-gray-300 block mt-4",
             	       ));
-            	   ?>
+					?>
                 </div>
                 <div class="intro-x flex text-gray-700 dark:text-gray-600 text-xs sm:text-sm mt-4">
-                    <a href="">Zapomniałeś hasła?</a> 
+                	<a href="">Zapomniałeś hasła?</a> 
                 </div>
                 <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
-                    <?php
+                	<?php
                         echo $this->Form->button("Zaloguj", array(
                             "class" => "btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top"
                         ));
@@ -59,7 +59,7 @@ use Cake\Core\Configure;
                             array("controller" => "users", "action" => "register"),
                             array( "class" => "btn btn-outline-secondary py-3 px-4 w-full xl:w-32 mt-3 xl:mt-0 align-top"));
                         echo $this->Form->end();
-                	 ?>
+                	?>
                 </div>
             </div>
         </div>
