@@ -19,6 +19,11 @@ class UsersController extends AppController
     
     public function login(){
         
+        //zapewnić, żęby zawsze istniała ta zmienna (bo w layoucie tak jest)
+        $this->set('bodyClass', "login");
+        
+        
+        
         $result = $this->Authentication->getResult();
         // If the user is logged in send them away.
         if ($result->isValid()) {
@@ -46,7 +51,7 @@ class UsersController extends AppController
                 Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
                 Log::write('error', $e->getMessage());
                 Log::write('error', $e->getTraceAsString());
-                $this->Flash->error(empty($e->getMessage()) ? Configure::read('Config.Messages.FailedForm') : $e->getMessage());
+                $this->Flash->error(empty($e->getMessage()) ? Configure::read('Config.Messages.FailedForm') : $e->getMessage(), ['key' => 'notification']);
             }
          }
     }
@@ -79,6 +84,7 @@ class UsersController extends AppController
     }
     
     public function home(){
+        return $this->redirect($this->Authentication->logout());
      
     }
     

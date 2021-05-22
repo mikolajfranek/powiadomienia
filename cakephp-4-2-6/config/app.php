@@ -10,7 +10,6 @@ use Cake\Mailer\Transport\MailTransport;
 /*
  * TODO
  * 'Error'.'exceptionRenderer' => 'App\Error\AppExceptionRenderer',
- * side-menu-light-notification.html
  * 
  * 
  */
