@@ -12,6 +12,12 @@ use Cake\Mailer\Transport\MailTransport;
  * 'Error'.'exceptionRenderer' => 'App\Error\AppExceptionRenderer',
  * 
  * 
+ * 
+ * DONE
+ * default layout
+ * simply view login
+ * app.php
+ * app_local
  */
 
 return [
