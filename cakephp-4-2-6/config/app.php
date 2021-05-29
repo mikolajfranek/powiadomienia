@@ -15,7 +15,8 @@ use Cake\Mailer\Transport\MailTransport;
  * 
  * DONE
  * default layout
- * simply view login
+ * simply view login (without reset password)
+ * simply view register
  * app.php
  * app_local
  */
@@ -434,9 +435,26 @@ return [
     ],
     'Config' => [
         'WebName' => 'Powiadomienia',
+        'WebEmail' => 'eu.powiadomienia@gmail.com',
+        'AdminEmail' => 'mikolaj.franek95@gmail.com',
         'Messages' => [
-            'FailedForm' => 'Wystąpił błąd w formularzu, spóbuj ponownie.'
-        ]
-        
+            'FailedForm' => 'Wystąpił błąd w formularzu, spróbuj ponownie.',
+            'RegisterFormSuccess' => 'Zarejestrowano. Aktywuj konto za pomocą linku aktywacyjnego wysłanego na Twoją pocztę elektroniczną.',
+            'Failed' => 'Wystąpił błąd.',
+            'UserNotFound' => 'Nie znaleziono użytkownika.',
+            'ActivateSuccess' => 'Pomyślnie aktywowano konto!',
+        ], 
+        'Validations' => [
+            'IsInUse' => 'Wartość jest już w użyciu',
+            'CannotBeEmpty' => 'Wartość nie może być pusta',
+            'EmailFormatFailed' => 'Nieprawidłowy adres email',
+            'Max100Characters' => 'Maksymalnie 100 znaki długości',
+            'Min6Max22Characters' => 'Wymagane minimalnie 6, maksymalnie 22 znaki długości',
+            'FailedCharacters' => 'Zawiera nieodpowiednie znaki',
+            'PasswordsNotMached' => 'Hasła nie pasują do siebie',
+            
+            
+            
+        ],
     ],
 ];

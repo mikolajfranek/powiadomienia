@@ -70,6 +70,7 @@ return [
      */
     'EmailTransport' => [
         'default' => [
+            'className' => 'Smtp',
             'host' => 'ssl://smtp.gmail.com',
             'port' => 465,
             'username' => 'eu.powiadomienia@gmail.com',

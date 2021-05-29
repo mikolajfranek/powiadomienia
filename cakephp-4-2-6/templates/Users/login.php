@@ -48,7 +48,7 @@ use Cake\Core\Configure;
 					?>
                 </div>
                 <div class="intro-x flex text-gray-700 dark:text-gray-600 text-xs sm:text-sm mt-4">
-                	<a href="">Zapomniałeś hasła?</a> 
+                	<a href="/users/reset">Zapomniałeś hasła?</a> 
                 </div>
                 <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
                 	<?php

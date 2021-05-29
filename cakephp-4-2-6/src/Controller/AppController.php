@@ -18,6 +18,7 @@ namespace App\Controller;
 
 use Cake\Controller\Controller;
 use Cake\Event\EventInterface;
+use Exception;
 
 /**
  * Application Controller
@@ -51,11 +52,26 @@ class AppController extends Controller
          * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
          */
         //$this->loadComponent('FormProtection');
+        
+        $this->loadComponent('EmailProvider');
     }
     
     public function beforeFilter(EventInterface $event)
     {
         parent::beforeFilter($event);
+        //BEGIN: bodyClass
         $this->set('bodyClass', "main");
+        //END: bodyClass
+    }
+    
+    protected function myFlashError(Exception $e, $messageIfExceptionHasEmptyMessage)
+    {
+        //TODO - logger
+        $this->Flash->error(empty($e->getMessage()) == true ? $messageIfExceptionHasEmptyMessage : $e->getMessage(), ['key' => 'notification']);
+    }
+    
+    protected function myFlashSuccess($message)
+    {
+        $this->Flash->success($message, ['key' => 'notification']);
     }
 }

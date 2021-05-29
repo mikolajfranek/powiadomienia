@@ -5,6 +5,7 @@ namespace App\Form;
 use Cake\Form\Form;
 use Cake\Form\Schema;
 use Cake\Validation\Validator;
+use Cake\Core\Configure;
 use Cake\Datasource\FactoryLocator;
 use Cake\Auth\DefaultPasswordHasher;
 
@@ -17,52 +18,44 @@ class RegisterForm extends Form
             ->addField('password', 'password')
             ->addField('password_confirm', 'password');
     }
- 
+    
     public function validationDefault(Validator $validator): Validator
     {
         $validator
         //email
             ->requirePresence('email')
-            ->notEmptyString('email', 'To pole nie może być puste')
-            ->email('email', false, "Nieprawidłowy adres email")
-            ->maxLength('email', 100, 'Maksymalnie 100 znaki długości')
+            ->notEmptyString('email', Configure::read('Config.Validations.CannotBeEmpty'))
+            ->email('email', false, Configure::read('Config.Validations.EmailFormatFailed'))
+            ->maxLength('email', 100, Configure::read('Config.Validations.Max100Characters'))
             ->add('email', 'unique', array(
                 'rule' => array($this, 'isUniqueEmail'),
-                'message' => 'Adres email jest już w użyciu'
-            ))  
+                'message' => Configure::read('Config.Validations.IsInUse')
+            ))
         //password
             ->requirePresence('password')
-            ->notEmptyString('password', 'To pole nie może być puste')
-            ->lengthBetween('password', array(6, 22), 'Wymagane minimalnie 6, maksymalnie 22 znaki długości')
+            ->notEmptyString('password', Configure::read('Config.Validations.CannotBeEmpty'))
+            ->lengthBetween('password', array(6, 22), Configure::read('Config.Validations.Min6Max22Characters'))
             ->add('password', 'custom', array(
                 'rule' => array('custom', '/^[A-Za-z0-9]*$/i'),
-                'message' => 'Zawiera nieodpowiednie znaki'
+                'message' => Configure::read('Config.Validations.FailedCharacters')
             ))
             ->add('password', 'match_passwords', array(
                 'rule' => array($this, 'isPasswordMatched'),
-                'message' => 'Hasła nie pasują do siebie'
+                'message' => Configure::read('Config.Validations.PasswordsNotMached')
             ))
         //password_confirm
             ->requirePresence('password_confirm')
-            ->notEmptyString('password_confirm', 'To pole nie może być puste')
-            ->lengthBetween('password_confirm', array(6, 22), 'Wymagane minimalnie 6, maksymalnie 22 znaki długości')
+            ->notEmptyString('password_confirm', Configure::read('Config.Validations.CannotBeEmpty'))
+            ->lengthBetween('password_confirm', array(6, 22), Configure::read('Config.Validations.Min6Max22Characters'))
             ->add('password_confirm', 'custom', array(
                 'rule' => array('custom', '/^[A-Za-z0-9]*$/i'),
-                'message' => 'Zawiera nieodpowiednie znaki'
+                'message' => Configure::read('Config.Validations.FailedCharacters')
             ))
             ->add('password_confirm', 'match_passwords', array(
                 'rule' => array($this, 'isPasswordConfirmMatched'),
-                'message' => 'Hasła nie pasują do siebie'
+                'message' => Configure::read('Config.Validations.PasswordsNotMached')
             ));
         return $validator;
-    }
-    
-    public function isUniqueLogin($check) {
-        $users = FactoryLocator::get('Table')->get('Users');
-        $count = $users->find()
-            ->where(array('login' => $check))
-            ->count('*');
-        return $count == 0;
     }
     
     public function isUniqueEmail($check) {
@@ -87,12 +80,8 @@ class RegisterForm extends Form
         $user = $users->newEmptyEntity();
         $user->email = $data['email'];
         $user->password = (new DefaultPasswordHasher())->hash($data['password']);
-        $user->is_account_admin = 0;
-        $user->is_account_active = 0;
-        $user->is_blocked = 0;
-        $user->is_email_confirmation = 0;
-        $user->is_email_notification = 1;
-        if ($users->save($user)) {
+        if ($users->save($user))
+        {
             return true;
         }
         return false;
