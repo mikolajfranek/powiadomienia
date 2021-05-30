@@ -55,7 +55,7 @@ if(empty($notification) == false)
         <script type="text/javascript" src="/dist/js/app.js"></script>
         <!-- END: JS Assets-->
     	<script type="text/javascript">
-    		var notify = <?php echo $notify; ?>;
+    		var notify = <?php echo $notify ? "1" : "0"; ?>;
             $(document).ready(function() 
             {
             	if(notify)

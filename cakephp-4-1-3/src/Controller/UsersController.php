@@ -16,14 +16,6 @@ use Cake\Auth\DefaultPasswordHasher;
 class UsersController extends AppController
 {
 
-    //TODO
-    public function register(){
-        if($this->Auth->user() != null){
-            return $this->redirect($this->Auth->redirectUrl());
-        }
-        $form = new RegisterForm();
-        
-    }
     
     
     
@@ -40,7 +32,12 @@ class UsersController extends AppController
                 if($form->validate($this->request->getData()) == false) throw new Exception('Wystąpił błąd w przetwarzaniu formularza logowania.');
                 $user = $this->Auth->identify();
                 if($user == false) throw new Exception("Login lub hasło są niepoprawne.");
+                
+                
+                
                 if($user['is_account_active'] != 1 || $user['is_email_confirmation'] != 1) throw new Exception("Konto jest zablokowane.");
+                
+                
                 $this->Auth->setUser($user);
                 $this->Flash->success('Witamy w serwisie ' . Configure::read('Config.WebName') . '.');
                 return $this->redirect($this->Auth->redirectUrl());
@@ -57,11 +54,7 @@ class UsersController extends AppController
     
 
     
-    public function logout(){
-        $this->Flash->success('Nastąpiło wylogowanie, będziemy oczekiwać Twojego powrotu!');
-        return $this->redirect($this->Auth->logout());
-    }
-    
+ 
     public function settings(){
         $form = new SettingsForm();
         if ($this->request->is('post')) {

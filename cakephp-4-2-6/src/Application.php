@@ -157,18 +157,18 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
     public function getAuthenticationService(ServerRequestInterface $request): AuthenticationServiceInterface
     {
         $service = new AuthenticationService();
-        
+    
         // Define where users should be redirected to when they are not authenticated
         $service->setConfig([
             'unauthenticatedRedirect' => Router::url([
-                'prefix' => false,
-                'plugin' => null,
-                'controller' => 'Users',
-                'action' => 'login',
+                    'prefix' => false,
+                    'plugin' => null,
+                    'controller' => 'Users',
+                    'action' => 'login',
             ]),
             'queryParam' => 'redirect',
         ]);
-        
+    
         $fields = [
             IdentifierInterface::CREDENTIAL_USERNAME => 'email',
             IdentifierInterface::CREDENTIAL_PASSWORD => 'password'
@@ -184,10 +184,10 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
                 'action' => 'login',
             ]),
         ]);
-        
+    
         // Load identifiers
         $service->loadIdentifier('Authentication.Password', compact('fields'));
-        
+    
         return $service;
     }
 }

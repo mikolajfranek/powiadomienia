@@ -2,14 +2,15 @@
 
 namespace App\Controller;
 
-use Cake\Datasource\FactoryLocator;
-use Cake\Event\EventInterface;
+use App\Form\LoginForm;
+use App\Form\RegisterForm;
+use App\Form\ResetForm;
+use Cake\Auth\DefaultPasswordHasher;
 use Cake\Auth\DigestAuthenticate;
 use Cake\Core\Configure;
-use App\Form\LoginForm;
+use Cake\Datasource\FactoryLocator;
+use Cake\Event\EventInterface;
 use Exception;
-use Cake\Log\Log;
-use App\Form\RegisterForm;
 
 class UsersController extends AppController
 {
@@ -21,6 +22,12 @@ class UsersController extends AppController
 
     public function register()
     {
+        $result = $this->Authentication->getResult();
+        if ($result->isValid() == true)
+        {
+            $target = $this->Authentication->getLoginRedirect() ?? '/users/home';
+            return $this->redirect($target);
+        }
         //BEGIN: bodyClass
         $this->set('bodyClass', "login");
         //END: bodyClass
@@ -74,8 +81,53 @@ class UsersController extends AppController
         $this->redirect(array('action' => 'login'));
     }
     
+    public function reset()
+    {
+        $result = $this->Authentication->getResult();
+        if ($result->isValid() == true)
+        {
+            $target = $this->Authentication->getLoginRedirect() ?? '/users/home';
+            return $this->redirect($target);
+        }
+        //BEGIN: bodyClass
+        $this->set('bodyClass', "login");
+        //END: bodyClass
+        $form = new ResetForm();
+        $this->set('form', $form);
+        if ($this->request->is('post'))
+        {
+            try
+            {
+                if ($form->execute($this->request->getData()) == false) throw new Exception();
+                //BEGIN: sendEmail
+                $users = FactoryLocator::get('Table')->get('Users');
+                $user = $users->find()
+                    ->where(array('email' => $this->request->getData()['email']))
+                    ->first();
+                if($user != null)
+                {
+                    $newPassword = substr(sha1(rand()), 0, 20);
+                    $user->password = (new DefaultPasswordHasher())->hash($newPassword);
+                    if ($users->save($user) == false) throw new Exception();
+                    $this->EmailProvider->sendAboutReset($user, $newPassword);   
+                }
+                //END: sendEmail
+                $this->myFlashSuccess(Configure::read('Config.Messages.ResetFormSuccess'));
+                $this->redirect(array('action' => 'login'));
+            }
+            catch(Exception $e)
+            {
+                $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
+            }
+        }
+    }
     
-    
+    public function logout()
+    {
+        $this->myFlashSuccess(Configure::read('Config.Messages.UserLogout'));
+        $this->Authentication->logout();
+        $this->redirect(array('action' => 'login'));
+    }
     
     
     
@@ -84,78 +136,68 @@ class UsersController extends AppController
     
     
     //TODO
-    
-    
-    
-    
-    
-    
-    
-    public function reset()
-    {
-        
-        
-    }
-    
-    
-    
-    
+   
     
     public function login()
     {
+        $result = $this->Authentication->getResult();
         //BEGIN: bodyClass
         $this->set('bodyClass', "login");
         //END: bodyClass
-        
-        
-        
-        $result = $this->Authentication->getResult();
-        // If the user is logged in send them away.
-        if ($result->isValid()) {
-            $target = $this->Authentication->getLoginRedirect() ?? '/users/home';
-            return $this->redirect($target);
-        }
-        
-        
         $form = new LoginForm();
         $this->set('form', $form);
-        if ($this->request->is('post')) {
-            try{
+        if ($this->request->is('post'))
+        {
+            try
+            {
                 if($form->validate($this->request->getData()) == false) throw new Exception();
                 if ($result->isValid() == false) throw new Exception();
                 
-                //TODO
-                                
-                $this->Flash->success('Witamy w serwisie');
                 
-            }catch(Exception $e){
                 
-                //TODO
                 
-                Log::write('error', isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "");
-                Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
-                Log::write('error', $e->getMessage());
-                Log::write('error', $e->getTraceAsString());
-                $this->Flash->error(empty($e->getMessage()) ? Configure::read('Config.Messages.Failed') : $e->getMessage(), ['key' => 'notification']);
+                //sprwadz czy jest zablokowany?
+                //is_blocked  == 1
+                //is_account_active == 0
+                //is_email_confirmation = 0
+                
+                //if($user['is_account_active'] != 1 || $user['is_email_confirmation'] != 1) throw new Exception("Konto jest zablokowane.");
+                
+                
+                
+                $target = $this->Authentication->getLoginRedirect() ?? '/users/home';
+                return $this->redirect($target);
             }
-         }
+            catch (Exception $e)
+            {
+                $this->myFlashError($e, Configure::read('Config.Messages.LoginFormFailed'));
+            }
+        }else{
+            if ($result->isValid() == true)
+            {
+                $target = $this->Authentication->getLoginRedirect() ?? '/users/home';
+                return $this->redirect($target);
+            }
+        }
     }
     
-    public function logout(){
-        $this->Flash->success('Nastąpiło wylogowanie, będziemy oczekiwać Twojego powrotu!');
-        return $this->redirect($this->Authentication->logout());
-    }
     
     
     
     
     
- 
+    
+    
+    
+    
     
     public function home(){
         //return $this->redirect($this->Authentication->logout());
      
     }
     
- 
+    public function settings(){
+        //return $this->redirect($this->Authentication->logout());
+        
+    }
 }

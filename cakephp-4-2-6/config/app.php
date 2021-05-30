@@ -9,14 +9,15 @@ use Cake\Mailer\Transport\MailTransport;
 
 /*
  * TODO
- * 'Error'.'exceptionRenderer' => 'App\Error\AppExceptionRenderer',
+ * logowania => 'Error'.'exceptionRenderer' => 'App\Error\AppExceptionRenderer',
+ * blokada zapytań wielu (strumień zapytań)
+ * 
  * 
  * 
  * 
  * DONE
  * default layout
- * simply view login (without reset password)
- * simply view register
+ * userscontroller / {login settings home}
  * app.php
  * app_local
  */
@@ -438,11 +439,13 @@ return [
         'WebEmail' => 'eu.powiadomienia@gmail.com',
         'AdminEmail' => 'mikolaj.franek95@gmail.com',
         'Messages' => [
-            'FailedForm' => 'Wystąpił błąd w formularzu, spróbuj ponownie.',
             'RegisterFormSuccess' => 'Zarejestrowano. Aktywuj konto za pomocą linku aktywacyjnego wysłanego na Twoją pocztę elektroniczną.',
             'Failed' => 'Wystąpił błąd.',
             'UserNotFound' => 'Nie znaleziono użytkownika.',
             'ActivateSuccess' => 'Pomyślnie aktywowano konto!',
+            'ResetFormSuccess' => 'Zresetowano hasło oraz wysłano wiadomość na pocztę elektroniczą jeśli takie konto istnieje.',
+            'UserLogout' => 'Pomyślnie wylogowano.',
+            'LoginFormFailed' => 'Login lub hasło są niepoprawne.',
         ], 
         'Validations' => [
             'IsInUse' => 'Wartość jest już w użyciu',
@@ -452,9 +455,6 @@ return [
             'Min6Max22Characters' => 'Wymagane minimalnie 6, maksymalnie 22 znaki długości',
             'FailedCharacters' => 'Zawiera nieodpowiednie znaki',
             'PasswordsNotMached' => 'Hasła nie pasują do siebie',
-            
-            
-            
         ],
     ],
 ];

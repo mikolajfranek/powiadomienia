@@ -25,6 +25,20 @@ class EmailProviderComponent extends Component
         $mailer->deliver($htmlContent);
     }
     
+    public function sendAboutReset($user, $newPassword)
+    {
+        $mailer = new Mailer('default');
+        $mailer
+            ->setTo($user->email)
+            ->setSubject(Configure::read('Config.WebName') . ' ['. (date('Y-m-d', time())) . '] Reset hasła')
+            ->setEmailFormat('html');
+        $htmlContent = '<h4>Resetowanie hasła zakończyło się pomyślnie!</h4>';
+        $htmlContent .= '<p>Oto Twoje nowe hasło: <b>'. $newPassword .'</b>.</p>';
+        $mailer->deliver($htmlContent);
+    }
+    
+    
+    
     
     
     

@@ -62,6 +62,7 @@ class AppController extends Controller
         //BEGIN: bodyClass
         $this->set('bodyClass', "main");
         //END: bodyClass
+        date_default_timezone_set("Europe/Warsaw");
     }
     
     protected function myFlashError(Exception $e, $messageIfExceptionHasEmptyMessage)
