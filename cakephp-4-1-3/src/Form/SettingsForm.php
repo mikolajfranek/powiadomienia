@@ -10,27 +10,11 @@ use Cake\Auth\DefaultPasswordHasher;
 
 class SettingsForm extends Form
 {
-    protected function _buildSchema(Schema $schema): Schema
-    {
-        return $schema
-            ->addField('is_email_notification', 'bool')
-            ->addField('email', 'string')
-            ->addField('password', 'password')
-            ->addField('password_new', 'password');
-    }
- 
+
     public function validationDefault(Validator $validator): Validator
     {
         $validator
-        //email
-            ->requirePresence('email')
-            ->notEmptyString('email', 'To pole nie może być puste')
-            ->email('email', false, "Nieprawidłowy adres email")
-            ->maxLength('email', 100, 'Maksymalnie 100 znaki długości')
-            ->add('email', 'unique', array(
-                'rule' => array($this, 'isUniqueEmail'),
-                'message' => 'Adres email jest już w użyciu'
-            ))
+    
         //password
             ->requirePresence('password')
             ->notEmptyString('password', 'To pole nie może być puste')
@@ -83,6 +67,7 @@ class SettingsForm extends Form
     
     public function isPasswordNewMatched($check) {
         if(empty($check)) return true;
+        
         $users = FactoryLocator::get('Table')->get('Users');
         $user = $users->find()
             ->where(array('id' => $this->getData('id')))

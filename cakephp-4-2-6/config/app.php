@@ -11,13 +11,17 @@ use Cake\Mailer\Transport\MailTransport;
  * TODO
  * logowania => 'Error'.'exceptionRenderer' => 'App\Error\AppExceptionRenderer',
  * blokada zapytań wielu (strumień zapytań)
+ * blokada wysyłania X email w beforefilter?
+ * brak strony - error-illustration.svg
+ * 
+ * 
  * 
  * 
  * 
  * 
  * DONE
  * default layout
- * userscontroller / {login settings home}
+ * userscontroller / {settings profile}
  * app.php
  * app_local
  */
@@ -446,6 +450,7 @@ return [
             'ResetFormSuccess' => 'Zresetowano hasło oraz wysłano wiadomość na pocztę elektroniczą jeśli takie konto istnieje.',
             'UserLogout' => 'Pomyślnie wylogowano.',
             'LoginFormFailed' => 'Login lub hasło są niepoprawne.',
+            'UserNotBlocked' => 'Konto jest zablokowane.',
         ], 
         'Validations' => [
             'IsInUse' => 'Wartość jest już w użyciu',
@@ -455,6 +460,9 @@ return [
             'Min6Max22Characters' => 'Wymagane minimalnie 6, maksymalnie 22 znaki długości',
             'FailedCharacters' => 'Zawiera nieodpowiednie znaki',
             'PasswordsNotMached' => 'Hasła nie pasują do siebie',
+            'PasswordInvalid' => 'Hasło nie zgadza się z aktualnym.',
+            'PasswordIsTheSame' => 'Nowe hasło musi być inne niż aktualne.'
+            
         ],
     ],
 ];

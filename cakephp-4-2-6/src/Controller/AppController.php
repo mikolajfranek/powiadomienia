@@ -63,6 +63,8 @@ class AppController extends Controller
         $this->set('bodyClass', "main");
         //END: bodyClass
         date_default_timezone_set("Europe/Warsaw");
+        $user = $this->Authentication->getIdentity();
+        $this->set('user', $user);
     }
     
     protected function myFlashError(Exception $e, $messageIfExceptionHasEmptyMessage)

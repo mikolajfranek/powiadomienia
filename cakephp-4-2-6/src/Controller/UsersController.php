@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Form\LoginForm;
 use App\Form\RegisterForm;
 use App\Form\ResetForm;
+use App\Form\SettingsForm;
 use Cake\Auth\DefaultPasswordHasher;
 use Cake\Auth\DigestAuthenticate;
 use Cake\Core\Configure;
@@ -25,7 +26,7 @@ class UsersController extends AppController
         $result = $this->Authentication->getResult();
         if ($result->isValid() == true)
         {
-            $target = $this->Authentication->getLoginRedirect() ?? '/users/home';
+            $target = $this->Authentication->getLoginRedirect() ?? '/users/profile';
             return $this->redirect($target);
         }
         //BEGIN: bodyClass
@@ -86,7 +87,7 @@ class UsersController extends AppController
         $result = $this->Authentication->getResult();
         if ($result->isValid() == true)
         {
-            $target = $this->Authentication->getLoginRedirect() ?? '/users/home';
+            $target = $this->Authentication->getLoginRedirect() ?? '/users/profile';
             return $this->redirect($target);
         }
         //BEGIN: bodyClass
@@ -129,15 +130,6 @@ class UsersController extends AppController
         $this->redirect(array('action' => 'login'));
     }
     
-    
-    
-    
-    
-    
-    
-    //TODO
-   
-    
     public function login()
     {
         $result = $this->Authentication->getResult();
@@ -152,30 +144,23 @@ class UsersController extends AppController
             {
                 if($form->validate($this->request->getData()) == false) throw new Exception();
                 if ($result->isValid() == false) throw new Exception();
-                
-                
-                
-                
-                //sprwadz czy jest zablokowany?
-                //is_blocked  == 1
-                //is_account_active == 0
-                //is_email_confirmation = 0
-                
-                //if($user['is_account_active'] != 1 || $user['is_email_confirmation'] != 1) throw new Exception("Konto jest zablokowane.");
-                
-                
-                
-                $target = $this->Authentication->getLoginRedirect() ?? '/users/home';
+                $user = $this->Authentication->getIdentity();
+                if($user['is_account_active'] == false) throw new Exception(Configure::read('Config.Messages.UserNotBlocked'));
+                if($user['is_email_confirmation'] == false) throw new Exception(Configure::read('Config.Messages.UserNotBlocked'));
+                if($user['is_blocked'] == true) throw new Exception(Configure::read('Config.Messages.UserNotBlocked'));
+                $target = $this->Authentication->getLoginRedirect() ?? '/users/profile';
                 return $this->redirect($target);
             }
             catch (Exception $e)
             {
                 $this->myFlashError($e, Configure::read('Config.Messages.LoginFormFailed'));
             }
-        }else{
+        }
+        else
+        {
             if ($result->isValid() == true)
             {
-                $target = $this->Authentication->getLoginRedirect() ?? '/users/home';
+                $target = $this->Authentication->getLoginRedirect() ?? '/users/profile';
                 return $this->redirect($target);
             }
         }
@@ -191,13 +176,51 @@ class UsersController extends AppController
     
     
     
-    public function home(){
-        //return $this->redirect($this->Authentication->logout());
-     
-    }
+    
+    
+    
+    //TODO
+    
     
     public function settings(){
-        //return $this->redirect($this->Authentication->logout());
-        
+        $form = new SettingsForm();
+        $this->set('form', $form);
+        if ($this->request->is('post'))
+        {
+            try
+            {
+                throw new Exception();
+                
+                
+                
+            }
+            catch (Exception $e)
+            {
+                $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
+            }
+        }
+        else
+        {
+            try
+            {
+                $users = FactoryLocator::get('Table')->get('Users');
+                $user = $users->find()
+                    ->where(array('id' => $this->Authentication->getIdentity()['id']))
+                    ->first();
+                $form->setData([
+                    'is_email_notification' => $user->is_email_notification,
+                    'email' => $user->email
+                ]); 
+            }
+            catch (Exception $e)
+            {
+                $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
+            }
+        }
+    }
+    
+    
+    public function profile(){
+     
     }
 }
