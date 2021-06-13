@@ -17,6 +17,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use Cake\Controller\Controller;
+use Cake\Core\Configure;
 use Cake\Event\EventInterface;
 use Exception;
 
@@ -56,15 +57,20 @@ class AppController extends Controller
         $this->loadComponent('EmailProvider');
     }
     
+    protected $user = null;
+    
     public function beforeFilter(EventInterface $event)
     {
         parent::beforeFilter($event);
         //BEGIN: bodyClass
-        $this->set('bodyClass', "main");
+        $this->set('bodyClass', 'main');
         //END: bodyClass
-        date_default_timezone_set("Europe/Warsaw");
-        $user = $this->Authentication->getIdentity();
-        $this->set('user', $user);
+        date_default_timezone_set('Europe/Warsaw');
+        //get logged user
+        $this->user = $this->Authentication->getIdentity();
+        $this->set('user', $this->user);
+        //get 
+        $this->set('menuside', Configure::read('Config.MenuSide'));
     }
     
     protected function myFlashError(Exception $e, $messageIfExceptionHasEmptyMessage)

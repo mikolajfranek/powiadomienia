@@ -26,11 +26,11 @@ class UsersController extends AppController
         $result = $this->Authentication->getResult();
         if ($result->isValid() == true)
         {
-            $target = $this->Authentication->getLoginRedirect() ?? '/users/profile';
+            $target = $this->Authentication->getLoginRedirect() ?? '/users/results';
             return $this->redirect($target);
         }
         //BEGIN: bodyClass
-        $this->set('bodyClass', "login");
+        $this->set('bodyClass', 'login');
         //END: bodyClass
         $form = new RegisterForm();
         $this->set('form', $form);
@@ -87,11 +87,11 @@ class UsersController extends AppController
         $result = $this->Authentication->getResult();
         if ($result->isValid() == true)
         {
-            $target = $this->Authentication->getLoginRedirect() ?? '/users/profile';
+            $target = $this->Authentication->getLoginRedirect() ?? '/users/results';
             return $this->redirect($target);
         }
         //BEGIN: bodyClass
-        $this->set('bodyClass', "login");
+        $this->set('bodyClass', 'login');
         //END: bodyClass
         $form = new ResetForm();
         $this->set('form', $form);
@@ -134,7 +134,7 @@ class UsersController extends AppController
     {
         $result = $this->Authentication->getResult();
         //BEGIN: bodyClass
-        $this->set('bodyClass', "login");
+        $this->set('bodyClass', 'login');
         //END: bodyClass
         $form = new LoginForm();
         $this->set('form', $form);
@@ -143,12 +143,11 @@ class UsersController extends AppController
             try
             {
                 if($form->validate($this->request->getData()) == false) throw new Exception();
-                if ($result->isValid() == false) throw new Exception();
-                $user = $this->Authentication->getIdentity();
-                if($user['is_account_active'] == false) throw new Exception(Configure::read('Config.Messages.UserNotBlocked'));
-                if($user['is_email_confirmation'] == false) throw new Exception(Configure::read('Config.Messages.UserNotBlocked'));
-                if($user['is_blocked'] == true) throw new Exception(Configure::read('Config.Messages.UserNotBlocked'));
-                $target = $this->Authentication->getLoginRedirect() ?? '/users/profile';
+                if ($result->isValid() == false) throw new Exception();                
+                if($this->user['is_account_active'] == false) throw new Exception(Configure::read('Config.Messages.UserNotBlocked'));
+                if($this->user['is_email_confirmation'] == false) throw new Exception(Configure::read('Config.Messages.UserNotBlocked'));
+                if($this->user['is_blocked'] == true) throw new Exception(Configure::read('Config.Messages.UserNotBlocked'));
+                $target = $this->Authentication->getLoginRedirect() ?? '/users/results';
                 return $this->redirect($target);
             }
             catch (Exception $e)
@@ -160,11 +159,18 @@ class UsersController extends AppController
         {
             if ($result->isValid() == true)
             {
-                $target = $this->Authentication->getLoginRedirect() ?? '/users/profile';
+                $target = $this->Authentication->getLoginRedirect() ?? '/users/results';
                 return $this->redirect($target);
             }
         }
     }
+    
+    
+    
+    
+    
+    
+    
     
     
     
@@ -180,8 +186,6 @@ class UsersController extends AppController
     
     
     //TODO
-    
-    
     public function settings(){
         $form = new SettingsForm();
         $this->set('form', $form);
@@ -190,6 +194,9 @@ class UsersController extends AppController
             try
             {
                 throw new Exception();
+                
+                
+                
                 
                 
                 
@@ -205,7 +212,7 @@ class UsersController extends AppController
             {
                 $users = FactoryLocator::get('Table')->get('Users');
                 $user = $users->find()
-                    ->where(array('id' => $this->Authentication->getIdentity()['id']))
+                    ->where(array('id' => $this->user['id']))
                     ->first();
                 $form->setData([
                     'is_email_notification' => $user->is_email_notification,
@@ -220,7 +227,10 @@ class UsersController extends AppController
     }
     
     
-    public function profile(){
+    public function tickets(){
      
+    }
+    public function results(){
+        
     }
 }

@@ -4,22 +4,21 @@ use Cake\Core\Configure;
 
 $email_of_user = $user['email'];
 $email_of_user = substr($email_of_user, 0, strpos($email_of_user, "@", 0));
-$email_of_user = substr($email_of_user, 0, 25);
-
+$email_of_user = strlen($email_of_user) > 22 ? substr($email_of_user, 0, 22) + "..." : substr($email_of_user, 0);
 ?>
 <!-- BEGIN: Top Bar -->
 <div class="top-bar">
     <!-- BEGIN: Breadcrumb -->
     <div class="-intro-x breadcrumb mr-auto hidden sm:flex">
-    	<?= Configure::read("Config.WebName") ?>
+    	<?= $breadcrumbPart1 ?>
     	<i data-feather="chevron-right" class="breadcrumb__icon"></i>
-    	<span class="breadcrumb--active"><?= $breadcrumb ?></span>
+    	<span class="breadcrumb--active"><?= $breadcrumbPart2 ?></span>
     </div>
     <!-- END: Breadcrumb -->
     <!-- BEGIN: Account Menu -->
     <div class="intro-x dropdown w-8 h-8 ml-auto">
         <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in btn-primary-soft" role="button" aria-expanded="false">
-             <i data-feather="menu" class="w-4 h-4 ml-2 mt-2"></i> 
+             <i data-feather="user" class="w-4 h-4 ml-2 mt-2"></i> 
         </div>        
         
         <div class="dropdown-menu w-56">
@@ -28,9 +27,14 @@ $email_of_user = substr($email_of_user, 0, 25);
                     <div class="font-medium"><?= $email_of_user ?></div>
                 </div>
                 <div class="p-2">
-                    <?php
-                        echo $this->Html->link('<i data-feather="user" class="w-4 h-4 mr-2"></i>Profil',
-                            array("controller" => "users", "action" => "profile"),
+                	 <?php
+                        echo $this->Html->link('<i data-feather="copy" class="w-4 h-4 mr-2"></i>Kupony',
+                            array("controller" => "users", "action" => "tickets"),
+                            array( "escape" => false, "class" => "flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"));
+                	 ?>
+                	 <?php
+                        echo $this->Html->link('<i data-feather="clipboard" class="w-4 h-4 mr-2"></i>Wyniki',
+                            array("controller" => "users", "action" => "results"),
                             array( "escape" => false, "class" => "flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"));
                 	 ?>
                     <?php
@@ -38,15 +42,10 @@ $email_of_user = substr($email_of_user, 0, 25);
                             array("controller" => "users", "action" => "settings"),
                             array( "escape" => false, "class" => "flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"));
                 	 ?>
-                    <?php
-                        echo $this->Html->link('<i data-feather="dollar-sign" class="w-4 h-4 mr-2"></i>Dotacja',
-                            array("controller" => "pages", "action" => "donate"),
-                            array( "escape" => false, "class" => "flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"));
-                	 ?>  
                 </div>            
                 <div class="p-2 border-t border-theme-27 dark:border-dark-3">
                      <?php
-                        echo $this->Html->link('<i data-feather="toggle-right" class="w-4 h-4 mr-2"></i>Wyloguj',
+                        echo $this->Html->link('<i data-feather="log-out" class="w-4 h-4 mr-2"></i>Wyloguj',
                             array("controller" => "users", "action" => "logout"),
                             array( "escape" => false, "class" => "flex items-center block p-2 transition duration-300 ease-in-out hover:bg-theme-1 dark:hover:bg-dark-3 rounded-md"));
                 	 ?>    

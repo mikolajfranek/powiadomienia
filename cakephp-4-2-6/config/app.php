@@ -16,6 +16,10 @@ use Cake\Mailer\Transport\MailTransport;
  * 
  * 
  * 
+ * PRACE
+ * userscontroller / {settings profile}
+ * pages donate
+ * menu
  * 
  * 
  * 
@@ -461,8 +465,15 @@ return [
             'FailedCharacters' => 'Zawiera nieodpowiednie znaki',
             'PasswordsNotMached' => 'Hasła nie pasują do siebie',
             'PasswordInvalid' => 'Hasło nie zgadza się z aktualnym.',
-            'PasswordIsTheSame' => 'Nowe hasło musi być inne niż aktualne.'
-            
+            'PasswordIsTheSame' => 'Nowe hasło musi być inne niż aktualne.',  
         ],
+        'Breadcrumb' => [
+            'User' => 'Użytkownik',
+        ],
+        'MenuSide' => [
+            'GamesList' => false,
+            'TicketsRegister' => false,
+            'PagesDonate' => false,
+        ]
     ],
 ];

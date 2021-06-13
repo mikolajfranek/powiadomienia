@@ -24,8 +24,7 @@ class UsersController extends AppController
         $this->set('form', $form);
         
         if ($this->request->is('post')) {
-            try{
-                
+          
                 //dodanie id do 'data'
                 $data = $this->request->getData();
                 $data['id'] = $this->Auth->user()['id'];
@@ -69,15 +68,7 @@ class UsersController extends AppController
                     $this->Flash->success('Pomyślnie zaktualizowano dane użytkownika.');
                 }
                 
-                
-                
-            }catch(Exception $e){
-                Log::write('error', isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "");
-                Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
-                Log::write('error', $e->getMessage());
-                Log::write('error', $e->getTraceAsString());
-                $this->Flash->error(empty($e->getMessage()) ? 'Wystąpił błąd w wysyłaniu formularza, spóbuj ponownie.' : $e->getMessage());
-            }
+           
         }
         
         

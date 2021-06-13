@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Cake\Core\Configure;
 use Cake\Event\EventInterface;
 
 class TicketsController extends AppController
@@ -11,7 +12,10 @@ class TicketsController extends AppController
         parent::beforeFilter($event);
     }
     
-    public function list(){
-    
+    public function register()
+    {
+        $menuside = Configure::read('Config.MenuSide');
+        $menuside['TicketsRegister'] = true;
+        $this->set('menuside',$menuside);
     }
 }
