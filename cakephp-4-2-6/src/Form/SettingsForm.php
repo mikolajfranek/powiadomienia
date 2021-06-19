@@ -14,7 +14,7 @@ class SettingsForm extends Form
     protected function _buildSchema(Schema $schema): Schema
     {
         return $schema
-            ->addField('is_email_notification', 'bool')
+            ->addField('is_email_notification', 'string')
             ->addField('email', 'string')
             ->addField('password', 'password')
             ->addField('password_new', 'password');
@@ -23,6 +23,12 @@ class SettingsForm extends Form
     public function validationDefault(Validator $validator): Validator
     {
         $validator
+        //is_email_notification
+        ->allowEmptyString('is_email_notification')
+        ->add('is_email_notification', 'custom', array(
+            'rule' => array('custom', '/^[01]*$/i'),
+            'message' => Configure::read('Config.Validations.FailedCharacters')
+        ))
         //email
             ->requirePresence('email')
             ->notEmptyString('email', Configure::read('Config.Validations.CannotBeEmpty'))
@@ -44,10 +50,12 @@ class SettingsForm extends Form
                 'rule' => array($this, 'isPasswordMatched'),
                 'message' => Configure::read('Config.Validations.PasswordInvalid')
             ))
-        //password_confirm
-            ->requirePresence('password_new')
-            ->notEmptyString('password_new', Configure::read('Config.Validations.CannotBeEmpty'))
-            ->lengthBetween('password_new', array(6, 22), Configure::read('Config.Validations.Min6Max22Characters'))
+        //password_new
+            ->allowEmptyString('password_new')
+            ->add('password_new', 'length_password', array(
+                'rule' => array($this, 'isPasswordNewLength'),
+                'message' => Configure::read('Config.Validations.Min6Max22Characters')
+            ))
             ->add('password_new', 'custom', array(
                 'rule' => array('custom', '/^[A-Za-z0-9]*$/i'),
                 'message' => Configure::read('Config.Validations.FailedCharacters')
@@ -59,10 +67,11 @@ class SettingsForm extends Form
         return $validator;
     }
     
-    public function isUniqueEmail($check) {
+    public function isUniqueEmail($check) 
+    {
         $users = FactoryLocator::get('Table')->get('Users');
         $count = $users->find()
-            ->where(array('email' => $check))
+            ->where(array('email' => $check, 'id IS NOT' => $this->getData('id')))
             ->count('*');
         return $count == 0;
     }
@@ -73,6 +82,10 @@ class SettingsForm extends Form
             ->where(array('id' => $this->getData('id')))
             ->first();
         return (new DefaultPasswordHasher)->check($check, $user->password) == true;
+    }
+    
+    public function isPasswordNewLength($check) {
+        return strlen($check) >= 6 && strlen($check) <= 22;
     }
     
     public function isPasswordNewMatched($check) {

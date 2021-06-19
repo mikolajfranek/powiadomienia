@@ -28,19 +28,28 @@ class UsersController extends AppController
                 //dodanie id do 'data'
                 $data = $this->request->getData();
                 $data['id'] = $this->Auth->user()['id'];
-                
-                
                 if ($form->execute($data) == false) throw new Exception('Wystąpił błąd w przetwarzaniu formularza ustawień.');
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 $users = FactoryLocator::get('Table')->get('Users');
                 $user = $users->find()
                     ->where(array('id' => $this->Auth->user()['id']))
                     ->first();
+                
+                    
+                    
                 $dataToUpdated = array(
                     'is_email_notification' => $data['is_email_notification'],
                     'email' => $data['email']
                 );
-                
-                
                 $userChangeEmail = $user->email != $data['email'];
                 if($userChangeEmail){
                     $dataToUpdated['is_email_confirmation'] = 0;
@@ -68,21 +77,13 @@ class UsersController extends AppController
                     $this->Flash->success('Pomyślnie zaktualizowano dane użytkownika.');
                 }
                 
-           
+                
+                
         }
         
         
-        if ($this->request->is('get')) {
         
-            $users = FactoryLocator::get('Table')->get('Users');
-            $user = $users->find()
-                ->where(array('id' => $this->Auth->user()['id']))
-                ->first();
-            
-            $form->setData([
-                'is_email_notification' => $user->is_email_notification,
-                'email' => $user->email
-            ]);
-        }
+        
+       
     }
 }

@@ -23,6 +23,11 @@ use Cake\Mailer\Transport\MailTransport;
  * 
  * 
  * 
+ * data do (aktywacja) linku (ważny 15 min)
+ * zablokowanie innych niż get/post
+ * 
+ * 
+ * 
  * DONE
  * default layout
  * userscontroller / {settings profile}
@@ -454,7 +459,8 @@ return [
             'ResetFormSuccess' => 'Zresetowano hasło oraz wysłano wiadomość na pocztę elektroniczą jeśli takie konto istnieje.',
             'UserLogout' => 'Pomyślnie wylogowano.',
             'LoginFormFailed' => 'Login lub hasło są niepoprawne.',
-            'UserNotBlocked' => 'Konto jest zablokowane.',
+            'UserBlocked' => 'Konto jest zablokowane.',
+            'SettingsSuccess' => 'Pomyślnie zaktualizowano dane użytkownika.'
         ], 
         'Validations' => [
             'IsInUse' => 'Wartość jest już w użyciu',

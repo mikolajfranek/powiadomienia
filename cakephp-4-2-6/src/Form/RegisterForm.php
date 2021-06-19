@@ -58,7 +58,8 @@ class RegisterForm extends Form
         return $validator;
     }
     
-    public function isUniqueEmail($check) {
+    public function isUniqueEmail($check) 
+    {
         $users = FactoryLocator::get('Table')->get('Users');
         $count = $users->find()
             ->where(array('email' => $check))
@@ -66,11 +67,13 @@ class RegisterForm extends Form
         return $count == 0;
     }
     
-    public function isPasswordMatched($check) {
+    public function isPasswordMatched($check) 
+    {
         return $check == $this->getData('password_confirm');
     }
     
-    public function isPasswordConfirmMatched($check) {
+    public function isPasswordConfirmMatched($check) 
+    {
         return $check == $this->getData('password');
     }
     

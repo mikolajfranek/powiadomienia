@@ -39,11 +39,11 @@ class UsersController extends AppController
             try
             {
                 if ($form->execute($this->request->getData()) == false) throw new Exception();
-                //BEGIN: sendEmail
                 $users = FactoryLocator::get('Table')->get('Users');
                 $user = $users->find()
                     ->where(array('email' => $this->request->getData()['email']))
                     ->first();
+                //BEGIN: sendEmail
                 $this->EmailProvider->sendAboutRegistration($user);
                 //END: sendEmail
                 $this->myFlashSuccess(Configure::read('Config.Messages.RegisterFormSuccess'));
@@ -100,7 +100,6 @@ class UsersController extends AppController
             try
             {
                 if ($form->execute($this->request->getData()) == false) throw new Exception();
-                //BEGIN: sendEmail
                 $users = FactoryLocator::get('Table')->get('Users');
                 $user = $users->find()
                     ->where(array('email' => $this->request->getData()['email']))
@@ -110,9 +109,10 @@ class UsersController extends AppController
                     $newPassword = substr(sha1(rand()), 0, 20);
                     $user->password = (new DefaultPasswordHasher())->hash($newPassword);
                     if ($users->save($user) == false) throw new Exception();
-                    $this->EmailProvider->sendAboutReset($user, $newPassword);   
+                    //BEGIN: sendEmail
+                    $this->EmailProvider->sendAboutReset($user, $newPassword);
+                    //END: sendEmail
                 }
-                //END: sendEmail
                 $this->myFlashSuccess(Configure::read('Config.Messages.ResetFormSuccess'));
                 $this->redirect(array('action' => 'login'));
             }
@@ -143,19 +143,19 @@ class UsersController extends AppController
             try
             {
                 if($form->validate($this->request->getData()) == false) throw new Exception();
-                if ($result->isValid() == false) throw new Exception();                
-                if($this->user['is_account_active'] == false) throw new Exception(Configure::read('Config.Messages.UserNotBlocked'));
-                if($this->user['is_email_confirmation'] == false) throw new Exception(Configure::read('Config.Messages.UserNotBlocked'));
-                if($this->user['is_blocked'] == true) throw new Exception(Configure::read('Config.Messages.UserNotBlocked'));
+                if ($result->isValid() == false) throw new Exception(Configure::read('Config.Messages.LoginFormFailed'));                
+                if($this->user['is_account_active'] == false) throw new Exception(Configure::read('Config.Messages.UserBlocked'));
+                if($this->user['is_email_confirmation'] == false) throw new Exception(Configure::read('Config.Messages.UserBlocked'));
+                if($this->user['is_blocked'] == true) throw new Exception(Configure::read('Config.Messages.UserBlocked'));
                 $target = $this->Authentication->getLoginRedirect() ?? '/users/results';
                 return $this->redirect($target);
             }
             catch (Exception $e)
             {
-                $this->myFlashError($e, Configure::read('Config.Messages.LoginFormFailed'));
+                $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
             }
         }
-        else
+        else 
         {
             if ($result->isValid() == true)
             {
@@ -193,12 +193,50 @@ class UsersController extends AppController
         {
             try
             {
-                throw new Exception();
+                $data = $this->request->getData();
+                $data['id'] = $this->user['id'];
+                if ($form->execute($data) == false) throw new Exception();
+                $users = FactoryLocator::get('Table')->get('Users');
+                $user = $users->find()
+                    ->where(array('id' => $this->user['id']))
+                    ->first();
+                $dataToUpdated = array(
+                    'is_email_notification' => $data['is_email_notification'],
+                    'email' => $data['email']
+                );
+                $userChangeEmail = $user->email != $dataToUpdated['email'];
+                if($userChangeEmail == true)
+                {
+                    $dataToUpdated['is_email_confirmation'] = 0;
+                }
+                $userChangePassword = empty($data['password_new']) == false;
+                if($userChangePassword)
+                {
+                    $dataToUpdated['password'] = (new DefaultPasswordHasher)->hash($data['password_new']);
+                }
+                $users->patchEntity($user, $dataToUpdated);
+                if($users->save($user) == false) throw new Exception();
+                
+                
+                $this->myFlashSuccess(Configure::read('Config.Messages.SettingsSuccess'));
                 
                 
                 
+                /*
+                 * TODO
+                 * 
+                if($userChangeEmail){
+                    $this->EmailProvider->sendAboutChangeEmail($user);
+                    $this->Flash->success('Adres email został zmieniony, odblokuj konto za pomocą linku odblokowującego znajdującego się na Twojej poczcie elektronicznej.');
+                    return $this->redirect($this->Auth->logout());
+                }else if($userChangePassword){
+                    $this->Flash->success('Pomyślnie zaktualizowano dane użytkownika, zaloguj się ponownie korzystając z nowego hasła.');
+                    return $this->redirect($this->Auth->logout());
+                }else{
+                    $this->Flash->success('Pomyślnie zaktualizowano dane użytkownika.');
+                }
                 
-                
+                */
                 
             }
             catch (Exception $e)
@@ -217,7 +255,7 @@ class UsersController extends AppController
                 $form->setData([
                     'is_email_notification' => $user->is_email_notification,
                     'email' => $user->email
-                ]); 
+                ]);
             }
             catch (Exception $e)
             {
@@ -225,6 +263,13 @@ class UsersController extends AppController
             }
         }
     }
+    
+    
+    
+    
+    
+    
+    
     
     
     public function tickets(){
