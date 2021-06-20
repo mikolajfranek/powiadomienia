@@ -130,47 +130,6 @@ class UsersController extends AppController
         $this->redirect(array('action' => 'login'));
     }
     
-    public function login()
-    {
-        $result = $this->Authentication->getResult();
-        //BEGIN: bodyClass
-        $this->set('bodyClass', 'login');
-        //END: bodyClass
-        $form = new LoginForm();
-        $this->set('form', $form);
-        if ($this->request->is('post'))
-        {
-            try
-            {
-                if($form->validate($this->request->getData()) == false) throw new Exception();
-                if ($result->isValid() == false) throw new Exception(Configure::read('Config.Messages.LoginFormFailed'));                
-                if($this->user['is_account_active'] == false) throw new Exception(Configure::read('Config.Messages.UserBlocked'));
-                if($this->user['is_email_confirmation'] == false) throw new Exception(Configure::read('Config.Messages.UserBlocked'));
-                if($this->user['is_blocked'] == true) throw new Exception(Configure::read('Config.Messages.UserBlocked'));
-                $target = $this->Authentication->getLoginRedirect() ?? '/users/results';
-                return $this->redirect($target);
-            }
-            catch (Exception $e)
-            {
-                $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
-            }
-        }
-        else 
-        {
-            if ($result->isValid() == true)
-            {
-                $target = $this->Authentication->getLoginRedirect() ?? '/users/results';
-                return $this->redirect($target);
-            }
-        }
-    }
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -186,7 +145,66 @@ class UsersController extends AppController
     
     
     //TODO
+    public function login()
+    {
+        //BEGIN: bodyClass
+        $this->set('bodyClass', 'login');
+        //END: bodyClass
+        $form = new LoginForm();
+        $this->set('form', $form);
+        if ($this->request->is('post'))
+        {
+            try
+            {
+                if($form->validate($this->request->getData()) == false) throw new Exception();
+                $users = FactoryLocator::get('Table')->get('Users');
+                $user = $users->find()
+                    ->where(array('email' => $this->request->getData()['email']))
+                    ->first();
+                if($user['is_account_active'] == false) throw new Exception(Configure::read('Config.Messages.UserBlocked'));
+                if($user['is_email_confirmation'] == false) throw new Exception(Configure::read('Config.Messages.UserBlocked'));
+                if($user['is_blocked'] == true) throw new Exception(Configure::read('Config.Messages.UserBlocked'));                
+                $result = $this->Authentication->getResult();
+                if ($result->isValid() == false) throw new Exception(Configure::read('Config.Messages.LoginFormFailed'));                
+                $target = $this->Authentication->getLoginRedirect() ?? '/users/results';
+                return $this->redirect($target);
+            }
+            catch (Exception $e)
+            {
+                $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
+            }
+        }
+        else 
+        {
+            
+            if($this->Authentication->getIdentity() != null)
+            {
+                
+                $this->myFlashSuccess("BBBBBBBBBBBBB");
+            
+            }
+            $result = $this->Authentication->getResult();
+            if ($result->isValid() == true)
+            {
+                $this->myFlashSuccess("AAAAAAAAAAAA");
+                //$target = $this->Authentication->getLoginRedirect() ?? '/users/results';
+                //return $this->redirect($target);
+            }
+        }
+    }
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    //TODO
     public function settings(){
+        $this->user = $this->Authentication->getIdentity();
         $form = new SettingsForm();
         $this->set('form', $form);
         if ($this->request->is('post'))
@@ -216,28 +234,23 @@ class UsersController extends AppController
                 }
                 $users->patchEntity($user, $dataToUpdated);
                 if($users->save($user) == false) throw new Exception();
-                
-                
-                $this->myFlashSuccess(Configure::read('Config.Messages.SettingsSuccess'));
-                
-                
-                
-                /*
-                 * TODO
-                 * 
-                if($userChangeEmail){
+                if($userChangeEmail == true)
+                {
                     $this->EmailProvider->sendAboutChangeEmail($user);
-                    $this->Flash->success('Adres email został zmieniony, odblokuj konto za pomocą linku odblokowującego znajdującego się na Twojej poczcie elektronicznej.');
-                    return $this->redirect($this->Auth->logout());
-                }else if($userChangePassword){
-                    $this->Flash->success('Pomyślnie zaktualizowano dane użytkownika, zaloguj się ponownie korzystając z nowego hasła.');
-                    return $this->redirect($this->Auth->logout());
-                }else{
-                    $this->Flash->success('Pomyślnie zaktualizowano dane użytkownika.');
+                    $this->myFlashSuccess(Configure::read('Config.Messages.UserMustUnblock'));
+                    $this->Authentication->logout();
+                    $this->redirect(array('action' => 'login'));
                 }
-                
-                */
-                
+                else if($userChangePassword)
+                {
+                    $this->myFlashSuccess(Configure::read('Config.Messages.UserMustUseNewPassword'));
+                    $this->Authentication->logout();
+                    $this->redirect(array('action' => 'login'));
+                }
+                else
+                {
+                    $this->myFlashSuccess(Configure::read('Config.Messages.SettingsSuccess'));
+                }
             }
             catch (Exception $e)
             {
@@ -263,6 +276,8 @@ class UsersController extends AppController
             }
         }
     }
+    
+    
     
     
     

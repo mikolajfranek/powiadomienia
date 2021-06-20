@@ -66,11 +66,17 @@ class AppController extends Controller
         $this->set('bodyClass', 'main');
         //END: bodyClass
         date_default_timezone_set('Europe/Warsaw');
-        //get logged user
-        $this->user = $this->Authentication->getIdentity();
-        $this->set('user', $this->user);
         //get 
         $this->set('menuside', Configure::read('Config.MenuSide'));
+    }
+    
+    public function beforeRender($event)
+    {
+        parent::beforeRender($event);
+        if($this->user != null)
+        {
+            $this->set('user', $this->user);
+        }
     }
     
     protected function myFlashError(Exception $e, $messageIfExceptionHasEmptyMessage)

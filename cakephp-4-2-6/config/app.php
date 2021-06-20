@@ -20,6 +20,7 @@ use Cake\Mailer\Transport\MailTransport;
  * userscontroller / {settings profile}
  * pages donate
  * menu
+ * logowanie nie działa, post (zablokowane konto), odświeżenie (jest zalogowany??)
  * 
  * 
  * 
@@ -460,7 +461,9 @@ return [
             'UserLogout' => 'Pomyślnie wylogowano.',
             'LoginFormFailed' => 'Login lub hasło są niepoprawne.',
             'UserBlocked' => 'Konto jest zablokowane.',
-            'SettingsSuccess' => 'Pomyślnie zaktualizowano dane użytkownika.'
+            'SettingsSuccess' => 'Pomyślnie zaktualizowano dane użytkownika.',            
+            'UserMustUnblock' => 'Zmieniono email oraz wysłano wiadomość na pocztę elektroniczą. Odblokuj konto za pomocą linku odblokowującego wysłanego na Twoją pocztę elektroniczną.',
+            'UserMustUseNewPassword'=> 'Pomyślnie zaktualizowano dane użytkownika. Zaloguj się ponownie korzystając z nowego hasła.',
         ], 
         'Validations' => [
             'IsInUse' => 'Wartość jest już w użyciu',

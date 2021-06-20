@@ -37,47 +37,39 @@ class EmailProviderComponent extends Component
         $mailer->deliver($htmlContent);
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    public function sendAboutChangeEmail($user){
+    public function sendAboutChangeEmail($user)
+    {
         $mailer = new Mailer('default');
         $mailer
             ->setTo($user->email)
-            ->setSubject(Configure::read('Config.WebName') . ' ['. (date('Y-m-d', time())) . '] Odblokowanie dostępu')
+            ->setSubject(Configure::read('Config.WebName') . ' ['. (date('Y-m-d', time())) . '] Zmiana adresu email')
             ->setEmailFormat('html');
-        $hash = DigestAuthenticate::password($user->login, ($user->id . $user->login . $user->email), env('SERVER_NAME'));
+        $hash = DigestAuthenticate::password($user->email, $user->password, env('SERVER_NAME'));
         $url =  Router::fullBaseUrl() . '/users/activate/' . $user->id . '/' . $hash;
-        $mailer->deliver(
-            '<h3>Witaj ' . $user->login . '!</h3>' .
-            '<p>Oto link odblokowujący Twoje konto <a href="'. $url .'">'. $url .'</a>.</p>'
-            );
+        $htmlContent = '<h4>Witaj!</h4>';
+        $htmlContent .= '<p>Oto link odblokowujący Twoje konto <a href="'. $url .'">'. $url .'</a>.</p>';
+        $mailer->deliver($htmlContent);
     }
+  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     public function sendMessageToAdmin($title, $message){        
         $mailer = new Mailer('default');

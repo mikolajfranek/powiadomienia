@@ -4,7 +4,7 @@ use Cake\Core\Configure;
 
 $email_of_user = $user['email'];
 $email_of_user = substr($email_of_user, 0, strpos($email_of_user, "@", 0));
-$email_of_user = strlen($email_of_user) > 22 ? substr($email_of_user, 0, 22) + "..." : substr($email_of_user, 0);
+$email_of_user = strlen($email_of_user) > 22 ? substr($email_of_user, 0, 22) . "..." : substr($email_of_user, 0);
 ?>
 <!-- BEGIN: Top Bar -->
 <div class="top-bar">
