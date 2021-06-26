@@ -176,20 +176,23 @@ class UsersController extends AppController
         }
         else 
         {
+            //TODO
             
-            if($this->Authentication->getIdentity() != null)
-            {
+            
+            
+            //if($this->Authentication->getIdentity() != null)
+            //{
+                //debug($this->Authentication->getIdentity()); 
                 
-                $this->myFlashSuccess("BBBBBBBBBBBBB");
-            
-            }
-            $result = $this->Authentication->getResult();
-            if ($result->isValid() == true)
-            {
-                $this->myFlashSuccess("AAAAAAAAAAAA");
+                //$this->myFlashSuccess("BBBBBBBBBBBBB");
+            //}
+            //$result = $this->Authentication->getResult();            
+            //if ($result->isValid() == true)
+            //{
+                //$this->myFlashSuccess("Zalogowanooo");
                 //$target = $this->Authentication->getLoginRedirect() ?? '/users/results';
                 //return $this->redirect($target);
-            }
+            //}
         }
     }
     

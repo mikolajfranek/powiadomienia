@@ -183,6 +183,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
                 'controller' => 'Users',
                 'action' => 'login',
             ]),
+            'finder' => 'auth',
         ]);
     
         // Load identifiers
