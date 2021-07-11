@@ -551,47 +551,7 @@ return [
         'Notifications' => array(
             'url' => 'https://app.lotto.pl/wyniki?type=',
         ),
-        'GameToId' => array(
-            'MiniLotto' => 1,
-            'Lotto' => 2,
-            'LottoAndLottoPlus' => 3
-        ),
-        'IdToGame' => array(
-           1 => "Mini Lotto",
-           2 => "Lotto",
-           3 => "Lotto + Lotto Plus"
-        ),
-        'Game' => array(
-            1 => array(
-                'queryParameter' => 'el',
-                'description' => 'Dawniej "Express lotek"',
-                'name' =>  'Mini Lotto',
-                'nameStatistic' => 'Mini Lotto',
-                'numbersInCollection' => 5,
-                'theGreatestNumber' => 42,
-                'numbersToWin' => 3,
-                'dayOfWeek' => array(1, 2, 3, 4, 5, 6, 7)
-            ),
-            2 => array(
-                'queryParameter' => 'dl',
-                'description' => 'Dawniej "Duży lotek"',
-                'name' =>  'Lotto',
-                'nameStatistic' => 'Lotto',
-                'numbersInCollection' => 6,
-                'theGreatestNumber' => 49,
-                'numbersToWin' => 3,
-                'dayOfWeek' => array(2, 4, 6)
-            ),
-            3 => array(
-                'queryParameter' => 'lp',
-                'description' => 'Dodatkowe losowanie dla kuponu "Duży lotek"',
-                'name' =>  'Lotto + Lotto Plus',
-                'nameStatistic' => 'Lotto Plus',
-                'numbersInCollection' => 6,
-                'theGreatestNumber' => 49,
-                'numbersToWin' => 3,
-                'dayOfWeek' => array(2, 4, 6)
-            ),
-        )
+        
+       
     ],
 ];

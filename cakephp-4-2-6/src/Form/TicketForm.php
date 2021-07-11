@@ -30,78 +30,78 @@ class TicketForm extends Form
         $validator
         //id_game
         ->requirePresence('id_game')
-        ->notEmptyString('id_game', 'To pole nie może być puste')
-        ->add('id_game', 'isGameExists', array(
+        ->notEmptyString('id_game', Configure::read('Config.Validations.CannotBeEmpty'))
+        ->add('id_game', 'game_exists', array(
             'rule' => array($this, 'isGameExists'),
-            'message' => 'Gra nie istnieje w serwisie'
+            'message' => Configure::read('Config.Validations.GameNotFound')
         ))
         //date_begin
         ->requirePresence('date_begin')
-        ->notEmptyString('date_begin', 'To pole nie może być puste')
-        ->add('date_begin', 'isProperlyDateBegin', array(
+        ->notEmptyString('date_begin', Configure::read('Config.Validations.CannotBeEmpty'))
+        ->add('date_begin', 'properly_date_begin', array(
             'rule' => array($this, 'isProperlyDateBegin'),
-            'message' => 'Data początkowa jest niepoprawna'
+            'message' => Configure::read('Config.Validations.DateInvalid')
         ))
         //date_end
         ->requirePresence('date_end')
-        ->notEmptyString('date_end', 'To pole nie może być puste')
-        ->add('date_end', 'isProperlyDateBegin', array(
+        ->notEmptyString('date_end', Configure::read('Config.Validations.CannotBeEmpty'))
+        ->add('date_end', 'properly_date_end', array(
             'rule' => array($this, 'isProperlyDateEnd'),
-            'message' => 'Data końcowa jest niepoprawna'
+            'message' => Configure::read('Config.Validations.DateInvalid')
         ))
         //collection1
         ->allowEmptyString('collection1')
-        ->add('collection1', 'isProperlyFormatCollection', array(
+        ->add('collection1', 'properly_format_collection', array(
             'rule' => array($this, 'isProperlyFormatCollection'),
-            'message' => 'Format deklaracji zakładu jest niepoprawny'
+            'message' => Configure::read('Config.Validations.NumbersOfTicketInvalid')
         ))
         //collection2
         ->allowEmptyString('collection2')
-        ->add('collection2', 'isProperlyFormatCollection', array(
+        ->add('collection2', 'properly_format_collection', array(
             'rule' => array($this, 'isProperlyFormatCollection'),
-            'message' => 'Format deklaracji zakładu jest niepoprawny'
+            'message' => Configure::read('Config.Validations.NumbersOfTicketInvalid')
         ))
         //collection3
         ->allowEmptyString('collection3')
-        ->add('collection3', 'isProperlyFormatCollection', array(
+        ->add('collection3', 'properly_format_collection', array(
             'rule' => array($this, 'isProperlyFormatCollection'),
-            'message' => 'Format deklaracji zakładu jest niepoprawny'
+            'message' => Configure::read('Config.Validations.NumbersOfTicketInvalid')
         ))
         //collection4
         ->allowEmptyString('collection4')
-        ->add('collection4', 'isProperlyFormatCollection', array(
+        ->add('collection4', 'properly_format_collection', array(
             'rule' => array($this, 'isProperlyFormatCollection'),
-            'message' => 'Format deklaracji zakładu jest niepoprawny'
+            'message' => Configure::read('Config.Validations.NumbersOfTicketInvalid')
         ))
         //collection5
         ->allowEmptyString('collection5')
-        ->add('collection5', 'isProperlyFormatCollection', array(
+        ->add('collection5', 'properly_format_collection', array(
             'rule' => array($this, 'isProperlyFormatCollection'),
-            'message' => 'Format deklaracji zakładu jest niepoprawny'
+            'message' => Configure::read('Config.Validations.NumbersOfTicketInvalid')
         ))
         //collection6
         ->allowEmptyString('collection6')
-        ->add('collection6', 'isProperlyFormatCollection', array(
+        ->add('collection6', 'properly_format_collection', array(
             'rule' => array($this, 'isProperlyFormatCollection'),
-            'message' => 'Format deklaracji zakładu jest niepoprawny'
+            'message' => Configure::read('Config.Validations.NumbersOfTicketInvalid')
         ))
         //collection7
         ->allowEmptyString('collection7')
-        ->add('collection7', 'isProperlyFormatCollection', array(
+        ->add('collection7', 'properly_format_collection', array(
             'rule' => array($this, 'isProperlyFormatCollection'),
-            'message' => 'Format deklaracji zakładu jest niepoprawny'
+            'message' => Configure::read('Config.Validations.NumbersOfTicketInvalid')
         ))
         //collection8
         ->allowEmptyString('collection8')
-        ->add('collection8', 'isProperlyFormatCollection', array(
+        ->add('collection8', 'properly_format_collection', array(
             'rule' => array($this, 'isProperlyFormatCollection'),
-            'message' => 'Format deklaracji zakładu jest niepoprawny'
+            'message' => Configure::read('Config.Validations.NumbersOfTicketInvalid')
         ));
         return $validator;
     }
     
     public function isGameExists($check) {
-        return array_key_exists($check, Configure::read('Config.Game'));
+        return array_key_exists($check, Configure::read('Config.Games'));
     }
     
     public function isProperlyDateBegin($check) {
@@ -117,25 +117,27 @@ class TicketForm extends Form
     }
     
     public function isProperlyFormatCollection($check) {
-        if(empty($check)) return true;
-        $games = Configure::read('Config.Game');
-        if(array_key_exists($this->getData('id_game'), $games) == false) return false;
-        $game = $games[$this->getData('id_game')];
+        if(empty($check) == true) return true;
+        $games = Configure::read('Config.Games');
+        $gameId = $this->getData('id_game');
+        if(array_key_exists($gameId, $games) == false) return false;
+        $game = $games[$gameId];
         $check = preg_replace('/\s{2,}/i', ' ', trim($check));
-        $array = explode(' ', $check);
-        if(sizeof($array) != $game['numbersInCollection']) return false;
+        $numbers = explode(' ', $check);
+        if(sizeof($numbers) != $game['numbersInCollection']) return false;
+        
+        
+        
+        //TODO
+        
+        
         $temporary = array();
-        foreach($array as $number){
+        foreach($numbers as $number){
             if(ctype_digit(strval($number)) == false) return false;
             if((int)$number < 1 || (int)$number > $game['theGreatestNumber']) return false;
             $temporary[(int)$number] = '';
         }
         if(sizeof($temporary) != $game['numbersInCollection']) return false;
-        return true;
-    }
-    
-    protected function _execute(array $data): bool
-    {
         return true;
     }
 }

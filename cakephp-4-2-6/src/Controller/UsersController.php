@@ -23,6 +23,7 @@ class UsersController extends AppController
 
     public function register()
     {
+        $this->request->allowMethod(['get', 'post']);
         $result = $this->Authentication->getResult();
         if ($result->isValid() == true)
         {
@@ -47,7 +48,7 @@ class UsersController extends AppController
                 $this->EmailProvider->sendAboutRegistration($user);
                 //END: sendEmail
                 $this->myFlashSuccess(Configure::read('Config.Messages.RegisterFormSuccess'));
-                $this->redirect(array('action' => 'login'));
+                $this->redirect(array('controller' => 'users', 'action' => 'login'));
             }
             catch(Exception $e)
             {
@@ -58,6 +59,7 @@ class UsersController extends AppController
     
     public function activate($userId, $activatingHash)
     {
+        $this->request->allowMethod(['get']);
         $this->autoRender = false;
         try
         {
@@ -79,11 +81,12 @@ class UsersController extends AppController
         {
             $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
         }
-        $this->redirect(array('action' => 'login'));
+        $this->redirect(array('controller' => 'users', 'action' => 'login'));
     }
     
     public function reset()
     {
+        $this->request->allowMethod(['get', 'post']);
         $result = $this->Authentication->getResult();
         if ($result->isValid() == true)
         {
@@ -114,7 +117,7 @@ class UsersController extends AppController
                     //END: sendEmail
                 }
                 $this->myFlashSuccess(Configure::read('Config.Messages.ResetFormSuccess'));
-                $this->redirect(array('action' => 'login'));
+                $this->redirect(array('controller' => 'users', 'action' => 'login'));
             }
             catch(Exception $e)
             {
@@ -125,28 +128,25 @@ class UsersController extends AppController
     
     public function logout()
     {
+        $this->request->allowMethod(['get']);
         $this->myFlashSuccess(Configure::read('Config.Messages.UserLogout'));
-        $this->Authentication->logout();
-        $this->redirect(array('action' => 'login'));
+        $result = $this->Authentication->getResult();
+        if ($result->isValid() == true) 
+        {
+            $this->Authentication->logout();
+            $this->redirect(array('controller' => 'users', 'action' => 'login'));
+        }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //TODO
     public function login()
     {
+        $this->request->allowMethod(['get', 'post']);
+        $result = $this->Authentication->getResult();
+        if ($result->isValid() == true)
+        {
+            $target = $this->Authentication->getLoginRedirect() ?? '/users/results';
+            return $this->redirect($target);
+        }
         //BEGIN: bodyClass
         $this->set('bodyClass', 'login');
         //END: bodyClass
@@ -156,7 +156,7 @@ class UsersController extends AppController
         {
             try
             {
-                if($form->validate($this->request->getData()) == false) throw new Exception();
+                if($form->execute($this->request->getData()) == false) throw new Exception();
                 $users = FactoryLocator::get('Table')->get('Users');
                 $user = $users->find()
                     ->where(array('email' => $this->request->getData()['email']))
@@ -164,50 +164,19 @@ class UsersController extends AppController
                 if($user['is_account_active'] == false) throw new Exception(Configure::read('Config.Messages.UserBlocked'));
                 if($user['is_email_confirmation'] == false) throw new Exception(Configure::read('Config.Messages.UserBlocked'));
                 if($user['is_blocked'] == true) throw new Exception(Configure::read('Config.Messages.UserBlocked'));                
-                $result = $this->Authentication->getResult();
-                if ($result->isValid() == false) throw new Exception(Configure::read('Config.Messages.LoginFormFailed'));                
-                $target = $this->Authentication->getLoginRedirect() ?? '/users/results';
-                return $this->redirect($target);
+                if((new DefaultPasswordHasher)->check($this->request->getData()['password'], $user->password) == false) throw new Exception(Configure::read('Config.Messages.LoginFormFailed'));
+                $this->Authentication->setIdentity($user);
+                $this->redirect(array('controller' => 'users', 'action' => 'results'));
             }
             catch (Exception $e)
             {
                 $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
             }
         }
-        else 
-        {
-            //TODO
-            
-            
-            
-            //if($this->Authentication->getIdentity() != null)
-            //{
-                //debug($this->Authentication->getIdentity()); 
-                
-                //$this->myFlashSuccess("BBBBBBBBBBBBB");
-            //}
-            //$result = $this->Authentication->getResult();            
-            //if ($result->isValid() == true)
-            //{
-                //$this->myFlashSuccess("Zalogowanooo");
-                //$target = $this->Authentication->getLoginRedirect() ?? '/users/results';
-                //return $this->redirect($target);
-            //}
-        }
     }
     
-    
-
-    
-    
-    
-    
-    
-    
-    
-    //TODO
     public function settings(){
-        $this->user = $this->Authentication->getIdentity();
+        $this->request->allowMethod(['get', 'post']);
         $form = new SettingsForm();
         $this->set('form', $form);
         if ($this->request->is('post'))
@@ -231,24 +200,31 @@ class UsersController extends AppController
                     $dataToUpdated['is_email_confirmation'] = 0;
                 }
                 $userChangePassword = empty($data['password_new']) == false;
-                if($userChangePassword)
+                if($userChangePassword == true)
                 {
                     $dataToUpdated['password'] = (new DefaultPasswordHasher)->hash($data['password_new']);
                 }
                 $users->patchEntity($user, $dataToUpdated);
                 if($users->save($user) == false) throw new Exception();
+                $result = $this->Authentication->getResult();
                 if($userChangeEmail == true)
                 {
                     $this->EmailProvider->sendAboutChangeEmail($user);
                     $this->myFlashSuccess(Configure::read('Config.Messages.UserMustUnblock'));
-                    $this->Authentication->logout();
-                    $this->redirect(array('action' => 'login'));
+                    if ($result->isValid() == true)
+                    {
+                        $this->Authentication->logout();
+                    }
+                    $this->redirect(array('controller' => 'users', 'action' => 'login'));
                 }
                 else if($userChangePassword)
                 {
                     $this->myFlashSuccess(Configure::read('Config.Messages.UserMustUseNewPassword'));
-                    $this->Authentication->logout();
-                    $this->redirect(array('action' => 'login'));
+                    if ($result->isValid() == true)
+                    {
+                        $this->Authentication->logout();
+                    }
+                    $this->redirect(array('controller' => 'users', 'action' => 'login'));
                 }
                 else
                 {
@@ -280,20 +256,13 @@ class UsersController extends AppController
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    public function tickets(){
-     
+    public function tickets()
+    {
+        //TODO
     }
-    public function results(){
-        
+    
+    public function results()
+    {
+        //TODO
     }
 }

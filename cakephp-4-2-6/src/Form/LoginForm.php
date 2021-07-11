@@ -2,6 +2,7 @@
 
 namespace App\Form;
 
+use Cake\Core\Configure;
 use Cake\Form\Form;
 use Cake\Form\Schema;
 use Cake\Validation\Validator;
@@ -20,16 +21,16 @@ class LoginForm extends Form
         $validator
         //email
             ->requirePresence('email')
-            ->notEmptyString('email', 'Nie może być puste')
-            ->email('email', false, 'Nieprawidłowy adres e-mail')
-            ->maxLength('email', 100, 'Długość przekracza 100 znaków długości')
+            ->notEmptyString('email', Configure::read('Config.Validations.CannotBeEmpty'))
+            ->email('email', false, Configure::read('Config.Validations.EmailFormatFailed'))
+            ->maxLength('email', 100, Configure::read('Config.Validations.Max100Characters'))
         //password
             ->requirePresence('password')
-            ->notEmptyString('password', 'Nie może być puste')
-            ->lengthBetween('password', array(6, 22), 'Długość nie jest w przedziale <6;22> znaków długości')
+            ->notEmptyString('password', Configure::read('Config.Validations.CannotBeEmpty'))
+            ->lengthBetween('password', array(6, 22), Configure::read('Config.Validations.Min6Max22Characters'))
             ->add('password', 'custom', array(
                 'rule' => array('custom', '/^[A-Za-z0-9]*$/i'),
-                'message' => 'Zawiera nieodpowiednie znaki'
+                'message' => Configure::read('Config.Validations.FailedCharacters')
             ));
         return $validator;
     }

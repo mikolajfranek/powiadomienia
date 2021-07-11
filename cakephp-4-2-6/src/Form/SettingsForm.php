@@ -46,21 +46,18 @@ class SettingsForm extends Form
                 'rule' => array('custom', '/^[A-Za-z0-9]*$/i'),
                 'message' => Configure::read('Config.Validations.FailedCharacters')
             ))
-            ->add('password', 'match_passwords', array(
+            ->add('password', 'match_passwords_old', array(
                 'rule' => array($this, 'isPasswordMatched'),
                 'message' => Configure::read('Config.Validations.PasswordInvalid')
             ))
         //password_new
             ->allowEmptyString('password_new')
-            ->add('password_new', 'length_password', array(
-                'rule' => array($this, 'isPasswordNewLength'),
-                'message' => Configure::read('Config.Validations.Min6Max22Characters')
-            ))
+            ->lengthBetween('password_new', array(6, 22), Configure::read('Config.Validations.Min6Max22Characters'))
             ->add('password_new', 'custom', array(
                 'rule' => array('custom', '/^[A-Za-z0-9]*$/i'),
                 'message' => Configure::read('Config.Validations.FailedCharacters')
             ))
-            ->add('password_new', 'match_passwords', array(
+            ->add('password_new', 'match_passwords_new', array(
                 'rule' => array($this, 'isPasswordNewMatched'),
                 'message' => Configure::read('Config.Validations.PasswordIsTheSame')
             ));
@@ -82,10 +79,6 @@ class SettingsForm extends Form
             ->where(array('id' => $this->getData('id')))
             ->first();
         return (new DefaultPasswordHasher)->check($check, $user->password) == true;
-    }
-    
-    public function isPasswordNewLength($check) {
-        return strlen($check) >= 6 && strlen($check) <= 22;
     }
     
     public function isPasswordNewMatched($check) {

@@ -13,13 +13,25 @@ class TicketsController extends AppController
     public function ticket($id = null){
         $this->set('game', null);
         $form = new TicketForm();
+        
+        
+        
+        
+        
+        
+        
+        
+        
         if ($this->request->is('post')) {
             try{
                 $data = $this->request->getData();
                 if ($form->execute($data) == false) throw new Exception('Wystąpił błąd w przetwarzaniu formularza rejestracji kuponu.');
+
                 if(((isset($data['collection1']) && empty($data['collection1']) == false) || (isset($data['collection2']) && empty($data['collection2']) == false) || (isset($data['collection3']) && empty($data['collection3']) == false) || (isset($data['collection4']) && empty($data['collection4']) == false) || (isset($data['collection5']) && empty($data['collection5']) == false) || (isset($data['collection6']) && empty($data['collection6']) == false) || (isset($data['collection7']) && empty($data['collection7']) == false) || (isset($data['collection8']) && empty($data['collection8']) == false) ) == false) {
-                    throw new Exception('Do zarejestrowania kuponu wymagana jest deklaracja minimalnie jednego zakładu.');
+                    throw new Exception('Do zarejestrowania kuponu wymagana jest deklaracja minimalnie jednego zakładu.');                
                 }
+                
+                
                 $numbers = array();
                 if((isset($data['collection1']) && empty($data['collection1']) == false)) $numbers[] = $this->sortCollection($data['collection1']);
                 if((isset($data['collection2']) && empty($data['collection2']) == false)) $numbers[] = $this->sortCollection($data['collection2']);
@@ -29,6 +41,8 @@ class TicketsController extends AppController
                 if((isset($data['collection6']) && empty($data['collection6']) == false)) $numbers[] = $this->sortCollection($data['collection6']);
                 if((isset($data['collection7']) && empty($data['collection7']) == false)) $numbers[] = $this->sortCollection($data['collection7']);
                 if((isset($data['collection8']) && empty($data['collection8']) == false)) $numbers[] = $this->sortCollection($data['collection8']);
+
+                
                 $tickets = FactoryLocator::get('Table')->get('Tickets');
                 $ticket = $tickets->newEmptyEntity();
                 if($id != null){
@@ -57,6 +71,9 @@ class TicketsController extends AppController
                 if ($tickets->save($ticket) == false) {
                     throw new Exception('Nie udało się zapisać kuponu.');
                 }
+                
+                
+                
                 $this->Flash->success('Pomyślnie zarejestrowano kupon.');
                 return $this->redirect(array('action' => 'ticket', $ticket->id));
             }catch(Exception $e){

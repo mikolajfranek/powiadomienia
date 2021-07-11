@@ -9,7 +9,7 @@ $email_of_user = strlen($email_of_user) > 22 ? substr($email_of_user, 0, 22) . "
 <!-- BEGIN: Top Bar -->
 <div class="top-bar">
     <!-- BEGIN: Breadcrumb -->
-    <div class="-intro-x breadcrumb mr-auto hidden sm:flex">
+    <div class="-intro-x breadcrumb mr-auto sm:flex">
     	<?= $breadcrumbPart1 ?>
     	<i data-feather="chevron-right" class="breadcrumb__icon"></i>
     	<span class="breadcrumb--active"><?= $breadcrumbPart2 ?></span>

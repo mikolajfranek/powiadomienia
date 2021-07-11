@@ -44,7 +44,7 @@ use Cake\Core\Configure;
             	}
                 echo $this->Html->link('<div class="side-menu__icon"><i data-feather="dollar-sign"></i></div><div class="side-menu__title">Dotacja</div>',
                     array("controller" => "pages", "action" => "donate"),
-                    array( "escape" => false, "class" => "side-menu"));
+                    array( "escape" => false, "class" => $class));
         	?>
         </li>	 
     </ul>

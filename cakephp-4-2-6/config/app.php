@@ -17,21 +17,13 @@ use Cake\Mailer\Transport\MailTransport;
  * 
  * 
  * PRACE
- * userscontroller / {settings profile}
- * pages donate
- * menu
- * logowanie nie działa, post (zablokowane konto), odświeżenie (jest zalogowany??)
- * 
- * 
- * 
+ * userscontroller / {results}
  * data do (aktywacja) linku (ważny 15 min)
- * zablokowanie innych niż get/post
  * 
  * 
  * 
  * DONE
  * default layout
- * userscontroller / {settings profile}
  * app.php
  * app_local
  */
@@ -464,25 +456,66 @@ return [
             'SettingsSuccess' => 'Pomyślnie zaktualizowano dane użytkownika.',            
             'UserMustUnblock' => 'Zmieniono email oraz wysłano wiadomość na pocztę elektroniczą. Odblokuj konto za pomocą linku odblokowującego wysłanego na Twoją pocztę elektroniczną.',
             'UserMustUseNewPassword'=> 'Pomyślnie zaktualizowano dane użytkownika. Zaloguj się ponownie korzystając z nowego hasła.',
+            'TicketRegisterSucess' => 'Pomyślnie zarejestrowano kupon.',
         ], 
         'Validations' => [
-            'IsInUse' => 'Wartość jest już w użyciu',
-            'CannotBeEmpty' => 'Wartość nie może być pusta',
-            'EmailFormatFailed' => 'Nieprawidłowy adres email',
-            'Max100Characters' => 'Maksymalnie 100 znaki długości',
-            'Min6Max22Characters' => 'Wymagane minimalnie 6, maksymalnie 22 znaki długości',
-            'FailedCharacters' => 'Zawiera nieodpowiednie znaki',
-            'PasswordsNotMached' => 'Hasła nie pasują do siebie',
+            'IsInUse' => 'Wartość jest już w użyciu.',
+            'CannotBeEmpty' => 'Wartość nie może być pusta.',
+            'EmailFormatFailed' => 'Nieprawidłowy adres email.',
+            'Max100Characters' => 'Maksymalnie 100 znaki długości.',
+            'Min6Max22Characters' => 'Wymagane minimalnie 6, maksymalnie 22 znaki długości.',
+            'FailedCharacters' => 'Zawiera nieodpowiednie znaki.',
+            'PasswordsNotMached' => 'Hasła nie pasują do siebie.',
             'PasswordInvalid' => 'Hasło nie zgadza się z aktualnym.',
-            'PasswordIsTheSame' => 'Nowe hasło musi być inne niż aktualne.',  
+            'PasswordIsTheSame' => 'Nowe hasło musi być inne niż aktualne.',
+            'TicketFormatInvalid' => 'Format deklaracji zakładu jest niepoprawny.',
+            'GameNotFound' => 'Gra nie istnieje w serwisie.',
+            'DateInvalid' => 'Deklarowana data jest niepoprawna.',            
+            'NumbersOfTicketInvalid' => 'Format deklaracji zakładu jest niepoprawny.',
         ],
         'Breadcrumb' => [
             'User' => 'Użytkownik',
+            'Web' => 'Powiadomienia',
         ],
         'MenuSide' => [
             'GamesList' => false,
             'TicketsRegister' => false,
             'PagesDonate' => false,
-        ]
+        ],
+        'Combobox' => [
+            'Empty' => 'proszę wybrać element z listy'
+        ],
+        'Games' => [
+            1 => [
+                'queryParameter' => 'el',
+                'description' => 'Dawniej "Express lotek"',
+                'name' => 'Mini Lotto',
+                'nameStatistic' => 'Mini Lotto',
+                'numbersInCollection' => 5,
+                'theGreatestNumber' => 42,
+                'numbersToWin' => 3,
+                'dayOfWeek' => array(1, 2, 3, 4, 5, 6, 7)
+            ],
+            2 => [
+                'queryParameter' => 'dl',
+                'description' => 'Dawniej "Duży lotek"',
+                'name' => 'Lotto',
+                'nameStatistic' => 'Lotto',
+                'numbersInCollection' => 6,
+                'theGreatestNumber' => 49,
+                'numbersToWin' => 3,
+                'dayOfWeek' => array(2, 4, 6)
+            ],
+            3 => [
+                'queryParameter' => 'lp',
+                'description' => 'Dodatkowe losowanie dla kuponu "Duży lotek"',
+                'name' => 'Lotto z Plusem',
+                'nameStatistic' => 'Lotto Plus',
+                'numbersInCollection' => 6,
+                'theGreatestNumber' => 49,
+                'numbersToWin' => 3,
+                'dayOfWeek' => array(2, 4, 6)
+            ],
+        ],
     ],
 ];

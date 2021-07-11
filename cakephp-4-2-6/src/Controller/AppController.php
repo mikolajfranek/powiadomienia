@@ -47,14 +47,12 @@ class AppController extends Controller
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
         $this->loadComponent('Authentication.Authentication');
-        
-        
 
         /*
          * Enable the following component for recommended CakePHP form protection settings.
          * see https://book.cakephp.org/4/en/controllers/components/form-protection.html
          */
-        //$this->loadComponent('FormProtection');
+        $this->loadComponent('FormProtection');
         
         $this->loadComponent('EmailProvider');
     }
@@ -70,6 +68,7 @@ class AppController extends Controller
         date_default_timezone_set('Europe/Warsaw');
         //get 
         $this->set('menuside', Configure::read('Config.MenuSide'));
+        $this->user = $this->Authentication->getIdentity();
     }
     
     public function beforeRender($event)

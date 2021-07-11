@@ -15,9 +15,19 @@ use Cake\Core\Configure;
             	<?php
             	   echo $this->Form->create($form);
             	   echo $this->Form->label('id_game', "Gra hazardowa");
-            	   echo $this->Form->control('id_game', array('options' => Configure::read('Config.IdToGame'), 'default' => $game, 'empty' => '-- wybierz grę -- ', 'label' => false, "autocomplete" => "new-password"));
+            	   echo $this->Form->control('id_game', 
+            	       
+            	       
+            	       array('options' => Configure::read('Config.IdToGame'), 
+            	           
+            	           
+            	           'default' => $game, 
+            	           
+            	           'empty' => '-- wybierz grę -- ', "autocomplete" => "new-password"));
             	   echo $this->Form->control("date_begin", array('type' => 'date', 'label' => 'Ważny od', "autocomplete" => "new-password"));
             	   echo $this->Form->control("date_end", array('type' => 'date', 'label' => 'Ważny do', "autocomplete" => "new-password"));
+            	   
+            	   
             	   echo $this->Form->control("collection1", array('label' => 'Zakład 1', "placeholder" => 'Zakład 1',  "autocomplete" => "new-password"));
             	   echo $this->Form->control("collection2", array('label' => 'Zakład 2', "placeholder" => 'Zakład 2',  "autocomplete" => "new-password"));
             	   echo $this->Form->control("collection3", array('label' => 'Zakład 3', "placeholder" => 'Zakład 3',  "autocomplete" => "new-password"));
