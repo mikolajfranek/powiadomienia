@@ -9,7 +9,13 @@ use App\Form\TicketForm;
 
 class TicketsController extends AppController
 {  
-    public function register()
+    protected function sortCollection($collectionString){
+        $array = explode(' ', $collectionString);
+        sort($array);
+        return trim(implode(" ", $array));
+    }
+    
+    public function register($id = null)
     {
         $this->request->allowMethod(['get', 'post']);
         $form = new TicketForm();
@@ -17,6 +23,9 @@ class TicketsController extends AppController
         $menuside = Configure::read('Config.MenuSide');
         $menuside['TicketsRegister'] = true;
         $this->set('menuside',$menuside);
+        
+        
+        
         $this->set('selectedGameId', null);
         if ($this->request->is('post'))
         {
@@ -24,10 +33,23 @@ class TicketsController extends AppController
             {
                 $data = $this->request->getData();
                 if ($form->execute($data) == false) throw new Exception();
+                $numbers = array();
+                $emptyElements = 0;
+                for($i = 1; $i < 9; $i++)
+                {
+                    if(empty($data['collection' . $i]) == true)
+                    {
+                        $emptyElements += 1;
+                    }
+                    else
+                    {
+                        $numbers[] = $this->sortCollection($data['collection' . $i]);
+                    }
+                }
+                if($emptyElements == 8) throw new Exception(Configure::read('Config.Messages.CannotRegisterEmptyTicket'));
                 
-                //TODO ticket form i tutaj
-                
-                
+                //TODO teraz
+                //przy pustym formularzu, id_game blokuje formularz
                 
                 
                 

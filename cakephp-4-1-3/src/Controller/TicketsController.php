@@ -27,21 +27,25 @@ class TicketsController extends AppController
                 $data = $this->request->getData();
                 if ($form->execute($data) == false) throw new Exception('Wystąpił błąd w przetwarzaniu formularza rejestracji kuponu.');
 
-                if(((isset($data['collection1']) && empty($data['collection1']) == false) || (isset($data['collection2']) && empty($data['collection2']) == false) || (isset($data['collection3']) && empty($data['collection3']) == false) || (isset($data['collection4']) && empty($data['collection4']) == false) || (isset($data['collection5']) && empty($data['collection5']) == false) || (isset($data['collection6']) && empty($data['collection6']) == false) || (isset($data['collection7']) && empty($data['collection7']) == false) || (isset($data['collection8']) && empty($data['collection8']) == false) ) == false) {
-                    throw new Exception('Do zarejestrowania kuponu wymagana jest deklaracja minimalnie jednego zakładu.');                
-                }
                 
                 
-                $numbers = array();
-                if((isset($data['collection1']) && empty($data['collection1']) == false)) $numbers[] = $this->sortCollection($data['collection1']);
-                if((isset($data['collection2']) && empty($data['collection2']) == false)) $numbers[] = $this->sortCollection($data['collection2']);
-                if((isset($data['collection3']) && empty($data['collection3']) == false)) $numbers[] = $this->sortCollection($data['collection3']);
-                if((isset($data['collection4']) && empty($data['collection4']) == false)) $numbers[] = $this->sortCollection($data['collection4']);
-                if((isset($data['collection5']) && empty($data['collection5']) == false)) $numbers[] = $this->sortCollection($data['collection5']);
-                if((isset($data['collection6']) && empty($data['collection6']) == false)) $numbers[] = $this->sortCollection($data['collection6']);
-                if((isset($data['collection7']) && empty($data['collection7']) == false)) $numbers[] = $this->sortCollection($data['collection7']);
-                if((isset($data['collection8']) && empty($data['collection8']) == false)) $numbers[] = $this->sortCollection($data['collection8']);
-
+                
+                
+                <select 
+                    'required'=>"required",
+                        
+                        'data-validity-message'=>"Wartość nie może być pusta.",
+                            'oninvalid'=>"this.setCustomValidity(''); if (!this.value) this.setCustomValidity(this.dataset.validityMessage)", 
+                                'oninput'=>"this.setCustomValidity('')"
+                                    
+                                    >
+                                
+                                
+                                <option value="">proszę wybrać element z listy</option><option value="1">Mini Lotto</option><option value="2">Lotto</option><option value="3">Lotto z Plusem</option></select>
+                
+                
+                
+                
                 
                 $tickets = FactoryLocator::get('Table')->get('Tickets');
                 $ticket = $tickets->newEmptyEntity();
@@ -56,6 +60,8 @@ class TicketsController extends AppController
                         $this->redirect(array('action' => 'ticket'));
                     }
                 }
+                
+                
                 $countActive = $tickets->find()
                     ->where(array('is_deleted' => 0, 'id_user' => $this->Auth->user()['id']))
                     ->count('*');
@@ -118,12 +124,7 @@ class TicketsController extends AppController
         }
         $this->set('form', $form);
     }
-    
-    protected function sortCollection($collectionString){
-        $array = explode(' ', $collectionString);
-        sort($array);
-        return trim(implode(" ", $array));
-    }
+
     
     public function delete($id){
         $this->autoRender = false;

@@ -24,11 +24,11 @@ class SettingsForm extends Form
     {
         $validator
         //is_email_notification
-        ->allowEmptyString('is_email_notification')
-        ->add('is_email_notification', 'custom', array(
-            'rule' => array('custom', '/^[01]*$/i'),
-            'message' => Configure::read('Config.Validations.FailedCharacters')
-        ))
+            ->allowEmptyString('is_email_notification')
+            ->add('is_email_notification', 'custom', array(
+                'rule' => array('custom', '/^[01]*$/i'),
+                'message' => Configure::read('Config.Validations.FailedCharacters')
+            ))
         //email
             ->requirePresence('email')
             ->notEmptyString('email', Configure::read('Config.Validations.CannotBeEmpty'))

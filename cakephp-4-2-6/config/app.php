@@ -457,6 +457,7 @@ return [
             'UserMustUnblock' => 'Zmieniono email oraz wysłano wiadomość na pocztę elektroniczą. Odblokuj konto za pomocą linku odblokowującego wysłanego na Twoją pocztę elektroniczną.',
             'UserMustUseNewPassword'=> 'Pomyślnie zaktualizowano dane użytkownika. Zaloguj się ponownie korzystając z nowego hasła.',
             'TicketRegisterSucess' => 'Pomyślnie zarejestrowano kupon.',
+            'CannotRegisterEmptyTicket' => 'Do zarejestrowania kuponu wymagana jest deklaracja minimalnie jednego zakładu.',
         ], 
         'Validations' => [
             'IsInUse' => 'Wartość jest już w użyciu.',
@@ -471,7 +472,7 @@ return [
             'TicketFormatInvalid' => 'Format deklaracji zakładu jest niepoprawny.',
             'GameNotFound' => 'Gra nie istnieje w serwisie.',
             'DateInvalid' => 'Deklarowana data jest niepoprawna.',            
-            'NumbersOfTicketInvalid' => 'Format deklaracji zakładu jest niepoprawny.',
+            'NumbersOfTicketInvalid' => 'Format deklaracji zakładu jest niepoprawny (separatorem między deklarowanymi liczbami jest znak spacji).',
         ],
         'Breadcrumb' => [
             'User' => 'Użytkownik',
