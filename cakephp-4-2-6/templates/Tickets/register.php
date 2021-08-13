@@ -35,7 +35,7 @@ foreach($games as $key => $game){
            		 		        "options" => $options, 
            		 		        "default" => $selectedGameId,
            		 		        "empty" => Configure::read('Config.Combobox.Empty'),
-           		 		        "class" => "tail-select w-full",
+           		 		        "class" => "form-select w-full",
            		 		        "id" => "crud-form-combobox"
            		 		    ));
        		 		    ?>

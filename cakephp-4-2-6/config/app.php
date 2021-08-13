@@ -13,12 +13,15 @@ use Cake\Mailer\Transport\MailTransport;
  * blokada zapytań wielu (strumień zapytań)
  * blokada wysyłania X email w beforefilter?
  * brak strony - error-illustration.svg
+ * data do (aktywacja) linku (ważny 15 min)
+ * 
+ * 
  * 
  * 
  * 
  * PRACE
  * userscontroller / {results}
- * data do (aktywacja) linku (ważny 15 min)
+ * 
  * 
  * 
  * 
@@ -458,6 +461,8 @@ return [
             'UserMustUseNewPassword'=> 'Pomyślnie zaktualizowano dane użytkownika. Zaloguj się ponownie korzystając z nowego hasła.',
             'TicketRegisterSucess' => 'Pomyślnie zarejestrowano kupon.',
             'CannotRegisterEmptyTicket' => 'Do zarejestrowania kuponu wymagana jest deklaracja minimalnie jednego zakładu.',
+            'CannotFindTicket' => 'Nie znaleziono kuponu.',
+            'LimitAmountOfTickets' => 'Nie można dodać kuponu, maksymalna liczba kuponów to 5.'
         ], 
         'Validations' => [
             'IsInUse' => 'Wartość jest już w użyciu.',

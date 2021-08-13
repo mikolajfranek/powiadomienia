@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Cake\Core\Configure;
+use Cake\Datasource\FactoryLocator;
 use Cake\Event\EventInterface;
 use Exception;
 use App\Form\TicketForm;
@@ -25,8 +26,10 @@ class TicketsController extends AppController
         $this->set('menuside',$menuside);
         
         
-        
         $this->set('selectedGameId', null);
+        //???
+        
+        
         if ($this->request->is('post'))
         {
             try
@@ -47,15 +50,41 @@ class TicketsController extends AppController
                     }
                 }
                 if($emptyElements == 8) throw new Exception(Configure::read('Config.Messages.CannotRegisterEmptyTicket'));
-                
-                //TODO teraz
-                //przy pustym formularzu, id_game blokuje formularz
-                
-                
-                
-                
+                $tickets = FactoryLocator::get('Table')->get('Tickets');
+                $ticket = $tickets->newEmptyEntity();
+                if($id != null)
+                {
+                    $count = $tickets->find()
+                        ->where(array('id' => $id, 'id_user' => $this->user['id']))
+                        ->count('*');
+                    if($count == 1) 
+                    {
+                        $ticket->id = $id;
+                    }
+                    else
+                    {
+                        $this->myFlashError(null, Configure::read('Config.Messages.CannotFindTicket'));
+                        return $this->redirect(array('action' => 'register'));
+                    }
+                }
+                $countActive = $tickets->find()
+                    ->where(array('id_user' => $this->user['id']))
+                    ->count('*');
+                if($countActive > 4)
+                {
+                    throw new Exception('Config.Messages.LimitAmountOfTickets');
+                }
+                $ticket->id_game = $data['id_game'];
+                $ticket->id_user = $this->user['id'];
+                $ticket->date_begin = $data['date_begin'];
+                $ticket->date_end = $data['date_end'];
+                $ticket->numbers = json_encode($numbers);
+                if ($tickets->save($ticket) == false) 
+                {
+                    throw new Exception();
+                }
                 $this->myFlashSuccess(Configure::read('Config.Messages.TicketRegisterSucess'));
-                //return $this->redirect(array('action' => 'ticket', $ticket->id));
+                return $this->redirect(array('action' => 'register', $ticket->id));
             }
             catch (Exception $e)
             {
@@ -64,6 +93,21 @@ class TicketsController extends AppController
         }
         else
         {
+            
+            
+            
+            if($id != null)
+            {
+                
+            }
+            else
+            {
+                $game = $this->request->getQuery('id_game');
+                debug($game);
+                
+            }
+            
+            
             
         }
     }

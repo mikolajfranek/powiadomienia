@@ -30,6 +30,7 @@ class TicketForm extends Form
         $validator
         //id_game
             ->requirePresence('id_game')
+            ->notEmptyString('id_game', Configure::read('Config.Validations.CannotBeEmpty'))
             ->add('id_game', 'game_exists', array(
                 'rule' => array($this, 'isGameExists'),
                 'message' => Configure::read('Config.Validations.GameNotFound')

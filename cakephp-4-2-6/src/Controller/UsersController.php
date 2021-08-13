@@ -48,7 +48,7 @@ class UsersController extends AppController
                 $this->EmailProvider->sendAboutRegistration($user);
                 //END: sendEmail
                 $this->myFlashSuccess(Configure::read('Config.Messages.RegisterFormSuccess'));
-                $this->redirect(array('controller' => 'users', 'action' => 'login'));
+                return $this->redirect(array('controller' => 'users', 'action' => 'login'));
             }
             catch(Exception $e)
             {
@@ -81,7 +81,7 @@ class UsersController extends AppController
         {
             $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
         }
-        $this->redirect(array('controller' => 'users', 'action' => 'login'));
+        return $this->redirect(array('controller' => 'users', 'action' => 'login'));
     }
     
     public function reset()
@@ -117,7 +117,7 @@ class UsersController extends AppController
                     //END: sendEmail
                 }
                 $this->myFlashSuccess(Configure::read('Config.Messages.ResetFormSuccess'));
-                $this->redirect(array('controller' => 'users', 'action' => 'login'));
+                return $this->redirect(array('controller' => 'users', 'action' => 'login'));
             }
             catch(Exception $e)
             {
@@ -134,7 +134,7 @@ class UsersController extends AppController
         if ($result->isValid() == true) 
         {
             $this->Authentication->logout();
-            $this->redirect(array('controller' => 'users', 'action' => 'login'));
+            return $this->redirect(array('controller' => 'users', 'action' => 'login'));
         }
     }
     
@@ -166,7 +166,7 @@ class UsersController extends AppController
                 if($user['is_blocked'] == true) throw new Exception(Configure::read('Config.Messages.UserBlocked'));                
                 if((new DefaultPasswordHasher)->check($this->request->getData()['password'], $user->password) == false) throw new Exception(Configure::read('Config.Messages.LoginFormFailed'));
                 $this->Authentication->setIdentity($user);
-                $this->redirect(array('controller' => 'users', 'action' => 'results'));
+                return $this->redirect(array('controller' => 'users', 'action' => 'results'));
             }
             catch (Exception $e)
             {
@@ -215,7 +215,7 @@ class UsersController extends AppController
                     {
                         $this->Authentication->logout();
                     }
-                    $this->redirect(array('controller' => 'users', 'action' => 'login'));
+                    return $this->redirect(array('controller' => 'users', 'action' => 'login'));
                 }
                 else if($userChangePassword)
                 {
@@ -224,7 +224,7 @@ class UsersController extends AppController
                     {
                         $this->Authentication->logout();
                     }
-                    $this->redirect(array('controller' => 'users', 'action' => 'login'));
+                    return $this->redirect(array('controller' => 'users', 'action' => 'login'));
                 }
                 else
                 {
