@@ -24,15 +24,10 @@ class TicketsController extends AppController
         $menuside = Configure::read('Config.MenuSide');
         $menuside['TicketsRegister'] = true;
         $this->set('menuside',$menuside);
-        
-        
         $this->set('selectedGameId', null);
-        //???
-        
-        
-        if ($this->request->is('post'))
+        try
         {
-            try
+            if ($this->request->is('post'))
             {
                 $data = $this->request->getData();
                 if ($form->execute($data) == false) throw new Exception();
@@ -76,8 +71,8 @@ class TicketsController extends AppController
                 }
                 $ticket->id_game = $data['id_game'];
                 $ticket->id_user = $this->user['id'];
-                $ticket->date_begin = $data['date_begin'];
-                $ticket->date_end = $data['date_end'];
+                $ticket->date_begin = date('Y-m-d H:i:s',strtotime($data['date_begin']));
+                $ticket->date_end = date('Y-m-d H:i:s',strtotime($data['date_end']));
                 $ticket->numbers = json_encode($numbers);
                 if ($tickets->save($ticket) == false) 
                 {
@@ -85,30 +80,46 @@ class TicketsController extends AppController
                 }
                 $this->myFlashSuccess(Configure::read('Config.Messages.TicketRegisterSucess'));
                 return $this->redirect(array('action' => 'register', $ticket->id));
-            }
-            catch (Exception $e)
-            {
-                $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
-            }
-        }
-        else
-        {
-            
-            
-            
-            if($id != null)
-            {
-                
+          
             }
             else
             {
-                $game = $this->request->getQuery('id_game');
-                debug($game);
-                
+                if($id != null)
+                {
+                    $tickets = FactoryLocator::get('Table')->get('Tickets');
+                    $ticket = $tickets->find()
+                        ->where(array('id' => $id, 'id_user' => $this->user['id']))
+                        ->first();
+                    if($ticket != null) 
+                    {
+                        $this->set('selectedGameId', $ticket->id_game);
+                        $decoded = json_decode($ticket->numbers);
+                        $form->setData([
+                            'date_begin' => $ticket->date_begin,
+                            'date_end' => $ticket->date_end,
+                            'collection1' => isset($decoded[0]) ? $decoded[0] : '',
+                            'collection2' => isset($decoded[1]) ? $decoded[1] : '',
+                            'collection3' => isset($decoded[2]) ? $decoded[2] : '',
+                            'collection4' => isset($decoded[3]) ? $decoded[3] : '',
+                            'collection5' => isset($decoded[4]) ? $decoded[4] : '',
+                            'collection6' => isset($decoded[5]) ? $decoded[5] : '',
+                            'collection7' => isset($decoded[6]) ? $decoded[6] : '',
+                            'collection8' => isset($decoded[7]) ? $decoded[7] : '',
+                        ]);
+                    }
+                }
+                else
+                {
+                    $game = $this->request->getQuery('game');
+                    if(array_key_exists($game, Configure::read('Config.Games'))){
+                        $this->set('selectedGameId', $game);
+                    }
+                }
             }
-            
-            
-            
+        }
+        catch (Exception $e)
+        {
+            $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
         }
     }
 }

@@ -494,7 +494,7 @@ return [
         'Games' => [
             1 => [
                 'queryParameter' => 'el',
-                'description' => 'Dawniej "Express lotek"',
+                'description' => 'Dawniej "Express lotek".',
                 'name' => 'Mini Lotto',
                 'nameStatistic' => 'Mini Lotto',
                 'numbersInCollection' => 5,
@@ -504,7 +504,7 @@ return [
             ],
             2 => [
                 'queryParameter' => 'dl',
-                'description' => 'Dawniej "Duży lotek"',
+                'description' => 'Dawniej "Duży lotek".',
                 'name' => 'Lotto',
                 'nameStatistic' => 'Lotto',
                 'numbersInCollection' => 6,
@@ -514,7 +514,7 @@ return [
             ],
             3 => [
                 'queryParameter' => 'lp',
-                'description' => 'Dodatkowe losowanie dla kuponu "Duży lotek"',
+                'description' => 'Lotto z dodatkiem.',
                 'name' => 'Lotto z Plusem',
                 'nameStatistic' => 'Lotto Plus',
                 'numbersInCollection' => 6,
