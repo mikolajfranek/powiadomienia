@@ -258,6 +258,9 @@ class UsersController extends AppController
     
     public function tickets()
     {
+        $this->request->allowMethod(['get']);
+        
+        
         //TODO
     }
     

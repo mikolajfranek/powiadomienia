@@ -14,6 +14,7 @@ class GamesController extends AppController
     
     public function list()
     {
+        $this->request->allowMethod(['get']);
         $menuside = Configure::read('Config.MenuSide');
         $menuside['GamesList'] = true;
         $this->set('menuside',$menuside);

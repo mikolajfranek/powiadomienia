@@ -16,7 +16,7 @@ use Cake\Core\Configure;
             </h2>
         </div>
         <div class="grid grid-cols-12 gap-6 mt-5">
-             <!-- BEGIN: Data List -->
+            <!-- BEGIN: Data List -->
             <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
                 <table class="table table-report -mt-2">
                     <thead>
