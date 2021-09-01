@@ -462,7 +462,7 @@ return [
             'TicketRegisterSucess' => 'Pomyślnie zarejestrowano kupon.',
             'CannotRegisterEmptyTicket' => 'Do zarejestrowania kuponu wymagana jest deklaracja minimalnie jednego zakładu.',
             'CannotFindTicket' => 'Nie znaleziono kuponu.',
-            'LimitAmountOfTickets' => 'Nie można dodać kuponu, maksymalna liczba kuponów to 5.'
+            'LimitAmountOfTickets' => 'Nie można dodać kuponu, maksymalna liczba kuponów to 10.'
         ], 
         'Validations' => [
             'IsInUse' => 'Wartość jest już w użyciu.',

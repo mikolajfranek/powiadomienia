@@ -35,9 +35,9 @@ class UsersController extends AppController
         //END: bodyClass
         $form = new RegisterForm();
         $this->set('form', $form);
-        if ($this->request->is('post')) 
+        try
         {
-            try
+            if ($this->request->is('post'))
             {
                 if ($form->execute($this->request->getData()) == false) throw new Exception();
                 $users = FactoryLocator::get('Table')->get('Users');
@@ -50,10 +50,10 @@ class UsersController extends AppController
                 $this->myFlashSuccess(Configure::read('Config.Messages.RegisterFormSuccess'));
                 return $this->redirect(array('controller' => 'users', 'action' => 'login'));
             }
-            catch(Exception $e)
-            {
-                $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
-            }
+        }
+        catch(Exception $e)
+        {
+            $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
         }
     }
     
@@ -98,9 +98,9 @@ class UsersController extends AppController
         //END: bodyClass
         $form = new ResetForm();
         $this->set('form', $form);
-        if ($this->request->is('post'))
+        try
         {
-            try
+            if ($this->request->is('post'))
             {
                 if ($form->execute($this->request->getData()) == false) throw new Exception();
                 $users = FactoryLocator::get('Table')->get('Users');
@@ -119,10 +119,10 @@ class UsersController extends AppController
                 $this->myFlashSuccess(Configure::read('Config.Messages.ResetFormSuccess'));
                 return $this->redirect(array('controller' => 'users', 'action' => 'login'));
             }
-            catch(Exception $e)
-            {
-                $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
-            }
+        }
+        catch(Exception $e)
+        {
+            $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
         }
     }
     
@@ -152,9 +152,9 @@ class UsersController extends AppController
         //END: bodyClass
         $form = new LoginForm();
         $this->set('form', $form);
-        if ($this->request->is('post'))
+        try
         {
-            try
+            if ($this->request->is('post'))
             {
                 if($form->execute($this->request->getData()) == false) throw new Exception();
                 $users = FactoryLocator::get('Table')->get('Users');
@@ -168,20 +168,21 @@ class UsersController extends AppController
                 $this->Authentication->setIdentity($user);
                 return $this->redirect(array('controller' => 'users', 'action' => 'results'));
             }
-            catch (Exception $e)
-            {
-                $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
-            }
+        }
+        catch (Exception $e)
+        {
+            $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
         }
     }
     
-    public function settings(){
+    public function settings()
+    {
         $this->request->allowMethod(['get', 'post']);
         $form = new SettingsForm();
         $this->set('form', $form);
-        if ($this->request->is('post'))
+        try
         {
-            try
+            if ($this->request->is('post'))
             {
                 $data = $this->request->getData();
                 $data['id'] = $this->user['id'];
@@ -231,37 +232,39 @@ class UsersController extends AppController
                     $this->myFlashSuccess(Configure::read('Config.Messages.SettingsSuccess'));
                 }
             }
-            catch (Exception $e)
-            {
-                $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
-            }
-        }
-        else
-        {
-            try
+            else
             {
                 $users = FactoryLocator::get('Table')->get('Users');
                 $user = $users->find()
-                    ->where(array('id' => $this->user['id']))
-                    ->first();
+                ->where(array('id' => $this->user['id']))
+                ->first();
                 $form->setData([
                     'is_email_notification' => $user->is_email_notification,
                     'email' => $user->email
                 ]);
             }
-            catch (Exception $e)
-            {
-                $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
-            }
+        }
+        catch (Exception $e)
+        {
+            $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
         }
     }
     
     public function tickets()
     {
         $this->request->allowMethod(['get']);
-        
-        
-        //TODO
+        try
+        {
+            $tickets = FactoryLocator::get('Table')->get('Tickets');
+            $ticketsOfUser = $tickets->find()
+                ->where(array('id_user' => $this->user['id']))
+                ->all();
+            $this->set('tickets', $ticketsOfUser);
+        }
+        catch (Exception $e)
+        {
+            $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
+        }
     }
     
     public function results()

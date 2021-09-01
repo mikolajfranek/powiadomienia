@@ -65,7 +65,7 @@ class TicketsController extends AppController
                 $countActive = $tickets->find()
                     ->where(array('id_user' => $this->user['id']))
                     ->count('*');
-                if($countActive > 4)
+                if($countActive > 9)
                 {
                     throw new Exception('Config.Messages.LimitAmountOfTickets');
                 }
@@ -121,5 +121,12 @@ class TicketsController extends AppController
         {
             $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
         }
+    }
+
+    public function delete($id)
+    {
+        $this->request->allowMethod(['get']);
+        $this->autoRender = false;
+        //TODO
     }
 }

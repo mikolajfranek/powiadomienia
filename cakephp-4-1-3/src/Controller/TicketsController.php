@@ -38,11 +38,4 @@ class TicketsController extends AppController
         return $this->redirect(array('action' => 'list'));
     }
     
-    public function list(){
-        $tickets = FactoryLocator::get('Table')->get('Tickets');
-        $ticketsOfUser = $tickets->find()
-            ->where(array('id_user' => $this->Auth->user()['id'], 'is_deleted' => false))
-            ->all();
-        $this->set('ticketsOfUser', $ticketsOfUser);
-    }
 }
