@@ -10,7 +10,8 @@ use App\Form\TicketForm;
 
 class TicketsController extends AppController
 {  
-    protected function sortCollection($collectionString){
+    protected function sortCollection($collectionString)
+    {
         $array = explode(' ', $collectionString);
         sort($array);
         return trim(implode(" ", $array));
@@ -80,7 +81,6 @@ class TicketsController extends AppController
                 }
                 $this->myFlashSuccess(Configure::read('Config.Messages.TicketRegisterSucess'));
                 return $this->redirect(array('action' => 'register', $ticket->id));
-          
             }
             else
             {
@@ -125,8 +125,24 @@ class TicketsController extends AppController
 
     public function delete($id)
     {
-        $this->request->allowMethod(['get']);
+        $this->request->allowMethod(['post']);
         $this->autoRender = false;
-        //TODO
+        try
+        {
+            $tickets = FactoryLocator::get('Table')->get('Tickets');
+            $ticket = $tickets->find()
+                ->where(array('id' => $id, 'id_user' => $this->Auth->user()['id']))
+                ->first();
+            if($ticket != null) 
+            {                
+                if($tickets->delete($ticket) == false) throw new Exception(Configure::read('Config.Messages.CannotDeleteTicket'));
+                $this->myFlashSuccess(Configure::read('Config.Messages.DeleteTicketSuccess'));
+            }
+        }
+        catch (Exception $e)
+        {
+            $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
+        }
+        return $this->redirect(array('controller' => 'users', 'action' => 'tickets'));
     }
 }

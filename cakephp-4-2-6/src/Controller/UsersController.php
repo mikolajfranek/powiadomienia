@@ -12,6 +12,7 @@ use Cake\Core\Configure;
 use Cake\Datasource\FactoryLocator;
 use Cake\Event\EventInterface;
 use Exception;
+use App\Form\DeleteTicketForm;
 
 class UsersController extends AppController
 {
@@ -253,6 +254,8 @@ class UsersController extends AppController
     public function tickets()
     {
         $this->request->allowMethod(['get']);
+        $form = new DeleteTicketForm();
+        $this->set('form', $form);
         try
         {
             $tickets = FactoryLocator::get('Table')->get('Tickets');

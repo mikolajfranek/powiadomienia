@@ -32,11 +32,12 @@ $games = Configure::read('Config.Games');
                         </div>
                         <div class="px-5 pb-8 text-center">
                             <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1">Anuluj</button>
-                            <?php 
-                                echo $this->Html->link("Usuń", 
-                                    "",
-                                    array("escape" => false, "class" => "btn btn-danger w-24", "id" => "delete-confirmation-modal-button-delete"));
-                            ?>
+                            
+                            <div id="delete-confirmation-modal-form-delete">
+                            
+                            </div>
+                            
+                           
                         </div>
                     </div>
                 </div>
@@ -91,7 +92,24 @@ $games = Configure::read('Config.Games');
     {
     	modal = function (id) 
     	{
-        	$("#delete-confirmation-modal-button-delete").attr("href", "/tickets/delete/" + id);
+
+			//wykonać ajax
+			//ustawić zmienną w sesji
+			//ustawić ją w formularzu?
+        	
+    		//miss id in url
+        	
+    		var form = '<?php
+    		  echo $this->Form->create($form, array('url' => array('controller'=>'tickets', 'action'=>'delete/')));
+    		  echo $this->Form->button("Usuń", array("escape" => false, "class" => "btn btn-danger w-24"));
+    		  echo $this->Form->end();
+    		?>';
+
+    		$("#delete-confirmation-modal-form-delete").html(form);
+    		
+        	
+    		//$("#delete-confirmation-modal-form-delete").attr("action", "/tickets/delete/" + id);
+        	//$("#delete-confirmation-modal-button-delete").attr("href", "/tickets/delete/" + id);
         }
     });
 </script>
