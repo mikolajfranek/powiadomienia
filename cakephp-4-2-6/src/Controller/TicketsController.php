@@ -10,6 +10,12 @@ use App\Form\TicketForm;
 
 class TicketsController extends AppController
 {  
+    public function beforeFilter(EventInterface $event)
+    {
+        parent::beforeFilter($event);
+        $this->Authentication->allowUnauthenticated(['ajax']);
+    }
+    
     protected function sortCollection($collectionString)
     {
         $array = explode(' ', $collectionString);
@@ -123,15 +129,20 @@ class TicketsController extends AppController
         }
     }
 
-    public function delete($id)
+    public function delete()
     {
+        $id = $this->request->getSession()->consume('Powiadomienia.Form.DeleteTicket');
+        
+        debug($id);
+        exit;
+        
         $this->request->allowMethod(['post']);
         $this->autoRender = false;
         try
         {
             $tickets = FactoryLocator::get('Table')->get('Tickets');
             $ticket = $tickets->find()
-                ->where(array('id' => $id, 'id_user' => $this->Auth->user()['id']))
+                ->where(array('id' => $id, 'id_user' => $this->user['id']))
                 ->first();
             if($ticket != null) 
             {                
@@ -145,4 +156,15 @@ class TicketsController extends AppController
         }
         return $this->redirect(array('controller' => 'users', 'action' => 'tickets'));
     }
+    
+    public function ajax()
+    {
+        $this->request->allowMethod(['post']);
+        $this->autoRender = false;
+        
+        
+        //$this->request->getSession()->write('Powiadomienia.Form.DeleteTicket', $this->request->data('id'));
+        echo 'abc';
+    }
+    
 }

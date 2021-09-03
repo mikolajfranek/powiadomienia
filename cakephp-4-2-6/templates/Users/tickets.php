@@ -31,13 +31,14 @@ $games = Configure::read('Config.Games');
                             </div>
                         </div>
                         <div class="px-5 pb-8 text-center">
+                            <?php
+                                echo $this->Form->create($form, array("url" => array("controller" => "tickets", "action" => "delete")));
+                            ?>
                             <button type="button" data-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1">Anuluj</button>
-                            
-                            <div id="delete-confirmation-modal-form-delete">
-                            
-                            </div>
-                            
-                           
+                            <?php 
+                                echo $this->Form->button("Usuń", array("escape" => false, "class" => "btn btn-danger w-24"));
+                                echo $this->Form->end();
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -92,24 +93,34 @@ $games = Configure::read('Config.Games');
     {
     	modal = function (id) 
     	{
+			//musi być post, bo get to bez sensu...
 
-			//wykonać ajax
-			//ustawić zmienną w sesji
-			//ustawić ją w formularzu?
-        	
-    		//miss id in url
-        	
-    		var form = '<?php
-    		  echo $this->Form->create($form, array('url' => array('controller'=>'tickets', 'action'=>'delete/')));
-    		  echo $this->Form->button("Usuń", array("escape" => false, "class" => "btn btn-danger w-24"));
-    		  echo $this->Form->end();
-    		?>';
-
-    		$("#delete-confirmation-modal-form-delete").html(form);
     		
+			//problem with ajax, 
+			//ajax cakephp4 CSRF token from either the request body or request headers did not match or is missing. site:stackoverflow.com
+			//when post
+			
         	
-    		//$("#delete-confirmation-modal-form-delete").attr("action", "/tickets/delete/" + id);
-        	//$("#delete-confirmation-modal-button-delete").attr("href", "/tickets/delete/" + id);
+    		var csrfToken = '<?php json_encode($this->request->getParam('_csrfToken')) ?>';
+            $.ajax({
+            
+                 beforeSend: function(xhr){
+                     xhr.setRequestHeader('X-CSRF-Token', getCookie('csrfToken'));
+                 },
+
+                 
+                type: 'post',
+                url: '/tickets/ajax',
+                data: {'id': id
+                    },
+                datatype: 'json',
+                
+                
+                success: function(result)
+                { 
+                    console.log(result);
+            	}
+            });
         }
     });
 </script>
