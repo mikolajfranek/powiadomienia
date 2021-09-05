@@ -10,12 +10,6 @@ use App\Form\TicketForm;
 
 class TicketsController extends AppController
 {  
-    public function beforeFilter(EventInterface $event)
-    {
-        parent::beforeFilter($event);
-        $this->Authentication->allowUnauthenticated(['ajax']);
-    }
-    
     protected function sortCollection($collectionString)
     {
         $array = explode(' ', $collectionString);
@@ -159,12 +153,10 @@ class TicketsController extends AppController
     
     public function ajax()
     {
-        $this->request->allowMethod(['post']);
+        $this->request->allowMethod(['post', 'put']);
         $this->autoRender = false;
-        
-        
         //$this->request->getSession()->write('Powiadomienia.Form.DeleteTicket', $this->request->data('id'));
-        echo 'abc';
+        echo "abc";
     }
     
 }

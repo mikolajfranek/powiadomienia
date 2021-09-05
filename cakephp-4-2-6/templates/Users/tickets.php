@@ -91,31 +91,28 @@ $games = Configure::read('Config.Games');
 <script type="text/javascript">
     $(document).ready(function() 
     {
+
+    	   var ajaxdata = $("#ajaxForm").serializeArray();
+    	   
     	modal = function (id) 
     	{
 			//musi być post, bo get to bez sensu...
 
-    		
 			//problem with ajax, 
 			//ajax cakephp4 CSRF token from either the request body or request headers did not match or is missing. site:stackoverflow.com
 			//when post
 			
         	
-    		var csrfToken = '<?php json_encode($this->request->getParam('_csrfToken')) ?>';
             $.ajax({
-            
-                 beforeSend: function(xhr){
-                     xhr.setRequestHeader('X-CSRF-Token', getCookie('csrfToken'));
-                 },
-
-                 
+            	beforeSend: function(xhr){
+            	    xhr.setRequestHeader(
+            	        'X-CSRF-Token', <?= json_encode($this->request->getAttribute('csrfToken')); ?>
+            	    );
+            	},
                 type: 'post',
+                dataType: "text",
+                data: "id=" + id +"&_TOKEN=null",
                 url: '/tickets/ajax',
-                data: {'id': id
-                    },
-                datatype: 'json',
-                
-                
                 success: function(result)
                 { 
                     console.log(result);
