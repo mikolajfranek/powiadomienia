@@ -125,18 +125,13 @@ class TicketsController extends AppController
 
     public function delete()
     {
-        $id = $this->request->getSession()->consume('Powiadomienia.Form.DeleteTicket');
-        
-        debug($id);
-        exit;
-        
         $this->request->allowMethod(['post']);
         $this->autoRender = false;
         try
         {
             $tickets = FactoryLocator::get('Table')->get('Tickets');
             $ticket = $tickets->find()
-                ->where(array('id' => $id, 'id_user' => $this->user['id']))
+                ->where(array('id' => $this->request->getData()["id"], 'id_user' => $this->user['id']))
                 ->first();
             if($ticket != null) 
             {                
@@ -150,13 +145,4 @@ class TicketsController extends AppController
         }
         return $this->redirect(array('controller' => 'users', 'action' => 'tickets'));
     }
-    
-    public function ajax()
-    {
-        $this->request->allowMethod(['post', 'put']);
-        $this->autoRender = false;
-        //$this->request->getSession()->write('Powiadomienia.Form.DeleteTicket', $this->request->data('id'));
-        echo "abc";
-    }
-    
 }
