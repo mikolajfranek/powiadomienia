@@ -54,53 +54,17 @@ class NotificationsController extends AppController
             
          
             
-            //download results
-            $gameResults = array();
-            foreach(array_keys($gameTickets) as $idGame){
-                $url = Configure::read('Config.Notifications.url') . Configure::read('Config.Game')[$idGame]['queryParameter'];
-                $content = file_get_contents($url);
-                if(empty($content)) throw new Exception("Nie pobrano wyników loterii.");
-                $lastLotteryDate = $this->getLastLotteryDate($idGame);
-                $content = explode("\n", trim($content, "\n"));
-                if($lastLotteryDate == null || $content[0] != $lastLotteryDate){
-                    throw new Exception("Dzień loterii jest nieprawidłowy.");
-                }
-                unset($content[0]);
-                $gameResults[$idGame] = $content;
-            }
+         
 
-            //compare results and sending email
-            $emails = FactoryLocator::get('Table')->get('Emails');
-            $resultsToSave = array();
-            foreach($gameResults as $idGame => $winnerNumbers){
-                foreach($gameTickets[$idGame] as $idUser => $tickets){
-                    $results = $this->compareResultWithTicketsOfUser(Configure::read('Config.Game')[$idGame]['numbersToWin'], $winnerNumbers, $tickets);
-                    $resultsToSave = array_merge($resultsToSave, $results['wins'], $results['loses']);
-                    if($users[$idUser]['is_email_notification'] == 1){
-                        try{
-                            $email = $emails->newEmptyEntity();
-                            $email->id_game = $idGame;
-                            $email->id_user = $idUser;
-                            $email->address = $users[$idUser]['email'];
-                            $email->content = (empty($results['wins']) == false ? "Wygrałeś" : "Przegrałeś")  . " - najlepsze trafienie to " . $results['winLevel'];
-                            $email->lottery_date = date('Y-m-d', time());
-                            if ($emails->save($email) == false) {
-                                throw new Exception('Nie udało się zapisać emailu.');
-                            }
-                            $this->EmailProvider->sendNotification($users[$idUser], $results, Configure::read('Config.Game')[$idGame]['nameStatistic'], $email->id);
-                            $email->sent = date('Y-m-d H:i:s', time());
-                            if ($emails->save($email) == false) {
-                                throw new Exception('Nie udało się zaktualizować emailu.');
-                            }
-                        }catch (Exception $e){
-                            Log::write('error', isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "");
-                            Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
-                            Log::write('error', $e->getMessage());
-                            Log::write('error', $e->getTraceAsString());
-                        }
-                    }
-                }
-            }
+       
+            
+            
+            
+            
+            
+            
+            
+            
 
             //save in results table
             $results = FactoryLocator::get('Table')->get('Results');
@@ -112,6 +76,9 @@ class NotificationsController extends AppController
             
             //send email about success of process
             $this->EmailProvider->sendMessageToAdmin("Success", "Cron działa, powiadomienia zostały wysłane.");
+            
+            
+            
         }catch(Exception $e){
             Log::write('error', isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "");
             Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
@@ -131,60 +98,6 @@ class NotificationsController extends AppController
         exit;
     }
     
-    protected function getLastLotteryDate($idGame){
-        switch($idGame){
-            case Configure::read('Config.GameToId.MiniLotto'):
-                return date('Y-m-d',  time());
-            case Configure::read('Config.GameToId.Lotto'):
-            case Configure::read('Config.GameToId.LottoAndLottoPlus'):
-                $dayOfWeek = date('D', time());
-                switch($dayOfWeek){
-                    case 'Tue':
-                    case 'Thu':
-                    case 'Sat':
-                        return date('Y-m-d', time());
-                    case 'Mon':
-                    case 'Sun':
-                        return date('Y-m-d', strtotime('last Saturday'));
-                    case 'Fri':
-                        return date('Y-m-d', strtotime('last Thursday'));
-                    case 'Wed':
-                        return date('Y-m-d', strtotime('last Tuesday'));
-                }
-        }
-        return null;
-    }
+
     
-    protected function compareResultWithTicketsOfUser($numbersToWin, $winnerNumbers, $tickets){
-        $lotteryDate = date('Y-m-d',  time());
-        $compare = array(
-            'wins' => array(),
-            'loses' => array(),
-            'winLevel' => 0
-        );
-        foreach($tickets as $ticket){
-            foreach(json_decode($ticket->numbers) as $numbers){
-                $numbers = explode(' ', $numbers);
-                $wins = array_intersect($winnerNumbers, $numbers);
-                $winLevel = count($wins);
-                if($winLevel > $compare['winLevel']){
-                    $compare['winLevel'] = $winLevel;
-                }
-                $type = ($winLevel >= $numbersToWin) ? 'wins' : 'loses';
-                sort($winnerNumbers);
-                sort($numbers);
-                sort($wins);
-                $result = array();
-                $result['id_game'] = $ticket->id_game;
-                $result['id_user'] = $ticket->id_user;
-                $result['lottery_date'] = $lotteryDate;
-                $result['lottery_numbers'] = implode(';', $winnerNumbers);
-                $result['collection'] = implode(';', $numbers);
-                $result['winning_numbers'] =  implode(';', $wins);
-                $result['winning_amount'] = $winLevel;
-                $compare[$type][] = $result;   
-            }
-        }
-        return $compare;
-    }
 }

@@ -548,9 +548,7 @@ return [
             'web' => 'kontakt@powiadomienia.eu',
             'admin' => 'mikolaj.franek95@gmail.com'
         ),
-        'Notifications' => array(
-            'url' => 'https://app.lotto.pl/wyniki?type=',
-        ),
+        
         
        
     ],

@@ -445,7 +445,8 @@ return [
     ],
     'Config' => [
         'WebName' => 'Powiadomienia',
-        'Localhost' => array('127.0.0.1', '91.134.248.249'),
+        'Localhost' => ['127.0.0.1', '91.134.248.249'],
+        'NotificationsUrl' =>  'https://app.lotto.pl/wyniki?type=',
         'WebEmail' => 'eu.powiadomienia@gmail.com',
         'AdminEmail' => 'mikolaj.franek95@gmail.com',
         'Messages' => [
@@ -468,6 +469,8 @@ return [
             'DeleteTicketSuccess' => 'Pomyślnie usunięto kupon.',
             'UnknowHost' => 'Nieznany adres IP wywołujący rozsyłkę powiadomień.',
             'NoneOfActiveTickets' => 'Brak aktywnych kuponów.',
+            'CannotDownloadResults' => 'Nie pobrano wyników loterii.',
+            'InvalidDayOfLottery' => 'Dzień loterii jest nieprawidłowy.'
         ], 
         'Validations' => [
             'IsInUse' => 'Wartość jest już w użyciu.',
@@ -496,6 +499,11 @@ return [
         'Combobox' => [
             'Empty' => 'proszę wybrać element z listy'
         ],
+        'GameToId' => [
+            'MiniLotto' => 1,
+            'Lotto' => 2,
+            'LottoAndLottoPlus' => 3
+        ],
         'Games' => [
             1 => [
                 'queryParameter' => 'el',
@@ -505,7 +513,7 @@ return [
                 'numbersInCollection' => 5,
                 'theGreatestNumber' => 42,
                 'numbersToWin' => 3,
-                'dayOfWeek' => array(1, 2, 3, 4, 5, 6, 7)
+                'dayOfWeek' => [1, 2, 3, 4, 5, 6, 7]
             ],
             2 => [
                 'queryParameter' => 'dl',
@@ -515,7 +523,7 @@ return [
                 'numbersInCollection' => 6,
                 'theGreatestNumber' => 49,
                 'numbersToWin' => 3,
-                'dayOfWeek' => array(2, 4, 6)
+                'dayOfWeek' => [2, 4, 6]
             ],
             3 => [
                 'queryParameter' => 'lp',
@@ -525,7 +533,7 @@ return [
                 'numbersInCollection' => 6,
                 'theGreatestNumber' => 49,
                 'numbersToWin' => 3,
-                'dayOfWeek' => array(2, 4, 6)
+                'dayOfWeek' => [2, 4, 6]
             ],
         ],
     ],

@@ -3,7 +3,6 @@
 namespace App\Model\Table;
 
 use Cake\ORM\Table;
-use Cake\Auth\DefaultPasswordHasher;
 
 class EmailsTable extends Table
 {
