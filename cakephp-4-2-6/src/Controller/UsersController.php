@@ -269,6 +269,17 @@ class UsersController extends AppController
     
     public function results()
     {
-        //TODO
+        $this->request->allowMethod(['get']);
+        try
+        {
+            //TODO
+            
+            
+            
+        }
+        catch (Exception $e)
+        {
+            $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
+        }
     }
 }

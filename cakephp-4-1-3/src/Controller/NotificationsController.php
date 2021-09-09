@@ -10,18 +10,9 @@ use Cake\Datasource\FactoryLocator;
 
 class NotificationsController extends AppController
 {
-    public function initialize(): void
-    {
-        parent::initialize();
-        $this->loadComponent('EmailProvider');
-    }
+
     
-    public function beforeFilter(EventInterface $event)
-    {
-        parent::beforeFilter($event);
-        $this->Auth->allow(['send', 'delivered']);
-    }
-    
+
     public function delivered($userId, $emailId){
         $this->autoRender = false;
         date_default_timezone_set("Europe/Warsaw");
@@ -51,51 +42,17 @@ class NotificationsController extends AppController
     }
     
     public function send(){
-        $this->autoRender = false;
-        date_default_timezone_set("Europe/Warsaw");
+
         try{
-            //ip
-            $ip = $this->request->clientIp();
-            if(in_array($ip, Configure::read('Config.Localhost')) == false){
-                throw new Exception('Nieznany adres IP ' . $ip . ', wywołujący rozsyłkę powiadomień.');
-            }
+       
             
-            //active games
-            $activeGames = array();
-            foreach(Configure::read('Config.Game') as $id => $game){
-                if(in_array(date('N'), $game['dayOfWeek'])){
-                    $activeGames[] = $id;
-                }
-            }
+      
             
-            //active tickets
-            $tickets = FactoryLocator::get('Table')->get('Tickets');
-            $activeTickets = $tickets->find('all')
-                ->where(array(
-                    'Tickets.id_game IN' => $activeGames,
-                    'Tickets.is_deleted' => 0,
-                    'Tickets.date_begin <= CAST(CURDATE() as date)',
-                    'Tickets.date_end >= CAST(CURDATE() as date)',
-                    'Users.is_account_active' => 1,
-                    'Users.is_email_confirmation' => 1
-                ))
-                ->contain(['Users']);
-            if($activeTickets->count() == 0){
-                throw new Exception("Brak aktywnych kuponów");
-            }
             
-            //prepare variables before download results
-            $gameTickets = array();
-            $users = array();
-            foreach ($activeTickets as $ticket) {
-                $users[$ticket->user['id']] = $ticket->user;
-                $gameTickets[$ticket['id_game']][$ticket->user['id']][] = $ticket;
-                if($ticket['id_game'] == Configure::read('Config.GameToId.LottoAndLottoPlus')){
-                    $additionalTicket = $tickets->newEntity($ticket->toArray());
-                    $additionalTicket['id_game'] = Configure::read('Config.GameToId.Lotto');
-                    $gameTickets[$additionalTicket['id_game']][$additionalTicket->user['id']][] = $additionalTicket;
-                }
-            }
+            
+       
+            
+         
             
             //download results
             $gameResults = array();

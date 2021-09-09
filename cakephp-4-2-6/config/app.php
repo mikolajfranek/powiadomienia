@@ -445,6 +445,7 @@ return [
     ],
     'Config' => [
         'WebName' => 'Powiadomienia',
+        'Localhost' => array('127.0.0.1', '91.134.248.249'),
         'WebEmail' => 'eu.powiadomienia@gmail.com',
         'AdminEmail' => 'mikolaj.franek95@gmail.com',
         'Messages' => [
@@ -465,6 +466,8 @@ return [
             'LimitAmountOfTickets' => 'Nie można dodać kuponu, maksymalna liczba kuponów to 10.',
             'CannotDeleteTicket' => 'Nie usunięto kuponu.',
             'DeleteTicketSuccess' => 'Pomyślnie usunięto kupon.',
+            'UnknowHost' => 'Nieznany adres IP wywołujący rozsyłkę powiadomień.',
+            'NoneOfActiveTickets' => 'Brak aktywnych kuponów.',
         ], 
         'Validations' => [
             'IsInUse' => 'Wartość jest już w użyciu.',
