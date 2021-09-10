@@ -57,7 +57,7 @@ class UsersController extends AppController
         }
     }
     
-    public function activate($userId, $activatingHash)
+    public function activate($idUser, $activatingHash)
     {
         $this->request->allowMethod(['get']);
         $this->autoRender = false;
@@ -65,7 +65,7 @@ class UsersController extends AppController
         {
             $users = FactoryLocator::get('Table')->get('Users');
             $user = $users->find()
-                ->where(array('id' => $userId))
+                ->where(array('id' => $idUser))
                 ->first();
             if($user == null) throw new Exception(Configure::read('Config.Messages.UserNotFound'));
             $hash = DigestAuthenticate::password($user->email, $user->password, env('SERVER_NAME'));
@@ -273,7 +273,9 @@ class UsersController extends AppController
         try
         {
             //TODO
-            
+            //test notification
+            //test delivered
+            //test mails
             
             
         }

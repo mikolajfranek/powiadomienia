@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Cake\Auth\DigestAuthenticate;
 use Cake\Core\Configure;
 use Cake\Datasource\FactoryLocator;
 use Cake\Event\EventInterface;
@@ -23,10 +24,7 @@ class NotificationsController extends AppController
         {
             //ip
             $ip = trim($this->request->clientIp());
-            if(in_array($ip, Configure::read('Config.Localhost')) == false)
-            {
-                throw new Exception(Configure::read('Config.Messages.UnknowHost') . ' (' . $ip . ')');
-            }
+            if(in_array($ip, Configure::read('Config.Localhost')) == false) throw new Exception(Configure::read('Config.Messages.UnknowHost') . ' (' . $ip . ')');
             //active games
             $activeGames = array();
             foreach(Configure::read('Config.Games') as $id => $game)
@@ -48,10 +46,7 @@ class NotificationsController extends AppController
                     'Users.is_blocked' => false
                 ])
                 ->contain(['Users']);
-            if($activeTickets->count() == 0)
-            {
-                throw new Exception(Configure::read('Config.Messages.NoneOfActiveTickets'));
-            }
+            if($activeTickets->count() == 0) throw new Exception(Configure::read('Config.Messages.NoneOfActiveTickets'));
             //prepare variables before download results
             $gameTickets = array();
             $users = array();
@@ -72,27 +67,13 @@ class NotificationsController extends AppController
             {
                 $url = Configure::read('Config.NotificationsUrl') . Configure::read('Config.Game')[$idGame]['queryParameter'];
                 $content = file_get_contents($url);
-                if(empty($content)) 
-                {
-                    throw new Exception(Configure::read('Config.Messages.CannotDownloadResults'));
-                }
+                if(empty($content)) throw new Exception(Configure::read('Config.Messages.CannotDownloadResults'));
                 $lastLotteryDate = $this->getLastLotteryDate($idGame);
                 $content = explode("\n", trim($content, "\n"));
-                if($lastLotteryDate == null || $content[0] != $lastLotteryDate)
-                {
-                    throw new Exception(Configure::read('Config.Messages.InvalidDayOfLottery'));
-                }
+                if($lastLotteryDate == null || $content[0] != $lastLotteryDate) throw new Exception(Configure::read('Config.Messages.InvalidDayOfLottery'));
                 unset($content[0]);
                 $gameResults[$idGame] = $content;
             }
-            
-            
-            
-            
-            
-            
-            //TODO
-            
             //compare results and sending email
             $emails = FactoryLocator::get('Table')->get('Emails');
             $resultsToSave = array();
@@ -101,57 +82,99 @@ class NotificationsController extends AppController
                 foreach($gameTickets[$idGame] as $idUser => $tickets)
                 {
                     $idEmail = null;
-                    
-                    
-                    //zapisz email w bazie danych
-                    //spróbuj wysłać
-                    
-                    $results = $this->compareResultWithTicketsOfUser(Configure::read('Config.Game')[$idGame]['numbersToWin'], $winnerNumbers, $tickets, $idEmail);
-                    $resultsToSave = array_merge($resultsToSave, $results['wins'], $results['loses']);
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    if($users[$idUser]['is_email_notification'] == 1)
+                    if($users[$idUser]['is_email_notification'] == true)
                     {
-                        try{
+                        try
+                        {
                             $email = $emails->newEmptyEntity();
                             $email->id_game = $idGame;
                             $email->id_user = $idUser;
-                            $email->address = $users[$idUser]['email'];
-                            $email->content = (empty($results['wins']) == false ? "Wygrałeś" : "Przegrałeś")  . " - najlepsze trafienie to " . $results['winLevel'];
-                            $email->lottery_date = date('Y-m-d', time());
-                            if ($emails->save($email) == false) {
-                                throw new Exception('Nie udało się zapisać emailu.');
-                            }
-                            $this->EmailProvider->sendNotification($users[$idUser], $results, Configure::read('Config.Game')[$idGame]['nameStatistic'], $email->id);
-                            $email->sent = date('Y-m-d H:i:s', time());
-                            if ($emails->save($email) == false) {
-                                throw new Exception('Nie udało się zaktualizować emailu.');
-                            }
-                        }catch (Exception $e){
-                            //log exception
+                            $email->email = $users[$idUser]['email'];
+                            if ($emails->save($email) == false) throw new Exception();
+                            $idEmail = $email->id;
+                        }
+                        catch (Exception $e)
+                        {
+                            $this->myLogger($e);
                         }
                     }
-                    
-                    
-                    
-                    
+                    $compare = $this->compareResultWithTicketsOfUser(Configure::read('Config.Game')[$idGame]['numbersToWin'], $winnerNumbers, $tickets, $idEmail);
+                    $resultsToSave = array_merge($resultsToSave, $compare['wins'], $compare['loses']);
+                    if($idEmail != null)
+                    {
+                        try
+                        {
+                            $this->EmailProvider->sendNotification($users[$idUser], $compare, Configure::read('Config.Game')[$idGame]['nameStatistic'], $idEmail);                            
+                            $email = $emails->find()
+                                ->where(array('id' => $idEmail))
+                                ->first();
+                            if($email != null)
+                            {
+                                $email->date_sent = date('Y-m-d H:i:s', time());
+                                if ($emails->save($email) == false) throw new Exception();
+                            }
+                        }
+                        catch (Exception $e)
+                        {
+                            $this->myLogger($e);
+                        }
+                    }
                 }
             }
-            
-            
-            
-            
+            //save in results table
+            $results = FactoryLocator::get('Table')->get('Results');
+            $entitiesResults = $results->newEntities($resultsToSave);
+            if(count($results->saveMany($entitiesResults)) != count($resultsToSave)) throw new Exception();
+            //send email about success of process
+            $this->EmailProvider->sendMessageToAdmin("Success", "Cron działa, powiadomienia zostały wysłane.");
         }
         catch (Exception $e)
         {
-            $this->myFlashError($e, Configure::read('Config.Messages.Failed'));
+            $this->myLogger($e);
+            $this->EmailProvider->sendMessageToAdmin("Exception", $e->getMessage()); 
+        }
+        finally
+        {
+            ob_clean();
+            ob_start();
+            ob_end_flush();
+            exit;
+        }
+    }
+    
+    public function delivered($idUser, $idEmail, $inputHash)
+    {
+        $this->request->allowMethod(['get']);
+        $this->autoRender = false;
+        try
+        {
+            $users = FactoryLocator::get('Table')->get('Users');
+            $user = $users->find()
+                ->where(array('id' => $idUser))
+                ->first();
+            if($user == null) throw new Exception(Configure::read('Config.Messages.UserNotFound'));
+            $hash = DigestAuthenticate::password($idEmail, $user->password, env('SERVER_NAME'));
+            if($inputHash != $hash) throw new Exception(Configure::read('Config.Messages.UserNotFound'));
+            $emails = FactoryLocator::get('Table')->get('Emails');
+            $email = $emails->find()
+                ->where(array('id' => $idEmail, 'id_user' => $idUser, 'date_delivered IS' => null))
+                ->first();
+            if($email != null) 
+            {
+                $email->date_delivered = date('Y-m-d H:i:s', time());
+                if ($emails->save($email) == false) throw new Exception();
+            }
+        }
+        catch (Exception $e)
+        {
+            $this->myLogger($e);
+        }
+        finally
+        {
+            ob_clean();
+            ob_start();
+            ob_end_flush();
+            exit;
         }
     }
     

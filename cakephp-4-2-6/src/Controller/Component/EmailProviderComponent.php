@@ -51,60 +51,50 @@ class EmailProviderComponent extends Component
         $mailer->deliver($htmlContent);
     }
   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    public function sendMessageToAdmin($title, $message){        
+    public function sendNotification($user, $results, $nameOfGame, $idEmail)
+    {
         $mailer = new Mailer('default');
         $mailer
-            ->setTo(Configure::read('Config.Email.admin'))
-            ->setSubject(Configure::read('Config.WebName') . ' ['. (date('Y-m-d', time())) . '] ' . $title)
-            ->setEmailFormat('html');
-        $mailer->deliver('<p>' . $message . '</p>');
-    }
-    
-    public function sendNotification($user, $results, $nameOfGame, $emailId){
-        $mailer = new Mailer('default');
-        $mailer
-            ->setTo($user['email'])           
+            ->setTo($user->email)
             ->setSubject(Configure::read('Config.WebName') . ' ['. (date('Y-m-d', time())) . '][' . $nameOfGame . '] ' . (empty($results['wins']) == false ? "Wygrałeś - najlepsze trafienie to " . $results['winLevel'] : "Przegrałeś"))
             ->setEmailFormat('html');
-       
-        $url =  Router::fullBaseUrl() . '/notifications/delivered/' . $user['id'] . '/' . $emailId;
-        $content = "<img width='0' height='0' alt='' src='". $url ."'/>";
-        $content .= '<h3>Witaj ' . $user['login'] . '!</h3>' . '<p>' . $nameOfGame . ' oraz Twoje wyniki.</p><br/>';        
-        if(empty($results['wins']) == false){
-            $content .= "<p>Zwycięskie zakłady:</p>";
-            foreach($results['wins'] as $item){
-                $content .= '<p>Zakład ' . $item['collection'] .  ' trafił "' . $item['winning_amount']  . '" (' .  $item['winning_numbers']  . ') w losowaniu ' . $item['lottery_numbers'] . '</p>';
+        $hash = DigestAuthenticate::password($idEmail, $user->password, env('SERVER_NAME'));
+        $url =  Router::fullBaseUrl() . '/notifications/delivered/' . $user->id . '/' . $idEmail . '/' . $hash;
+        $htmlContent = '<img width="0" height="0" alt="" src="'. $url .'"/>';
+        $htmlContent .= '<h4>Witaj!</h4>';
+        $htmlContent .= '<h5>' . $nameOfGame . ' oraz Twoje wyniki.</h5><br/>';
+        if(empty($results['wins']) == false)
+        {
+            $htmlContent .= '<h6>Zwycięskie zakłady:</h6>';
+            foreach($results['wins'] as $item)
+            {
+                $htmlContent .= '<p>Zakład ' . $item['numbers_of_user'] . ' trafił "' . $item['amount_winning']  . '" (' .  $item['numbers_winning'] . ') w losowaniu ' . $item['numbers_lottery'] . '</p>';
             }
         }
-        if(empty($results['loses']) == false){
-            if(empty($results['wins']) == false){
-                $content .= "<br/>";
+        if(empty($results['loses']) == false)
+        {
+            if(empty($results['wins']) == false)
+            {
+                $htmlContent .= '<br/>';
             }
-            $content .= "<p>Przegrane zakłady:</p>";
-            foreach($results['loses'] as $item){
-                $content .= '<p>Zakład ' . $item['collection'] .  ' trafił "' . $item['winning_amount']  . '" (' .  $item['winning_numbers']  . ') w losowaniu ' . $item['lottery_numbers'] . '</p>';
+            $htmlContent .= '<h6>Przegrane zakłady:</h6>';
+            foreach($results['loses'] as $item)
+            {
+                $htmlContent .= '<p>Zakład ' . $item['numbers_of_user'] . ' trafił "' . $item['amount_winning']  . '" (' .  $item['numbers_winning'] . ') w losowaniu ' . $item['numbers_lottery'] . '</p>';
             }
         }
-        $mailer->deliver($content);
-    }  
+        $mailer->deliver($htmlContent);
+    } 
+    
+    public function sendMessageToAdmin($title, $message)
+    {        
+        $mailer = new Mailer('default');
+        $mailer
+            ->setTo(Configure::read('Config.AdminEmail'))
+            ->setSubject(Configure::read('Config.WebName') . ' ['. (date('Y-m-d', time())) . '] ' . $title)
+            ->setEmailFormat('html');    
+        $htmlContent = '<h4>Witaj!</h4>';
+        $htmlContent .= '<p>' . $message . '</p>';
+        $mailer->deliver($htmlContent);
+    }
 }

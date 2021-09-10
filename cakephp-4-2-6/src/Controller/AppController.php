@@ -80,9 +80,21 @@ class AppController extends Controller
         }
     }
     
+    protected function myLogger(Exception $e)
+    {
+        try
+        {
+            //TODO
+        }
+        catch(Exception $e)
+        {
+            //nothing            
+        }
+    }
+    
     protected function myFlashError(Exception $e, $messageIfExceptionHasEmptyMessage)
     {
-        //TODO - logger
+        $this->myLogger($e);
         $this->Flash->error(empty($e->getMessage()) == true ? $messageIfExceptionHasEmptyMessage : $e->getMessage(), ['key' => 'notification']);
     }
     
