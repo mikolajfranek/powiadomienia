@@ -15,20 +15,6 @@ use Cake\Mailer\Transport\MailTransport;
  * brak strony - error-illustration.svg
  * data do (aktywacja) linku (ważny 15 min)
  * 
- * 
- * 
- * 
- * 
- * PRACE
- * userscontroller / {results}
- * 
- * 
- * 
- * 
- * DONE
- * default layout
- * app.php
- * app_local
  */
 
 return [

@@ -39,8 +39,8 @@ class NotificationsController extends AppController
             $activeTickets = $tickets->find('all')
                 ->where([
                     'Tickets.id_game IN' => $activeGames,
-                    'Tickets.date_begin <= CAST(CURDATE() as date)',
-                    'Tickets.date_end >= CAST(CURDATE() as date)',
+                    'CAST(Tickets.date_begin as date) <= CAST(CURDATE() as date)',
+                    'CAST(Tickets.date_end as date) >= CAST(CURDATE() as date)',
                     'Users.is_account_active' => true,
                     'Users.is_email_confirmation' => true,
                     'Users.is_blocked' => false
@@ -65,7 +65,7 @@ class NotificationsController extends AppController
             $gameResults = array();
             foreach(array_keys($gameTickets) as $idGame)
             {
-                $url = Configure::read('Config.NotificationsUrl') . Configure::read('Config.Game')[$idGame]['queryParameter'];
+                $url = Configure::read('Config.NotificationsUrl') . Configure::read('Config.Games')[$idGame]['queryParameter'];
                 $content = file_get_contents($url);
                 if(empty($content)) throw new Exception(Configure::read('Config.Messages.CannotDownloadResults'));
                 $lastLotteryDate = $this->getLastLotteryDate($idGame);
@@ -98,13 +98,13 @@ class NotificationsController extends AppController
                             $this->myLogger($e);
                         }
                     }
-                    $compare = $this->compareResultWithTicketsOfUser(Configure::read('Config.Game')[$idGame]['numbersToWin'], $winnerNumbers, $tickets, $idEmail);
+                    $compare = $this->compareResultWithTicketsOfUser(Configure::read('Config.Games')[$idGame]['numbersToWin'], $winnerNumbers, $tickets, $idEmail);
                     $resultsToSave = array_merge($resultsToSave, $compare['wins'], $compare['loses']);
                     if($idEmail != null)
                     {
                         try
                         {
-                            $this->EmailProvider->sendNotification($users[$idUser], $compare, Configure::read('Config.Game')[$idGame]['nameStatistic'], $idEmail);                            
+                            $this->EmailProvider->sendNotification($users[$idUser], $compare, Configure::read('Config.Games')[$idGame]['nameStatistic'], $idEmail);                            
                             $email = $emails->find()
                                 ->where(array('id' => $idEmail))
                                 ->first();

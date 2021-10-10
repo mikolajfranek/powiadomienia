@@ -267,17 +267,26 @@ class UsersController extends AppController
         }
     }
     
-    public function results()
+    public function results($page = null)
     {
         $this->request->allowMethod(['get']);
         try
         {
-            //TODO
-            //test notification
-            //test delivered
-            //test mails
+            $page = $page ?? 1;
+            $page = $page < 1 ? 1 : $page;
+            $results = FactoryLocator::get('Table')->get('Results');
+            $resultsOfUser = $results->find()
+                ->where(array('Results.id_user' => $this->user['id']))
+                ->order('Results.id DESC')
+                //TODO limit na 10
+                ->page($page, 1)
+                ->contain(['Emails']);
             
-            
+            //TODO, count, żeby wiedzieć ile jest możliwych stron...?
+            //osobna metoda w AppController zwraracająca 'dane' paginatora
+                
+            $this->set('resultsOfUser', $resultsOfUser);
+            $this->set('page', $page);
         }
         catch (Exception $e)
         {

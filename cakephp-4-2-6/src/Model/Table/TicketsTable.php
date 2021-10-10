@@ -10,5 +10,6 @@ class TicketsTable extends Table
     {
         $this->setPrimaryKey('id');
         $this->setTable('tickets');
+        $this->belongsTo('Users')->setForeignKey('id_user');
     }
 }
