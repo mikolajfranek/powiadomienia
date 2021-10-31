@@ -275,18 +275,14 @@ class UsersController extends AppController
             $page = $page ?? 1;
             $page = $page < 1 ? 1 : $page;
             $results = FactoryLocator::get('Table')->get('Results');
-            $resultsOfUser = $results->find()
+            $query = $results->find()
                 ->where(array('Results.id_user' => $this->user['id']))
                 ->order('Results.id DESC')
-                //TODO limit na 10
                 ->page($page, 1)
                 ->contain(['Emails']);
-            
-            //TODO, count, żeby wiedzieć ile jest możliwych stron...?
-            //osobna metoda w AppController zwraracająca 'dane' paginatora
-                
+            $resultsOfUser = $this->paginate($query, array('limit' => 1, 'page' => $page)); //TODO usunać drugi parametr
             $this->set('resultsOfUser', $resultsOfUser);
-            $this->set('page', $page);
+            $this->set('paginate', $this->Paginator->getPaginator()->getPagingParams()['Results']);
         }
         catch (Exception $e)
         {

@@ -1,7 +1,16 @@
 /* Flash messages */
 .message.success {
-    color: #1f9d55;
+	color: #1f9d55;
 }
 .message.error {
-    color: #cc1f1a;
+	color: #cc1f1a;
+}
+.noClick {
+	pointer-events: none;
+}
+.textAlignCenter {
+	text-align: center !important;
+}
+.tabulator-table{
+	display: block !important;
 }
