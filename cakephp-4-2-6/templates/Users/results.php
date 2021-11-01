@@ -17,240 +17,99 @@ $games = Configure::read('Config.Games');
 		</div>
 		<div class="intro-y box p-5 mt-5">
 			<div class="overflow-x-auto scrollbar-hidden">
-				<div class="tabulator">
-				<?php echo $this->element('pagination', array('paginate' => $paginate)); ?>
-				<div class="mt-5 table-report table-report--tabulator tabulator">
+				<div class="tabulator mt-5 table-report table-report--tabulator tabulator">
+					<?php echo $this->element('pagination', array('paginate' => $paginate)); ?>
+						<div class="tabulator-tableHolder">
+						<!-- top is ok -->
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+							<div class="tabulator-header">
+    							<div class="tabulator-headers">
+    								
+                        			<div class="tabulator-col noClick">
+                        				<div class="tabulator-col-content">
+                        					<div class="tabulator-col-title-holder">
+                        						<div class="tabulator-col-title">Data</div>
+                        					</div>
+                        				</div>
+                        			</div>
+                        							
+    								<div class="tabulator-col noClick">
+                        				<div class="tabulator-col-content">
+                        					<div class="tabulator-col-title-holder">
+                        						<div class="tabulator-col-title">Kupon</div>
+                        					</div>
+                        				</div>
+                        			</div>
+						    		
+    							</div>
+							</div>
 				
 				
 				
 				
 				
-				
-					<div class="tabulator-tableHolder">
-					<div class="tabulator-header"
-		style="padding-right: 0px; margin-left: 0px;">
-		<div class="tabulator-headers" style="margin-left: 0px;">
-			<div class="tabulator-col" role="columnheader" aria-sort="none"
-				style="min-width: 30px; width: 40px; display: none; height: 44px;"
-				title="">
-				<div class="tabulator-col-content">
-					<div class="tabulator-col-title-holder">
-						<div class="tabulator-col-title">&nbsp;</div>
-					</div>
-				</div>
-				<div class="tabulator-col-resize-handle"></div>
-				<div class="tabulator-col-resize-handle prev"></div>
-			</div>
-			<div class="tabulator-col tabulator-sortable" role="columnheader"
-				aria-sort="none" tabulator-field="name"
-				style="min-width: 200px; height: 44px; width: 421px;" title="">
-				<div class="tabulator-col-content">
-					<div class="tabulator-col-title-holder">
-						<div class="tabulator-col-title">PRODUCT NAME</div>
-						<div class="tabulator-col-sorter">
-							<div class="tabulator-arrow"></div>
-						</div>
-					</div>
-				</div>
-				<div class="tabulator-col-resize-handle"></div>
-				<div class="tabulator-col-resize-handle prev"></div>
-			</div>
-			<div class="tabulator-col tabulator-sortable" role="columnheader"
-				aria-sort="none" tabulator-field="images"
-				style="min-width: 200px; height: 44px; width: 421px;" title="">
-				<div class="tabulator-col-content">
-					<div class="tabulator-col-title-holder">
-						<div class="tabulator-col-title">IMAGES</div>
-						<div class="tabulator-col-sorter">
-							<div class="tabulator-arrow"></div>
-						</div>
-					</div>
-				</div>
-				<div class="tabulator-col-resize-handle"></div>
-				<div class="tabulator-col-resize-handle prev"></div>
-			</div>
-			<div class="tabulator-col tabulator-sortable" role="columnheader"
-				aria-sort="none" tabulator-field="remaining_stock"
-				style="min-width: 200px; height: 44px; width: 421px;" title="">
-				<div class="tabulator-col-content">
-					<div class="tabulator-col-title-holder">
-						<div class="tabulator-col-title">REMAINING STOCK</div>
-						<div class="tabulator-col-sorter">
-							<div class="tabulator-arrow"></div>
-						</div>
-					</div>
-				</div>
-				<div class="tabulator-col-resize-handle"></div>
-				<div class="tabulator-col-resize-handle prev"></div>
-			</div>
-			<div class="tabulator-col tabulator-sortable" role="columnheader"
-				aria-sort="none" tabulator-field="status"
-				style="min-width: 200px; height: 44px; width: 421px;" title="">
-				<div class="tabulator-col-content">
-					<div class="tabulator-col-title-holder">
-						<div class="tabulator-col-title">STATUS</div>
-						<div class="tabulator-col-sorter">
-							<div class="tabulator-arrow"></div>
-						</div>
-					</div>
-				</div>
-				<div class="tabulator-col-resize-handle"></div>
-				<div class="tabulator-col-resize-handle prev"></div>
-			</div>
-			<div class="tabulator-col tabulator-sortable" role="columnheader"
-				aria-sort="none" tabulator-field="actions"
-				style="min-width: 200px; height: 44px; width: 424px;" title="">
-				<div class="tabulator-col-content">
-					<div class="tabulator-col-title-holder">
-						<div class="tabulator-col-title">ACTIONS</div>
-						<div class="tabulator-col-sorter">
-							<div class="tabulator-arrow"></div>
-						</div>
-					</div>
-				</div>
-				<div class="tabulator-col-resize-handle"></div>
-				<div class="tabulator-col-resize-handle prev"></div>
-			</div>
-			<div class="tabulator-col tabulator-sortable" role="columnheader"
-				aria-sort="none"
-				style="display: none; min-width: 40px; height: 44px;"
-				tabulator-field="name" title="">
-				<div class="tabulator-col-content">
-					<div class="tabulator-col-title-holder">
-						<div class="tabulator-col-title">PRODUCT NAME</div>
-						<div class="tabulator-col-sorter">
-							<div class="tabulator-arrow"></div>
-						</div>
-					</div>
-				</div>
-				<div class="tabulator-col-resize-handle"></div>
-				<div class="tabulator-col-resize-handle prev"></div>
-			</div>
-			<div class="tabulator-col tabulator-sortable" role="columnheader"
-				aria-sort="none"
-				style="display: none; min-width: 40px; height: 44px;"
-				tabulator-field="category" title="">
-				<div class="tabulator-col-content">
-					<div class="tabulator-col-title-holder">
-						<div class="tabulator-col-title">CATEGORY</div>
-						<div class="tabulator-col-sorter">
-							<div class="tabulator-arrow"></div>
-						</div>
-					</div>
-				</div>
-				<div class="tabulator-col-resize-handle"></div>
-				<div class="tabulator-col-resize-handle prev"></div>
-			</div>
-			<div class="tabulator-col tabulator-sortable" role="columnheader"
-				aria-sort="none"
-				style="display: none; min-width: 40px; height: 44px;"
-				tabulator-field="remaining_stock" title="">
-				<div class="tabulator-col-content">
-					<div class="tabulator-col-title-holder">
-						<div class="tabulator-col-title">REMAINING STOCK</div>
-						<div class="tabulator-col-sorter">
-							<div class="tabulator-arrow"></div>
-						</div>
-					</div>
-				</div>
-				<div class="tabulator-col-resize-handle"></div>
-				<div class="tabulator-col-resize-handle prev"></div>
-			</div>
-			<div class="tabulator-col tabulator-sortable" role="columnheader"
-				aria-sort="none"
-				style="display: none; min-width: 40px; height: 44px;"
-				tabulator-field="status" title="">
-				<div class="tabulator-col-content">
-					<div class="tabulator-col-title-holder">
-						<div class="tabulator-col-title">STATUS</div>
-						<div class="tabulator-col-sorter">
-							<div class="tabulator-arrow"></div>
-						</div>
-					</div>
-				</div>
-				<div class="tabulator-col-resize-handle"></div>
-				<div class="tabulator-col-resize-handle prev"></div>
-			</div>
-			<div class="tabulator-col tabulator-sortable" role="columnheader"
-				aria-sort="none"
-				style="display: none; min-width: 40px; height: 44px;"
-				tabulator-field="images" title="">
-				<div class="tabulator-col-content">
-					<div class="tabulator-col-title-holder">
-						<div class="tabulator-col-title">IMAGE 1</div>
-						<div class="tabulator-col-sorter">
-							<div class="tabulator-arrow"></div>
-						</div>
-					</div>
-				</div>
-				<div class="tabulator-col-resize-handle"></div>
-				<div class="tabulator-col-resize-handle prev"></div>
-			</div>
-			<div class="tabulator-col tabulator-sortable" role="columnheader"
-				aria-sort="none"
-				style="display: none; min-width: 40px; height: 44px;"
-				tabulator-field="images" title="">
-				<div class="tabulator-col-content">
-					<div class="tabulator-col-title-holder">
-						<div class="tabulator-col-title">IMAGE 2</div>
-						<div class="tabulator-col-sorter">
-							<div class="tabulator-arrow"></div>
-						</div>
-					</div>
-				</div>
-				<div class="tabulator-col-resize-handle"></div>
-				<div class="tabulator-col-resize-handle prev"></div>
-			</div>
-			<div class="tabulator-col tabulator-sortable" role="columnheader"
-				aria-sort="none"
-				style="display: none; min-width: 40px; height: 44px;"
-				tabulator-field="images" title="">
-				<div class="tabulator-col-content">
-					<div class="tabulator-col-title-holder">
-						<div class="tabulator-col-title">IMAGE 3</div>
-						<div class="tabulator-col-sorter">
-							<div class="tabulator-arrow"></div>
-						</div>
-					</div>
-				</div>
-				<div class="tabulator-col-resize-handle"></div>
-				<div class="tabulator-col-resize-handle prev"></div>
-			</div>
-		</div>
-		<div class="tabulator-frozen-rows-holder"></div>
-	</div>
-	
+					
+    	
+					
+					
 					
 						<div class="tabulator-table">
+							<?php $rowOdd = true; ?>
             				<?php foreach($resultsOfUser as $result): ?>
-            				<?php debug($result); ?>
-            				<div class="tabulator-row tabulator-selectable tabulator-row-odd">
+            					<div class="tabulator-row tabulator-selectable <?php echo ($rowOdd ? "tabulator-row-odd" : "tabulator-row-even"); ?>">
+            					
+            						<div class="tabulator-cell">
+    									<div>
+    										<div class="font-medium whitespace-nowrap"><?= date("d-m-Y", date_timestamp_get($result['date_lottery'])) ?></div>
+    										<div class="text-gray-600 text-xs whitespace-nowrap"><?= $games[$result['id_game']]['name'] ?></div>
+    									</div>
+    								</div>
+    								
+            						<div class="tabulator-cell" tabulator-field="category">
+            							<?= $result['numbers_of_user'] ?>
+            						</div>
             				
-        						<div class="tabulator-cell" role="gridcell"
-									style="width: 10%;  display: inline-flex; align-items: center; height: 64px;">
-									<div>
-										<div class="font-medium whitespace-nowrap"><? ?></div>
-										<div class="text-gray-600 text-xs whitespace-nowrap"><?= $games[$result['id_game']]['name'] ?></div>
-									</div>
-
-									<div class="tabulator-col-resize-handle"></div>
-									<div class="tabulator-col-resize-handle prev"></div>
-								</div>
             				
-            				</div>
+            					</div>
+            					<?php $rowOdd = $rowOdd ? false : true; ?>
             				<?php endforeach; ?>
-            				
-            				
 						</div>
-					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+						</div>
+					<?php echo $this->element('pagination', array('paginate' => $paginate)); ?>
 				</div>
-    				
+			</div>
+		</div>
+	</div>
+	<!-- END: Content -->
+</div>		
     				
     				
     				
     				
 
-        		
 
 
         		
@@ -582,11 +441,3 @@ $games = Configure::read('Config.Games');
 				
 				
 				
-				
-				<?php echo $this->element('pagination', array('paginate' => $paginate)); ?>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- END: Content -->
-</div>

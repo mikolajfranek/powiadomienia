@@ -21,7 +21,7 @@ use Cake\Core\Configure;
                             <tr>
                             	<td class="show-date">
                                     <span class="date"><?= (Configure::read('Config.Game'))[$ticket['id_game']]['name'] . ($ticket['is_lotto_plus'] ? ' (+ Lotto Plus)' : '') ?></span>
-                                    <span class="day">Ważny od <?= date("d-m-y", date_timestamp_get($ticket['date_begin'])) ?> do <?= date("d-m-y", date_timestamp_get($ticket['date_end'])) ?></span>
+                                    <span class="day">Ważny od <?= date("d-m-Y", date_timestamp_get($ticket['date_begin'])) ?> do <?= date("d-m-Y", date_timestamp_get($ticket['date_end'])) ?></span>
                                 </td>
                                 <td class="show-ticket">
                                     <?php 

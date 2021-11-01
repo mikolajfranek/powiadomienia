@@ -60,7 +60,7 @@ $games = Configure::read('Config.Games');
                     	<?php foreach($tickets as $ticket): ?>
                             <tr class="intro-x">
                                 <td>
-                                    <span class="font-medium whitespace-nowrap">Kupon ważny <br/>od <?= date("d-m-y", date_timestamp_get($ticket['date_begin'])) ?> <br/>do <?= date("d-m-y", date_timestamp_get($ticket['date_end'])) ?></span>
+                                    <span class="font-medium whitespace-nowrap">Kupon ważny <br/>od <?= date("d-m-Y", date_timestamp_get($ticket['date_begin'])) ?> <br/>do <?= date("d-m-Y", date_timestamp_get($ticket['date_end'])) ?></span>
                                     <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5"><?= $games[$ticket['id_game']]['name'] ?></div>
                                 </td>
                                 <td class="table-report__action w-56">

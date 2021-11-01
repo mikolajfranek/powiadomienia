@@ -1,6 +1,6 @@
 <?php if ($paginate['pageCount'] > 1): ?>
-<div class="tabulator-footer ">
-	<span class="tabulator-paginator justify-center textAlignCenter">
+<div class="tabulator-footer">
+	<span class="tabulator-paginator justify-center textAlignCenter mt-5 mb-5">
 		<?php 
 		     $classesFirst = "tabulator-page";
 		     if($paginate['page'] === 1)
