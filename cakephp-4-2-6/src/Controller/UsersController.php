@@ -280,7 +280,7 @@ class UsersController extends AppController
                 ->order('Results.id DESC')
                 ->page($page, 10)
                 ->contain(['Emails']);
-            $resultsOfUser = $this->paginate($query, array('limit' => 10, 'page' => $page)); //TODO usunać drugi parametr
+            $resultsOfUser = $this->paginate($query, array('limit' => 10, 'page' => $page));
             $this->set('resultsOfUser', $resultsOfUser);
             $this->set('paginate', $this->Paginator->getPaginator()->getPagingParams()['Results']);
         }
