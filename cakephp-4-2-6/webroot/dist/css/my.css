@@ -13,6 +13,9 @@
 }
 @media (max-width:768px) {
  .md\:inline-flex {
-  display:none !important;
+  display: none !important;
  }
+}
+.inlineBlock {
+	display: inline-block;
 }

@@ -22,29 +22,34 @@ $games = Configure::read('Config.Games');
 					<!-- top ok -->
 
 
+                    <!--  TODO: noClick -->
 
 
 
+				 
 
 
+				
 
 
-
-
-
-
-
-
-					<!-- header -->
-					<div class="tabulator-header noClick"
+					<!-- content -->
+					<div class="tabulator-tableHolder " tabindex="0">
+				
+							
+					
+						<div class="tabulator-table"
+							style="padding-top: 0px; padding-bottom: 0px; display: grid;">
+							
+				
+				
+	   <!-- header -->
+					<div class="tabulator-header "
 						style="padding-right: 0px; margin-left: 0px;">
 						<div class="tabulator-headers" style="margin-left: 0px;">
 
-
-
 							<div class="tabulator-col" role="columnheader" aria-sort="asc"
 								tabulator-field="name"
-								style="min-width: 200px; height: 44px; width: 421px;" title="">
+								style="min-width: 100px; height: 44px; width: 121px;" title="">
 								<div class="tabulator-col-content">
 									<div class="tabulator-col-title-holder">
 										<div class="tabulator-col-title">0000</div>
@@ -52,7 +57,7 @@ $games = Configure::read('Config.Games');
 								</div>
 							</div>
 
-							<div class="tabulator-col md:inline-flex" role="columnheader"
+							<div class="tabulator-col md:inline-flex textAlignCenter" role="columnheader"
 								aria-sort="none" tabulator-field="images"
 								style="min-width: 200px; height: 44px; width: 421px;" title="">
 								<div class="tabulator-col-content">
@@ -61,7 +66,8 @@ $games = Configure::read('Config.Games');
 									</div>
 								</div>
 							</div>
-							<div class="tabulator-col md:inline-flex" role="columnheader"
+							
+							<div class="tabulator-col md:inline-flex textAlignCenter" role="columnheader"
 								aria-sort="none" tabulator-field="remaining_stock"
 								style="min-width: 200px; height: 44px; width: 421px;" title="">
 								<div class="tabulator-col-content">
@@ -70,7 +76,8 @@ $games = Configure::read('Config.Games');
 									</div>
 								</div>
 							</div>
-							<div class="tabulator-col md:inline-flex" role="columnheader"
+
+							<div class="tabulator-col md:inline-flex textAlignCenter" role="columnheader"
 								aria-sort="none" tabulator-field="status"
 								style="min-width: 200px; height: 44px; width: 421px;" title="">
 								<div class="tabulator-col-content">
@@ -79,7 +86,8 @@ $games = Configure::read('Config.Games');
 									</div>
 								</div>
 							</div>
-							<div class="tabulator-col md:inline-flex" role="columnheader"
+
+							<div class="tabulator-col md:inline-flex textAlignCenter" role="columnheader"
 								aria-sort="none" tabulator-field="actions"
 								style="min-width: 200px; height: 44px; width: 424px;" title="">
 								<div class="tabulator-col-content">
@@ -89,26 +97,24 @@ $games = Configure::read('Config.Games');
 								</div>
 							</div>
 						</div>
-						<div class="tabulator-frozen-rows-holder"></div>
 					</div>
 
+							
 
-
-
-					<!-- content -->
-					<div class="tabulator-tableHolder" tabindex="0">
-						<div class="tabulator-table"
-							style="padding-top: 0px; padding-bottom: 0px;">
+				
+				
+							
 						<?php $rowOdd = true; ?>
         				<?php foreach($resultsOfUser as $result): ?>
         					<div
-								class="tabulator-row tabulator-selectable <?php echo ($rowOdd ? "tabulator-row-odd" : "tabulator-row-even"); ?>"
+								class="tabulator-row tabulator-selectable noClick <?php echo ($rowOdd ? "tabulator-row-odd" : "tabulator-row-even"); ?>"
 								role="row" style="padding-left: 0px;">
 
 
 
+
 								<div class="tabulator-cell" role="gridcell"
-									style="width: 421px; display: inline-flex; align-items: center; height: 64px;"
+									style="width: 121px; display: inline-flex; align-items: center; height: 64px;"
 									tabulator-field="name" title="">
 									<div>
 										<div class="font-medium whitespace-nowrap">
@@ -161,13 +167,6 @@ $games = Configure::read('Config.Games');
 
 
 								<!--  @media (min-width:768px) {  -->
-
-
-
-
-
-
-
 								<!-- mobile -->
 								<div class="tabulator-responsive-collapse md:hidden">
 									<table>
@@ -198,6 +197,8 @@ $games = Configure::read('Config.Games');
 									</table>
 								</div>
 							</div>
+
+
 
 
 

@@ -64,16 +64,16 @@ $games = Configure::read('Config.Games');
                                     <div class="text-gray-600 text-xs whitespace-nowrap mt-0.5"><?= $games[$ticket['id_game']]['name'] ?></div>
                                 </td>
                                 <td class="table-report__action w-56">
-                                    <div class="flex justify-center items-center">
+                                    <div class="flex justify-center items-center inlineBlock">
                                         <?php 
                                             echo $this->Html->link('<i data-feather="check-square" class="w-4 h-4 mr-1"></i> Edytuj', 
                                                 array("controller" => "tickets", "action" => "register/" . $ticket['id']), 
-                                                array("escape" => false, "class" => "flex items-center mr-3"));
+                                                array("escape" => false, "class" => "flex items-center mr-3 inlineBlock"));
                                         ?>
                                         <?php 
                                             echo $this->Html->link('<i data-feather="trash-2" class="w-4 h-4 mr-1"></i> Usuń',
                                                 "javascript:modal(" . $ticket['id'] . ");",
-                                                array("escape" => false, "class" => "flex items-center text-theme-6",
+                                                array("escape" => false, "class" => "flex items-center text-theme-6 inlineBlock",
                                                       "data-toggle" => "modal", "data-target" => "#delete-confirmation-modal"
                                                 ));
                                         ?>                       
