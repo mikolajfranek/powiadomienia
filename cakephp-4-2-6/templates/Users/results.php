@@ -22,10 +22,7 @@ $games = Configure::read('Config.Games');
 					<!-- top ok -->
 
 
-                    <!--  TODO: noClick -->
-
-
-
+                   
 				 
 
 
@@ -43,7 +40,7 @@ $games = Configure::read('Config.Games');
 				
 				
 	   <!-- header -->
-					<div class="tabulator-header "
+					<div class="tabulator-header noClick"
 						style="padding-right: 0px; margin-left: 0px;">
 						<div class="tabulator-headers" style="margin-left: 0px;">
 
