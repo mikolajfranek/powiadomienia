@@ -1,6 +1,10 @@
 <?php
 use Cake\Core\Configure;
 $games = Configure::read('Config.Games');
+$options = [];
+foreach($games as $key => $game){
+    $options[$key] = $game['name'];
+}
 
 function colorNumbersOfUser($numbers, $intersect)
 {
@@ -37,68 +41,56 @@ function colorNumbersOfUser($numbers, $intersect)
 				<div
 					class="tabulator mt-5 table-report table-report--tabulator tabulator"
 					role="grid" tabulator-layout="fitColumns">
-				
-
-
-
-
-
-<!--  only filter TODO -->
 					<!-- BEGIN: Filter -->
 					<div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
-						<form id="tabulator-html-filter-form" class="xl:flex sm:mr-auto">
-							<div class="sm:flex items-center sm:mr-4">
-								<label class="w-22 flex-none xl:w-auto mr-2">Gra hazardowa</label>
-								<select id="tabulator-html-filter-field"
-									class="form-select w-full sm:w-32 xxl:w-full mt-2 sm:mt-0 sm:w-auto">
-									<option value="name">Name</option>
-									<option value="category">Category</option>
-									<option value="remaining_stock">Remaining Stock</option>
-								</select>
-							</div>
-							<div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
-								<label class="w-22 flex-none xl:w-auto xl:flex-initial mr-2">Stopień wygranej</label>
-								<select id="tabulator-html-filter-type"
-									class="form-select w-full mt-2 sm:mt-0 sm:w-auto">
-									<option value="like" selected="">like</option>
-									<option value="=">=</option>
-                					<option value=">">&gt;</option>
-                					<option value=">=">&gt;=</option>
-                					<option value="!=">!=</option>
-                				</select>
-                			</div>
-                			<div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
-                				<label class="w-22 flex-none xl:w-auto xl:flex-initial mr-2">Zakład</label>
-                				<input id="tabulator-html-filter-value" type="text"
-                									class="form-control sm:w-40 xxl:w-full mt-2 sm:mt-0"
-                									placeholder="Search...">
-                			</div>
-                			<div class="mt-2 xl:mt-0">
-                				<button id="tabulator-html-filter-go" type="button"
-                									class="btn btn-primary w-full sm:w-16">Filtruj</button>
-                				<button id="tabulator-html-filter-reset" type="button"
-                									class="btn btn-secondary w-full sm:w-16 mt-2 sm:mt-0 sm:ml-1">Resetuj</button>
-                			</div>
-                		</form>
+    					<?php
+                           echo $this->Form->create($form, array("class" => "xl:flex sm:mr-auto"));
+                        ?>
+						<div class="sm:flex items-center sm:mr-4">
+							<label class="w-22 flex-none xl:w-auto mr-2">Gra hazardowa</label>
+							<?php
+               		 		    echo $this->Form->control("id_game", array(
+               		 		        "label" => false,
+               		 		        "options" => $options, 
+               		 		        "empty" => Configure::read('Config.Combobox.Empty'),
+               		 		        "class" => "form-select w-full sm:w-32 xxl:w-full mt-2 sm:mt-0 sm:w-auto",
+               		 		    ));
+           		 		    ?>
+						</div>
+						<div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+							<label class="w-22 flex-none xl:w-auto xl:flex-initial mr-2">Stopień wygranej</label>
+							<?php
+               		 		    echo $this->Form->control("winning_degree", array(
+               		 		        "label" => false,
+               		 		        "options" => Configure::read('Config.WinningDegree')[1], 
+               		 		        "empty" => Configure::read('Config.Combobox.Empty'),
+               		 		        "class" => "form-select w-full mt-2 sm:mt-0 sm:w-auto",
+               		 		    ));
+           		 		    ?>
+            			</div>
+            			<div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+            				<label class="w-22 flex-none xl:w-auto xl:flex-initial mr-2">Zakład</label>			
+	           		 		<?php
+               		 		    echo $this->Form->control("numbers_filter", array(
+               		 		        "placeholder" => "Zakład",
+               		 		        "label" => false,
+               		 		        "class" => "form-control sm:w-40 xxl:w-full mt-2 sm:mt-0"
+               		 		    ));
+           		 		    ?>
+            			</div>
+            			<div class="mt-2 xl:mt-0">
+    				    	<?php
+                                echo $this->Form->button("Filtruj", array(
+                                    "class" => "btn btn-primary w-full sm:w-16"
+                                ));
+                                echo $this->Html->link('Resetuj',
+                                    array("controller" => "users", "action" => "results"),
+                                    array( "escape" => false, "class" => "btn btn-secondary w-full sm:w-16 mt-2 sm:mt-0 sm:ml-1"));
+                                echo $this->Form->end();
+                            ?>
+            			</div>
                 	</div>
                     <!-- END: Filter -->
-                    
-                    
-                    
-                    
-                    
-                    
-
-
-
-
-
-
-
-
-
-
-
 					<?php echo $this->element('pagination', array('paginate' => $paginate)); ?>
 					<!-- BEGIN: Content table-->
 					<div class="tabulator-tableHolder" tabindex="0">

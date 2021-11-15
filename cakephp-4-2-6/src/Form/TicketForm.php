@@ -100,8 +100,8 @@ class TicketForm extends Form
         return $validator;
     }
     
-    public function isGameExists($check) { 
-        if(empty($check) == true) return false; 
+    public function isGameExists($check) {
+        if(empty($check) == true) return false;
         return array_key_exists($check, Configure::read('Config.Games'));
     }
     

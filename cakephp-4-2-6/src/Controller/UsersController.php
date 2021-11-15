@@ -6,6 +6,7 @@ use App\Form\LoginForm;
 use App\Form\RegisterForm;
 use App\Form\ResetForm;
 use App\Form\SettingsForm;
+use App\Form\ResultForm;
 use Cake\Auth\DefaultPasswordHasher;
 use Cake\Auth\DigestAuthenticate;
 use Cake\Core\Configure;
@@ -269,20 +270,38 @@ class UsersController extends AppController
     
     public function results($page = null)
     {
-        $this->request->allowMethod(['get']);
+        $this->request->allowMethod(['get', 'post']);
+        $form = new ResultForm();
+        $this->set('form', $form);
         try
         {
-            $page = $page ?? 1;
-            $page = $page < 1 ? 1 : $page;
-            $results = FactoryLocator::get('Table')->get('Results');
-            $query = $results->find()
-                ->where(array('Results.id_user' => $this->user['id']))
-                ->order('Results.id DESC')
-                ->page($page, 10)
-                ->contain(['Emails']);
-            $resultsOfUser = $this->paginate($query, array('limit' => 10, 'page' => $page));
-            $this->set('resultsOfUser', $resultsOfUser);
-            $this->set('paginate', $this->Paginator->getPaginator()->getPagingParams()['Results']);
+            if ($this->request->is('post'))
+            {
+                $data = $this->request->getData();
+                //$data['id'] = $this->user['id'];
+                
+                if ($form->execute($data) == false) throw new Exception();
+                
+                debug($this->request->getData());
+                exit;
+                
+            
+           
+            }
+            else
+            {
+                $page = $page ?? 1;
+                $page = $page < 1 ? 1 : $page;
+                $results = FactoryLocator::get('Table')->get('Results');
+                $query = $results->find()
+                    ->where(array('Results.id_user' => $this->user['id']))
+                    ->order('Results.id DESC')
+                    ->page($page, 10)
+                    ->contain(['Emails']);
+                $resultsOfUser = $this->paginate($query, array('limit' => 10, 'page' => $page));
+                $this->set('resultsOfUser', $resultsOfUser);
+                $this->set('paginate', $this->Paginator->getPaginator()->getPagingParams()['Results']);
+            }
         }
         catch (Exception $e)
         {
