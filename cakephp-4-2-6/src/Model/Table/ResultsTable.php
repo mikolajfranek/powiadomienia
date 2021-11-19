@@ -17,6 +17,13 @@ class ResultsTable extends Table
         $this->searchManager()
             ->value('id_game')
             ->value('amount_winning')
-            ->value('numbers_of_user');
+            ->value('numbers_of_user')
+            ->add('search', 'Search.Callback', [
+                'callback' => function (\Cake\ORM\Query $query, array $args, \Search\Model\Filter\Base $filter) {
+                // Modify $query as required
+                    
+                }
+            ]);
+           
     }
 }

@@ -44,7 +44,7 @@ function colorNumbersOfUser($numbers, $intersect)
 					<!-- BEGIN: Filter -->
 					<div class="flex flex-col sm:flex-row sm:items-end xl:items-start">
     					<?php
-                           echo $this->Form->create($form, array("class" => "xl:flex sm:mr-auto"));
+    					   echo $this->Form->create(null, array("valueSources" => "query", "class" => "xl:flex sm:mr-auto"));
                         ?>
 						<div class="sm:flex items-center sm:mr-4">
 							<label class="w-22 flex-none xl:w-auto mr-2">Gra hazardowa</label>
@@ -83,11 +83,11 @@ function colorNumbersOfUser($numbers, $intersect)
                                 echo $this->Form->button("Filtruj", array(
                                     "class" => "btn btn-primary w-full sm:w-16"
                                 ));
-                                if (empty($_isSearch) == false) 
+                                //TODO
+                                if ($this->Search->isSearch()) 
                                 {
-                                    //echo $this->Search->resetLink('Resetuj',
-                                        //array("controller" => "users", "action" => "results"),
-                                        //array( "escape" => false, "class" => "btn btn-secondary w-full sm:w-16 mt-2 sm:mt-0 sm:ml-1"));
+                                    echo $this->Search->resetLink('Resetuj',
+                                        array( "escape" => false, "class" => "btn btn-secondary w-full sm:w-16 mt-2 sm:mt-0 sm:ml-1"));
                                 }
                                 echo $this->Form->end();
                             ?>
