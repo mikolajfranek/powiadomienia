@@ -20,6 +20,9 @@ class UsersController extends AppController
     {
         parent::beforeFilter($event);
         $this->Authentication->allowUnauthenticated(['login', 'register', 'activate', 'reset']);
+        $this->loadComponent('Search.Search', [
+            'actions' => ['results'],
+        ]);
     }
 
     public function register()
@@ -290,10 +293,11 @@ class UsersController extends AppController
             }
             else
             {
+                
                 $page = $page ?? 1;
                 $page = $page < 1 ? 1 : $page;
                 $results = FactoryLocator::get('Table')->get('Results');
-                $query = $results->find()
+                $query = $results->find('search', array('search' => $this->request->getQueryParams()))
                     ->where(array('Results.id_user' => $this->user['id']))
                     ->order('Results.id DESC')
                     ->page($page, 10)

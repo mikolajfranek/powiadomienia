@@ -32,7 +32,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '25d0ecac5831ecf4414de6a3183c95500ca6f84c',
+    'reference' => '7998ecb92e2f1a1442908fe40beb9c6cff7a9231',
     'name' => 'cakephp/app',
   ),
   'versions' => 
@@ -53,7 +53,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '25d0ecac5831ecf4414de6a3183c95500ca6f84c',
+      'reference' => '7998ecb92e2f1a1442908fe40beb9c6cff7a9231',
     ),
     'cakephp/authentication' => 
     array (
@@ -312,6 +312,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'd56bf6102915de5702778fe20f2de3b2fe570b5b',
+    ),
+    'friendsofcake/search' => 
+    array (
+      'pretty_version' => '6.2.3',
+      'version' => '6.2.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '67aaee581c712ca344a2c8dab3015237324eaf6e',
     ),
     'jasny/twig-extensions' => 
     array (

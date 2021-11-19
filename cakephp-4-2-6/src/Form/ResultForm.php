@@ -13,8 +13,8 @@ class ResultForm extends Form
     {
         return $schema
             ->addField('id_game', 'integer')
-            ->addField('winning_degree', 'integer')
-            ->addField('numbers_filter', 'string');
+            ->addField('amount_winning', 'integer')
+            ->addField('numbers_of_user', 'string');
     }
  
     public function validationDefault(Validator $validator): Validator
@@ -32,8 +32,6 @@ class ResultForm extends Form
     //TODO
     //filtr
     //napis ile rekordów jest aktualnie wyświetlane
-    
-    
     
     
     public function isGameExists($check) {

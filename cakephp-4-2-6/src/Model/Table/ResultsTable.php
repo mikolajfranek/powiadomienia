@@ -11,5 +11,12 @@ class ResultsTable extends Table
         $this->setPrimaryKey('id');
         $this->setTable('results');
         $this->belongsTo('Emails')->setForeignKey('id_email');
+        
+        $this->addBehavior('Search.Search');
+        
+        $this->searchManager()
+            ->value('id_game')
+            ->value('amount_winning')
+            ->value('numbers_of_user');
     }
 }

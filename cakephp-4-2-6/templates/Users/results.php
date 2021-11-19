@@ -60,7 +60,7 @@ function colorNumbersOfUser($numbers, $intersect)
 						<div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
 							<label class="w-22 flex-none xl:w-auto xl:flex-initial mr-2">Stopień wygranej</label>
 							<?php
-               		 		    echo $this->Form->control("winning_degree", array(
+               		 		    echo $this->Form->control("amount_winning", array(
                		 		        "label" => false,
                		 		        "options" => Configure::read('Config.WinningDegree')[1], 
                		 		        "empty" => Configure::read('Config.Combobox.Empty'),
@@ -71,7 +71,7 @@ function colorNumbersOfUser($numbers, $intersect)
             			<div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
             				<label class="w-22 flex-none xl:w-auto xl:flex-initial mr-2">Zakład</label>			
 	           		 		<?php
-               		 		    echo $this->Form->control("numbers_filter", array(
+               		 		    echo $this->Form->control("numbers_of_user", array(
                		 		        "placeholder" => "Zakład",
                		 		        "label" => false,
                		 		        "class" => "form-control sm:w-40 xxl:w-full mt-2 sm:mt-0"
@@ -83,9 +83,12 @@ function colorNumbersOfUser($numbers, $intersect)
                                 echo $this->Form->button("Filtruj", array(
                                     "class" => "btn btn-primary w-full sm:w-16"
                                 ));
-                                echo $this->Html->link('Resetuj',
-                                    array("controller" => "users", "action" => "results"),
-                                    array( "escape" => false, "class" => "btn btn-secondary w-full sm:w-16 mt-2 sm:mt-0 sm:ml-1"));
+                                if (empty($_isSearch) == false) 
+                                {
+                                    //echo $this->Search->resetLink('Resetuj',
+                                        //array("controller" => "users", "action" => "results"),
+                                        //array( "escape" => false, "class" => "btn btn-secondary w-full sm:w-16 mt-2 sm:mt-0 sm:ml-1"));
+                                }
                                 echo $this->Form->end();
                             ?>
             			</div>

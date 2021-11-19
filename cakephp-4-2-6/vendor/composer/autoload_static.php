@@ -78,6 +78,7 @@ class ComposerStaticInit1e89a37ef5080f46cd6176d7311b7c03
             'SlevomatCodingStandard\\' => 23,
             'Seld\\PharUtils\\' => 15,
             'Seld\\JsonLint\\' => 14,
+            'Search\\' => 7,
         ),
         'R' => 
         array (
@@ -236,6 +237,10 @@ class ComposerStaticInit1e89a37ef5080f46cd6176d7311b7c03
         'Seld\\JsonLint\\' => 
         array (
             0 => __DIR__ . '/..' . '/seld/jsonlint/src/Seld/JsonLint',
+        ),
+        'Search\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/friendsofcake/search/src',
         ),
         'React\\Promise\\' => 
         array (
