@@ -83,16 +83,18 @@ function colorNumbersOfUser($numbers, $intersect)
                                 echo $this->Form->button("Filtruj", array(
                                     "class" => "btn btn-primary w-full sm:w-16"
                                 ));
-                                //TODO
-                                if ($this->Search->isSearch()) 
-                                {
-                                    echo $this->Search->resetLink('Resetuj',
-                                        array( "escape" => false, "class" => "btn btn-secondary w-full sm:w-16 mt-2 sm:mt-0 sm:ml-1"));
-                                }
+                                echo $this->Html->link('Resetuj', 
+                                    array("controller" => "users", "action" => "results"),
+                                    array("escape" => false, "class" => "btn btn-secondary w-full sm:w-16 mt-2 sm:mt-0 sm:ml-1"));
+                                
                                 echo $this->Form->end();
                             ?>
             			</div>
                 	</div>
+					<div class="mt-5 text-gray-600 text-xs whitespace-nowrap">
+    					Wyświetlono ... na ... 
+    					"Przedstawiono 0 pozycji" : $"Przedstawiono od {FirstRowOnPage} do {LastRowOnPage} na {RowCount} pozycji"; }
+    				</div>
                     <!-- END: Filter -->
 					<?php echo $this->element('pagination', array('paginate' => $paginate)); ?>
 					<!-- BEGIN: Content table-->
@@ -125,7 +127,6 @@ function colorNumbersOfUser($numbers, $intersect)
 											</div>
 										</div>
 									</div>
-									
 									<div class="tabulator-col md:inline-flex textAlignCenter" role="columnheader"
 									style="height: 44px; width: 400px;" title="">
 										<div class="tabulator-col-content">

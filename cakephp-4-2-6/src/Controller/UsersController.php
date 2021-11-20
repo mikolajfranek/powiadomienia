@@ -15,13 +15,19 @@ use Exception;
 
 class UsersController extends AppController
 {
+    public function initialize() : void
+    {
+        parent::initialize();
+        
+        $this->loadComponent('Search.Search', array(
+            'actions' => array('results')
+        ));
+    }
+    
     public function beforeFilter(EventInterface $event)
     {
         parent::beforeFilter($event);
         $this->Authentication->allowUnauthenticated(['login', 'register', 'activate', 'reset']);
-        $this->loadComponent('Search.Search', [
-            'actions' => ['results']
-        ]);
     }
 
     public function register()
@@ -278,7 +284,14 @@ class UsersController extends AppController
             $page = $page ?? 1;
             $page = $page < 1 ? 1 : $page;
             $results = FactoryLocator::get('Table')->get('Results');
-            $query = $results->find('search', array('search' => $this->request->getQueryParams()))
+            $params = $this->request->getQueryParams();
+            if(isset($params['numbers_of_user']))
+            {
+                $params['numbers_of_user'] = trim($params['numbers_of_user']);
+                $params['numbers_of_user'] = preg_replace('/\s+/', ' ', $params['numbers_of_user']);
+                $params['numbers_of_user'] = preg_replace('/[^0-9]/', ';', $params['numbers_of_user']);
+            }
+            $query = $results->find('search', array('search' => $params))
                 ->where(array('Results.id_user' => $this->user['id']))
                 ->order('Results.id DESC')
                 ->page($page, 10)
