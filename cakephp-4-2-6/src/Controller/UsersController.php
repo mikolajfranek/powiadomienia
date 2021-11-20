@@ -114,16 +114,25 @@ class UsersController extends AppController
                 if ($form->execute($this->request->getData()) == false) throw new Exception();
                 $users = FactoryLocator::get('Table')->get('Users');
                 $user = $users->find()
-                    ->where(array('email' => $this->request->getData()['email']))
+                    ->where(array('email' => $this->request->getData()['email'], 
+                        '`date_expired` < DATE_SUB(NOW(), INTERVAL 15 MINUTE)'))
+                    //TODO
                     ->first();
                 if($user != null)
                 {
                     $newPassword = substr(sha1(rand()), 0, 20);
                     $user->password = (new DefaultPasswordHasher())->hash($newPassword);
+                    $user->date_expired = date('Y-m-d H:i:s', time());
                     if ($users->save($user) == false) throw new Exception();
                     //BEGIN: sendEmail
-                    $this->EmailProvider->sendAboutReset($user, $newPassword);
+                    //$this->EmailProvider->sendAboutReset($user, $newPassword);
                     //END: sendEmail
+                }
+                else
+                {
+                    
+                    //TODO, coś tu jest nie tak, nie działa jak powinno
+                    //throw new Exception();
                 }
                 $this->myFlashSuccess(Configure::read('Config.Messages.ResetFormSuccess'));
                 return $this->redirect(array('controller' => 'users', 'action' => 'login'));
@@ -245,8 +254,8 @@ class UsersController extends AppController
             {
                 $users = FactoryLocator::get('Table')->get('Users');
                 $user = $users->find()
-                ->where(array('id' => $this->user['id']))
-                ->first();
+                    ->where(array('id' => $this->user['id']))
+                    ->first();
                 $form->setData([
                     'is_email_notification' => $user->is_email_notification,
                     'email' => $user->email
@@ -279,6 +288,7 @@ class UsersController extends AppController
     public function results($page = null)
     {
         $this->request->allowMethod(['get']);
+        $this->set('resultsOfUser', array());
         try
         {
             $page = $page ?? 1;

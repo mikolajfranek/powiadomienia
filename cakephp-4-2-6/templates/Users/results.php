@@ -62,7 +62,7 @@ function colorNumbersOfUser($numbers, $intersect)
 							<?php
                		 		    echo $this->Form->control("amount_winning", array(
                		 		        "label" => false,
-               		 		        "options" => Configure::read('Config.WinningDegree')[1], 
+               		 		        "options" => Configure::read('Config.WinningDegree'), 
                		 		        "empty" => Configure::read('Config.Combobox.Empty'),
                		 		        "class" => "form-select w-full mt-2 sm:mt-0 sm:w-auto",
                		 		    ));
@@ -86,17 +86,29 @@ function colorNumbersOfUser($numbers, $intersect)
                                 echo $this->Html->link('Resetuj', 
                                     array("controller" => "users", "action" => "results"),
                                     array("escape" => false, "class" => "btn btn-secondary w-full sm:w-16 mt-2 sm:mt-0 sm:ml-1"));
-                                
                                 echo $this->Form->end();
                             ?>
             			</div>
                 	</div>
 					<div class="mt-5 text-gray-600 text-xs whitespace-nowrap">
-    					Wyświetlono ... na ... 
-    					"Przedstawiono 0 pozycji" : $"Przedstawiono od {FirstRowOnPage} do {LastRowOnPage} na {RowCount} pozycji"; }
+					<?php
+						if(sizeof($resultsOfUser) == 0)
+						{
+						    echo "Wyświetlono 0 pozycji";
+						}
+						else
+						{
+						    echo "Wyświetlono od " . $paginate['start'] . " do " . $paginate['end'] . " na " . $paginate['count'] . " pozycji";
+						}
+				    ?>
     				</div>
                     <!-- END: Filter -->
-					<?php echo $this->element('pagination', array('paginate' => $paginate)); ?>
+					<?php
+					if(isset($paginate))
+					{
+					    echo $this->element('pagination', array('paginate' => $paginate));
+					}
+					?>
 					<!-- BEGIN: Content table-->
 					<div class="tabulator-tableHolder" tabindex="0">
 						<div class="tabulator-table" style="padding-top: 20px; padding-bottom: 0px; display: grid;">
@@ -219,7 +231,12 @@ function colorNumbersOfUser($numbers, $intersect)
 						</div>
 					</div>
 					<!-- END: Content table-->
-					<?php echo $this->element('pagination', array('paginate' => $paginate)); ?>					
+					<?php
+					if(isset($paginate))
+					{
+					    echo $this->element('pagination', array('paginate' => $paginate));
+					}
+					?>					
 				</div>
 			</div>
 		</div>

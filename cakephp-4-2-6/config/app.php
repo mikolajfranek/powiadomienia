@@ -9,12 +9,11 @@ use Cake\Mailer\Transport\MailTransport;
 
 /*
  * TODO
- * logowania => 'Error'.'exceptionRenderer' => 'App\Error\AppExceptionRenderer',
+ * * brak strony - error-illustration.svg
+ * logowania => 'Error'.'exceptionRenderer' => 'App\Error\AppExceptionRenderer',*
  * blokada zapytań wielu (strumień zapytań)
- * blokada wysyłania X email w beforefilter?
- * brak strony - error-illustration.svg
- * data do (aktywacja) linku (ważny 15 min)
  * 
+ * data do (aktywacja) linku (ważny 15 min) + blokada restowania hasła jeśli nie aktywowano w przeciągu 15 min...
  */
 
 return [
@@ -191,7 +190,7 @@ return [
      */
     'Error' => [
         'errorLevel' => E_ALL,
-        'exceptionRenderer' => ExceptionRenderer::class,
+        'exceptionRenderer' => ExceptionRenderer::class,//'App\Error\AppExceptionRenderer',
         'skipLog' => [],
         'log' => true,
         'trace' => true,
@@ -491,32 +490,13 @@ return [
             'LottoAndLottoPlus' => 3
         ],
         'WinningDegree' => [
-            1 => [
-                0 => "0",
-                1 => "1-ka",
-                2 => "2-ka",
-                3 => "3-ka",
-                4 => "4-ka",
-                5 => "5-ka",
-            ],
-            2 => [
-                0 => "0",
-                1 => "1-ka",
-                2 => "2-ka",
-                3 => "3-ka",
-                4 => "4-ka",
-                5 => "5-ka",
-                6 => "6-ka"
-            ],
-            3 => [
-                0 => "0",
-                1 => "1-ka",
-                2 => "2-ka",
-                3 => "3-ka",
-                4 => "4-ka",
-                5 => "5-ka",
-                6 => "6-ka"
-            ],
+            0 => "0",
+            1 => "1-ka",
+            2 => "2-ka",
+            3 => "3-ka",
+            4 => "4-ka",
+            5 => "5-ka",
+            6 => "6-ka"
         ],
         'Games' => [
             1 => [

@@ -125,13 +125,18 @@ class NotificationsController extends AppController
             $results = FactoryLocator::get('Table')->get('Results');
             $entitiesResults = $results->newEntities($resultsToSave);
             if(count($results->saveMany($entitiesResults)) != count($resultsToSave)) throw new Exception();
-            //send email about success of process
-            $this->EmailProvider->sendMessageToAdmin("Success", "Cron działa, powiadomienia zostały wysłane.");
         }
         catch (Exception $e)
         {
             $this->myLogger($e);
-            $this->EmailProvider->sendMessageToAdmin("Exception", $e->getMessage()); 
+            try
+            {
+                $this->EmailProvider->sendMessageToAdmin("Exception", $e->getMessage());
+            }
+            catch(Exception $e)
+            {
+                //nothing
+            }
         }
         finally
         {

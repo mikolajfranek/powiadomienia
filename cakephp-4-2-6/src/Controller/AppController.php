@@ -20,6 +20,7 @@ use Cake\Controller\Controller;
 use Cake\Core\Configure;
 use Cake\Event\EventInterface;
 use Exception;
+use Cake\Log\Log;
 
 /**
  * Application Controller
@@ -81,11 +82,14 @@ class AppController extends Controller
         }
     }
     
-    protected function myLogger(Exception $e)
+    public static function myLogger(Exception $e)
     {
         try
         {
-            //TODO
+            Log::write('error', isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "");
+            Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
+            Log::write('error', $e->getMessage());
+            Log::write('error', $e->getTraceAsString());
         }
         catch(Exception $e)
         {
