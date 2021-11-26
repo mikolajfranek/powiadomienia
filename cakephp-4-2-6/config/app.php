@@ -22,10 +22,6 @@ use Cake\Mailer\Transport\MailTransport;
  * register_count = 0...3
  * //zmiana adresu email
  * //rejestracja
- * 
- * //date_unblock
- * //null
- * //datetime (+sprawdzanie czy to jest dzisiaj, jeśli tak to nie pozwalaj na wysłanie emailu
  */
 
 return [
@@ -456,7 +452,7 @@ return [
             'LoginFormFailed' => 'Login lub hasło są niepoprawne.',
             'UserBlocked' => 'Konto jest zablokowane.',
             'SettingsSuccess' => 'Pomyślnie zaktualizowano dane użytkownika.',
-            'SettingsDateUnblockFailed' => 'Nie można zmienić Email, możliwa jedna zmiana na 24h.',
+            'SettingsDateUnblockFailed' => 'Nie można zmienić Email, możliwa jedna zmiana na 1 h.',
             'UserMustUnblock' => 'Zmieniono email oraz wysłano wiadomość na pocztę elektroniczą. Odblokuj konto za pomocą linku odblokowującego wysłanego na Twoją pocztę elektroniczną.',
             'UserMustUseNewPassword'=> 'Pomyślnie zaktualizowano dane użytkownika. Zaloguj się ponownie korzystając z nowego hasła.',
             'TicketRegisterSucess' => 'Pomyślnie zarejestrowano kupon.',

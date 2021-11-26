@@ -80,13 +80,14 @@ class UsersController extends AppController
                 ->where(array('id' => $idUser))
                 ->first();
             if($user == null) throw new Exception(Configure::read('Config.Messages.UserNotFound'));
-            $hash = DigestAuthenticate::password($user->email, $user->password, env('SERVER_NAME'));
+            $hash = DigestAuthenticate::password($user->email, $user->date_activate, env('SERVER_NAME'));
             if($activatingHash != $hash) throw new Exception(Configure::read('Config.Messages.UserNotFound'));
+            $limit = date('Y-m-d H:i:s', strtotime('-60 minutes'));
+            if(strtotime($user->date_activate) < strtotime($limit)) throw new Exception(Configure::read('Config.Messages.UserNotFound'));
             if($user->is_blocked == 1) throw new Exception(Configure::read('Config.Messages.UserNotFound'));
             if($user->is_email_confirmation == 1) throw new Exception(Configure::read('Config.Messages.UserNotFound'));
-            $user->is_account_active = 1;
             $user->is_email_confirmation = 1;
-            $user->date_unblock = date('Y-m-d H:i:s', time());
+            $user->date_email_confirmation = date('Y-m-d H:i:s', time());
             if($users->save($user) == false) throw new Exception();
             $this->myFlashSuccess(Configure::read('Config.Messages.ActivateSuccess'));
         }
@@ -177,7 +178,6 @@ class UsersController extends AppController
                     ->where(array('email' => $this->request->getData()['email']))
                     ->first();
                 if($user == null) throw new Exception(Configure::read('Config.Messages.LoginFormFailed'));
-                if($user['is_account_active'] == false) throw new Exception(Configure::read('Config.Messages.UserBlocked'));
                 if($user['is_email_confirmation'] == false) throw new Exception(Configure::read('Config.Messages.UserBlocked'));
                 if($user['is_blocked'] == true) throw new Exception(Configure::read('Config.Messages.UserBlocked'));                
                 if((new DefaultPasswordHasher)->check($this->request->getData()['password'], $user->password) == false) throw new Exception(Configure::read('Config.Messages.LoginFormFailed'));
@@ -214,8 +214,8 @@ class UsersController extends AppController
                 $userChangeEmail = $user->email != $dataToUpdated['email'];
                 if($userChangeEmail == true)
                 {
-                    $limit = date('Y-m-d H:i:s', strtotime('-1 day'));
-                    if(strtotime($user->date_unblock) >= strtotime($limit)) throw new Exception(Configure::read('Config.Messages.SettingsDateUnblockFailed'));
+                    $limit = date('Y-m-d H:i:s', strtotime('-60 minutes'));
+                    if(strtotime($user->date_email_confirmation) >= strtotime($limit)) throw new Exception(Configure::read('Config.Messages.SettingsDateUnblockFailed'));
                     $dataToUpdated['is_email_confirmation'] = 0;
                 }
                 $userChangePassword = empty($data['password_new']) == false;

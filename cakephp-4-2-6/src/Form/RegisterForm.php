@@ -83,6 +83,7 @@ class RegisterForm extends Form
         $user = $users->newEmptyEntity();
         $user->email = $data['email'];
         $user->password = (new DefaultPasswordHasher())->hash($data['password']);
+        $user->date_activate = date('Y-m-d H:i:s', time());
         if ($users->save($user))
         {
             return true;

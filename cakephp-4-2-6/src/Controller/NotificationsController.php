@@ -41,7 +41,6 @@ class NotificationsController extends AppController
                     'Tickets.id_game IN' => $activeGames,
                     'CAST(Tickets.date_begin as date) <= CAST(CURDATE() as date)',
                     'CAST(Tickets.date_end as date) >= CAST(CURDATE() as date)',
-                    'Users.is_account_active' => true,
                     'Users.is_email_confirmation' => true,
                     'Users.is_blocked' => false
                 ])
