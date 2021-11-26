@@ -216,6 +216,7 @@ class UsersController extends AppController
                 {
                     $limit = date('Y-m-d H:i:s', strtotime('-60 minutes'));
                     if(strtotime($user->date_email_confirmation) >= strtotime($limit)) throw new Exception(Configure::read('Config.Messages.SettingsDateUnblockFailed'));
+                    $dataToUpdated['date_activate'] = date('Y-m-d H:i:s', time());
                     $dataToUpdated['is_email_confirmation'] = 0;
                 }
                 $userChangePassword = empty($data['password_new']) == false;

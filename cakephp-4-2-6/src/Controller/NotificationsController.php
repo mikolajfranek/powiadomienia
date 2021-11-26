@@ -157,7 +157,7 @@ class NotificationsController extends AppController
                 ->where(array('id' => $idUser))
                 ->first();
             if($user == null) throw new Exception(Configure::read('Config.Messages.UserNotFound'));
-            $hash = DigestAuthenticate::password($idEmail, $user->password, env('SERVER_NAME'));
+            $hash = DigestAuthenticate::password($user->email, $idEmail, env('SERVER_NAME'));
             if($inputHash != $hash) throw new Exception(Configure::read('Config.Messages.UserNotFound'));
             $emails = FactoryLocator::get('Table')->get('Emails');
             $email = $emails->find()

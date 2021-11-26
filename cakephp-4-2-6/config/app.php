@@ -17,11 +17,10 @@ use Cake\Mailer\Transport\MailTransport;
  * blokada zapytań wielu (strumień zapytań)
  * 
  * 3.
- * data do (aktywacja) linku (ważny 15 min) + blokada restowania hasła jeśli nie aktywowano w przeciągu 15 min...
- * date_register
- * register_count = 0...3
- * //zmiana adresu email
- * //rejestracja
+ * sendNotification bez sensu metoda hash...
+ *     public function delivered($idUser, $idEmail, $inputHash)
+ *     https://stackoverflow.com/questions/2384230/what-is-digest-authentication
+ 
  */
 
 return [

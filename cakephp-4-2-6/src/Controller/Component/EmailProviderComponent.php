@@ -58,7 +58,7 @@ class EmailProviderComponent extends Component
             ->setTo($user->email)
             ->setSubject(Configure::read('Config.WebName') . ' ['. (date('Y-m-d', time())) . '][' . $nameOfGame . '] ' . (empty($results['wins']) == false ? "Wygrałeś - najlepsze trafienie to " . $results['winLevel'] : "Przegrałeś"))
             ->setEmailFormat('html');
-        $hash = DigestAuthenticate::password($idEmail, $user->password, env('SERVER_NAME'));
+        $hash = DigestAuthenticate::password($user->email, $idEmail, env('SERVER_NAME'));
         $url =  Router::fullBaseUrl() . '/notifications/delivered/' . $user->id . '/' . $idEmail . '/' . $hash;
         $htmlContent = '<img width="0" height="0" alt="" src="'. $url .'"/>';
         $htmlContent .= '<h4>Witaj!</h4>';
