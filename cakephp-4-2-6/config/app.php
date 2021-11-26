@@ -9,11 +9,23 @@ use Cake\Mailer\Transport\MailTransport;
 
 /*
  * TODO
- * * brak strony - error-illustration.svg
+ * 1.
+ * brak strony - error-illustration.svg
  * logowania => 'Error'.'exceptionRenderer' => 'App\Error\AppExceptionRenderer',*
+ 
+ * 2.
  * blokada zapytań wielu (strumień zapytań)
  * 
+ * 3.
  * data do (aktywacja) linku (ważny 15 min) + blokada restowania hasła jeśli nie aktywowano w przeciągu 15 min...
+ * date_register
+ * register_count = 0...3
+ * //zmiana adresu email
+ * //rejestracja
+ * 
+ * //date_unblock
+ * //null
+ * //datetime (+sprawdzanie czy to jest dzisiaj, jeśli tak to nie pozwalaj na wysłanie emailu
  */
 
 return [
@@ -443,7 +455,8 @@ return [
             'UserLogout' => 'Pomyślnie wylogowano.',
             'LoginFormFailed' => 'Login lub hasło są niepoprawne.',
             'UserBlocked' => 'Konto jest zablokowane.',
-            'SettingsSuccess' => 'Pomyślnie zaktualizowano dane użytkownika.',            
+            'SettingsSuccess' => 'Pomyślnie zaktualizowano dane użytkownika.',
+            'SettingsDateUnblockFailed' => 'Nie można zmienić Email, możliwa jedna zmiana na 24h.',
             'UserMustUnblock' => 'Zmieniono email oraz wysłano wiadomość na pocztę elektroniczą. Odblokuj konto za pomocą linku odblokowującego wysłanego na Twoją pocztę elektroniczną.',
             'UserMustUseNewPassword'=> 'Pomyślnie zaktualizowano dane użytkownika. Zaloguj się ponownie korzystając z nowego hasła.',
             'TicketRegisterSucess' => 'Pomyślnie zarejestrowano kupon.',

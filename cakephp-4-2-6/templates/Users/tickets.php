@@ -49,6 +49,11 @@ $games = Configure::read('Config.Games');
         <div class="grid grid-cols-12 gap-6 mt-5">
             <!-- BEGIN: Data List -->
             <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
+            	<?php if(sizeof($tickets) == 0): ?>
+					<div class="mt-5 text-gray-600 text-xs whitespace-nowrap">
+						Nie zarejestrowałeś żadnego kuponu.
+					</div>
+				<?php else: ?>
                 <table class="table table-report -mt-2">
                     <thead>
                         <tr>
@@ -83,6 +88,7 @@ $games = Configure::read('Config.Games');
                 		<?php endforeach; ?>
                     </tbody>
                 </table>
+                <?php endif; ?>
             </div>
             <!-- END: Data List -->
         </div>

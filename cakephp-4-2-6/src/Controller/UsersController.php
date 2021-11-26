@@ -9,9 +9,12 @@ use App\Form\SettingsForm;
 use Cake\Auth\DefaultPasswordHasher;
 use Cake\Auth\DigestAuthenticate;
 use Cake\Core\Configure;
+use Cake\Datasource\ConnectionManager;
 use Cake\Datasource\FactoryLocator;
 use Cake\Event\EventInterface;
 use Exception;
+use DateTime;
+use DateTimeZone;
 
 class UsersController extends AppController
 {
@@ -83,6 +86,7 @@ class UsersController extends AppController
             if($user->is_email_confirmation == 1) throw new Exception(Configure::read('Config.Messages.UserNotFound'));
             $user->is_account_active = 1;
             $user->is_email_confirmation = 1;
+            $user->date_unblock = date('Y-m-d H:i:s', time());
             if($users->save($user) == false) throw new Exception();
             $this->myFlashSuccess(Configure::read('Config.Messages.ActivateSuccess'));
         }
@@ -113,26 +117,19 @@ class UsersController extends AppController
             {
                 if ($form->execute($this->request->getData()) == false) throw new Exception();
                 $users = FactoryLocator::get('Table')->get('Users');
+                $limit = date('Y-m-d H:i:s', strtotime('-60 minutes'));
                 $user = $users->find()
-                    ->where(array('email' => $this->request->getData()['email'], 
-                        '`date_expired` < DATE_SUB(NOW(), INTERVAL 15 MINUTE)'))
-                    //TODO
+                    ->where(array('email' => $this->request->getData()['email'], 'OR' => array('date_reset IS NULL', 'date_reset <' => $limit)))
                     ->first();
                 if($user != null)
                 {
                     $newPassword = substr(sha1(rand()), 0, 20);
                     $user->password = (new DefaultPasswordHasher())->hash($newPassword);
-                    $user->date_expired = date('Y-m-d H:i:s', time());
+                    $user->date_reset = date('Y-m-d H:i:s', time());
                     if ($users->save($user) == false) throw new Exception();
                     //BEGIN: sendEmail
-                    //$this->EmailProvider->sendAboutReset($user, $newPassword);
+                    $this->EmailProvider->sendAboutReset($user, $newPassword);
                     //END: sendEmail
-                }
-                else
-                {
-                    
-                    //TODO, coś tu jest nie tak, nie działa jak powinno
-                    //throw new Exception();
                 }
                 $this->myFlashSuccess(Configure::read('Config.Messages.ResetFormSuccess'));
                 return $this->redirect(array('controller' => 'users', 'action' => 'login'));
@@ -179,6 +176,7 @@ class UsersController extends AppController
                 $user = $users->find()
                     ->where(array('email' => $this->request->getData()['email']))
                     ->first();
+                if($user == null) throw new Exception(Configure::read('Config.Messages.LoginFormFailed'));
                 if($user['is_account_active'] == false) throw new Exception(Configure::read('Config.Messages.UserBlocked'));
                 if($user['is_email_confirmation'] == false) throw new Exception(Configure::read('Config.Messages.UserBlocked'));
                 if($user['is_blocked'] == true) throw new Exception(Configure::read('Config.Messages.UserBlocked'));                
@@ -216,6 +214,8 @@ class UsersController extends AppController
                 $userChangeEmail = $user->email != $dataToUpdated['email'];
                 if($userChangeEmail == true)
                 {
+                    $limit = date('Y-m-d H:i:s', strtotime('-1 day'));
+                    if(strtotime($user->date_unblock) >= strtotime($limit)) throw new Exception(Configure::read('Config.Messages.SettingsDateUnblockFailed'));
                     $dataToUpdated['is_email_confirmation'] = 0;
                 }
                 $userChangePassword = empty($data['password_new']) == false;
