@@ -12,9 +12,13 @@ use Cake\Mailer\Transport\MailTransport;
  * 1.
  * brak strony - error-illustration.svg
  * logowania => 'Error'.'exceptionRenderer' => 'App\Error\AppExceptionRenderer',*
+ * niby działa, ale url/error/*... to nie działa wtedy bo przekierowywuje na kontroller?
  
  * 2.
  * blokada zapytań wielu (strumień zapytań)
+ * 
+ * 3.
+ * notification/send (zabezpiecznie przed wieloma zapytaniami)
  
  */
 
