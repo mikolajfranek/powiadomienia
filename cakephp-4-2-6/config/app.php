@@ -15,11 +15,6 @@ use Cake\Mailer\Transport\MailTransport;
  
  * 2.
  * blokada zapytań wielu (strumień zapytań)
- * 
- * 3.
- * sendNotification bez sensu metoda hash...
- *     public function delivered($idUser, $idEmail, $inputHash)
- *     https://stackoverflow.com/questions/2384230/what-is-digest-authentication
  
  */
 

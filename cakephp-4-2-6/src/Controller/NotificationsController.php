@@ -41,7 +41,7 @@ class NotificationsController extends AppController
                     'Tickets.id_game IN' => $activeGames,
                     'CAST(Tickets.date_begin as date) <= CAST(CURDATE() as date)',
                     'CAST(Tickets.date_end as date) >= CAST(CURDATE() as date)',
-                    'Users.is_email_confirmation' => true,
+                    'Users.date_email_confirmation IS NOT NULL',
                     'Users.is_blocked' => false
                 ])
                 ->contain(['Users']);
@@ -157,11 +157,11 @@ class NotificationsController extends AppController
                 ->where(array('id' => $idUser))
                 ->first();
             if($user == null) throw new Exception(Configure::read('Config.Messages.UserNotFound'));
-            $hash = DigestAuthenticate::password($user->email, $idEmail, env('SERVER_NAME'));
+            $hash = DigestAuthenticate::password($user->id, $user->date_registration, env('SERVER_NAME'));
             if($inputHash != $hash) throw new Exception(Configure::read('Config.Messages.UserNotFound'));
             $emails = FactoryLocator::get('Table')->get('Emails');
             $email = $emails->find()
-                ->where(array('id' => $idEmail, 'id_user' => $idUser, 'date_delivered IS' => null))
+                ->where(array('id' => $idEmail, 'id_user' => $idUser, 'date_delivered IS NULL'))
                 ->first();
             if($email != null) 
             {

@@ -18,7 +18,7 @@ class EmailProviderComponent extends Component
             ->setBcc(Configure::read('Config.AdminEmail'))
             ->setSubject(Configure::read('Config.WebName') . ' ['. (date('Y-m-d', time())) . '] Rejestracja')
             ->setEmailFormat('html');
-        $hash = DigestAuthenticate::password($user->email, $user->date_activate, env('SERVER_NAME'));
+        $hash = DigestAuthenticate::password($user->id, $user->date_registration, env('SERVER_NAME'));
         $url =  Router::fullBaseUrl() . '/users/activate/' . $user->id . '/' . $hash;
         $htmlContent = '<h4>Witaj w serwisie ' . Configure::read('Config.WebName') . '!</h4>';
         $htmlContent .= '<p>Oto link aktywujący Twoje konto <a href="'. $url .'">'. $url .'</a>.</p>';
@@ -44,7 +44,7 @@ class EmailProviderComponent extends Component
             ->setTo($user->email)
             ->setSubject(Configure::read('Config.WebName') . ' ['. (date('Y-m-d', time())) . '] Zmiana adresu email')
             ->setEmailFormat('html');
-        $hash = DigestAuthenticate::password($user->email, $user->date_activate, env('SERVER_NAME'));
+        $hash = DigestAuthenticate::password($user->id, $user->date_registration, env('SERVER_NAME'));
         $url =  Router::fullBaseUrl() . '/users/activate/' . $user->id . '/' . $hash;
         $htmlContent = '<h4>Witaj!</h4>';
         $htmlContent .= '<p>Oto link odblokowujący Twoje konto <a href="'. $url .'">'. $url .'</a>.</p>';
@@ -58,7 +58,7 @@ class EmailProviderComponent extends Component
             ->setTo($user->email)
             ->setSubject(Configure::read('Config.WebName') . ' ['. (date('Y-m-d', time())) . '][' . $nameOfGame . '] ' . (empty($results['wins']) == false ? "Wygrałeś - najlepsze trafienie to " . $results['winLevel'] : "Przegrałeś"))
             ->setEmailFormat('html');
-        $hash = DigestAuthenticate::password($user->email, $idEmail, env('SERVER_NAME'));
+        $hash = DigestAuthenticate::password($user->id, $user->date_registration, env('SERVER_NAME'));
         $url =  Router::fullBaseUrl() . '/notifications/delivered/' . $user->id . '/' . $idEmail . '/' . $hash;
         $htmlContent = '<img width="0" height="0" alt="" src="'. $url .'"/>';
         $htmlContent .= '<h4>Witaj!</h4>';
