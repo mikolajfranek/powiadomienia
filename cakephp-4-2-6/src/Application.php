@@ -74,6 +74,7 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
         // Load more plugins here
         $this->addPlugin('Authentication');
         $this->addPlugin('Search');
+        $this->addPlugin('Muffin/Throttle');
     }
 
     /**
@@ -114,6 +115,26 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
             ]));
             
         $middlewareQueue->add(new AuthenticationMiddleware($this));
+        
+        $throttleMiddleware = new \Muffin\Throttle\Middleware\ThrottleMiddleware([
+            // Data used to generate response with HTTP code 429 when limit is exceeded.
+            'response' => [
+                'body' => 'Przekroczono limit żądań',
+            ],
+            // Time period as number of seconds
+            'period' => 60,
+            // Number of requests allowed within the above time period
+            'limit' => 100,
+            // Client identifier
+            'identifier' => function ($request) {
+                if (!empty($request->getHeaderLine('Authorization'))) {
+                    return str_replace('Bearer ', '', $request->getHeaderLine('Authorization'));
+                }
+                return $request->clientIp();
+            }
+        ]);
+        
+        $middlewareQueue->add($throttleMiddleware);
 
         return $middlewareQueue;
     }

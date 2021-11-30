@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '7998ecb92e2f1a1442908fe40beb9c6cff7a9231',
+    'reference' => '19ab75a2a7562a5c58bffda2cecc29c38ec5cc3b',
     'name' => 'cakephp/app',
   ),
   'versions' => 
@@ -27,7 +27,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '7998ecb92e2f1a1442908fe40beb9c6cff7a9231',
+      'reference' => '19ab75a2a7562a5c58bffda2cecc29c38ec5cc3b',
     ),
     'cakephp/authentication' => 
     array (
@@ -385,6 +385,15 @@
       array (
       ),
       'reference' => '9841e3c46f5bd0739b53aed8ac677fa712943df7',
+    ),
+    'muffin/throttle' => 
+    array (
+      'pretty_version' => '2.0.0',
+      'version' => '2.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '71086ee9b853efbbaceb3a70ce57de71ba9792d5',
     ),
     'myclabs/deep-copy' => 
     array (

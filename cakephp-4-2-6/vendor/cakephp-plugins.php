@@ -8,6 +8,7 @@ return [
         'Cake/TwigView' => $baseDir . '/vendor/cakephp/twig-view/',
         'DebugKit' => $baseDir . '/vendor/cakephp/debug_kit/',
         'Migrations' => $baseDir . '/vendor/cakephp/migrations/',
+        'Muffin/Throttle' => $baseDir . '/vendor/muffin/throttle/',
         'Search' => $baseDir . '/vendor/friendsofcake/search/',
     ],
 ];

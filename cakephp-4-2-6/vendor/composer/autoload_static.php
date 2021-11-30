@@ -100,6 +100,7 @@ class ComposerStaticInit1e89a37ef5080f46cd6176d7311b7c03
         ),
         'M' => 
         array (
+            'Muffin\\Throttle\\' => 16,
             'Migrations\\' => 11,
             'M1\\Env\\' => 7,
         ),
@@ -291,6 +292,10 @@ class ComposerStaticInit1e89a37ef5080f46cd6176d7311b7c03
         'PHPStan\\PhpDocParser\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpstan/phpdoc-parser/src',
+        ),
+        'Muffin\\Throttle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/muffin/throttle/src',
         ),
         'Migrations\\' => 
         array (
