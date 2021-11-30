@@ -174,7 +174,7 @@ class UsersController extends AppController
                     ->where(array('email' => $this->request->getData()['email']))
                     ->first();
                 if($user == null) throw new Exception(Configure::read('Config.Messages.LoginFormFailed'));
-                if($user['date_email_confirmation'] == NULL) throw new Exception(Configure::read('Config.Messages.UserBlocked'));
+                if($user['date_email_confirmation'] == null) throw new Exception(Configure::read('Config.Messages.UserBlocked'));
                 if($user['is_blocked'] == true) throw new Exception(Configure::read('Config.Messages.UserBlocked'));                
                 if((new DefaultPasswordHasher)->check($this->request->getData()['password'], $user->password) == false) throw new Exception(Configure::read('Config.Messages.LoginFormFailed'));
                 $this->Authentication->setIdentity($user);
@@ -213,7 +213,7 @@ class UsersController extends AppController
                     $limit = date('Y-m-d H:i:s', strtotime('-60 minutes'));
                     if(strtotime($user->date_email_confirmation) >= strtotime($limit)) throw new Exception(Configure::read('Config.Messages.SettingsDateUnblockFailed'));
                     $dataToUpdated['date_activate'] = date('Y-m-d H:i:s', time());
-                    $dataToUpdated['date_email_confirmation'] = NULL;
+                    $dataToUpdated['date_email_confirmation'] = null;
                 }
                 $userChangePassword = empty($data['password_new']) == false;
                 if($userChangePassword == true)

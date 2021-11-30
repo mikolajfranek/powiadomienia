@@ -22,6 +22,43 @@ class NotificationsController extends AppController
         $this->autoRender = false;
         try
         {
+            //critical section
+            $syncFile = fopen("sync_file", 'r');
+            $notificationsId = null;
+            $notifications = FactoryLocator::get('Table')->get('Notifications');
+            try
+            {
+                if (flock($syncFile, LOCK_EX)) 
+                {   
+                    try
+                    {
+                        $today = date('Y-m-d');
+                        $notification = $notifications->find()
+                            ->where(array('date' => $today))
+                            ->first();
+                        if($notification != null)
+                        {
+                            throw new Exception();
+                        }
+                        $newOne = $notifications->newEmptyEntity();
+                        $newOne->date = $today;
+                        if ($notifications->save($newOne) == false) throw new Exception();
+                        $notificationsId = $newOne->id;
+                    }
+                    finally
+                    {
+                        flock($syncFile, LOCK_UN);
+                    }
+                }
+                else 
+                {
+                    throw new Exception();
+                }
+            }
+            finally
+            {
+                fclose($syncFile);
+            }
             //ip
             $ip = trim($this->request->clientIp());
             if(in_array($ip, Configure::read('Config.Localhost')) == false) throw new Exception(Configure::read('Config.Messages.UnknowHost') . ' (' . $ip . ')');
@@ -124,6 +161,15 @@ class NotificationsController extends AppController
             $results = FactoryLocator::get('Table')->get('Results');
             $entitiesResults = $results->newEntities($resultsToSave);
             if(count($results->saveMany($entitiesResults)) != count($resultsToSave)) throw new Exception();
+            //save flag success
+            if($notificationsId != null)
+            {
+                $notification = $notifications->find()
+                    ->where(array('id' => $notificationsId))
+                    ->first();
+                $notification->success = 1;
+                if ($notifications->save($notification) == false) throw new Exception();
+            }
         }
         catch (Exception $e)
         {

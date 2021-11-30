@@ -14,9 +14,9 @@ use Cake\Mailer\Transport\MailTransport;
  * logowania => 'Error'.'exceptionRenderer' => 'App\Error\AppExceptionRenderer',*
  * niby działa, ale url/error/*... to nie działa wtedy bo przekierowywuje na kontroller?
  * 
- * 2.
- * notification/send (zabezpiecznie przed wieloma zapytaniami)
- 
+ * 2.logowanie zapytań do http
+ * 
+ * 
  */
 
 return [

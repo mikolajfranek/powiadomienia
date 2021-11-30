@@ -88,8 +88,7 @@ class AppController extends Controller
         {
             Log::write('error', isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : "");
             Log::write('error', isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "");
-            Log::write('error', $e->getMessage());
-            Log::write('error', $e->getTraceAsString());
+            Log::write('error', $e->__toString());
         }
         catch(Exception $e)
         {
