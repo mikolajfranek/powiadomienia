@@ -14,6 +14,7 @@ class NotificationsController extends AppController
     {
         parent::beforeFilter($event);
         $this->Authentication->allowUnauthenticated(['send', 'delivered']);
+        $this->FormProtection->setConfig('unlockedActions', ['send']);
     }
     
     public function send()

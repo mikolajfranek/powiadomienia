@@ -106,13 +106,20 @@ class Application extends BaseApplication implements AuthenticationServiceProvid
             // Parse various types of encoded request bodies so that they are
             // available as array through $request->getData()
             // https://book.cakephp.org/4/en/controllers/middleware.html#body-parser-middleware
-            ->add(new BodyParserMiddleware())
+            ->add(new BodyParserMiddleware());
 
-            // Cross Site Request Forgery (CSRF) Protection Middleware
-            // https://book.cakephp.org/4/en/controllers/middleware.html#cross-site-request-forgery-csrf-middleware
-            ->add(new CsrfProtectionMiddleware([
-                'httponly' => true,
-            ]));
+        // Cross Site Request Forgery (CSRF) Protection Middleware
+        // https://book.cakephp.org/4/en/controllers/middleware.html#cross-site-request-forgery-csrf-middleware
+        $csrf = new CsrfProtectionMiddleware([
+            'httponly' => true,
+        ]);
+        // Token check will be skipped when callback returns `true`.
+        $csrf->skipCheckCallback(function ($request) {
+            if ($request->getParam('controller') === 'Notifications' && $request->getParam('action') === 'send') {
+                return true;
+            }
+        }); 
+        $middlewareQueue->add($csrf);
             
         $middlewareQueue->add(new AuthenticationMiddleware($this));
         
