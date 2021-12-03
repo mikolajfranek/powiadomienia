@@ -18,7 +18,7 @@ class NotificationsController extends AppController
     
     public function send()
     {
-        $this->request->allowMethod(['get']);
+        $this->request->allowMethod(['put']);
         $this->autoRender = false;
         try
         {
@@ -28,21 +28,31 @@ class NotificationsController extends AppController
             $notifications = FactoryLocator::get('Table')->get('Notifications');
             try
             {
+                //hour
+                $todayHour = date('H:i:s');
+                if($todayHour < '23:00:00')
+                {
+                    throw new \InvalidArgumentException();   
+                }
+                //ip
+                $ip = trim($this->request->clientIp());
+                if(in_array($ip, Configure::read('Config.Localhost')) == false) throw new \InvalidArgumentException(Configure::read('Config.Messages.UnknowHost') . ' (' . $ip . ')');
+                //check amount of notifications send  
                 if (flock($syncFile, LOCK_EX)) 
                 {   
                     try
-                    {
+                    {   
                         $today = date('Y-m-d');
                         $notification = $notifications->find()
                             ->where(array('date' => $today))
                             ->first();
                         if($notification != null)
                         {
-                            throw new Exception();
+                            throw new \InvalidArgumentException();  
                         }
                         $newOne = $notifications->newEmptyEntity();
                         $newOne->date = $today;
-                        if ($notifications->save($newOne) == false) throw new Exception();
+                        if ($notifications->save($newOne) == false) throw new Exception();  
                         $notificationsId = $newOne->id;
                     }
                     finally
@@ -52,16 +62,13 @@ class NotificationsController extends AppController
                 }
                 else 
                 {
-                    throw new Exception();
+                    throw new \InvalidArgumentException();  
                 }
             }
             finally
             {
                 fclose($syncFile);
             }
-            //ip
-            $ip = trim($this->request->clientIp());
-            if(in_array($ip, Configure::read('Config.Localhost')) == false) throw new Exception(Configure::read('Config.Messages.UnknowHost') . ' (' . $ip . ')');
             //active games
             $activeGames = array();
             foreach(Configure::read('Config.Games') as $id => $game)
@@ -82,7 +89,7 @@ class NotificationsController extends AppController
                     'Users.is_blocked' => false
                 ])
                 ->contain(['Users']);
-            if($activeTickets->count() == 0) throw new Exception(Configure::read('Config.Messages.NoneOfActiveTickets'));
+            if($activeTickets->count() == 0) throw new \InvalidArgumentException(Configure::read('Config.Messages.NoneOfActiveTickets'));
             //prepare variables before download results
             $gameTickets = array();
             $users = array();
@@ -170,6 +177,10 @@ class NotificationsController extends AppController
                 $notification->success = 1;
                 if ($notifications->save($notification) == false) throw new Exception();
             }
+        }
+        catch (\InvalidArgumentException $e)
+        {
+            $this->myLogger($e);
         }
         catch (Exception $e)
         {

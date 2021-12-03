@@ -7,18 +7,6 @@ use Cake\Error\ExceptionRenderer;
 use Cake\Log\Engine\FileLog;
 use Cake\Mailer\Transport\MailTransport;
 
-/*
- * TODO
- * 1.
- * brak strony - error-illustration.svg
- * logowania => 'Error'.'exceptionRenderer' => 'App\Error\AppExceptionRenderer',*
- * niby działa, ale url/error/*... to nie działa wtedy bo przekierowywuje na kontroller?
- * 
- * 2.logowanie zapytań do http
- * 
- * 
- */
-
 return [
     /*
      * Debug Level:
@@ -197,7 +185,7 @@ return [
      */
     'Error' => [
         'errorLevel' => E_ALL,
-        'exceptionRenderer' => ExceptionRenderer::class,//'App\Error\AppExceptionRenderer',
+        'exceptionRenderer' => ExceptionRenderer::class,
         'skipLog' => [],
         'log' => true,
         'trace' => true,
