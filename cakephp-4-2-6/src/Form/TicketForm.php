@@ -107,13 +107,13 @@ class TicketForm extends Form
     
     public function isProperlyDateBegin($check) {
         if($check == null) return false;
-        if($check > $this->getData('date_end')) return false;
+        if(strtotime($check) > strtotime($this->getData('date_end'))) return false;
         return true;
     }
     
     public function isProperlyDateEnd($check) {
         if($check == null) return false;
-        if($check < $this->getData('date_begin')) return false;
+        if(strtotime($check) < strtotime($this->getData('date_begin'))) return false;
         return true;
     }
     
