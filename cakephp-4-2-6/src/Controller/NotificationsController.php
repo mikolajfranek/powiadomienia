@@ -19,7 +19,7 @@ class NotificationsController extends AppController
     
     public function send()
     {
-        $this->request->allowMethod(['put']);
+        $this->request->allowMethod(['post']);
         $this->autoRender = false;
         try
         {
@@ -31,7 +31,7 @@ class NotificationsController extends AppController
             {
                 //hour
                 $todayHour = date('H:i:s');
-                if($todayHour < '23:00:00')
+                if(strtotime($todayHour) < strtotime('23:00:00'))
                 {
                     throw new \InvalidArgumentException();   
                 }
