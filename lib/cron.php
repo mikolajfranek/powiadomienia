@@ -2,8 +2,8 @@
 $url = "https://powiadomienia.eu/notifications/send";
 $options = array(
 	"http" => array(
-		"header"  => "User-Agent: Automat",
-		"method"  => "PUT"
+		"header" => "User-Agent: Automat\r\nContent-Length: 0\r\n",
+		"method"  => "POST"
 	)
 );
 $context  = stream_context_create($options);
