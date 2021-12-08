@@ -19,7 +19,7 @@ class NotificationsController extends AppController
     
     public function send()
     {
-        $this->request->allowMethod(['post']);
+        $this->request->allowMethod(['get']);
         $this->autoRender = false;
         try
         {
