@@ -14,4 +14,5 @@
     RewriteRule    ^$    webroot/    [L]
     RewriteRule    (.*) webroot/$1    [L]
 #endif
+Header set Strict-Transport-Security "max-age=31536000" env=HTTPS
 </IfModule>
