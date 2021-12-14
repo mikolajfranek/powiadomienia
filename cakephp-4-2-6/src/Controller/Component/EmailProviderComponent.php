@@ -16,7 +16,7 @@ class EmailProviderComponent extends Component
         $mailer
             ->setTo($user->email)
             ->setBcc(Configure::read('Config.AdminEmail'))
-            ->setSubject(Configure::read('Config.WebName') . ' ['. (date('Y-m-d', time())) . '] Rejestracja')
+            ->setSubject('['. (date('Y-m-d', time())) . '] Rejestracja')
             ->setEmailFormat('html');
         $hash = DigestAuthenticate::password($user->id, $user->date_registration, env('SERVER_NAME'));
         $url =  Router::fullBaseUrl() . '/users/activate/' . $user->id . '/' . $hash;
@@ -30,7 +30,7 @@ class EmailProviderComponent extends Component
         $mailer = new Mailer('default');
         $mailer
             ->setTo($user->email)
-            ->setSubject(Configure::read('Config.WebName') . ' ['. (date('Y-m-d', time())) . '] Reset hasła')
+            ->setSubject('['. (date('Y-m-d', time())) . '] Reset hasła')
             ->setEmailFormat('html');
         $htmlContent = '<h4>Resetowanie hasła zakończyło się pomyślnie!</h4>';
         $htmlContent .= '<p>Oto Twoje nowe hasło: <b>'. $newPassword .'</b>.</p>';
@@ -42,7 +42,7 @@ class EmailProviderComponent extends Component
         $mailer = new Mailer('default');
         $mailer
             ->setTo($user->email)
-            ->setSubject(Configure::read('Config.WebName') . ' ['. (date('Y-m-d', time())) . '] Zmiana adresu email')
+            ->setSubject('['. (date('Y-m-d', time())) . '] Zmiana adresu email')
             ->setEmailFormat('html');
         $hash = DigestAuthenticate::password($user->id, $user->date_registration, env('SERVER_NAME'));
         $url =  Router::fullBaseUrl() . '/users/activate/' . $user->id . '/' . $hash;
@@ -56,7 +56,7 @@ class EmailProviderComponent extends Component
         $mailer = new Mailer('default');
         $mailer
             ->setTo($user->email)
-            ->setSubject(Configure::read('Config.WebName') . ' ['. (date('Y-m-d', time())) . '][' . $nameOfGame . '] ' . (empty($results['wins']) == false ? "Wygrałeś - najlepsze trafienie to " . $results['winLevel'] : "Przegrałeś"))
+            ->setSubject('['. (date('Y-m-d', time())) . '][' . $nameOfGame . '] ' . (empty($results['wins']) == false ? "Wygrałeś - najlepsze trafienie to " . $results['winLevel'] : "Przegrałeś"))
             ->setEmailFormat('html');
         $hash = DigestAuthenticate::password($user->id, $user->date_registration, env('SERVER_NAME'));
         $url =  Router::fullBaseUrl() . '/notifications/delivered/' . $user->id . '/' . $idEmail . '/' . $hash;
@@ -91,7 +91,7 @@ class EmailProviderComponent extends Component
         $mailer = new Mailer('default');
         $mailer
             ->setTo(Configure::read('Config.AdminEmail'))
-            ->setSubject(Configure::read('Config.WebName') . ' ['. (date('Y-m-d', time())) . '] ' . $title)
+            ->setSubject('['. (date('Y-m-d', time())) . '] ' . $title)
             ->setEmailFormat('html');    
         $htmlContent = '<h4>Witaj!</h4>';
         $htmlContent .= '<p>' . $message . '</p>';
