@@ -5,6 +5,7 @@ namespace App\Controller;
 use Cake\Core\Configure;
 use Cake\Datasource\FactoryLocator;
 use Cake\Event\EventInterface;
+use DateTime;
 use Exception;
 use App\Form\TicketForm;
 
@@ -72,8 +73,8 @@ class TicketsController extends AppController
                 }
                 $ticket->id_game = $data['id_game'];
                 $ticket->id_user = $this->user['id'];
-                $ticket->date_begin = date('Y-m-d H:i:s',strtotime($data['date_begin']));
-                $ticket->date_end = date('Y-m-d H:i:s',strtotime($data['date_end']));
+                $ticket->date_begin = date('Y-m-d H:i:s',strtotime(DateTime::createFromFormat('d M, Y', $data['date_begin'])->format('Y-m-d')));
+                $ticket->date_end = date('Y-m-d H:i:s',strtotime(DateTime::createFromFormat('d M, Y', $data['date_end'])->format('Y-m-d')));
                 $ticket->numbers = json_encode($numbers);
                 if ($tickets->save($ticket) == false) 
                 {

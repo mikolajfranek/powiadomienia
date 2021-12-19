@@ -6,6 +6,7 @@ use Cake\Form\Form;
 use Cake\Form\Schema;
 use Cake\Validation\Validator;
 use Cake\Core\Configure;
+use DateTime;
 
 class TicketForm extends Form
 {
@@ -107,13 +108,13 @@ class TicketForm extends Form
     
     public function isProperlyDateBegin($check) {
         if($check == null) return false;
-        if(strtotime($check) > strtotime($this->getData('date_end'))) return false;
+        if(strtotime(DateTime::createFromFormat('d M, Y', $check)->format('Y-m-d')) > strtotime(DateTime::createFromFormat('d M, Y', $this->getData('date_end'))->format('Y-m-d'))) return false;
         return true;
     }
     
     public function isProperlyDateEnd($check) {
         if($check == null) return false;
-        if(strtotime($check) < strtotime($this->getData('date_begin'))) return false;
+        if(strtotime(DateTime::createFromFormat('d M, Y', $check)->format('Y-m-d')) < strtotime(DateTime::createFromFormat('d M, Y', $this->getData('date_begin'))->format('Y-m-d'))) return false;
         return true;
     }
     
