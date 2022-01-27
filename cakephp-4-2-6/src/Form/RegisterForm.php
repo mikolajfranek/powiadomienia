@@ -14,6 +14,7 @@ class RegisterForm extends Form
     protected function _buildSchema(Schema $schema): Schema
     {
         return $schema
+            ->addField('name', 'string')
             ->addField('email', 'string')
             ->addField('password', 'password')
             ->addField('password_confirm', 'password');
@@ -22,6 +23,14 @@ class RegisterForm extends Form
     public function validationDefault(Validator $validator): Validator
     {
         $validator
+        //name
+            ->requirePresence('name')
+            ->notEmptyString('name', Configure::read('Config.Validations.CannotBeEmpty'))
+            ->maxLength('name', 100, Configure::read('Config.Validations.Max100Characters'))
+            ->add('name', 'unique', array(
+                'rule' => array($this, 'isName'),
+                'message' => Configure::read('Config.Validations.NameNotFound')
+            ))
         //email
             ->requirePresence('email')
             ->notEmptyString('email', Configure::read('Config.Validations.CannotBeEmpty'))
@@ -58,6 +67,16 @@ class RegisterForm extends Form
         return $validator;
     }
     
+    
+    public function isName($check)
+    {
+        $names = FactoryLocator::get('Table')->get('Names');
+        $count = $names->find()
+            ->where(array('name' => $check))
+            ->count('*');
+        return $count == 1;
+    }
+    
     public function isUniqueEmail($check) 
     {
         $users = FactoryLocator::get('Table')->get('Users');
@@ -81,6 +100,7 @@ class RegisterForm extends Form
     {
         $users = FactoryLocator::get('Table')->get('Users');
         $user = $users->newEmptyEntity();
+        $user->name = $data['name'];
         $user->email = $data['email'];
         $user->password = (new DefaultPasswordHasher())->hash($data['password']);
         $user->date_registration = date('Y-m-d H:i:s', time());

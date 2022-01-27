@@ -51,10 +51,13 @@ class UsersController extends AppController
         {
             if ($this->request->is('post'))
             {
-                if ($form->execute($this->request->getData()) == false) throw new Exception();
+                $data = $this->request->getData();
+                $data['name'] = $this->replaceStrangeChar($data['name']);
+                $data['name'] = ucfirst(strtolower($data['name']));
+                if ($form->execute($data) == false) throw new Exception();
                 $users = FactoryLocator::get('Table')->get('Users');
                 $user = $users->find()
-                    ->where(array('email' => $this->request->getData()['email']))
+                    ->where(array('email' => $data['email']))
                     ->first();
                 //BEGIN: sendEmail
                 $this->EmailProvider->sendAboutRegistration($user);

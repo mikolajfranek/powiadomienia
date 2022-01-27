@@ -20,7 +20,7 @@ class EmailProviderComponent extends Component
             ->setEmailFormat('html');
         $hash = DigestAuthenticate::password($user->id, $user->date_registration, env('SERVER_NAME'));
         $url =  Router::fullBaseUrl() . '/users/activate/' . $user->id . '/' . $hash;
-        $htmlContent = '<h4>Witaj w serwisie ' . Configure::read('Config.WebName') . '!</h4>';
+        $htmlContent = '<h4>Witaj ' . $user->name . ' w serwisie ' . Configure::read('Config.WebName') . '!</h4>';
         $htmlContent .= '<p>Oto link aktywujący Twoje konto <a href="'. $url .'">'. $url .'</a>.</p>';
         $mailer->deliver($htmlContent);
     }
@@ -32,8 +32,8 @@ class EmailProviderComponent extends Component
             ->setTo($user->email)
             ->setSubject('['. (date('Y-m-d', time())) . '] Reset hasła')
             ->setEmailFormat('html');
-        $htmlContent = '<h4>Resetowanie hasła zakończyło się pomyślnie!</h4>';
-        $htmlContent .= '<p>Oto Twoje nowe hasło: <b>'. $newPassword .'</b>.</p>';
+        $htmlContent = '<h4>Witaj ' . $user->name . '!</h4>';
+        $htmlContent .= '<p>Resetowanie hasła zakończyło się pomyślnie! Oto Twoje nowe hasło: <b>'. $newPassword .'</b>.</p>';
         $mailer->deliver($htmlContent);
     }
     
@@ -46,7 +46,7 @@ class EmailProviderComponent extends Component
             ->setEmailFormat('html');
         $hash = DigestAuthenticate::password($user->id, $user->date_registration, env('SERVER_NAME'));
         $url =  Router::fullBaseUrl() . '/users/activate/' . $user->id . '/' . $hash;
-        $htmlContent = '<h4>Witaj!</h4>';
+        $htmlContent = '<h4>Witaj ' . $user->name . '!</h4>';
         $htmlContent .= '<p>Oto link odblokowujący Twoje konto <a href="'. $url .'">'. $url .'</a>.</p>';
         $mailer->deliver($htmlContent);
     }
@@ -61,7 +61,7 @@ class EmailProviderComponent extends Component
         $hash = DigestAuthenticate::password($user->id, $user->date_registration, env('SERVER_NAME'));
         $url =  Router::fullBaseUrl() . '/notifications/delivered/' . $user->id . '/' . $idEmail . '/' . $hash;
         $htmlContent = '<img width="0" height="0" alt="" src="'. $url .'"/>';
-        $htmlContent .= '<h4>Witaj!</h4>';
+        $htmlContent .= '<h4>Witaj ' . $user->name . '!</h4>';
         $htmlContent .= '<h5>' . $nameOfGame . ' oraz Twoje wyniki.</h5><br/>';
         if(empty($results['wins']) == false)
         {

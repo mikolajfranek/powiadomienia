@@ -441,6 +441,7 @@ return [
             'IsInUse' => 'Wartość jest już w użyciu.',
             'CannotBeEmpty' => 'Wartość nie może być pusta.',
             'EmailFormatFailed' => 'Nieprawidłowy adres email.',
+            'NameNotFound' => 'Imie nie istnieje.',
             'Max100Characters' => 'Maksymalnie 100 znaki długości.',
             'Min6Max22Characters' => 'Wymagane minimalnie 6, maksymalnie 22 znaki długości.',
             'FailedCharacters' => 'Zawiera nieodpowiednie znaki.',

@@ -13,10 +13,15 @@
 		   	    ?>
                 <div class="intro-x mt-8">
                     <?php
+                        echo $this->Form->control("name", array(
+                            "placeholder" => "Imie",
+                            "label" => false,
+                            "class" => "intro-x login__input form-control py-3 px-4 border-gray-300 block"
+                        ));
             	       echo $this->Form->control("email", array(
             	           "placeholder" => "Email",
             	           "label" => false,
-            	           "class" => "intro-x login__input form-control py-3 px-4 border-gray-300 block"
+            	           "class" => "intro-x login__input form-control py-3 px-4 border-gray-300 block mt-4"
             	       ));
             	       echo $this->Form->control("password", array(
             	           "type" => "password",

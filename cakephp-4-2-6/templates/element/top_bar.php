@@ -2,9 +2,6 @@
 
 use Cake\Core\Configure;
 
-$email_of_user = $user['email'];
-$email_of_user = substr($email_of_user, 0, strpos($email_of_user, "@", 0));
-$email_of_user = strlen($email_of_user) > 22 ? substr($email_of_user, 0, 22) . "..." : substr($email_of_user, 0);
 ?>
 <!-- BEGIN: Top Bar -->
 <div class="top-bar">
@@ -24,7 +21,7 @@ $email_of_user = strlen($email_of_user) > 22 ? substr($email_of_user, 0, 22) . "
         <div class="dropdown-menu w-56">
             <div class="dropdown-menu__content box bg-theme-26 dark:bg-dark-6 text-white">
                 <div class="p-4 border-b border-theme-27 dark:border-dark-3">
-                    <div class="font-medium"><?= $email_of_user ?></div>
+                    <div class="font-medium"><?= $user['name'] ?></div>
                 </div>
                 <div class="p-2">
                 	 <?php
