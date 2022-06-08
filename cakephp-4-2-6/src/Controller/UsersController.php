@@ -304,9 +304,9 @@ class UsersController extends AppController
             $query = $results->find('search', array('search' => $params))
                 ->where(array('Results.id_user' => $this->user['id']))
                 ->order('Results.id DESC')
-                ->page($page, 10)
+                ->page($page, 16)
                 ->contain(['Emails']);
-            $resultsOfUser = $this->paginate($query, array('limit' => 10, 'page' => $page));
+            $resultsOfUser = $this->paginate($query, array('limit' => 16, 'page' => $page));
             $this->set('resultsOfUser', $resultsOfUser);
             $this->set('paginate', $this->Paginator->getPaginator()->getPagingParams()['Results']);
         }
