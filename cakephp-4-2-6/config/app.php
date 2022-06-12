@@ -479,6 +479,14 @@ return [
             5 => "5-ka",
             6 => "6-ka"
         ],
+        'YesOrNo' => [
+            0 => "Nie",
+            1 => "Tak"
+        ],
+        'YesOrNoValue' => [
+            "Nie" => 0,
+            "Tak" => 1
+        ],
         'Games' => [
             1 => [
                 'queryParameter' => 'el',

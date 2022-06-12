@@ -68,6 +68,17 @@ function colorNumbersOfUser($numbers, $intersect)
                		 		    ));
            		 		    ?>
             			</div>
+            				<div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
+							<label class="w-22 flex-none xl:w-auto xl:flex-initial mr-2">Wygrana</label>
+							<?php
+               		 		    echo $this->Form->control("amount_winning_yes_or_no", array(
+               		 		        "label" => false,
+               		 		        "options" => Configure::read('Config.YesOrNo'), 
+               		 		        "empty" => Configure::read('Config.Combobox.Empty'),
+               		 		        "class" => "form-select w-full mt-2 sm:mt-0 sm:w-auto",
+               		 		    ));
+           		 		    ?>
+            			</div>
             			<div class="sm:flex items-center sm:mr-4 mt-2 xl:mt-0">
             				<label class="w-22 flex-none xl:w-auto xl:flex-initial mr-2">Zakład</label>			
 	           		 		<?php

@@ -301,12 +301,25 @@ class UsersController extends AppController
                 $params['numbers_of_user'] = preg_replace('/\s+/', ' ', $params['numbers_of_user']);
                 $params['numbers_of_user'] = preg_replace('/[^0-9]/', ';', $params['numbers_of_user']);
             }
+            $conditions = array(
+                'Results.id_user' => $this->user['id']
+            );
+            if (isset($params['amount_winning_yes_or_no'])) {
+                $input = $params['amount_winning_yes_or_no'];
+                unset($params['amount_winning_yes_or_no']);
+                if(empty($input) == false || $input == Configure::read('Config.YesOrNoValue.Yes')){
+                    $conditions['Results.amount_winning >='] = 3;
+                }
+                else{
+                    $conditions['Results.amount_winning <'] = 3;
+                }
+            }
             $query = $results->find('search', array('search' => $params))
-                ->where(array('Results.id_user' => $this->user['id']))
+                ->where($conditions)
                 ->order('Results.id DESC')
-                ->page($page, 16)
+                ->page($page, 20)
                 ->contain(['Emails']);
-            $resultsOfUser = $this->paginate($query, array('limit' => 16, 'page' => $page));
+            $resultsOfUser = $this->paginate($query, array('limit' => 20, 'page' => $page));
             $this->set('resultsOfUser', $resultsOfUser);
             $this->set('paginate', $this->Paginator->getPaginator()->getPagingParams()['Results']);
         }
